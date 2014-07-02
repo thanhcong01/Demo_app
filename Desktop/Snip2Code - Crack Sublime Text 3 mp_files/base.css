@@ -1,0 +1,24 @@
+.oas_box {
+  overflow: hidden;
+  font-family: Tahoma, Kalimati, Verdana, "Bitstream Vera Sans", "DejaVu Sans", Geneva, Arial, Helvetica, Sans-serif;
+  font-size: 11px;
+}
+
+.oas_box .oas_btn {
+  float: left;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.oas_box .oas_btn_brd {
+  cursor: pointer;
+}
+
+.oas_box .oas_btn_ico {
+  float: left;
+  cursor: pointer;
+  outline: 0 none;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-color: transparent;
+}

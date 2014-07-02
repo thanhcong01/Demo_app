@@ -1,0 +1,14 @@
+/home/thanhcongframgia/.rvm/rubies/ruby-1.9.3-p547/bin/ruby extconf.rb
+checking for labs() in stdlib.h... yes
+checking for llabs() in stdlib.h... yes
+creating Makefile
+
+make  clean
+
+make
+compiling bigdecimal.c
+linking shared-object bigdecimal.so
+
+make  install
+/usr/bin/install -m 0755 bigdecimal.so /home/thanhcongframgia/.rvm/gems/ruby-1.9.3-p547/gems/bigdecimal-1.2.5/.gem.20140702-6806-1k89e7q
+installing default bigdecimal libraries

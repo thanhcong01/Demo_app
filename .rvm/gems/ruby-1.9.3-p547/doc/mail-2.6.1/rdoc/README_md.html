@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>README - mail-2.6.1 Documentation</title>
+
+<link href="./fonts.css" rel="stylesheet">
+<link href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script src="./js/jquery.js"></script>
+<script src="./js/navigation.js"></script>
+<script src="./js/search_index.js"></script>
+<script src="./js/search.js"></script>
+<script src="./js/searcher.js"></script>
+<script src="./js/darkfish.js"></script>
+
+
+<body id="top" role="document" class="file">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+<div class="nav-section">
+  <h3>Table of Contents</h3>
+
+  <ul class="link-list" role="directory">
+    <li><a href="#label-Mail+rdoc-image%3Ahttps%3A%2F%2Ftravis-ci.org%2Fmikel%2Fmail.png%3Fbranch%3Dmaster">Mail <a href="https://travis-ci.org/mikel/mail"><img src="https://travis-ci.org/mikel/mail.png?branch=master"></a></a>
+    <li><a href="#label-Introduction">Introduction</a>
+    <li><a href="#label-Donations">Donations</a>
+    <li><a href="#label-Compatibility">Compatibility</a>
+    <li><a href="#label-Discussion">Discussion</a>
+    <li><a href="#label-Current+Capabilities+of+Mail">Current Capabilities of Mail</a>
+    <li><a href="#label-Roadmap">Roadmap</a>
+    <li><a href="#label-Testing+Policy">Testing Policy</a>
+    <li><a href="#label-API+Policy">API Policy</a>
+    <li><a href="#label-Installation">Installation</a>
+    <li><a href="#label-Encodings">Encodings</a>
+    <li><a href="#label-Contributing">Contributing</a>
+    <li><a href="#label-Usage">Usage</a>
+    <li><a href="#label-Making+an+email">Making an email</a>
+    <li><a href="#label-Making+an+email%2C+have+it+your+way%3A">Making an email, have it your way:</a>
+    <li><a href="#label-Don%27t+Worry+About+Message+IDs%3A">Don’t Worry About Message IDs:</a>
+    <li><a href="#label-Or+do+worry+about+Message-IDs%3A">Or do worry about Message-IDs:</a>
+    <li><a href="#label-Sending+an+email%3A">Sending an email:</a>
+    <li><a href="#label-Getting+emails+from+a+pop+server%3A">Getting emails from a pop server:</a>
+    <li><a href="#label-Reading+an+Email">Reading an Email</a>
+    <li><a href="#label-Reading+a+Multipart+Email">Reading a Multipart Email</a>
+    <li><a href="#label-Testing+and+extracting+attachments">Testing and extracting attachments</a>
+    <li><a href="#label-Writing+and+sending+a+multipart%2Falternative+%28html+and+text%29+email">Writing and sending a multipart/alternative (html and text) email</a>
+    <li><a href="#label-Making+Multipart%2FAlternate%2C+without+a+block">Making Multipart/Alternate, without a block</a>
+    <li><a href="#label-Getting+error+reports+from+an+email%3A">Getting error reports from an email:</a>
+    <li><a href="#label-Attaching+and+Detaching+Files">Attaching and Detaching Files</a>
+    <li><a href="#label-Using+Mail+with+Testing+or+Spec%27ing+Libraries">Using Mail with Testing or Spec’ing Libraries</a>
+    <li><a href="#label-Excerpts+from+TREC+Spam+Corpus+2005">Excerpts from TREC Spam Corpus 2005</a>
+    <li><a href="#label-License">License</a>
+  </ul>
+</div>
+
+
+  <div id="project-metadata">
+    <div id="fileindex-section" class="nav-section">
+  <h3>Pages</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./CHANGELOG_rdoc.html">CHANGELOG</a>
+  
+    <li><a href="./CONTRIBUTING_md.html">CONTRIBUTING</a>
+  
+    <li><a href="./README_md.html">README</a>
+  
+    <li><a href="./TODO_rdoc.html">TODO</a>
+  
+    <li><a href="./lib/mail/parsers/ragel/common_rl.html">common.rl</a>
+  
+    <li><a href="./lib/mail/parsers/ragel/date_time_rl.html">date_time.rl</a>
+  
+    <li><a href="./lib/mail/parsers/ragel/ruby/machines/address_lists_machine_rb_rl.html">address_lists_machine.rb.rl</a>
+  
+    <li><a href="./lib/mail/parsers/ragel/ruby/machines/content_disposition_machine_rb_rl.html">content_disposition_machine.rb.rl</a>
+  
+    <li><a href="./lib/mail/parsers/ragel/ruby/machines/content_location_machine_rb_rl.html">content_location_machine.rb.rl</a>
+  
+    <li><a href="./lib/mail/parsers/ragel/ruby/machines/content_transfer_encoding_machine_rb_rl.html">content_transfer_encoding_machine.rb.rl</a>
+  
+    <li><a href="./lib/mail/parsers/ragel/ruby/machines/content_type_machine_rb_rl.html">content_type_machine.rb.rl</a>
+  
+    <li><a href="./lib/mail/parsers/ragel/ruby/machines/date_time_machine_rb_rl.html">date_time_machine.rb.rl</a>
+  
+    <li><a href="./lib/mail/parsers/ragel/ruby/machines/envelope_from_machine_rb_rl.html">envelope_from_machine.rb.rl</a>
+  
+    <li><a href="./lib/mail/parsers/ragel/ruby/machines/message_ids_machine_rb_rl.html">message_ids_machine.rb.rl</a>
+  
+    <li><a href="./lib/mail/parsers/ragel/ruby/machines/mime_version_machine_rb_rl.html">mime_version_machine.rb.rl</a>
+  
+    <li><a href="./lib/mail/parsers/ragel/ruby/machines/phrase_lists_machine_rb_rl.html">phrase_lists_machine.rb.rl</a>
+  
+    <li><a href="./lib/mail/parsers/ragel/ruby/machines/rb_actions_rl.html">rb_actions.rl</a>
+  
+    <li><a href="./lib/mail/parsers/ragel/ruby/machines/received_machine_rb_rl.html">received_machine.rb.rl</a>
+  
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-label="Page README.md">
+
+<h1 id="label-Mail+rdoc-image%3Ahttps%3A%2F%2Ftravis-ci.org%2Fmikel%2Fmail.png%3Fbranch%3Dmaster"><a href="Mail.html">Mail</a> <a href="https://travis-ci.org/mikel/mail"><img src="https://travis-ci.org/mikel/mail.png?branch=master"></a><span><a href="#label-Mail+rdoc-image%3Ahttps%3A%2F%2Ftravis-ci.org%2Fmikel%2Fmail.png%3Fbranch%3Dmaster">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
+
+<h2 id="label-Introduction">Introduction<span><a href="#label-Introduction">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+
+<p><a href="Mail.html">Mail</a> is an internet library for Ruby that is
+designed to handle emails generation, parsing and sending in a simple,
+rubyesque manner.</p>
+
+<p>The purpose of this library is to provide a single point of access to
+handle all email functions, including sending and receiving emails. All
+network type actions are done through proxy methods to <a
+href="Net/SMTP.html">Net::SMTP</a>, Net::POP3 etc.</p>
+
+<p>Built from my experience with TMail, it is designed to be a pure ruby
+implementation that makes generating, sending and parsing emails a no
+brainer.</p>
+
+<p>It is also designed form the ground up to work with the more modern
+versions of Ruby. This is because Ruby &gt; 1.9 handles text encodings much
+more wonderfully than Ruby 1.8.x and so these features have been taken full
+advantage of in this library allowing <a href="Mail.html">Mail</a> to
+handle a lot more messages more cleanly than TMail. <a
+href="Mail.html">Mail</a> does run on Ruby 1.8.x… it’s just not as fun to
+code.</p>
+
+<p>Finally, <a href="Mail.html">Mail</a> has been designed with a very simple
+object oriented system that really opens up the email messages you are
+parsing, if you know what you are doing, you can fiddle with every last bit
+of your email directly.</p>
+
+<h2 id="label-Donations">Donations<span><a href="#label-Donations">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+
+<p><a href="Mail.html">Mail</a> has been downloaded millions of times, by
+people around the world, in fact, it represents more than 1% of
+<em>all</em> gems downloaded.</p>
+
+<p>It is (like all open source software) a labour of love and something I am
+doing with my own free time. If you would like to say thanks, please feel
+free to <a href="http://www.pledgie.com/campaigns/8790">make a donation</a>
+and feel free to send me a nice email :)</p>
+
+<p>&lt;a href=‘<a
+href="http://www.pledgie.com/campaigns/8790'><img">www.pledgie.com/campaigns/8790’><img</a>
+alt=‘Click here to lend your support to: mail and make a donation at <a
+href="www.pledgie.com">www.pledgie.com</a> !’ src=‘<a
+href="http://www.pledgie.com/campaigns/8790.png?skin_name=chrome">www.pledgie.com/campaigns/8790.png?skin_name=chrome</a>’
+border=‘0’ /&gt;&lt;/a&gt;</p>
+
+<h2 id="label-Compatibility">Compatibility<span><a href="#label-Compatibility">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+
+<p>Every <a href="Mail.html">Mail</a> commit is tested by Travis on the <a
+href="https://github.com/mikel/mail/blob/master/.travis.yml">following
+platforms</a></p>
+<ul><li>
+<p>ruby-1.8.7-p374 [ i686 ]</p>
+</li><li>
+<p>ruby-1.9.2-p320 [ x86_64 ]</p>
+</li><li>
+<p>ruby-1.9.3-p327 [ x86_64 ]</p>
+</li><li>
+<p>ruby-2.0.0-p451 [ x86_64 ]</p>
+</li><li>
+<p>ruby-2.1.2 [ x86_64 ]</p>
+</li><li>
+<p>ruby-head [ x86_64 ]</p>
+</li><li>
+<p>jruby [ x86_64 ]</p>
+</li><li>
+<p>jruby-head [ x86_64 ]</p>
+</li><li>
+<p>rbx-2 [ x86_64 ]</p>
+</li></ul>
+
+<p>Testing a specific mime type (needed for 1.8.7 for example) can be done
+manually with:</p>
+
+<pre>BUNDLE_GEMFILE=gemfiles/mime_types_1.16.gemfile (bundle check || bundle) &amp;&amp; rake</pre>
+
+<h2 id="label-Discussion">Discussion<span><a href="#label-Discussion">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+
+<p>If you want to discuss mail with like minded individuals, please subscribe
+to the <a href="http://groups.google.com/group/mail-ruby">Google Group</a>.</p>
+
+<h2 id="label-Current+Capabilities+of+Mail">Current Capabilities of <a href="Mail.html">Mail</a><span><a href="#label-Current+Capabilities+of+Mail">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<ul><li>
+<p>RFC2822 Support, Reading and Writing</p>
+</li><li>
+<p>RFC2045-2049 Support for multipart emails</p>
+</li><li>
+<p>Support for creating multipart alternate emails</p>
+</li><li>
+<p>Support for reading multipart/report emails &amp; getting details from such</p>
+</li><li>
+<p>Support for multibyte emails - needs quite a lot of work and testing</p>
+</li><li>
+<p>Wrappers for File, Net/POP3, Net/SMTP</p>
+</li><li>
+<p>Auto encoding of non US-ASCII header fields</p>
+</li><li>
+<p>Auto encoding of non US-ASCII bodies</p>
+</li></ul>
+
+<p><a href="Mail.html">Mail</a> is RFC2822 compliant now, that is, it can
+parse and generate valid US-ASCII emails. There are a few obsoleted syntax
+emails that it will have problems with, but it also is quite robust,
+meaning, if it finds something it doesn't understand it will not crash,
+instead, it will skip the problem and keep parsing. In the case of a header
+it doesn't understand, it will initialise the header as an optional
+unstructured field and continue parsing.</p>
+
+<p>This means <a href="Mail.html">Mail</a> won’t (ever) crunch your data (I
+think).</p>
+
+<p>You can also create MIME emails. There are helper methods for making a
+multipart/alternate email for text/plain and text/html (the most common
+pair) and you can manually create any other type of MIME email.</p>
+
+<h2 id="label-Roadmap">Roadmap<span><a href="#label-Roadmap">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+
+<p>Next TODO:</p>
+<ul><li>
+<p>Improve MIME support for character sets in headers, currently works,
+mostly, needs  refinement.</p>
+</li></ul>
+
+<h2 id="label-Testing+Policy">Testing Policy<span><a href="#label-Testing+Policy">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+
+<p>Basically… we do BDD on <a href="Mail.html">Mail</a>. No method gets
+written in <a href="Mail.html">Mail</a> without a corresponding or covering
+spec. We expect as a minimum 100% coverage measured by RCov. While this is
+not perfect by any measure, it is pretty good. Additionally, all functional
+tests from TMail are to be passing before the gem gets released.</p>
+
+<p>It also means you can be sure <a href="Mail.html">Mail</a> will behave
+correctly.</p>
+
+<h2 id="label-API+Policy">API Policy<span><a href="#label-API+Policy">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+
+<p>No API removals within a single point release. All removals to be
+deprecated with warnings for at least one MINOR point release before
+removal.</p>
+
+<p>Also, all private or protected methods to be declared as such - though this
+is still I/P.</p>
+
+<h2 id="label-Installation">Installation<span><a href="#label-Installation">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+
+<p>Installation is fairly simple, I host mail on rubygems, so you can just do:</p>
+
+<pre># gem install mail</pre>
+
+<h2 id="label-Encodings">Encodings<span><a href="#label-Encodings">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+
+<p>If you didn’t know, handling encodings in Emails is not as straight forward
+as you would hope.</p>
+
+<p>I have tried to simplify it some:</p>
+<ol><li>
+<p>All objects that can render into an email, have an <code>#encoded</code>
+method. Encoded will  return the object as a complete string ready to send
+in the mail system, that is,  it will include the header field and value
+and CRLF at the end and wrapped as  needed.</p>
+</li><li>
+<p>All objects that can render into an email, have a <code>#decoded</code>
+method. Decoded will  return the object’s “value” only as a string. This
+means it will not include  the header fields (like ‘To:’ or ‘Subject:’).</p>
+</li><li>
+<p>By default, calling <code>#to_s</code> on a container object will call its
+encoded  method, while <code>#to_s</code> on a field object will call its
+decoded method.  So calling <code>#to_s</code> on a <a
+href="Mail.html">Mail</a> object will return the mail, all encoded  ready
+to send, while calling <code>#to_s</code> on the From field or the body
+will  return the decoded value of the object. The header object of <a
+href="Mail.html">Mail</a> is considered a  container. If you are in doubt,
+call <code>#encoded</code>, or <code>#decoded</code>  explicitly, this is
+safer if you are not sure.</p>
+</li><li>
+<p>Structured fields that have parameter values that can be encoded (e.g.
+Content-Type) will  provide decoded parameter values when you call the
+parameter names as methods against  the object.</p>
+</li><li>
+<p>Structured fields that have parameter values that can be encoded (e.g.
+Content-Type) will  provide encoded parameter values when you call the
+parameter names through the 
+<code>object.parameters['<parameter_name>']</code> method call.</p>
+</li></ol>
+
+<h2 id="label-Contributing">Contributing<span><a href="#label-Contributing">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+
+<p>Please do! Contributing is easy in <a href="Mail.html">Mail</a>. Please
+read the <a href="CONTRIBUTING_md.html">CONTRIBUTING.md</a> document for
+more info</p>
+
+<h2 id="label-Usage">Usage<span><a href="#label-Usage">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+
+<p>All major mail functions should be able to happen from the <a
+href="Mail.html">Mail</a> module. So, you should be able to just
+<code>require 'mail'</code> to get started.</p>
+
+<h3 id="label-Making+an+email">Making an email<span><a href="#label-Making+an+email">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+
+<pre class="ruby"><span class="ruby-identifier">mail</span> = <span class="ruby-constant">Mail</span>.<span class="ruby-identifier">new</span> <span class="ruby-keyword">do</span>
+  <span class="ruby-identifier">from</span>    <span class="ruby-string">'mikel@test.lindsaar.net'</span>
+  <span class="ruby-identifier">to</span>      <span class="ruby-string">'you@test.lindsaar.net'</span>
+  <span class="ruby-identifier">subject</span> <span class="ruby-string">'This is a test email'</span>
+  <span class="ruby-identifier">body</span>    <span class="ruby-constant">File</span>.<span class="ruby-identifier">read</span>(<span class="ruby-string">'body.txt'</span>)
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-identifier">mail</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-comment">#=&gt; &quot;From: mikel@test.lindsaar.net\r\nTo: you@...</span>
+</pre>
+
+<h3 id="label-Making+an+email%2C+have+it+your+way%3A">Making an email, have it your way:<span><a href="#label-Making+an+email%2C+have+it+your+way%3A">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+
+<pre class="ruby"><span class="ruby-identifier">mail</span> = <span class="ruby-constant">Mail</span>.<span class="ruby-identifier">new</span> <span class="ruby-keyword">do</span>
+  <span class="ruby-identifier">body</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">read</span>(<span class="ruby-string">'body.txt'</span>)
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-identifier">mail</span>[<span class="ruby-string">'from'</span>] = <span class="ruby-string">'mikel@test.lindsaar.net'</span>
+<span class="ruby-identifier">mail</span>[:<span class="ruby-identifier">to</span>]    = <span class="ruby-string">'you@test.lindsaar.net'</span>
+<span class="ruby-identifier">mail</span>.<span class="ruby-identifier">subject</span> = <span class="ruby-string">'This is a test email'</span>
+
+<span class="ruby-identifier">mail</span>.<span class="ruby-identifier">header</span>[<span class="ruby-string">'X-Custom-Header'</span>] = <span class="ruby-string">'custom value'</span>
+
+<span class="ruby-identifier">mail</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-comment">#=&gt; &quot;From: mikel@test.lindsaar.net\r\nTo: you@...</span>
+</pre>
+
+<h3 id="label-Don%27t+Worry+About+Message+IDs%3A">Don’t Worry About Message IDs:<span><a href="#label-Don%27t+Worry+About+Message+IDs%3A">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+
+<pre class="ruby"><span class="ruby-identifier">mail</span> = <span class="ruby-constant">Mail</span>.<span class="ruby-identifier">new</span> <span class="ruby-keyword">do</span>
+  <span class="ruby-identifier">to</span>   <span class="ruby-string">'you@test.lindsaar.net'</span>
+  <span class="ruby-identifier">body</span> <span class="ruby-string">'Some simple body'</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-identifier">mail</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">/Message\-ID: &lt;[\d\w_]+@.+.mail/</span> <span class="ruby-comment">#=&gt; 27</span>
+</pre>
+
+<p><a href="Mail.html">Mail</a> will automatically add a Message-ID field if
+it is missing and give it a unique, random Message-ID along the lines of:</p>
+
+<pre>&lt;4a7ff76d7016_13a81ab802e1@local.host.mail&gt;</pre>
+
+<h3 id="label-Or+do+worry+about+Message-IDs%3A">Or do worry about Message-IDs:<span><a href="#label-Or+do+worry+about+Message-IDs%3A">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+
+<pre class="ruby"><span class="ruby-identifier">mail</span> = <span class="ruby-constant">Mail</span>.<span class="ruby-identifier">new</span> <span class="ruby-keyword">do</span>
+  <span class="ruby-identifier">to</span>         <span class="ruby-string">'you@test.lindsaar.net'</span>
+  <span class="ruby-identifier">message_id</span> <span class="ruby-string">'&lt;ThisIsMyMessageId@some.domain.com&gt;'</span>
+  <span class="ruby-identifier">body</span>       <span class="ruby-string">'Some simple body'</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-identifier">mail</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">/Message\-ID: &lt;ThisIsMyMessageId@some.domain.com&gt;/</span> <span class="ruby-comment">#=&gt; 27</span>
+</pre>
+
+<p><a href="Mail.html">Mail</a> will take the message_id you assign to it
+trusting that you know what you are doing.</p>
+
+<h3 id="label-Sending+an+email%3A">Sending an email:<span><a href="#label-Sending+an+email%3A">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+
+<p><a href="Mail.html">Mail</a> defaults to sending via SMTP to local host
+port 25. If you have a sendmail or postfix daemon running on on this port,
+sending email is as easy as:</p>
+
+<pre class="ruby"><span class="ruby-constant">Mail</span>.<span class="ruby-identifier">deliver</span> <span class="ruby-keyword">do</span>
+  <span class="ruby-identifier">from</span>     <span class="ruby-string">'me@test.lindsaar.net'</span>
+  <span class="ruby-identifier">to</span>       <span class="ruby-string">'you@test.lindsaar.net'</span>
+  <span class="ruby-identifier">subject</span>  <span class="ruby-string">'Here is the image you wanted'</span>
+  <span class="ruby-identifier">body</span>     <span class="ruby-constant">File</span>.<span class="ruby-identifier">read</span>(<span class="ruby-string">'body.txt'</span>)
+  <span class="ruby-identifier">add_file</span> <span class="ruby-string">'/full/path/to/somefile.png'</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>or</p>
+
+<pre class="ruby"><span class="ruby-identifier">mail</span> = <span class="ruby-constant">Mail</span>.<span class="ruby-identifier">new</span> <span class="ruby-keyword">do</span>
+  <span class="ruby-identifier">from</span>     <span class="ruby-string">'me@test.lindsaar.net'</span>
+  <span class="ruby-identifier">to</span>       <span class="ruby-string">'you@test.lindsaar.net'</span>
+  <span class="ruby-identifier">subject</span>  <span class="ruby-string">'Here is the image you wanted'</span>
+  <span class="ruby-identifier">body</span>     <span class="ruby-constant">File</span>.<span class="ruby-identifier">read</span>(<span class="ruby-string">'body.txt'</span>)
+  <span class="ruby-identifier">add_file</span> :<span class="ruby-identifier">filename</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'somefile.png'</span>, :<span class="ruby-identifier">content</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">read</span>(<span class="ruby-string">'/somefile.png'</span>)
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-identifier">mail</span>.<span class="ruby-identifier">deliver!</span>
+</pre>
+
+<p>Sending via sendmail can be done like so:</p>
+
+<pre class="ruby"><span class="ruby-identifier">mail</span> = <span class="ruby-constant">Mail</span>.<span class="ruby-identifier">new</span> <span class="ruby-keyword">do</span>
+  <span class="ruby-identifier">from</span>     <span class="ruby-string">'me@test.lindsaar.net'</span>
+  <span class="ruby-identifier">to</span>       <span class="ruby-string">'you@test.lindsaar.net'</span>
+  <span class="ruby-identifier">subject</span>  <span class="ruby-string">'Here is the image you wanted'</span>
+  <span class="ruby-identifier">body</span>     <span class="ruby-constant">File</span>.<span class="ruby-identifier">read</span>(<span class="ruby-string">'body.txt'</span>)
+  <span class="ruby-identifier">add_file</span> :<span class="ruby-identifier">filename</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'somefile.png'</span>, :<span class="ruby-identifier">content</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">read</span>(<span class="ruby-string">'/somefile.png'</span>)
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-identifier">mail</span>.<span class="ruby-identifier">delivery_method</span> :<span class="ruby-identifier">sendmail</span>
+
+<span class="ruby-identifier">mail</span>.<span class="ruby-identifier">deliver</span>
+</pre>
+
+<p>Sending via smtp (for example to <a
+href="https://github.com/sj26/mailcatcher">mailcatcher</a>) “`ruby</p>
+
+<p><a href="Mail.html#method-c-defaults">Mail.defaults</a> do  delivery_method
+:smtp, address: "localhost", port: 1025 end "`</p>
+
+<p>Exim requires its own delivery manager, and can be used like so:</p>
+
+<pre class="ruby"><span class="ruby-identifier">mail</span>.<span class="ruby-identifier">delivery_method</span> :<span class="ruby-identifier">exim</span>, :<span class="ruby-identifier">location</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;/usr/bin/exim&quot;</span>
+
+<span class="ruby-identifier">mail</span>.<span class="ruby-identifier">deliver</span>
+</pre>
+
+<h3 id="label-Getting+emails+from+a+pop+server%3A">Getting emails from a pop server:<span><a href="#label-Getting+emails+from+a+pop+server%3A">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+
+<p>You can configure <a href="Mail.html">Mail</a> to receive email using
+<code>retriever_method</code> within <code>Mail.defaults</code>:</p>
+
+<pre class="ruby"><span class="ruby-constant">Mail</span>.<span class="ruby-identifier">defaults</span> <span class="ruby-keyword">do</span>
+  <span class="ruby-identifier">retriever_method</span> :<span class="ruby-identifier">pop3</span>, :<span class="ruby-identifier">address</span>    =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;pop.gmail.com&quot;</span>,
+                          :<span class="ruby-identifier">port</span>       =<span class="ruby-operator">&gt;</span> <span class="ruby-value">995</span>,
+                          :<span class="ruby-identifier">user_name</span>  =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'&lt;username&gt;'</span>,
+                          :<span class="ruby-identifier">password</span>   =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'&lt;password&gt;'</span>,
+                          :<span class="ruby-identifier">enable_ssl</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>You can access incoming email in a number of ways.</p>
+
+<p>The most recent email:</p>
+
+<pre class="ruby"><span class="ruby-constant">Mail</span>.<span class="ruby-identifier">all</span>    <span class="ruby-comment">#=&gt; Returns an array of all emails</span>
+<span class="ruby-constant">Mail</span>.<span class="ruby-identifier">first</span>  <span class="ruby-comment">#=&gt; Returns the first unread email</span>
+<span class="ruby-constant">Mail</span>.<span class="ruby-identifier">last</span>   <span class="ruby-comment">#=&gt; Returns the last unread email</span>
+</pre>
+
+<p>The first 10 emails sorted by date in ascending order:</p>
+
+<pre class="ruby"><span class="ruby-identifier">emails</span> = <span class="ruby-constant">Mail</span>.<span class="ruby-identifier">find</span>(:<span class="ruby-identifier">what</span> =<span class="ruby-operator">&gt;</span> :<span class="ruby-identifier">first</span>, :<span class="ruby-identifier">count</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">10</span>, :<span class="ruby-identifier">order</span> =<span class="ruby-operator">&gt;</span> :<span class="ruby-identifier">asc</span>)
+<span class="ruby-identifier">emails</span>.<span class="ruby-identifier">length</span> <span class="ruby-comment">#=&gt; 10</span>
+</pre>
+
+<p>Or even all emails:</p>
+
+<pre class="ruby"><span class="ruby-identifier">emails</span> = <span class="ruby-constant">Mail</span>.<span class="ruby-identifier">all</span>
+<span class="ruby-identifier">emails</span>.<span class="ruby-identifier">length</span> <span class="ruby-comment">#=&gt; LOTS!</span>
+</pre>
+
+<h3 id="label-Reading+an+Email">Reading an Email<span><a href="#label-Reading+an+Email">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+
+<pre class="ruby"><span class="ruby-identifier">mail</span> = <span class="ruby-constant">Mail</span>.<span class="ruby-identifier">read</span>(<span class="ruby-string">'/path/to/message.eml'</span>)
+
+<span class="ruby-identifier">mail</span>.<span class="ruby-identifier">envelope_from</span>   <span class="ruby-comment">#=&gt; 'mikel@test.lindsaar.net'</span>
+<span class="ruby-identifier">mail</span>.<span class="ruby-identifier">from</span>.<span class="ruby-identifier">addresses</span>  <span class="ruby-comment">#=&gt; ['mikel@test.lindsaar.net', 'ada@test.lindsaar.net']</span>
+<span class="ruby-identifier">mail</span>.<span class="ruby-identifier">sender</span>.<span class="ruby-identifier">address</span>  <span class="ruby-comment">#=&gt; 'mikel@test.lindsaar.net'</span>
+<span class="ruby-identifier">mail</span>.<span class="ruby-identifier">to</span>              <span class="ruby-comment">#=&gt; 'bob@test.lindsaar.net'</span>
+<span class="ruby-identifier">mail</span>.<span class="ruby-identifier">cc</span>              <span class="ruby-comment">#=&gt; 'sam@test.lindsaar.net'</span>
+<span class="ruby-identifier">mail</span>.<span class="ruby-identifier">subject</span>         <span class="ruby-comment">#=&gt; &quot;This is the subject&quot;</span>
+<span class="ruby-identifier">mail</span>.<span class="ruby-identifier">date</span>.<span class="ruby-identifier">to_s</span>       <span class="ruby-comment">#=&gt; '21 Nov 1997 09:55:06 -0600'</span>
+<span class="ruby-identifier">mail</span>.<span class="ruby-identifier">message_id</span>      <span class="ruby-comment">#=&gt; '&lt;4D6AA7EB.6490534@xxx.xxx&gt;'</span>
+<span class="ruby-identifier">mail</span>.<span class="ruby-identifier">body</span>.<span class="ruby-identifier">decoded</span>    <span class="ruby-comment">#=&gt; 'This is the body of the email...</span>
+</pre>
+
+<p>Many more methods available.</p>
+
+<h3 id="label-Reading+a+Multipart+Email">Reading a Multipart Email<span><a href="#label-Reading+a+Multipart+Email">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+
+<pre class="ruby"><span class="ruby-identifier">mail</span> = <span class="ruby-constant">Mail</span>.<span class="ruby-identifier">read</span>(<span class="ruby-string">'multipart_email'</span>)
+
+<span class="ruby-identifier">mail</span>.<span class="ruby-identifier">multipart?</span>          <span class="ruby-comment">#=&gt; true</span>
+<span class="ruby-identifier">mail</span>.<span class="ruby-identifier">parts</span>.<span class="ruby-identifier">length</span>        <span class="ruby-comment">#=&gt; 2</span>
+<span class="ruby-identifier">mail</span>.<span class="ruby-identifier">body</span>.<span class="ruby-identifier">preamble</span>       <span class="ruby-comment">#=&gt; &quot;Text before the first part&quot;</span>
+<span class="ruby-identifier">mail</span>.<span class="ruby-identifier">body</span>.<span class="ruby-identifier">epilogue</span>       <span class="ruby-comment">#=&gt; &quot;Text after the last part&quot;</span>
+<span class="ruby-identifier">mail</span>.<span class="ruby-identifier">parts</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">p</span><span class="ruby-operator">|</span> <span class="ruby-identifier">p</span>.<span class="ruby-identifier">content_type</span> }  <span class="ruby-comment">#=&gt; ['text/plain', 'application/pdf']</span>
+<span class="ruby-identifier">mail</span>.<span class="ruby-identifier">parts</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">p</span><span class="ruby-operator">|</span> <span class="ruby-identifier">p</span>.<span class="ruby-identifier">class</span> }         <span class="ruby-comment">#=&gt; [Mail::Message, Mail::Message]</span>
+<span class="ruby-identifier">mail</span>.<span class="ruby-identifier">parts</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">content_type_parameters</span>  <span class="ruby-comment">#=&gt; {'charset' =&gt; 'ISO-8859-1'}</span>
+<span class="ruby-identifier">mail</span>.<span class="ruby-identifier">parts</span>[<span class="ruby-value">1</span>].<span class="ruby-identifier">content_type_parameters</span>  <span class="ruby-comment">#=&gt; {'name' =&gt; 'my.pdf'}</span>
+</pre>
+
+<p><a href="Mail.html">Mail</a> generates a tree of parts. Each message has
+many or no parts. Each part is another message which can have many or no
+parts.</p>
+
+<p>A message will only have parts if it is a multipart/mixed or
+multipart/related content type and has a boundary defined.</p>
+
+<h3 id="label-Testing+and+extracting+attachments">Testing and extracting attachments<span><a href="#label-Testing+and+extracting+attachments">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+
+<pre class="ruby"><span class="ruby-identifier">mail</span>.<span class="ruby-identifier">attachments</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span> <span class="ruby-identifier">attachment</span> <span class="ruby-operator">|</span>
+  <span class="ruby-comment"># Attachments is an AttachmentsList object containing a</span>
+  <span class="ruby-comment"># number of Part objects</span>
+  <span class="ruby-keyword">if</span> (<span class="ruby-identifier">attachment</span>.<span class="ruby-identifier">content_type</span>.<span class="ruby-identifier">start_with?</span>(<span class="ruby-string">'image/'</span>))
+    <span class="ruby-comment"># extracting images for example...</span>
+    <span class="ruby-identifier">filename</span> = <span class="ruby-identifier">attachment</span>.<span class="ruby-identifier">filename</span>
+    <span class="ruby-keyword">begin</span>
+      <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">images_dir</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">filename</span>, <span class="ruby-string">&quot;w+b&quot;</span>, <span class="ruby-value">0644</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span> <span class="ruby-identifier">f</span>.<span class="ruby-identifier">write</span> <span class="ruby-identifier">attachment</span>.<span class="ruby-identifier">body</span>.<span class="ruby-identifier">decoded</span>}
+    <span class="ruby-keyword">rescue</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+      <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Unable to save data for #{filename} because #{e.message}&quot;</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<h3 id="label-Writing+and+sending+a+multipart%2Falternative+%28html+and+text%29+email">Writing and sending a multipart/alternative (html and text) email<span><a href="#label-Writing+and+sending+a+multipart%2Falternative+%28html+and+text%29+email">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+
+<p><a href="Mail.html">Mail</a> makes some basic assumptions and makes doing
+the common thing as simple as possible.... (asking a lot from a mail
+library)</p>
+
+<pre class="ruby"><span class="ruby-identifier">mail</span> = <span class="ruby-constant">Mail</span>.<span class="ruby-identifier">deliver</span> <span class="ruby-keyword">do</span>
+  <span class="ruby-identifier">to</span>      <span class="ruby-string">'nicolas@test.lindsaar.net.au'</span>
+  <span class="ruby-identifier">from</span>    <span class="ruby-string">'Mikel Lindsaar &lt;mikel@test.lindsaar.net.au&gt;'</span>
+  <span class="ruby-identifier">subject</span> <span class="ruby-string">'First multipart email sent with Mail'</span>
+
+  <span class="ruby-identifier">text_part</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">body</span> <span class="ruby-string">'This is plain text'</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">html_part</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">content_type</span> <span class="ruby-string">'text/html; charset=UTF-8'</span>
+    <span class="ruby-identifier">body</span> <span class="ruby-string">'&lt;h1&gt;This is HTML&lt;/h1&gt;'</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p><a href="Mail.html">Mail</a> then delivers the email at the end of the
+block and returns the resulting <a
+href="Mail/Message.html">Mail::Message</a> object, which you can then
+inspect if you so desire...</p>
+
+<pre class="ruby"><span class="ruby-identifier">puts</span> <span class="ruby-identifier">mail</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-comment">#=&gt;</span>
+
+<span class="ruby-constant">To</span><span class="ruby-operator">:</span> <span class="ruby-identifier">nicolas</span><span class="ruby-ivar">@test</span>.<span class="ruby-identifier">lindsaar</span>.<span class="ruby-identifier">net</span>.<span class="ruby-identifier">au</span>
+<span class="ruby-constant">From</span><span class="ruby-operator">:</span> <span class="ruby-constant">Mikel</span> <span class="ruby-constant">Lindsaar</span> <span class="ruby-operator">&lt;</span><span class="ruby-identifier">mikel</span><span class="ruby-ivar">@test</span>.<span class="ruby-identifier">lindsaar</span>.<span class="ruby-identifier">net</span>.<span class="ruby-identifier">au</span><span class="ruby-operator">&gt;</span>
+<span class="ruby-constant">Subject</span><span class="ruby-operator">:</span> <span class="ruby-constant">First</span> <span class="ruby-identifier">multipart</span> <span class="ruby-identifier">email</span> <span class="ruby-identifier">sent</span> <span class="ruby-identifier">with</span> <span class="ruby-constant">Mail</span>
+<span class="ruby-constant">Content</span><span class="ruby-operator">-</span><span class="ruby-constant">Type</span><span class="ruby-operator">:</span> <span class="ruby-identifier">multipart</span><span class="ruby-operator">/</span><span class="ruby-identifier">alternative</span>;
+  <span class="ruby-identifier">boundary</span>=<span class="ruby-operator">-</span><span class="ruby-operator">-=</span>=<span class="ruby-identifier">_mimepart_4a914f0c911be_6f0f1ab8026659</span>
+<span class="ruby-constant">Message</span><span class="ruby-operator">-</span><span class="ruby-constant">ID</span><span class="ruby-operator">:</span> <span class="ruby-operator">&lt;</span><span class="ruby-value">4</span><span class="ruby-identifier">a914f12ac7e_6f0f1ab80267d1</span><span class="ruby-ivar">@baci</span>.<span class="ruby-identifier">local</span>.<span class="ruby-identifier">mail</span><span class="ruby-operator">&gt;</span>
+<span class="ruby-constant">Date</span><span class="ruby-operator">:</span> <span class="ruby-constant">Mon</span>, <span class="ruby-value">24</span> <span class="ruby-constant">Aug</span> <span class="ruby-value">2009</span> <span class="ruby-value">00</span><span class="ruby-operator">:</span><span class="ruby-value">15</span><span class="ruby-operator">:</span><span class="ruby-value">46</span> <span class="ruby-operator">+</span><span class="ruby-value">1000</span>
+<span class="ruby-constant">Mime</span><span class="ruby-operator">-</span><span class="ruby-constant">Version</span><span class="ruby-operator">:</span> <span class="ruby-value">1.0</span>
+<span class="ruby-constant">Content</span><span class="ruby-operator">-</span><span class="ruby-constant">Transfer</span><span class="ruby-operator">-</span><span class="ruby-constant">Encoding</span><span class="ruby-operator">:</span> <span class="ruby-value">7</span><span class="ruby-identifier">bit</span>
+
+
+<span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-=</span>=<span class="ruby-identifier">_mimepart_4a914f0c911be_6f0f1ab8026659</span>
+<span class="ruby-constant">Content</span><span class="ruby-operator">-</span><span class="ruby-constant">ID</span><span class="ruby-operator">:</span> <span class="ruby-operator">&lt;</span><span class="ruby-value">4</span><span class="ruby-identifier">a914f12c8c4_6f0f1ab80268d6</span><span class="ruby-ivar">@baci</span>.<span class="ruby-identifier">local</span>.<span class="ruby-identifier">mail</span><span class="ruby-operator">&gt;</span>
+<span class="ruby-constant">Date</span><span class="ruby-operator">:</span> <span class="ruby-constant">Mon</span>, <span class="ruby-value">24</span> <span class="ruby-constant">Aug</span> <span class="ruby-value">2009</span> <span class="ruby-value">00</span><span class="ruby-operator">:</span><span class="ruby-value">15</span><span class="ruby-operator">:</span><span class="ruby-value">46</span> <span class="ruby-operator">+</span><span class="ruby-value">1000</span>
+<span class="ruby-constant">Mime</span><span class="ruby-operator">-</span><span class="ruby-constant">Version</span><span class="ruby-operator">:</span> <span class="ruby-value">1.0</span>
+<span class="ruby-constant">Content</span><span class="ruby-operator">-</span><span class="ruby-constant">Type</span><span class="ruby-operator">:</span> <span class="ruby-identifier">text</span><span class="ruby-operator">/</span><span class="ruby-identifier">plain</span>
+<span class="ruby-constant">Content</span><span class="ruby-operator">-</span><span class="ruby-constant">Transfer</span><span class="ruby-operator">-</span><span class="ruby-constant">Encoding</span><span class="ruby-operator">:</span> <span class="ruby-value">7</span><span class="ruby-identifier">bit</span>
+
+<span class="ruby-constant">This</span> <span class="ruby-identifier">is</span> <span class="ruby-identifier">plain</span> <span class="ruby-identifier">text</span>
+<span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-=</span>=<span class="ruby-identifier">_mimepart_4a914f0c911be_6f0f1ab8026659</span>
+<span class="ruby-constant">Content</span><span class="ruby-operator">-</span><span class="ruby-constant">Type</span><span class="ruby-operator">:</span> <span class="ruby-identifier">text</span><span class="ruby-operator">/</span><span class="ruby-identifier">html</span>; <span class="ruby-identifier">charset</span>=<span class="ruby-constant">UTF</span><span class="ruby-operator">-</span><span class="ruby-value">8</span>
+<span class="ruby-constant">Content</span><span class="ruby-operator">-</span><span class="ruby-constant">ID</span><span class="ruby-operator">:</span> <span class="ruby-operator">&lt;</span><span class="ruby-value">4</span><span class="ruby-identifier">a914f12cf86_6f0f1ab802692c</span><span class="ruby-ivar">@baci</span>.<span class="ruby-identifier">local</span>.<span class="ruby-identifier">mail</span><span class="ruby-operator">&gt;</span>
+<span class="ruby-constant">Date</span><span class="ruby-operator">:</span> <span class="ruby-constant">Mon</span>, <span class="ruby-value">24</span> <span class="ruby-constant">Aug</span> <span class="ruby-value">2009</span> <span class="ruby-value">00</span><span class="ruby-operator">:</span><span class="ruby-value">15</span><span class="ruby-operator">:</span><span class="ruby-value">46</span> <span class="ruby-operator">+</span><span class="ruby-value">1000</span>
+<span class="ruby-constant">Mime</span><span class="ruby-operator">-</span><span class="ruby-constant">Version</span><span class="ruby-operator">:</span> <span class="ruby-value">1.0</span>
+<span class="ruby-constant">Content</span><span class="ruby-operator">-</span><span class="ruby-constant">Transfer</span><span class="ruby-operator">-</span><span class="ruby-constant">Encoding</span><span class="ruby-operator">:</span> <span class="ruby-value">7</span><span class="ruby-identifier">bit</span>
+
+<span class="ruby-operator">&lt;</span><span class="ruby-identifier">h1</span><span class="ruby-operator">&gt;</span><span class="ruby-constant">This</span> <span class="ruby-identifier">is</span> <span class="ruby-constant">HTML</span><span class="ruby-operator">&lt;</span><span class="ruby-regexp">/h1&gt;
+----==_mimepart_4a914f0c911be_6f0f1ab8026659--
+</span></pre>
+
+<p><a href="Mail.html">Mail</a> inserts the content transfer encoding, the
+mime version, the content-id's and handles the content-type and boundary.</p>
+
+<p><a href="Mail.html">Mail</a> assumes that if your text in the body is only
+us-ascii, that your transfer encoding is 7bit and it is text/plain. You can
+override this by explicitly declaring it.</p>
+
+<h3 id="label-Making+Multipart%2FAlternate%2C+without+a+block">Making Multipart/Alternate, without a block<span><a href="#label-Making+Multipart%2FAlternate%2C+without+a+block">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+
+<p>You don’t have to use a block with the text and html part included, you can
+just do it declaratively. However, you need to add Mail::Parts to an email,
+not Mail::Messages.</p>
+
+<pre class="ruby"><span class="ruby-identifier">mail</span> = <span class="ruby-constant">Mail</span>.<span class="ruby-identifier">new</span> <span class="ruby-keyword">do</span>
+  <span class="ruby-identifier">to</span>      <span class="ruby-string">'nicolas@test.lindsaar.net.au'</span>
+  <span class="ruby-identifier">from</span>    <span class="ruby-string">'Mikel Lindsaar &lt;mikel@test.lindsaar.net.au&gt;'</span>
+  <span class="ruby-identifier">subject</span> <span class="ruby-string">'First multipart email sent with Mail'</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-identifier">text_part</span> = <span class="ruby-constant">Mail</span><span class="ruby-operator">::</span><span class="ruby-constant">Part</span>.<span class="ruby-identifier">new</span> <span class="ruby-keyword">do</span>
+  <span class="ruby-identifier">body</span> <span class="ruby-string">'This is plain text'</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-identifier">html_part</span> = <span class="ruby-constant">Mail</span><span class="ruby-operator">::</span><span class="ruby-constant">Part</span>.<span class="ruby-identifier">new</span> <span class="ruby-keyword">do</span>
+  <span class="ruby-identifier">content_type</span> <span class="ruby-string">'text/html; charset=UTF-8'</span>
+  <span class="ruby-identifier">body</span> <span class="ruby-string">'&lt;h1&gt;This is HTML&lt;/h1&gt;'</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-identifier">mail</span>.<span class="ruby-identifier">text_part</span> = <span class="ruby-identifier">text_part</span>
+<span class="ruby-identifier">mail</span>.<span class="ruby-identifier">html_part</span> = <span class="ruby-identifier">html_part</span>
+</pre>
+
+<p>Results in the same email as done using the block form</p>
+
+<h3 id="label-Getting+error+reports+from+an+email%3A">Getting error reports from an email:<span><a href="#label-Getting+error+reports+from+an+email%3A">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+
+<pre class="ruby"><span class="ruby-ivar">@mail</span> = <span class="ruby-constant">Mail</span>.<span class="ruby-identifier">read</span>(<span class="ruby-string">'/path/to/bounce_message.eml'</span>)
+
+<span class="ruby-ivar">@mail</span>.<span class="ruby-identifier">bounced?</span>         <span class="ruby-comment">#=&gt; true</span>
+<span class="ruby-ivar">@mail</span>.<span class="ruby-identifier">final_recipient</span>  <span class="ruby-comment">#=&gt; rfc822;mikel@dont.exist.com</span>
+<span class="ruby-ivar">@mail</span>.<span class="ruby-identifier">action</span>           <span class="ruby-comment">#=&gt; failed</span>
+<span class="ruby-ivar">@mail</span>.<span class="ruby-identifier">error_status</span>     <span class="ruby-comment">#=&gt; 5.5.0</span>
+<span class="ruby-ivar">@mail</span>.<span class="ruby-identifier">diagnostic_code</span>  <span class="ruby-comment">#=&gt; smtp;550 Requested action not taken: mailbox unavailable</span>
+<span class="ruby-ivar">@mail</span>.<span class="ruby-identifier">retryable?</span>       <span class="ruby-comment">#=&gt; false</span>
+</pre>
+
+<h3 id="label-Attaching+and+Detaching+Files">Attaching and Detaching Files<span><a href="#label-Attaching+and+Detaching+Files">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+
+<p>You can just read the file off an absolute path, <a
+href="Mail.html">Mail</a> will try to guess the mime_type and will encode
+the file in Base64 for you.</p>
+
+<pre class="ruby"><span class="ruby-ivar">@mail</span> = <span class="ruby-constant">Mail</span>.<span class="ruby-identifier">new</span>
+<span class="ruby-ivar">@mail</span>.<span class="ruby-identifier">add_file</span>(<span class="ruby-string">&quot;/path/to/file.jpg&quot;</span>)
+<span class="ruby-ivar">@mail</span>.<span class="ruby-identifier">parts</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">attachment?</span> <span class="ruby-comment">#=&gt; true</span>
+<span class="ruby-ivar">@mail</span>.<span class="ruby-identifier">parts</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">content_transfer_encoding</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-comment">#=&gt; 'base64'</span>
+<span class="ruby-ivar">@mail</span>.<span class="ruby-identifier">attachments</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">mime_type</span> <span class="ruby-comment">#=&gt; 'image/jpg'</span>
+<span class="ruby-ivar">@mail</span>.<span class="ruby-identifier">attachments</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">filename</span> <span class="ruby-comment">#=&gt; 'file.jpg'</span>
+<span class="ruby-ivar">@mail</span>.<span class="ruby-identifier">attachments</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">decoded</span> <span class="ruby-operator">==</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">read</span>(<span class="ruby-string">'/path/to/file.jpg'</span>) <span class="ruby-comment">#=&gt; true</span>
+</pre>
+
+<p>Or You can pass in file_data and give it a filename, again, mail will try
+and guess the mime_type for you.</p>
+
+<pre class="ruby"><span class="ruby-ivar">@mail</span> = <span class="ruby-constant">Mail</span>.<span class="ruby-identifier">new</span>
+<span class="ruby-ivar">@mail</span>.<span class="ruby-identifier">attachments</span>[<span class="ruby-string">'myfile.pdf'</span>] = <span class="ruby-constant">File</span>.<span class="ruby-identifier">read</span>(<span class="ruby-string">'path/to/myfile.pdf'</span>)
+<span class="ruby-ivar">@mail</span>.<span class="ruby-identifier">parts</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">attachment?</span> <span class="ruby-comment">#=&gt; true</span>
+<span class="ruby-ivar">@mail</span>.<span class="ruby-identifier">attachments</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">mime_type</span> <span class="ruby-comment">#=&gt; 'application/pdf'</span>
+<span class="ruby-ivar">@mail</span>.<span class="ruby-identifier">attachments</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">decoded</span> <span class="ruby-operator">==</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">read</span>(<span class="ruby-string">'path/to/myfile.pdf'</span>) <span class="ruby-comment">#=&gt; true</span>
+</pre>
+
+<p>You can also override the guessed MIME media type if you really know better
+than mail (this should be rarely needed)</p>
+
+<pre class="ruby"><span class="ruby-ivar">@mail</span> = <span class="ruby-constant">Mail</span>.<span class="ruby-identifier">new</span>
+<span class="ruby-identifier">file_data</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">read</span>(<span class="ruby-string">'path/to/myfile.pdf'</span>)
+<span class="ruby-ivar">@mail</span>.<span class="ruby-identifier">attachments</span>[<span class="ruby-string">'myfile.pdf'</span>] = { :<span class="ruby-identifier">mime_type</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'application/x-pdf'</span>,
+                                    :<span class="ruby-identifier">content</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">read</span>(<span class="ruby-string">'path/to/myfile.pdf'</span>) }
+<span class="ruby-ivar">@mail</span>.<span class="ruby-identifier">parts</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">mime_type</span> <span class="ruby-comment">#=&gt; 'application/x-pdf'</span>
+</pre>
+
+<p>Of course… <a href="Mail.html">Mail</a> will round trip an attachment as
+well</p>
+
+<pre class="ruby"><span class="ruby-ivar">@mail</span> = <span class="ruby-constant">Mail</span>.<span class="ruby-identifier">new</span> <span class="ruby-keyword">do</span>
+  <span class="ruby-identifier">to</span>      <span class="ruby-string">'nicolas@test.lindsaar.net.au'</span>
+  <span class="ruby-identifier">from</span>    <span class="ruby-string">'Mikel Lindsaar &lt;mikel@test.lindsaar.net.au&gt;'</span>
+  <span class="ruby-identifier">subject</span> <span class="ruby-string">'First multipart email sent with Mail'</span>
+
+  <span class="ruby-identifier">text_part</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">body</span> <span class="ruby-string">'Here is the attachment you wanted'</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">html_part</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">content_type</span> <span class="ruby-string">'text/html; charset=UTF-8'</span>
+    <span class="ruby-identifier">body</span> <span class="ruby-string">'&lt;h1&gt;Funky Title&lt;/h1&gt;&lt;p&gt;Here is the attachment you wanted&lt;/p&gt;'</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">add_file</span> <span class="ruby-string">'/path/to/myfile.pdf'</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-ivar">@round_tripped_mail</span> = <span class="ruby-constant">Mail</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@mail</span>.<span class="ruby-identifier">encoded</span>)
+
+<span class="ruby-ivar">@round_tripped_mail</span>.<span class="ruby-identifier">attachments</span>.<span class="ruby-identifier">length</span> <span class="ruby-comment">#=&gt; 1</span>
+<span class="ruby-ivar">@round_tripped_mail</span>.<span class="ruby-identifier">attachments</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">filename</span> <span class="ruby-comment">#=&gt; 'myfile.pdf'</span>
+</pre>
+
+<p>See “Testing and extracting attachments” above for more details.</p>
+
+<h2 id="label-Using+Mail+with+Testing+or+Spec%27ing+Libraries">Using <a href="Mail.html">Mail</a> with Testing or Spec’ing Libraries<span><a href="#label-Using+Mail+with+Testing+or+Spec%27ing+Libraries">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+
+<p>If mail is part of your system, you’ll need a way to test it without
+actually sending emails, the TestMailer can do this for you.</p>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">'mail'</span>
+=<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>
+<span class="ruby-constant">Mail</span>.<span class="ruby-identifier">defaults</span> <span class="ruby-keyword">do</span>
+  <span class="ruby-identifier">delivery_method</span> :<span class="ruby-identifier">test</span>
+<span class="ruby-keyword">end</span>
+=<span class="ruby-operator">&gt;</span> <span class="ruby-comment">#&lt;Mail::Configuration:0x19345a8 @delivery_method=Mail::TestMailer&gt;</span>
+<span class="ruby-constant">Mail</span><span class="ruby-operator">::</span><span class="ruby-constant">TestMailer</span>.<span class="ruby-identifier">deliveries</span>
+=<span class="ruby-operator">&gt;</span> []
+<span class="ruby-constant">Mail</span>.<span class="ruby-identifier">deliver</span> <span class="ruby-keyword">do</span>
+  <span class="ruby-identifier">to</span> <span class="ruby-string">'mikel@me.com'</span>
+  <span class="ruby-identifier">from</span> <span class="ruby-string">'you@you.com'</span>
+  <span class="ruby-identifier">subject</span> <span class="ruby-string">'testing'</span>
+  <span class="ruby-identifier">body</span> <span class="ruby-string">'hello'</span>
+<span class="ruby-keyword">end</span>
+=<span class="ruby-operator">&gt;</span> <span class="ruby-comment">#&lt;Mail::Message:0x19284ec ...</span>
+<span class="ruby-constant">Mail</span><span class="ruby-operator">::</span><span class="ruby-constant">TestMailer</span>.<span class="ruby-identifier">deliveries</span>.<span class="ruby-identifier">length</span>
+=<span class="ruby-operator">&gt;</span> <span class="ruby-value">1</span>
+<span class="ruby-constant">Mail</span><span class="ruby-operator">::</span><span class="ruby-constant">TestMailer</span>.<span class="ruby-identifier">deliveries</span>.<span class="ruby-identifier">first</span>
+=<span class="ruby-operator">&gt;</span> <span class="ruby-comment">#&lt;Mail::Message:0x19284ec ...</span>
+<span class="ruby-constant">Mail</span><span class="ruby-operator">::</span><span class="ruby-constant">TestMailer</span>.<span class="ruby-identifier">deliveries</span>.<span class="ruby-identifier">clear</span>
+=<span class="ruby-operator">&gt;</span> []
+</pre>
+
+<p>There is also a set of RSpec matchers stolen fr^H^H^H^H^H^H^H^H inspired by
+Shoulda’s ActionMailer matchers (you’ll want to set
+<code>delivery_method</code> as above too):</p>
+
+<pre class="ruby"><span class="ruby-constant">Mail</span>.<span class="ruby-identifier">defaults</span> <span class="ruby-keyword">do</span>
+  <span class="ruby-identifier">delivery_method</span> :<span class="ruby-identifier">test</span> <span class="ruby-comment"># in practice you'd do this in spec_helper.rb</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-identifier">describe</span> <span class="ruby-string">&quot;sending an email&quot;</span> <span class="ruby-keyword">do</span>
+  <span class="ruby-identifier">include</span> <span class="ruby-constant">Mail</span><span class="ruby-operator">::</span><span class="ruby-constant">Matchers</span>
+
+  <span class="ruby-identifier">before</span>(:<span class="ruby-identifier">each</span>) <span class="ruby-keyword">do</span>
+    <span class="ruby-constant">Mail</span><span class="ruby-operator">::</span><span class="ruby-constant">TestMailer</span>.<span class="ruby-identifier">deliveries</span>.<span class="ruby-identifier">clear</span>
+
+    <span class="ruby-constant">Mail</span>.<span class="ruby-identifier">deliver</span> <span class="ruby-keyword">do</span>
+      <span class="ruby-identifier">to</span> [<span class="ruby-string">'mikel@me.com'</span>, <span class="ruby-string">'mike2@me.com'</span>]
+      <span class="ruby-identifier">from</span> <span class="ruby-string">'you@you.com'</span>
+      <span class="ruby-identifier">subject</span> <span class="ruby-string">'testing'</span>
+      <span class="ruby-identifier">body</span> <span class="ruby-string">'hello'</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">it</span> { <span class="ruby-identifier">should</span> <span class="ruby-identifier">have_sent_email</span> } <span class="ruby-comment"># passes if any email at all was sent</span>
+
+  <span class="ruby-identifier">it</span> { <span class="ruby-identifier">should</span> <span class="ruby-identifier">have_sent_email</span>.<span class="ruby-identifier">from</span>(<span class="ruby-string">'you@you.com'</span>) }
+  <span class="ruby-identifier">it</span> { <span class="ruby-identifier">should</span> <span class="ruby-identifier">have_sent_email</span>.<span class="ruby-identifier">to</span>(<span class="ruby-string">'mike1@me.com'</span>) }
+
+  <span class="ruby-comment"># can specify a list of recipients...</span>
+  <span class="ruby-identifier">it</span> { <span class="ruby-identifier">should</span> <span class="ruby-identifier">have_sent_email</span>.<span class="ruby-identifier">to</span>([<span class="ruby-string">'mike1@me.com'</span>, <span class="ruby-string">'mike2@me.com'</span>]) }
+
+  <span class="ruby-comment"># ...or chain recipients together</span>
+  <span class="ruby-identifier">it</span> { <span class="ruby-identifier">should</span> <span class="ruby-identifier">have_sent_email</span>.<span class="ruby-identifier">to</span>(<span class="ruby-string">'mike1@me.com'</span>).<span class="ruby-identifier">to</span>(<span class="ruby-string">'mike2@me.com'</span>) }
+
+  <span class="ruby-identifier">it</span> { <span class="ruby-identifier">should</span> <span class="ruby-identifier">have_sent_email</span>.<span class="ruby-identifier">with_subject</span>(<span class="ruby-string">'testing'</span>) }
+
+  <span class="ruby-identifier">it</span> { <span class="ruby-identifier">should</span> <span class="ruby-identifier">have_sent_email</span>.<span class="ruby-identifier">with_body</span>(<span class="ruby-string">'hello'</span>) }
+
+  <span class="ruby-comment"># Can match subject or body with a regex</span>
+  <span class="ruby-comment"># (or anything that responds_to? :match)</span>
+
+  <span class="ruby-identifier">it</span> { <span class="ruby-identifier">should</span> <span class="ruby-identifier">have_sent_email</span>.<span class="ruby-identifier">matching_subject</span>(<span class="ruby-regexp">/test(ing)?/</span>) }
+  <span class="ruby-identifier">it</span> { <span class="ruby-identifier">should</span> <span class="ruby-identifier">have_sent_email</span>.<span class="ruby-identifier">matching_body</span>(<span class="ruby-regexp">/h(a|e)llo/</span>) }
+
+  <span class="ruby-comment"># Can chain together modifiers</span>
+  <span class="ruby-comment"># Note that apart from recipients, repeating a modifier overwrites old value.</span>
+
+  <span class="ruby-identifier">it</span> { <span class="ruby-identifier">should</span> <span class="ruby-identifier">have_sent_email</span>.<span class="ruby-identifier">from</span>(<span class="ruby-string">'you@you.com'</span>).<span class="ruby-identifier">to</span>(<span class="ruby-string">'mike1@me.com'</span>).<span class="ruby-identifier">matching_body</span>(<span class="ruby-regexp">/hell/</span>)
+<span class="ruby-keyword">end</span>
+</pre>
+
+<h2 id="label-Excerpts+from+TREC+Spam+Corpus+2005">Excerpts from TREC Spam Corpus 2005<span><a href="#label-Excerpts+from+TREC+Spam+Corpus+2005">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+
+<p>The spec fixture files in spec/fixtures/emails/from_trec_2005 are from the
+2005 TREC Public Spam Corpus. They remain copyrighted under the terms of
+that project and license agreement. They are used in this project to verify
+and describe the development of this email parser implementation.</p>
+
+<p><a
+href="http://plg.uwaterloo.ca/~gvcormac/treccorpus">plg.uwaterloo.ca/~gvcormac/treccorpus</a>/</p>
+
+<p>They are used as allowed by ‘Permitted Uses, Clause 3’:</p>
+
+<pre>&quot;Small excerpts of the information may be displayed to others
+ or published in a scientific or technical context, solely for
+ the purpose of describing the research and development and
+ related issues.&quot;
+
+ -- http://plg.uwaterloo.ca/~gvcormac/treccorpus/</pre>
+
+<h2 id="label-License">License<span><a href="#label-License">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+
+<p>(The MIT License)</p>
+
+<p>Copyright © 2009-2013 Mikel Lindsaar</p>
+
+<p>Permission is hereby granted, free of charge, to any person obtaining a
+copy of this software and associated documentation files (the ‘Software’),
+to deal in the Software without restriction, including without limitation
+the rights to use, copy, modify, merge, publish, distribute, sublicense,
+and/or sell copies of the Software, and to permit persons to whom the
+Software is furnished to do so, subject to the following conditions:</p>
+
+<p>The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.</p>
+
+<p>THE SOFTWARE IS PROVIDED ‘AS IS’, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+DEALINGS IN THE SOFTWARE.</p>
+</main>
+
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.1.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

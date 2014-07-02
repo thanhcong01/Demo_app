@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>phrase_lists_machine.rb.rl - mail-2.6.1 Documentation</title>
+
+<link href="../../../../../../fonts.css" rel="stylesheet">
+<link href="../../../../../../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../../../../../";
+</script>
+
+<script src="../../../../../../js/jquery.js"></script>
+<script src="../../../../../../js/navigation.js"></script>
+<script src="../../../../../../js/search_index.js"></script>
+<script src="../../../../../../js/search.js"></script>
+<script src="../../../../../../js/searcher.js"></script>
+<script src="../../../../../../js/darkfish.js"></script>
+
+
+<body id="top" role="document" class="file">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../../../../../../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../../../../../../table_of_contents.html#pages">Pages</a>
+    <a href="../../../../../../table_of_contents.html#classes">Classes</a>
+    <a href="../../../../../../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="project-metadata">
+    <div id="fileindex-section" class="nav-section">
+  <h3>Pages</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../../../../../CHANGELOG_rdoc.html">CHANGELOG</a>
+  
+    <li><a href="../../../../../../CONTRIBUTING_md.html">CONTRIBUTING</a>
+  
+    <li><a href="../../../../../../README_md.html">README</a>
+  
+    <li><a href="../../../../../../TODO_rdoc.html">TODO</a>
+  
+    <li><a href="../../../../../../lib/mail/parsers/ragel/common_rl.html">common.rl</a>
+  
+    <li><a href="../../../../../../lib/mail/parsers/ragel/date_time_rl.html">date_time.rl</a>
+  
+    <li><a href="../../../../../../lib/mail/parsers/ragel/ruby/machines/address_lists_machine_rb_rl.html">address_lists_machine.rb.rl</a>
+  
+    <li><a href="../../../../../../lib/mail/parsers/ragel/ruby/machines/content_disposition_machine_rb_rl.html">content_disposition_machine.rb.rl</a>
+  
+    <li><a href="../../../../../../lib/mail/parsers/ragel/ruby/machines/content_location_machine_rb_rl.html">content_location_machine.rb.rl</a>
+  
+    <li><a href="../../../../../../lib/mail/parsers/ragel/ruby/machines/content_transfer_encoding_machine_rb_rl.html">content_transfer_encoding_machine.rb.rl</a>
+  
+    <li><a href="../../../../../../lib/mail/parsers/ragel/ruby/machines/content_type_machine_rb_rl.html">content_type_machine.rb.rl</a>
+  
+    <li><a href="../../../../../../lib/mail/parsers/ragel/ruby/machines/date_time_machine_rb_rl.html">date_time_machine.rb.rl</a>
+  
+    <li><a href="../../../../../../lib/mail/parsers/ragel/ruby/machines/envelope_from_machine_rb_rl.html">envelope_from_machine.rb.rl</a>
+  
+    <li><a href="../../../../../../lib/mail/parsers/ragel/ruby/machines/message_ids_machine_rb_rl.html">message_ids_machine.rb.rl</a>
+  
+    <li><a href="../../../../../../lib/mail/parsers/ragel/ruby/machines/mime_version_machine_rb_rl.html">mime_version_machine.rb.rl</a>
+  
+    <li><a href="../../../../../../lib/mail/parsers/ragel/ruby/machines/phrase_lists_machine_rb_rl.html">phrase_lists_machine.rb.rl</a>
+  
+    <li><a href="../../../../../../lib/mail/parsers/ragel/ruby/machines/rb_actions_rl.html">rb_actions.rl</a>
+  
+    <li><a href="../../../../../../lib/mail/parsers/ragel/ruby/machines/received_machine_rb_rl.html">received_machine.rb.rl</a>
+  
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-label="Page lib/mail/parsers/ragel/ruby/machines/phrase_lists_machine.rb.rl">
+
+<p>%%{</p>
+
+<pre>machine phrase_lists;
+
+include rb_actions &quot;rb_actions.rl&quot;;
+include common &quot;../../common.rl&quot;;
+
+getkey data_unpacked[p];
+
+main := phrase_lists;</pre>
+
+<p>}%%</p>
+
+<p>module <a href="../../../../../../Mail.html">Mail</a></p>
+
+<pre class="ruby"><span class="ruby-keyword">module</span> <span class="ruby-constant">Parsers</span>
+  <span class="ruby-keyword">module</span> <span class="ruby-constant">Ragel</span>
+    <span class="ruby-keyword">module</span> <span class="ruby-constant">PhraseListsMachine</span>
+      <span class="ruby-string">%Qwrite data;
+
+      def self.parse(data)
+        p = 0
+        eof = data.length
+        stack = []
+
+        actions = []
+        data_unpacked = data.bytes.to_a
+        %</span><span class="ruby-operator">%</span><span class="ruby-identifier">write</span> <span class="ruby-identifier">init</span>;
+        <span class="ruby-string">%Qwrite exec;
+
+        if p == eof &amp;&amp; cs &gt;= %</span><span class="ruby-operator">%</span>{ <span class="ruby-identifier">write</span> <span class="ruby-identifier">first_final</span>; }<span class="ruby-operator">%</span><span class="ruby-string">%Q          return actions, nil
+</span>        <span class="ruby-keyword">else</span>
+          <span class="ruby-keyword">return</span> [], <span class="ruby-node">&quot;Only able to parse up to #{data[0..p]}&quot;</span>
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>end</p>
+</main>
+
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.1.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

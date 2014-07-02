@@ -1,0 +1,77 @@
+[2014-07-01 09:14:32] alias_delete_execute
+alias_delete_execute () 
+{ 
+    for _path in "$rvm_rubies_path" "$rvm_environments_path" "$rvm_wrappers_path";
+    do
+        if [[ -L "$_path/$1" ]]; then
+            \rm -fv "$_path/$1" || return $?;
+        fi;
+    done;
+    __rvm_db_ "$rvm_path/config/alias" "$1" "delete";
+    alias_after_delete_default "$1" || return $?
+}
+current path: /home/thanhcongframgia/Desktop
+GEM_HOME=/home/thanhcongframgia/.rvm/gems/ruby-1.9.3-p547
+PATH=/home/thanhcongframgia/.rvm/gems/ruby-1.9.3-p547/bin:/home/thanhcongframgia/.rvm/gems/ruby-1.9.3-p547@global/bin:/home/thanhcongframgia/.rvm/rubies/ruby-1.9.3-p547/bin:/home/thanhcongframgia/.rvm/bin:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
+GEM_PATH=/home/thanhcongframgia/.rvm/gems/ruby-1.9.3-p547:/home/thanhcongframgia/.rvm/gems/ruby-1.9.3-p547@global
+command(2): alias_delete_execute default
++ for _path in '"$rvm_rubies_path"' '"$rvm_environments_path"' '"$rvm_wrappers_path"'
++ [[ -L /home/thanhcongframgia/.rvm/rubies/default ]]
++ rm -fv /home/thanhcongframgia/.rvm/rubies/default
+removed `/home/thanhcongframgia/.rvm/rubies/default'
++ for _path in '"$rvm_rubies_path"' '"$rvm_environments_path"' '"$rvm_wrappers_path"'
++ [[ -L /home/thanhcongframgia/.rvm/environments/default ]]
++ rm -fv /home/thanhcongframgia/.rvm/environments/default
+removed `/home/thanhcongframgia/.rvm/environments/default'
++ for _path in '"$rvm_rubies_path"' '"$rvm_environments_path"' '"$rvm_wrappers_path"'
++ [[ -L /home/thanhcongframgia/.rvm/wrappers/default ]]
++ rm -fv /home/thanhcongframgia/.rvm/wrappers/default
+removed `/home/thanhcongframgia/.rvm/wrappers/default'
++ __rvm_db_ /home/thanhcongframgia/.rvm/config/alias default delete
++ typeset __db __key __value
++ __db=/home/thanhcongframgia/.rvm/config/alias
++ __key=default
++ shift 2
++ __value=delete
++ case "${__value}" in
++ __rvm_db_remove /home/thanhcongframgia/.rvm/config/alias default
++ [[ -f /home/thanhcongframgia/.rvm/config/alias ]]
++ __rvm_sed -e 's#^default=.*$##' -e '/^$/d' /home/thanhcongframgia/.rvm/config/alias
++ sed -e 's#^default=.*$##' -e '/^$/d' /home/thanhcongframgia/.rvm/config/alias
++ mv -f /home/thanhcongframgia/.rvm/config/alias.new /home/thanhcongframgia/.rvm/config/alias
++ alias_after_delete_default default
++ [[ default == \d\e\f\a\u\l\t ]]
++ for _path in '"$rvm_bin_path"/default_*'
++ [[ -f /home/thanhcongframgia/.rvm/bin/default_* ]]
++ _path='/home/thanhcongframgia/.rvm/bin/default_*'
++ [[ -f /home/thanhcongframgia/.rvm/bin/default_* ]]
++ for _path in '"$rvm_path"/wrappers/default/*' gem irb erb ri rdoc testrb rake ruby bundle
++ _path='*'
++ rm -fv '/home/thanhcongframgia/.rvm/bin/*'
++ for _path in '"$rvm_path"/wrappers/default/*' gem irb erb ri rdoc testrb rake ruby bundle
++ _path=gem
++ rm -fv /home/thanhcongframgia/.rvm/bin/gem
++ for _path in '"$rvm_path"/wrappers/default/*' gem irb erb ri rdoc testrb rake ruby bundle
++ _path=irb
++ rm -fv /home/thanhcongframgia/.rvm/bin/irb
++ for _path in '"$rvm_path"/wrappers/default/*' gem irb erb ri rdoc testrb rake ruby bundle
++ _path=erb
++ rm -fv /home/thanhcongframgia/.rvm/bin/erb
++ for _path in '"$rvm_path"/wrappers/default/*' gem irb erb ri rdoc testrb rake ruby bundle
++ _path=ri
++ rm -fv /home/thanhcongframgia/.rvm/bin/ri
++ for _path in '"$rvm_path"/wrappers/default/*' gem irb erb ri rdoc testrb rake ruby bundle
++ _path=rdoc
++ rm -fv /home/thanhcongframgia/.rvm/bin/rdoc
++ for _path in '"$rvm_path"/wrappers/default/*' gem irb erb ri rdoc testrb rake ruby bundle
++ _path=testrb
++ rm -fv /home/thanhcongframgia/.rvm/bin/testrb
++ for _path in '"$rvm_path"/wrappers/default/*' gem irb erb ri rdoc testrb rake ruby bundle
++ _path=rake
++ rm -fv /home/thanhcongframgia/.rvm/bin/rake
++ for _path in '"$rvm_path"/wrappers/default/*' gem irb erb ri rdoc testrb rake ruby bundle
++ _path=ruby
++ rm -fv /home/thanhcongframgia/.rvm/bin/ruby
++ for _path in '"$rvm_path"/wrappers/default/*' gem irb erb ri rdoc testrb rake ruby bundle
++ _path=bundle
++ rm -fv /home/thanhcongframgia/.rvm/bin/bundle

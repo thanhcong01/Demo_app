@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class IntervalSkipList - treetop-1.5.3 Documentation</title>
+
+<link href="./fonts.css" rel="stylesheet">
+<link href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script src="./js/jquery.js"></script>
+<script src="./js/navigation.js"></script>
+<script src="./js/search_index.js"></script>
+<script src="./js/search.js"></script>
+<script src="./js/searcher.js"></script>
+<script src="./js/darkfish.js"></script>
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    <div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  
+  <p class="link"><a href="Object.html">Object</a>
+  
+</div>
+
+    
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-c-new">::new</a>
+    
+    <li ><a href="#method-i-can_ascend_from-3F">#can_ascend_from?</a>
+    
+    <li ><a href="#method-i-can_descend_from-3F">#can_descend_from?</a>
+    
+    <li ><a href="#method-i-containing">#containing</a>
+    
+    <li ><a href="#method-i-containing_with_node">#containing_with_node</a>
+    
+    <li ><a href="#method-i-delete">#delete</a>
+    
+    <li ><a href="#method-i-delete_node">#delete_node</a>
+    
+    <li ><a href="#method-i-empty-3F">#empty?</a>
+    
+    <li ><a href="#method-i-expire">#expire</a>
+    
+    <li ><a href="#method-i-find">#find</a>
+    
+    <li ><a href="#method-i-insert">#insert</a>
+    
+    <li ><a href="#method-i-insert_node">#insert_node</a>
+    
+    <li ><a href="#method-i-make_path">#make_path</a>
+    
+    <li ><a href="#method-i-mark_forward_path_at_level">#mark_forward_path_at_level</a>
+    
+    <li ><a href="#method-i-max_height">#max_height</a>
+    
+    <li ><a href="#method-i-next_node_at_level_inside_range-3F">#next_node_at_level_inside_range?</a>
+    
+    <li ><a href="#method-i-next_node_at_level_outside_range-3F">#next_node_at_level_outside_range?</a>
+    
+    <li ><a href="#method-i-next_node_height">#next_node_height</a>
+    
+    <li ><a href="#method-i-node_inside_range-3F">#node_inside_range?</a>
+    
+    <li ><a href="#method-i-nodes">#nodes</a>
+    
+    <li ><a href="#method-i-overlapping">#overlapping</a>
+    
+    <li ><a href="#method-i-unmark_forward_path_at_level">#unmark_forward_path_at_level</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-IntervalSkipList">
+  <h1 id="class-IntervalSkipList" class="class">
+    class IntervalSkipList
+  </h1>
+
+  <section class="description">
+    
+  </section>
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+    <section class="attribute-method-details" class="method-section">
+      <header>
+        <h3>Attributes</h3>
+      </header>
+
+      
+      <div id="attribute-i-head" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">head</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-probability" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">probability</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-ranges" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">ranges</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+    </section>
+    
+
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Class Methods</h3>
+       </header>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/treetop/runtime/interval_skip_list/interval_skip_list.rb, line 4</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>
+  <span class="ruby-ivar">@head</span> = <span class="ruby-constant">HeadNode</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">max_height</span>)
+  <span class="ruby-ivar">@ranges</span> = {}
+  <span class="ruby-ivar">@probability</span> = <span class="ruby-value">0.5</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-containing" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">containing</span><span
+            class="method-args">(n)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="containing-source">
+            <pre><span class="ruby-comment"># File lib/treetop/runtime/interval_skip_list/interval_skip_list.rb, line 36</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">containing</span>(<span class="ruby-identifier">n</span>)
+  <span class="ruby-identifier">containing_with_node</span>(<span class="ruby-identifier">n</span>).<span class="ruby-identifier">first</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-delete" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">delete</span><span
+            class="method-args">(marker)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="delete-source">
+            <pre><span class="ruby-comment"># File lib/treetop/runtime/interval_skip_list/interval_skip_list.rb, line 64</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">delete</span>(<span class="ruby-identifier">marker</span>)
+  <span class="ruby-identifier">range</span> = <span class="ruby-identifier">ranges</span>[<span class="ruby-identifier">marker</span>]
+  <span class="ruby-identifier">path_to_first_node</span> = <span class="ruby-identifier">make_path</span>
+  <span class="ruby-identifier">first_node</span> = <span class="ruby-identifier">find</span>(<span class="ruby-identifier">range</span>.<span class="ruby-identifier">first</span>, <span class="ruby-identifier">path_to_first_node</span>)
+
+  <span class="ruby-identifier">cur_node</span> = <span class="ruby-identifier">first_node</span>
+  <span class="ruby-identifier">cur_level</span> = <span class="ruby-identifier">first_node</span>.<span class="ruby-identifier">top_level</span>
+  <span class="ruby-keyword">while</span> <span class="ruby-identifier">next_node_at_level_inside_range?</span>(<span class="ruby-identifier">cur_node</span>, <span class="ruby-identifier">cur_level</span>, <span class="ruby-identifier">range</span>)
+    <span class="ruby-keyword">while</span> <span class="ruby-identifier">can_ascend_from?</span>(<span class="ruby-identifier">cur_node</span>, <span class="ruby-identifier">cur_level</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">next_node_at_level_inside_range?</span>(<span class="ruby-identifier">cur_node</span>, <span class="ruby-identifier">cur_level</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span>, <span class="ruby-identifier">range</span>)
+      <span class="ruby-identifier">cur_level</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">cur_node</span> = <span class="ruby-identifier">unmark_forward_path_at_level</span>(<span class="ruby-identifier">cur_node</span>, <span class="ruby-identifier">cur_level</span>, <span class="ruby-identifier">marker</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">while</span> <span class="ruby-identifier">node_inside_range?</span>(<span class="ruby-identifier">cur_node</span>, <span class="ruby-identifier">range</span>)
+    <span class="ruby-keyword">while</span> <span class="ruby-identifier">can_descend_from?</span>(<span class="ruby-identifier">cur_level</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">next_node_at_level_outside_range?</span>(<span class="ruby-identifier">cur_node</span>, <span class="ruby-identifier">cur_level</span>, <span class="ruby-identifier">range</span>)
+      <span class="ruby-identifier">cur_level</span> <span class="ruby-operator">-=</span> <span class="ruby-value">1</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">cur_node</span> = <span class="ruby-identifier">unmark_forward_path_at_level</span>(<span class="ruby-identifier">cur_node</span>, <span class="ruby-identifier">cur_level</span>, <span class="ruby-identifier">marker</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">last_node</span> = <span class="ruby-identifier">cur_node</span>
+
+  <span class="ruby-identifier">first_node</span>.<span class="ruby-identifier">endpoint_of</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">marker</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">first_node</span>.<span class="ruby-identifier">endpoint_of</span>.<span class="ruby-identifier">empty?</span>
+    <span class="ruby-identifier">first_node</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">path_to_first_node</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">last_node</span>.<span class="ruby-identifier">endpoint_of</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">marker</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">last_node</span>.<span class="ruby-identifier">endpoint_of</span>.<span class="ruby-identifier">empty?</span>
+    <span class="ruby-identifier">path_to_last_node</span> = <span class="ruby-identifier">make_path</span>
+    <span class="ruby-identifier">find</span>(<span class="ruby-identifier">range</span>.<span class="ruby-identifier">last</span>, <span class="ruby-identifier">path_to_last_node</span>)
+    <span class="ruby-identifier">last_node</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">path_to_last_node</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-empty-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">empty?</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="empty-3F-source">
+            <pre><span class="ruby-comment"># File lib/treetop/runtime/interval_skip_list/interval_skip_list.rb, line 14</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">empty?</span>
+  <span class="ruby-identifier">head</span>.<span class="ruby-identifier">forward</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">nil?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-expire" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">expire</span><span
+            class="method-args">(range, length_change)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="expire-source">
+            <pre><span class="ruby-comment"># File lib/treetop/runtime/interval_skip_list/interval_skip_list.rb, line 18</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">expire</span>(<span class="ruby-identifier">range</span>, <span class="ruby-identifier">length_change</span>)
+  <span class="ruby-identifier">expired_markers</span>, <span class="ruby-identifier">first_node_after_range</span> = <span class="ruby-identifier">overlapping</span>(<span class="ruby-identifier">range</span>)
+  <span class="ruby-identifier">expired_markers</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">marker</span><span class="ruby-operator">|</span> <span class="ruby-identifier">delete</span>(<span class="ruby-identifier">marker</span>) }
+  <span class="ruby-identifier">first_node_after_range</span>.<span class="ruby-identifier">propagate_length_change</span>(<span class="ruby-identifier">length_change</span>)    
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-insert" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">insert</span><span
+            class="method-args">(range, marker)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="insert-source">
+            <pre><span class="ruby-comment"># File lib/treetop/runtime/interval_skip_list/interval_skip_list.rb, line 40</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">insert</span>(<span class="ruby-identifier">range</span>, <span class="ruby-identifier">marker</span>)
+  <span class="ruby-identifier">ranges</span>[<span class="ruby-identifier">marker</span>] = <span class="ruby-identifier">range</span>
+  <span class="ruby-identifier">first_node</span> = <span class="ruby-identifier">insert_node</span>(<span class="ruby-identifier">range</span>.<span class="ruby-identifier">first</span>)
+  <span class="ruby-identifier">first_node</span>.<span class="ruby-identifier">endpoint_of</span>.<span class="ruby-identifier">push</span>(<span class="ruby-identifier">marker</span>)
+  <span class="ruby-identifier">last_node</span> = <span class="ruby-identifier">insert_node</span>(<span class="ruby-identifier">range</span>.<span class="ruby-identifier">last</span>)
+  <span class="ruby-identifier">last_node</span>.<span class="ruby-identifier">endpoint_of</span>.<span class="ruby-identifier">push</span>(<span class="ruby-identifier">marker</span>)
+
+  <span class="ruby-identifier">cur_node</span> = <span class="ruby-identifier">first_node</span>
+  <span class="ruby-identifier">cur_level</span> = <span class="ruby-identifier">first_node</span>.<span class="ruby-identifier">top_level</span>
+  <span class="ruby-keyword">while</span> <span class="ruby-identifier">next_node_at_level_inside_range?</span>(<span class="ruby-identifier">cur_node</span>, <span class="ruby-identifier">cur_level</span>, <span class="ruby-identifier">range</span>)
+    <span class="ruby-keyword">while</span> <span class="ruby-identifier">can_ascend_from?</span>(<span class="ruby-identifier">cur_node</span>, <span class="ruby-identifier">cur_level</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">next_node_at_level_inside_range?</span>(<span class="ruby-identifier">cur_node</span>, <span class="ruby-identifier">cur_level</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span>, <span class="ruby-identifier">range</span>)
+      <span class="ruby-identifier">cur_level</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">cur_node</span> = <span class="ruby-identifier">mark_forward_path_at_level</span>(<span class="ruby-identifier">cur_node</span>, <span class="ruby-identifier">cur_level</span>, <span class="ruby-identifier">marker</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">while</span> <span class="ruby-identifier">node_inside_range?</span>(<span class="ruby-identifier">cur_node</span>, <span class="ruby-identifier">range</span>)
+    <span class="ruby-keyword">while</span> <span class="ruby-identifier">can_descend_from?</span>(<span class="ruby-identifier">cur_level</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">next_node_at_level_outside_range?</span>(<span class="ruby-identifier">cur_node</span>, <span class="ruby-identifier">cur_level</span>, <span class="ruby-identifier">range</span>)
+      <span class="ruby-identifier">cur_level</span> <span class="ruby-operator">-=</span> <span class="ruby-value">1</span> 
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">cur_node</span> = <span class="ruby-identifier">mark_forward_path_at_level</span>(<span class="ruby-identifier">cur_node</span>, <span class="ruby-identifier">cur_level</span>, <span class="ruby-identifier">marker</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-max_height" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">max_height</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="max_height-source">
+            <pre><span class="ruby-comment"># File lib/treetop/runtime/interval_skip_list/interval_skip_list.rb, line 10</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">max_height</span>
+  <span class="ruby-value">3</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-overlapping" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">overlapping</span><span
+            class="method-args">(range)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="overlapping-source">
+            <pre><span class="ruby-comment"># File lib/treetop/runtime/interval_skip_list/interval_skip_list.rb, line 24</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">overlapping</span>(<span class="ruby-identifier">range</span>)
+  <span class="ruby-identifier">markers</span>, <span class="ruby-identifier">first_node</span> = <span class="ruby-identifier">containing_with_node</span>(<span class="ruby-identifier">range</span>.<span class="ruby-identifier">first</span>)
+
+  <span class="ruby-identifier">cur_node</span> = <span class="ruby-identifier">first_node</span>
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">markers</span>.<span class="ruby-identifier">concat</span>(<span class="ruby-identifier">cur_node</span>.<span class="ruby-identifier">forward_markers</span>.<span class="ruby-identifier">flatten</span>)
+    <span class="ruby-identifier">cur_node</span> = <span class="ruby-identifier">cur_node</span>.<span class="ruby-identifier">forward</span>[<span class="ruby-value">0</span>]
+  <span class="ruby-keyword">end</span> <span class="ruby-keyword">while</span> <span class="ruby-identifier">cur_node</span>.<span class="ruby-identifier">key</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">range</span>.<span class="ruby-identifier">last</span>
+
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">markers</span>.<span class="ruby-identifier">uniq</span>, <span class="ruby-identifier">cur_node</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+     <section id="protected-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Protected Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-can_ascend_from-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">can_ascend_from?</span><span
+            class="method-args">(node, level)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="can_ascend_from-3F-source">
+            <pre><span class="ruby-comment"># File lib/treetop/runtime/interval_skip_list/interval_skip_list.rb, line 157</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">can_ascend_from?</span>(<span class="ruby-identifier">node</span>, <span class="ruby-identifier">level</span>)
+  <span class="ruby-identifier">level</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">top_level</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-can_descend_from-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">can_descend_from?</span><span
+            class="method-args">(level)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="can_descend_from-3F-source">
+            <pre><span class="ruby-comment"># File lib/treetop/runtime/interval_skip_list/interval_skip_list.rb, line 161</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">can_descend_from?</span>(<span class="ruby-identifier">level</span>)
+  <span class="ruby-identifier">level</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-containing_with_node" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">containing_with_node</span><span
+            class="method-args">(n)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="containing_with_node-source">
+            <pre><span class="ruby-comment"># File lib/treetop/runtime/interval_skip_list/interval_skip_list.rb, line 112</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">containing_with_node</span>(<span class="ruby-identifier">n</span>)
+  <span class="ruby-identifier">containing</span> = []
+  <span class="ruby-identifier">cur_node</span> = <span class="ruby-identifier">head</span>
+  (<span class="ruby-identifier">max_height</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>).<span class="ruby-identifier">downto</span>(<span class="ruby-value">0</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">cur_level</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">while</span> (<span class="ruby-identifier">next_node</span> = <span class="ruby-identifier">cur_node</span>.<span class="ruby-identifier">forward</span>[<span class="ruby-identifier">cur_level</span>]) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">next_node</span>.<span class="ruby-identifier">key</span> <span class="ruby-operator">&lt;=</span> <span class="ruby-identifier">n</span>
+      <span class="ruby-identifier">cur_node</span> = <span class="ruby-identifier">next_node</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">cur_node</span>.<span class="ruby-identifier">key</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">n</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-identifier">containing</span> <span class="ruby-operator">+</span> (<span class="ruby-identifier">cur_node</span>.<span class="ruby-identifier">markers</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">cur_node</span>.<span class="ruby-identifier">endpoint_of</span>), <span class="ruby-identifier">cur_node</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">containing</span>.<span class="ruby-identifier">concat</span>(<span class="ruby-identifier">cur_node</span>.<span class="ruby-identifier">forward_markers</span>[<span class="ruby-identifier">cur_level</span>])
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">containing</span>, <span class="ruby-identifier">cur_node</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-delete_node" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">delete_node</span><span
+            class="method-args">(key)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="delete_node-source">
+            <pre><span class="ruby-comment"># File lib/treetop/runtime/interval_skip_list/interval_skip_list.rb, line 128</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">delete_node</span>(<span class="ruby-identifier">key</span>)
+  <span class="ruby-identifier">path</span> = <span class="ruby-identifier">make_path</span>
+  <span class="ruby-identifier">found_node</span> = <span class="ruby-identifier">find</span>(<span class="ruby-identifier">key</span>, <span class="ruby-identifier">path</span>)
+  <span class="ruby-identifier">found_node</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">path</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">found_node</span>.<span class="ruby-identifier">key</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">key</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-find" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">find</span><span
+            class="method-args">(key, path)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="find-source">
+            <pre><span class="ruby-comment"># File lib/treetop/runtime/interval_skip_list/interval_skip_list.rb, line 134</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">find</span>(<span class="ruby-identifier">key</span>, <span class="ruby-identifier">path</span>)
+  <span class="ruby-identifier">cur_node</span> = <span class="ruby-identifier">head</span>
+  (<span class="ruby-identifier">max_height</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>).<span class="ruby-identifier">downto</span>(<span class="ruby-value">0</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">cur_level</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">while</span> (<span class="ruby-identifier">next_node</span> = <span class="ruby-identifier">cur_node</span>.<span class="ruby-identifier">forward</span>[<span class="ruby-identifier">cur_level</span>]) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">next_node</span>.<span class="ruby-identifier">key</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">key</span>
+      <span class="ruby-identifier">cur_node</span> = <span class="ruby-identifier">next_node</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">path</span>[<span class="ruby-identifier">cur_level</span>] = <span class="ruby-identifier">cur_node</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">cur_node</span>.<span class="ruby-identifier">forward</span>[<span class="ruby-value">0</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-insert_node" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">insert_node</span><span
+            class="method-args">(key)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="insert_node-source">
+            <pre><span class="ruby-comment"># File lib/treetop/runtime/interval_skip_list/interval_skip_list.rb, line 102</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">insert_node</span>(<span class="ruby-identifier">key</span>)
+  <span class="ruby-identifier">path</span> = <span class="ruby-identifier">make_path</span>
+  <span class="ruby-identifier">found_node</span> = <span class="ruby-identifier">find</span>(<span class="ruby-identifier">key</span>, <span class="ruby-identifier">path</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">found_node</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">found_node</span>.<span class="ruby-identifier">key</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">key</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-identifier">found_node</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-constant">Node</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">key</span>, <span class="ruby-identifier">next_node_height</span>, <span class="ruby-identifier">path</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-make_path" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">make_path</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="make_path-source">
+            <pre><span class="ruby-comment"># File lib/treetop/runtime/interval_skip_list/interval_skip_list.rb, line 145</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">make_path</span>
+  <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">max_height</span>, <span class="ruby-keyword">nil</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-mark_forward_path_at_level" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">mark_forward_path_at_level</span><span
+            class="method-args">(node, level, marker)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="mark_forward_path_at_level-source">
+            <pre><span class="ruby-comment"># File lib/treetop/runtime/interval_skip_list/interval_skip_list.rb, line 177</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">mark_forward_path_at_level</span>(<span class="ruby-identifier">node</span>, <span class="ruby-identifier">level</span>, <span class="ruby-identifier">marker</span>)
+  <span class="ruby-identifier">node</span>.<span class="ruby-identifier">forward_markers</span>[<span class="ruby-identifier">level</span>].<span class="ruby-identifier">push</span>(<span class="ruby-identifier">marker</span>)
+  <span class="ruby-identifier">next_node</span> = <span class="ruby-identifier">node</span>.<span class="ruby-identifier">forward</span>[<span class="ruby-identifier">level</span>]
+  <span class="ruby-identifier">next_node</span>.<span class="ruby-identifier">markers</span>.<span class="ruby-identifier">push</span>(<span class="ruby-identifier">marker</span>)
+  <span class="ruby-identifier">node</span> = <span class="ruby-identifier">next_node</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-next_node_at_level_inside_range-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">next_node_at_level_inside_range?</span><span
+            class="method-args">(node, level, range)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="next_node_at_level_inside_range-3F-source">
+            <pre><span class="ruby-comment"># File lib/treetop/runtime/interval_skip_list/interval_skip_list.rb, line 169</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">next_node_at_level_inside_range?</span>(<span class="ruby-identifier">node</span>, <span class="ruby-identifier">level</span>, <span class="ruby-identifier">range</span>)
+  <span class="ruby-identifier">node</span>.<span class="ruby-identifier">forward</span>[<span class="ruby-identifier">level</span>] <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">forward</span>[<span class="ruby-identifier">level</span>].<span class="ruby-identifier">key</span> <span class="ruby-operator">&lt;=</span> <span class="ruby-identifier">range</span>.<span class="ruby-identifier">last</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-next_node_at_level_outside_range-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">next_node_at_level_outside_range?</span><span
+            class="method-args">(node, level, range)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="next_node_at_level_outside_range-3F-source">
+            <pre><span class="ruby-comment"># File lib/treetop/runtime/interval_skip_list/interval_skip_list.rb, line 173</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">next_node_at_level_outside_range?</span>(<span class="ruby-identifier">node</span>, <span class="ruby-identifier">level</span>, <span class="ruby-identifier">range</span>)
+  (<span class="ruby-identifier">node</span>.<span class="ruby-identifier">forward</span>[<span class="ruby-identifier">level</span>].<span class="ruby-identifier">nil?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">forward</span>[<span class="ruby-identifier">level</span>].<span class="ruby-identifier">key</span> <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">range</span>.<span class="ruby-identifier">last</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-next_node_height" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">next_node_height</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="next_node_height-source">
+            <pre><span class="ruby-comment"># File lib/treetop/runtime/interval_skip_list/interval_skip_list.rb, line 149</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">next_node_height</span>
+  <span class="ruby-identifier">height</span> = <span class="ruby-value">1</span>
+  <span class="ruby-keyword">while</span> <span class="ruby-identifier">rand</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">probability</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">height</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">max_height</span>
+    <span class="ruby-identifier">height</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">height</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-node_inside_range-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">node_inside_range?</span><span
+            class="method-args">(node, range)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="node_inside_range-3F-source">
+            <pre><span class="ruby-comment"># File lib/treetop/runtime/interval_skip_list/interval_skip_list.rb, line 165</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">node_inside_range?</span>(<span class="ruby-identifier">node</span>, <span class="ruby-identifier">range</span>)
+  <span class="ruby-identifier">node</span>.<span class="ruby-identifier">key</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">range</span>.<span class="ruby-identifier">last</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-nodes" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">nodes</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="nodes-source">
+            <pre><span class="ruby-comment"># File lib/treetop/runtime/interval_skip_list/interval_skip_list.rb, line 191</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">nodes</span>
+  <span class="ruby-identifier">nodes</span> = []
+  <span class="ruby-identifier">cur_node</span> = <span class="ruby-identifier">head</span>.<span class="ruby-identifier">forward</span>[<span class="ruby-value">0</span>]
+  <span class="ruby-keyword">until</span> <span class="ruby-identifier">cur_node</span>.<span class="ruby-identifier">nil?</span>
+    <span class="ruby-identifier">nodes</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">cur_node</span>
+    <span class="ruby-identifier">cur_node</span> = <span class="ruby-identifier">cur_node</span>.<span class="ruby-identifier">forward</span>[<span class="ruby-value">0</span>]
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">nodes</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-unmark_forward_path_at_level" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">unmark_forward_path_at_level</span><span
+            class="method-args">(node, level, marker)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="unmark_forward_path_at_level-source">
+            <pre><span class="ruby-comment"># File lib/treetop/runtime/interval_skip_list/interval_skip_list.rb, line 184</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">unmark_forward_path_at_level</span>(<span class="ruby-identifier">node</span>, <span class="ruby-identifier">level</span>, <span class="ruby-identifier">marker</span>)
+  <span class="ruby-identifier">node</span>.<span class="ruby-identifier">forward_markers</span>[<span class="ruby-identifier">level</span>].<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">marker</span>)
+  <span class="ruby-identifier">next_node</span> = <span class="ruby-identifier">node</span>.<span class="ruby-identifier">forward</span>[<span class="ruby-identifier">level</span>]
+  <span class="ruby-identifier">next_node</span>.<span class="ruby-identifier">markers</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">marker</span>)
+  <span class="ruby-identifier">node</span> = <span class="ruby-identifier">next_node</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.1.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

@@ -1,0 +1,91 @@
+[2014-07-01 09:13:35] run_gem_wrappers_regenerate
+run_gem_wrappers_regenerate () 
+{ 
+    gem_install gem-wrappers && gem wrappers regenerate || return $?
+}
+current path: /home/thanhcongframgia/Desktop
+GEM_HOME=/home/thanhcongframgia/.rvm/gems/ruby-1.9.3-p547
+PATH=/home/thanhcongframgia/.rvm/gems/ruby-1.9.3-p547/bin:/home/thanhcongframgia/.rvm/gems/ruby-1.9.3-p547@global/bin:/home/thanhcongframgia/.rvm/rubies/ruby-1.9.3-p547/bin:/home/thanhcongframgia/.rvm/bin:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
+GEM_PATH=/home/thanhcongframgia/.rvm/gems/ruby-1.9.3-p547:/home/thanhcongframgia/.rvm/gems/ruby-1.9.3-p547@global
+command(1): run_gem_wrappers_regenerate
++ gem_install gem-wrappers
++ typeset gem_name gem_version version_check
++ gem_version=
++ __rvm_parse_gems_args gem-wrappers
++ typeset gem=gem-wrappers
++ __rvm_string_match gem-wrappers '*.gem$'
++ typeset _string
++ _string=gem-wrappers
++ shift
++ ((  1  ))
++ case "${_string}" in
++ shift
++ ((  0  ))
++ return 1
++ gem_name=gem-wrappers
++ case "$gem" in
++ [[ -z '' ]]
++ __rvm_db gem_gem-wrappers_version gem_version
++ typeset value key variable
++ key=gem_gem-wrappers_version
++ key=gem_gem-wrappers_version
++ variable=gem_version
++ [[ -f /home/thanhcongframgia/.rvm/user/db ]]
+++ __rvm_db_ /home/thanhcongframgia/.rvm/user/db gem_gem-wrappers_version
+++ typeset __db __key __value
+++ __db=/home/thanhcongframgia/.rvm/user/db
+++ __key=gem_gem-wrappers_version
+++ shift 2
+++ __value=
+++ case "${__value}" in
+++ __rvm_db_get /home/thanhcongframgia/.rvm/user/db gem_gem-wrappers_version
+++ [[ -f /home/thanhcongframgia/.rvm/user/db ]]
+++ __rvm_sed -e 's#^gem_gem-wrappers_version=##' -e '/^$/d'
+++ sed -e 's#^gem_gem-wrappers_version=##' -e '/^$/d'
+++ __rvm_grep '^gem_gem-wrappers_version=' /home/thanhcongframgia/.rvm/user/db
+++ GREP_OPTIONS=
+++ grep '^gem_gem-wrappers_version=' /home/thanhcongframgia/.rvm/user/db
+++ return 1
++ value=
++ [[ -z '' ]]
++ [[ -f /home/thanhcongframgia/.rvm/config/db ]]
+++ __rvm_db_ /home/thanhcongframgia/.rvm/config/db gem_gem-wrappers_version
+++ typeset __db __key __value
+++ __db=/home/thanhcongframgia/.rvm/config/db
+++ __key=gem_gem-wrappers_version
+++ shift 2
+++ __value=
+++ case "${__value}" in
+++ __rvm_db_get /home/thanhcongframgia/.rvm/config/db gem_gem-wrappers_version
+++ [[ -f /home/thanhcongframgia/.rvm/config/db ]]
+++ __rvm_grep '^gem_gem-wrappers_version=' /home/thanhcongframgia/.rvm/config/db
+++ GREP_OPTIONS=
+++ __rvm_sed -e 's#^gem_gem-wrappers_version=##' -e '/^$/d'
+++ sed -e 's#^gem_gem-wrappers_version=##' -e '/^$/d'
+++ grep '^gem_gem-wrappers_version=' /home/thanhcongframgia/.rvm/config/db
++ value='>=1.2.4'
++ [[ -n >=1.2.4 ]]
++ [[ -n gem_version ]]
++ eval 'gem_version='\''>=1.2.4'\'''
+++ gem_version='>=1.2.4'
++ true
++ ((  0 == 0  ))
++ is_gem_installed
++ typeset gem_spec
++ gem_spec='gem '\''gem-wrappers'\'''
++ [[ -n >=1.2.4 ]]
++ gem_spec+=', '\''>=1.2.4'\'''
++ version_check=1.2.4
++ ls -ld /home/thanhcongframgia/.rvm/gems/ruby-1.9.3-p547/gems/gem-wrappers-1.2.4
++ /home/thanhcongframgia/.rvm/rubies/ruby-1.9.3-p547/bin/ruby -rrubygems -e 'gem '\''gem-wrappers'\'', '\''>=1.2.4'\'''
++ rvm_log 'gem gem-wrappers >=1.2.4 is already installed'
++ rvm_pretty_print stdout
++ case "${rvm_pretty_print_flag:=auto}" in
++ case "${TERM:-dumb}" in
++ case "$1" in
++ [[ -t 1 ]]
++ return 1
++ printf %b 'gem gem-wrappers >=1.2.4 is already installed\n'
+gem gem-wrappers >=1.2.4 is already installed
++ return 0
++ gem wrappers regenerate

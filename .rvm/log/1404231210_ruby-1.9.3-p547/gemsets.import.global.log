@@ -1,0 +1,403 @@
+[2014-07-01 09:13:34] gemset_import_list
+gemset_import_list () 
+{ 
+    typeset line;
+    for line in "$@";
+    do
+        gem_install $line || rvm_error "there was an error installing gem $line";
+    done
+}
+current path: /home/thanhcongframgia/Desktop
+GEM_HOME=/home/thanhcongframgia/.rvm/gems/ruby-1.9.3-p547@global
+PATH=/home/thanhcongframgia/.rvm/gems/ruby-1.9.3-p547@global/bin:/home/thanhcongframgia/.rvm/rubies/ruby-1.9.3-p547/bin:/home/thanhcongframgia/.rvm/bin:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
+GEM_PATH=/home/thanhcongframgia/.rvm/gems/ruby-1.9.3-p547@global
+command(6): gemset_import_list gem-wrappers rubygems-bundler bundler rake rvm
++ typeset line
++ for line in '"$@"'
++ gem_install gem-wrappers
++ typeset gem_name gem_version version_check
++ gem_version=
++ __rvm_parse_gems_args gem-wrappers
++ typeset gem=gem-wrappers
++ __rvm_string_match gem-wrappers '*.gem$'
++ typeset _string
++ _string=gem-wrappers
++ shift
++ ((  1  ))
++ case "${_string}" in
++ shift
++ ((  0  ))
++ return 1
++ gem_name=gem-wrappers
++ case "$gem" in
++ [[ -z '' ]]
++ __rvm_db gem_gem-wrappers_version gem_version
++ typeset value key variable
++ key=gem_gem-wrappers_version
++ key=gem_gem-wrappers_version
++ variable=gem_version
++ [[ -f /home/thanhcongframgia/.rvm/user/db ]]
+++ __rvm_db_ /home/thanhcongframgia/.rvm/user/db gem_gem-wrappers_version
+++ typeset __db __key __value
+++ __db=/home/thanhcongframgia/.rvm/user/db
+++ __key=gem_gem-wrappers_version
+++ shift 2
+++ __value=
+++ case "${__value}" in
+++ __rvm_db_get /home/thanhcongframgia/.rvm/user/db gem_gem-wrappers_version
+++ [[ -f /home/thanhcongframgia/.rvm/user/db ]]
+++ __rvm_grep '^gem_gem-wrappers_version=' /home/thanhcongframgia/.rvm/user/db
+++ __rvm_sed -e 's#^gem_gem-wrappers_version=##' -e '/^$/d'
+++ GREP_OPTIONS=
+++ grep '^gem_gem-wrappers_version=' /home/thanhcongframgia/.rvm/user/db
+++ sed -e 's#^gem_gem-wrappers_version=##' -e '/^$/d'
+++ return 1
++ value=
++ [[ -z '' ]]
++ [[ -f /home/thanhcongframgia/.rvm/config/db ]]
+++ __rvm_db_ /home/thanhcongframgia/.rvm/config/db gem_gem-wrappers_version
+++ typeset __db __key __value
+++ __db=/home/thanhcongframgia/.rvm/config/db
+++ __key=gem_gem-wrappers_version
+++ shift 2
+++ __value=
+++ case "${__value}" in
+++ __rvm_db_get /home/thanhcongframgia/.rvm/config/db gem_gem-wrappers_version
+++ [[ -f /home/thanhcongframgia/.rvm/config/db ]]
+++ __rvm_grep '^gem_gem-wrappers_version=' /home/thanhcongframgia/.rvm/config/db
+++ __rvm_sed -e 's#^gem_gem-wrappers_version=##' -e '/^$/d'
+++ GREP_OPTIONS=
+++ grep '^gem_gem-wrappers_version=' /home/thanhcongframgia/.rvm/config/db
+++ sed -e 's#^gem_gem-wrappers_version=##' -e '/^$/d'
++ value='>=1.2.4'
++ [[ -n >=1.2.4 ]]
++ [[ -n gem_version ]]
++ eval 'gem_version='\''>=1.2.4'\'''
+++ gem_version='>=1.2.4'
++ true
++ ((  0 == 0  ))
++ is_gem_installed
++ typeset gem_spec
++ gem_spec='gem '\''gem-wrappers'\'''
++ [[ -n >=1.2.4 ]]
++ gem_spec+=', '\''>=1.2.4'\'''
++ version_check=1.2.4
++ ls -ld /home/thanhcongframgia/.rvm/gems/ruby-1.9.3-p547@global/gems/gem-wrappers-1.2.4
++ rvm_log 'gem gem-wrappers >=1.2.4 is already installed'
++ rvm_pretty_print stdout
++ case "${rvm_pretty_print_flag:=auto}" in
++ case "${TERM:-dumb}" in
++ case "$1" in
++ [[ -t 1 ]]
++ return 1
++ printf %b 'gem gem-wrappers >=1.2.4 is already installed\n'
+gem gem-wrappers >=1.2.4 is already installed
++ return 0
++ for line in '"$@"'
++ gem_install rubygems-bundler
++ typeset gem_name gem_version version_check
++ gem_version=
++ __rvm_parse_gems_args rubygems-bundler
++ typeset gem=rubygems-bundler
++ __rvm_string_match rubygems-bundler '*.gem$'
++ typeset _string
++ _string=rubygems-bundler
++ shift
++ ((  1  ))
++ case "${_string}" in
++ shift
++ ((  0  ))
++ return 1
++ gem_name=rubygems-bundler
++ case "$gem" in
++ [[ -z '' ]]
++ __rvm_db gem_rubygems-bundler_version gem_version
++ typeset value key variable
++ key=gem_rubygems-bundler_version
++ key=gem_rubygems-bundler_version
++ variable=gem_version
++ [[ -f /home/thanhcongframgia/.rvm/user/db ]]
+++ __rvm_db_ /home/thanhcongframgia/.rvm/user/db gem_rubygems-bundler_version
+++ typeset __db __key __value
+++ __db=/home/thanhcongframgia/.rvm/user/db
+++ __key=gem_rubygems-bundler_version
+++ shift 2
+++ __value=
+++ case "${__value}" in
+++ __rvm_db_get /home/thanhcongframgia/.rvm/user/db gem_rubygems-bundler_version
+++ [[ -f /home/thanhcongframgia/.rvm/user/db ]]
+++ __rvm_grep '^gem_rubygems-bundler_version=' /home/thanhcongframgia/.rvm/user/db
+++ GREP_OPTIONS=
+++ __rvm_sed -e 's#^gem_rubygems-bundler_version=##' -e '/^$/d'
+++ grep '^gem_rubygems-bundler_version=' /home/thanhcongframgia/.rvm/user/db
+++ sed -e 's#^gem_rubygems-bundler_version=##' -e '/^$/d'
+++ return 1
++ value=
++ [[ -z '' ]]
++ [[ -f /home/thanhcongframgia/.rvm/config/db ]]
+++ __rvm_db_ /home/thanhcongframgia/.rvm/config/db gem_rubygems-bundler_version
+++ typeset __db __key __value
+++ __db=/home/thanhcongframgia/.rvm/config/db
+++ __key=gem_rubygems-bundler_version
+++ shift 2
+++ __value=
+++ case "${__value}" in
+++ __rvm_db_get /home/thanhcongframgia/.rvm/config/db gem_rubygems-bundler_version
+++ [[ -f /home/thanhcongframgia/.rvm/config/db ]]
+++ __rvm_grep '^gem_rubygems-bundler_version=' /home/thanhcongframgia/.rvm/config/db
+++ GREP_OPTIONS=
+++ grep '^gem_rubygems-bundler_version=' /home/thanhcongframgia/.rvm/config/db
+++ __rvm_sed -e 's#^gem_rubygems-bundler_version=##' -e '/^$/d'
+++ sed -e 's#^gem_rubygems-bundler_version=##' -e '/^$/d'
+++ return 1
++ value=
++ [[ -n '' ]]
++ return 1
++ ((  0 == 0  ))
++ is_gem_installed
++ typeset gem_spec
++ gem_spec='gem '\''rubygems-bundler'\'''
++ [[ -n '' ]]
++ version_check='*([[:digit:]\.])'
++ ls -ld /home/thanhcongframgia/.rvm/gems/ruby-1.9.3-p547@global/gems/rubygems-bundler-1.4.4
++ rvm_log 'gem rubygems-bundler  is already installed'
++ rvm_pretty_print stdout
++ case "${rvm_pretty_print_flag:=auto}" in
++ case "${TERM:-dumb}" in
++ case "$1" in
++ [[ -t 1 ]]
++ return 1
++ printf %b 'gem rubygems-bundler  is already installed\n'
+gem rubygems-bundler  is already installed
++ return 0
++ for line in '"$@"'
++ gem_install bundler
++ typeset gem_name gem_version version_check
++ gem_version=
++ __rvm_parse_gems_args bundler
++ typeset gem=bundler
++ __rvm_string_match bundler '*.gem$'
++ typeset _string
++ _string=bundler
++ shift
++ ((  1  ))
++ case "${_string}" in
++ shift
++ ((  0  ))
++ return 1
++ gem_name=bundler
++ case "$gem" in
++ [[ -z '' ]]
++ __rvm_db gem_bundler_version gem_version
++ typeset value key variable
++ key=gem_bundler_version
++ key=gem_bundler_version
++ variable=gem_version
++ [[ -f /home/thanhcongframgia/.rvm/user/db ]]
+++ __rvm_db_ /home/thanhcongframgia/.rvm/user/db gem_bundler_version
+++ typeset __db __key __value
+++ __db=/home/thanhcongframgia/.rvm/user/db
+++ __key=gem_bundler_version
+++ shift 2
+++ __value=
+++ case "${__value}" in
+++ __rvm_db_get /home/thanhcongframgia/.rvm/user/db gem_bundler_version
+++ [[ -f /home/thanhcongframgia/.rvm/user/db ]]
+++ __rvm_grep '^gem_bundler_version=' /home/thanhcongframgia/.rvm/user/db
+++ GREP_OPTIONS=
+++ grep '^gem_bundler_version=' /home/thanhcongframgia/.rvm/user/db
+++ __rvm_sed -e 's#^gem_bundler_version=##' -e '/^$/d'
+++ sed -e 's#^gem_bundler_version=##' -e '/^$/d'
+++ return 1
++ value=
++ [[ -z '' ]]
++ [[ -f /home/thanhcongframgia/.rvm/config/db ]]
+++ __rvm_db_ /home/thanhcongframgia/.rvm/config/db gem_bundler_version
+++ typeset __db __key __value
+++ __db=/home/thanhcongframgia/.rvm/config/db
+++ __key=gem_bundler_version
+++ shift 2
+++ __value=
+++ case "${__value}" in
+++ __rvm_db_get /home/thanhcongframgia/.rvm/config/db gem_bundler_version
+++ [[ -f /home/thanhcongframgia/.rvm/config/db ]]
+++ __rvm_grep '^gem_bundler_version=' /home/thanhcongframgia/.rvm/config/db
+++ GREP_OPTIONS=
+++ __rvm_sed -e 's#^gem_bundler_version=##' -e '/^$/d'
+++ grep '^gem_bundler_version=' /home/thanhcongframgia/.rvm/config/db
+++ sed -e 's#^gem_bundler_version=##' -e '/^$/d'
+++ return 1
++ value=
++ [[ -n '' ]]
++ return 1
++ ((  0 == 0  ))
++ is_gem_installed
++ typeset gem_spec
++ gem_spec='gem '\''bundler'\'''
++ [[ -n '' ]]
++ version_check='*([[:digit:]\.])'
++ ls -ld /home/thanhcongframgia/.rvm/gems/ruby-1.9.3-p547@global/gems/bundler-1.6.2
++ rvm_log 'gem bundler  is already installed'
++ rvm_pretty_print stdout
++ case "${rvm_pretty_print_flag:=auto}" in
++ case "${TERM:-dumb}" in
++ case "$1" in
++ [[ -t 1 ]]
++ return 1
++ printf %b 'gem bundler  is already installed\n'
+gem bundler  is already installed
++ return 0
++ for line in '"$@"'
++ gem_install rake
++ typeset gem_name gem_version version_check
++ gem_version=
++ __rvm_parse_gems_args rake
++ typeset gem=rake
++ __rvm_string_match rake '*.gem$'
++ typeset _string
++ _string=rake
++ shift
++ ((  1  ))
++ case "${_string}" in
++ shift
++ ((  0  ))
++ return 1
++ gem_name=rake
++ case "$gem" in
++ [[ -z '' ]]
++ __rvm_db gem_rake_version gem_version
++ typeset value key variable
++ key=gem_rake_version
++ key=gem_rake_version
++ variable=gem_version
++ [[ -f /home/thanhcongframgia/.rvm/user/db ]]
+++ __rvm_db_ /home/thanhcongframgia/.rvm/user/db gem_rake_version
+++ typeset __db __key __value
+++ __db=/home/thanhcongframgia/.rvm/user/db
+++ __key=gem_rake_version
+++ shift 2
+++ __value=
+++ case "${__value}" in
+++ __rvm_db_get /home/thanhcongframgia/.rvm/user/db gem_rake_version
+++ [[ -f /home/thanhcongframgia/.rvm/user/db ]]
+++ __rvm_grep '^gem_rake_version=' /home/thanhcongframgia/.rvm/user/db
+++ __rvm_sed -e 's#^gem_rake_version=##' -e '/^$/d'
+++ GREP_OPTIONS=
+++ grep '^gem_rake_version=' /home/thanhcongframgia/.rvm/user/db
+++ sed -e 's#^gem_rake_version=##' -e '/^$/d'
+++ return 1
++ value=
++ [[ -z '' ]]
++ [[ -f /home/thanhcongframgia/.rvm/config/db ]]
+++ __rvm_db_ /home/thanhcongframgia/.rvm/config/db gem_rake_version
+++ typeset __db __key __value
+++ __db=/home/thanhcongframgia/.rvm/config/db
+++ __key=gem_rake_version
+++ shift 2
+++ __value=
+++ case "${__value}" in
+++ __rvm_db_get /home/thanhcongframgia/.rvm/config/db gem_rake_version
+++ [[ -f /home/thanhcongframgia/.rvm/config/db ]]
+++ __rvm_grep '^gem_rake_version=' /home/thanhcongframgia/.rvm/config/db
+++ __rvm_sed -e 's#^gem_rake_version=##' -e '/^$/d'
+++ GREP_OPTIONS=
+++ grep '^gem_rake_version=' /home/thanhcongframgia/.rvm/config/db
+++ sed -e 's#^gem_rake_version=##' -e '/^$/d'
+++ return 1
++ value=
++ [[ -n '' ]]
++ return 1
++ ((  0 == 0  ))
++ is_gem_installed
++ typeset gem_spec
++ gem_spec='gem '\''rake'\'''
++ [[ -n '' ]]
++ version_check='*([[:digit:]\.])'
++ ls -ld /home/thanhcongframgia/.rvm/gems/ruby-1.9.3-p547@global/gems/rake-0.9.2.2
++ rvm_log 'gem rake  is already installed'
++ rvm_pretty_print stdout
++ case "${rvm_pretty_print_flag:=auto}" in
++ case "${TERM:-dumb}" in
++ case "$1" in
++ [[ -t 1 ]]
++ return 1
++ printf %b 'gem rake  is already installed\n'
+gem rake  is already installed
++ return 0
++ for line in '"$@"'
++ gem_install rvm
++ typeset gem_name gem_version version_check
++ gem_version=
++ __rvm_parse_gems_args rvm
++ typeset gem=rvm
++ __rvm_string_match rvm '*.gem$'
++ typeset _string
++ _string=rvm
++ shift
++ ((  1  ))
++ case "${_string}" in
++ shift
++ ((  0  ))
++ return 1
++ gem_name=rvm
++ case "$gem" in
++ [[ -z '' ]]
++ __rvm_db gem_rvm_version gem_version
++ typeset value key variable
++ key=gem_rvm_version
++ key=gem_rvm_version
++ variable=gem_version
++ [[ -f /home/thanhcongframgia/.rvm/user/db ]]
+++ __rvm_db_ /home/thanhcongframgia/.rvm/user/db gem_rvm_version
+++ typeset __db __key __value
+++ __db=/home/thanhcongframgia/.rvm/user/db
+++ __key=gem_rvm_version
+++ shift 2
+++ __value=
+++ case "${__value}" in
+++ __rvm_db_get /home/thanhcongframgia/.rvm/user/db gem_rvm_version
+++ [[ -f /home/thanhcongframgia/.rvm/user/db ]]
+++ __rvm_grep '^gem_rvm_version=' /home/thanhcongframgia/.rvm/user/db
+++ __rvm_sed -e 's#^gem_rvm_version=##' -e '/^$/d'
+++ GREP_OPTIONS=
+++ grep '^gem_rvm_version=' /home/thanhcongframgia/.rvm/user/db
+++ sed -e 's#^gem_rvm_version=##' -e '/^$/d'
+++ return 1
++ value=
++ [[ -z '' ]]
++ [[ -f /home/thanhcongframgia/.rvm/config/db ]]
+++ __rvm_db_ /home/thanhcongframgia/.rvm/config/db gem_rvm_version
+++ typeset __db __key __value
+++ __db=/home/thanhcongframgia/.rvm/config/db
+++ __key=gem_rvm_version
+++ shift 2
+++ __value=
+++ case "${__value}" in
+++ __rvm_db_get /home/thanhcongframgia/.rvm/config/db gem_rvm_version
+++ [[ -f /home/thanhcongframgia/.rvm/config/db ]]
+++ __rvm_grep '^gem_rvm_version=' /home/thanhcongframgia/.rvm/config/db
+++ __rvm_sed -e 's#^gem_rvm_version=##' -e '/^$/d'
+++ GREP_OPTIONS=
+++ sed -e 's#^gem_rvm_version=##' -e '/^$/d'
+++ grep '^gem_rvm_version=' /home/thanhcongframgia/.rvm/config/db
+++ return 1
++ value=
++ [[ -n '' ]]
++ return 1
++ ((  0 == 0  ))
++ is_gem_installed
++ typeset gem_spec
++ gem_spec='gem '\''rvm'\'''
++ [[ -n '' ]]
++ version_check='*([[:digit:]\.])'
++ ls -ld /home/thanhcongframgia/.rvm/gems/ruby-1.9.3-p547@global/gems/rvm-1.11.3.9
++ rvm_log 'gem rvm  is already installed'
++ rvm_pretty_print stdout
++ case "${rvm_pretty_print_flag:=auto}" in
++ case "${TERM:-dumb}" in
++ case "$1" in
++ [[ -t 1 ]]
++ return 1
++ printf %b 'gem rvm  is already installed\n'
+gem rvm  is already installed
++ return 0

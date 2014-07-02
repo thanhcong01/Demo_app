@@ -1,0 +1,185 @@
+// <!-- <mdb:mork:z v="1.4"/> -->
+< <(a=c)> // (f=iso-8859-1)
+  (B8=retainBy)(B9=daysToKeepHdrs)(BA=numHdrsToKeep)(BB=daysToKeepBodies)
+  (BC=keepUnreadOnly)(BD=useServerDefaults)(BE=cleanupBodies)
+  (BF=applyToFlaggedMessages)(C0=useServerRetention)(C1=storeToken)
+  (C2=account)(C3=dateReceived)(C4=ProtoThreadFlags)(C5=junkscore)
+  (C6=gloda-id)(C7=gloda-dirty)(C8=preview)(C9=keywords)
+  (CA=customSortCol)(CB=imageSize)(CC=sender_name)(CD=notAPhishMessage)
+  (80=ns:msg:db:row:scope:msgs:all)(81=subject)(82=sender)(83=message-id)
+  (84=references)(85=recipients)(86=date)(87=size)(88=flags)(89=priority)
+  (8A=label)(8B=statusOfset)(8C=numLines)(8D=ccList)(8E=bccList)
+  (8F=msgThreadId)(90=threadId)(91=threadFlags)(92=threadNewestMsgDate)
+  (93=children)(94=unreadChildren)(95=threadSubject)(96=msgCharSet)
+  (97=ns:msg:db:table:kind:msgs)(98=ns:msg:db:table:kind:thread)
+  (99=ns:msg:db:table:kind:allthreads)
+  (9A=ns:msg:db:row:scope:threads:all)(9B=threadParent)(9C=threadRoot)
+  (9D=msgOffset)(9E=offlineMsgSize)
+  (9F=ns:msg:db:row:scope:dbfolderinfo:all)
+  (A0=ns:msg:db:table:kind:dbfolderinfo)(A1=numMsgs)(A2=numNewMsgs)
+  (A3=folderSize)(A4=expungedBytes)(A5=folderDate)(A6=highWaterKey)
+  (A7=mailboxName)(A8=UIDValidity)(A9=totPendingMsgs)
+  (AA=unreadPendingMsgs)(AB=expiredMark)(AC=version)
+  (AD=fixedBadRefThreading)(AE=folderName)(AF=charSetOverride)
+  (B0=charSet)(B1=sortType)(B2=sortOrder)(B3=viewFlags)(B4=viewType)
+  (B5=columnStates)(B6=MRUTime)(B7=sortColumns)>
+<(83=0)(90=53b11caa)(80=1)>[1:m(^9C=0)(^90=0)(^92^90)(^91=0)(^93=1)
+    (^94=0)]
+<(92=dac)(9D=53b21142)>[2:m(^9C^92)(^90^92)(^92^9D)(^91=0)(^93=1)(^94=0)]
+<(A3=1b2c)(A9=53b2168a)>[3:m(^9C^A3)(^90^A3)(^92^A9)(^91=0)(^93=1)(^94=1)]
+<(AE=2940)(B1=53b21f50)>[4:m(^9C^AE)(^90^AE)(^92^B1)(^91=0)(^93=1)(^94=0)]
+<(B4=375c)(B9=53b22368)>[5:m(^9C^B4)(^90^B4)(^92^B9)(^91=0)(^93=1)(^94=0)]
+<(BE=3d6a)(C4=53b2794e)>[6:m(^9C^BE)(^90^BE)(^92^C4)(^91=0)(^93=1)(^94=0)]
+<(C9=5485)(E6=53b3da39)>[7:m(^9C^C9)(^90^C9)(^92^E6)(^91=0)(^93=1)(^94=1)]
+
+<(E3=21637)(8A=51)(B6=Huy Tuan <vu.huy.tuan@framgia.com>)(A6
+    =duong.thanh.cong@framgia.com)(E4=aaaaaaaaa)(E5
+    =53B3DA39.5080502@framgia.com)(8F=account1)(E7=53b3da3e)(9F=UTF-8)
+  (E8=60c)(AD=3)(94=ffffffff)(ED=vvvvvvvvvvv)>
+{5485:^80 {(k^98:c)(s=9)7:m } [5485(^9D^C9)(^C1^E3)(^88=0)(^8A=0)(^8B=51)
+    (^82^B6)(^85^A6)(^81^E4)(^83^E5)(^C2^8F)(^86^E6)(^C3^E7)(^89=1)
+    (^96^9F)(^87^E8)(^8C=3)(^9B^94)(^8F^C9)(^C4=0)(^C8^ED)]}
+
+<(AF=10560)(A5==?UTF-8?B?Q2hhdFdvcms=?= <info@chatwork.com>)(A7
+    ==?UTF-8?B?Q2hhdFdvcms6IENyZWF0aW5nIHlvdXIgYWNjb3VudA==?=)(B0
+    =dbf82c7cb260ab1840e396db0cad3c67@www.chatwork.com)(B2=53b21f51)
+  (AA=4)(B3=e1c)(AC=28)(CD
+    =Thank you for your interest in ChatWork! Here are the steps to create you\
+r account. $E2$94$80$E2$94$80$E2$94$80$E2$94$80$E2$94$80$E2$94$80$E2$94$80$E2$94\
+$80$E2$94$80$E2$94$80$E2$94$80$E2$94$80$E2$94$80$E2$94$80$E2$94$80$E2$94$80$E2\
+$94$80$E2$94$80$E2$94$80$E2$94$80$E2$94$80$E2$94$80$E2$94$80$E2$94$80$E2$94$80\
+$E2$94$80$E2$94$80$E2$94$80$E2$94$80$E2$94$80 Creating your account $E2$94$80$E2\
+$94$80$E2$94$80$E2$94$80$E2$94$80$E2$94$80$E2$94$80$E2$94$80$E2$94$80$E2$94$80\
+$E2$94$80$E2$94$80$E2$94$80$E2$94$80$E2$94$80$E2$94$80)(D3=0|ChatWork)
+  (D8=24)>
+{2940:^80 {(k^98:c)(s=9)4:m } [2940(^9D^AE)(^C1^AF)(^88=1)(^8A=0)(^8B=51)
+    (^82^A5)(^85^A6)(^81^A7)(^83^B0)(^C2^8F)(^86^B1)(^C3^B2)(^89=4)
+    (^96^9F)(^87^B3)(^8C=28)(^9B^94)(^8F^AE)(^C4=0)(^C8^CD)(^CC^D3)
+    (^C6=24)(^C7=0)]}
+
+<(8B=redmine@dev.framgia.com)(8C=undisclosed-recipients:;)(8D
+    =Your framgia Redmine account activation)(8E
+    =53b11caada761_47783f8d53d0de441011c4@framgia.tmail)(91=53b11d07)
+  (93=4d)(CB
+    =Your account information: * Login: duong.thanh.cong * Password: 32e6y6JA \
+Sign in: https://dev.framgia.com/redmine/login -- You have received this notif\
+ication because you have either subscribed to it, or are involved in it. To ch\
+ange your notif)(D1=0|redmine@dev.framgia.com)(D5=20)>
+{0:^80 {(k^98:c)(s=9)1:m } [0(^9D=0)(^C1=0)(^88=1)(^8A=0)(^8B=51)(^82^8B)
+    (^85^8C)(^81^8D)(^83^8E)(^C2^8F)(^86^90)(^C3^91)(^89=1)(^87^92)
+    (^8C=4d)(^9B^94)(^8F=0)(^C4=0)(^C8^CB)(^CC^D1)(^C6=20)(^C7=0)]}
+
+<(96=3500)(97=Uoc Mo NT <nguyen.thi.uoc.mo@framgia.com>)(98
+    =duong.thanh.cong@framgia.com, tran.van.cuong@framgia.com, bui.duy.doanh@f\
+ramgia.com, vu.huy.tuan@framgia.com)(99
+    ="hr_team@framgia.com" <hr_team@framgia.com>)(9A
+    =[HR] =?UTF-8?B?SMaw4bubbmcgZOG6q24gbuG7mWkgcXV5?=)(9B
+    =53B21142.1050407@framgia.com)(9C=<53141AF0.10103@framgia.com>)
+  (9E=53b21153)(A0=d80)(A1=2f)(CC
+    =Dear All, $C4$90$E1$BB$83 n$E1$BA$AFm r$C3$B5 n$E1$BB$99i quy c$C3$B4ng t\
+y, m$E1$BB$8Di v$C3$A0o link sau $C4$91$E1$BB$83 $C4$91$E1$BB$8Dc th$C3$AAm nh\
+$C3$A9: \\\\192.168.1.10\\Public\\hr (http://192.168.1.10:8080/\) M$E1$BB$8Di \
+ng$C6$B0$E1$BB$9Di t$E1$BA$A1o t$C3$A0i kho$E1$BA$A3n chatwork v$C3$A0 redmine\
+ n$E1$BB$AFa nh$C3$A9. https://www.chatwork.com http://de)(D2=0|Uoc Mo NT)
+  (D6=22)(A4=6956)(A8=fa21afc8490cbf7e1bc66a3605092622@www.chatwork.com)
+  (AB=e14)(D7=23)(B5=14172)(B7=aaaaaaa)(B8=53B22368.6050407@framgia.com)
+  (BA=53b2236c)(BB=ISO-8859-1)(BC=60e)(CE
+    =aaaaaaaa From - Tue Jul 1 02:46:31 2014 X-Account-Key: account1 X-UIDL: 0\
+000000653b21cd6 X-Mozilla-Status: 0000 X-Mozilla-Status2: 00000000 X-Mozilla-K\
+eys: Retur)(D4=0|Huy Tuan)(D9=25)(BF=15722)(C0
+    ="hr_team@framgia.com" <hr_team@framgia.com>, Tuan Chu Anh <chu.anh.tuan@f\
+ramgia.com>)(C1
+    =[HR] =?UTF-8?B?SMaw4bubbmcgZOG6q24gcXV5IHRyw6xuaCBo4buNYyBSdWJ5IA==?= =?U\
+TF-8?B?VHV0b3JpYWwu?=)(C2=53B2794E.6050006@framgia.com)(C3
+    =<53140445.6010805@framgia.com>)(C5=53b27953)(C6=171b)(C7=5d)(CF
+    =DearC$C3$B4ng, Ch$C3$A0o m$E1$BB$ABng b$E1$BA$A1n gia nh$E1$BA$ADp Framgi\
+a VN. B$C6$B0$E1$BB$9Bc $C4$91$E1$BA$A7u, b$E1$BA$A1n h$E1$BB$8Dc t$C3$A0i li$E1\
+$BB$87u training v$E1$BB$81 Ruby $C4$91$E1$BB$83 c$C3$B3 th$E1$BB$83 $C4$91$C3\
+$A1p $E1$BB$A9ng $C4$91$C6$B0$E1$BB$A3c y$C3$AAu c$E1$BA$A7u $C4$91$C3$A0o t$E1\
+$BA$A1o $C4$91$E1$BA$A7u v$C3$A0o c$E1$BB$A7a Framgia. $C4$90$C3$A2y l$C3$A0 l\
+ink $C4$91$E1$BB$8Dc t$C3$A0i li$E1$BB$87u:https://do)(DA=27)>
+{1:^80 {(k^97:c)(s=9)} 0 
+  [DAC(^9D^92)(^C1^96)(^88=1)(^8A=0)(^8B=51)(^82^97)(^85^98)(^8D^99)
+    (^81^9A)(^83^9B)(^C2^8F)(^84^9C)(^86^9D)(^C3^9E)(^89=1)(^96^9F)
+    (^87^A0)(^8C=2f)(^9B^94)(^8F^92)(^C4=0)(^C8^CC)(^CC^D2)(^C6=22)
+    (^C7=0)]
+  [1B2C(^9D^A3)(^C1^A4)(^88=0)(^8A=0)(^8B=51)(^82^A5)(^85^A6)(^81^A7)
+    (^83^A8)(^C2^8F)(^86^A9)(^C3^A9)(^89=4)(^96^9F)(^87^AB)(^8C=28)
+    (^9B^94)(^8F^A3)(^C4=0)(^C8^CD)(^CC^D3)(^C6=23)]2940 
+  [375C(^9D^B4)(^C1^B5)(^88=1)(^8A=0)(^8B=51)(^82^B6)(^85^A6)(^81^B7)
+    (^83^B8)(^C2^8F)(^86^B9)(^C3^BA)(^89=1)(^96^BB)(^87^BC)(^8C=3)(^9B^94)
+    (^8F^B4)(^C4=0)(^C8^CE)(^CC^D4)(^C6=25)(^C7=0)]
+  [3D6A(^9D^BE)(^C1^BF)(^88=1)(^8A=0)(^8B=51)(^82^97)(^85^A6)(^8D^C0)
+    (^81^C1)(^83^C2)(^C2^8F)(^84^C3)(^86^C4)(^C3^C5)(^89=1)(^87^C6)
+    (^8C=5d)(^9B^94)(^8F^BE)(^C4=0)(^C8^CF)(^CC^D2)(^C6=27)(^C7=0)]
+  5485 }
+{DAC:^80 {(k^98:c)(s=9)2:m } DAC }
+{3D6A:^80 {(k^98:c)(s=9)6:m } 3D6A }
+{375C:^80 {(k^98:c)(s=9)5:m } 375C }
+{1B2C:^80 {(k^98:c)(s=9)3:m } 1B2C }
+{FFFFFFFD:^9A {(k^99:c)(s=9)} [0(^95^8D)]
+  [DAC(^95^9A)]
+  [1B2C(^95^A7)]
+  [2940(^95^A7)]
+  [375C(^95^B7)]
+  [3D6A(^95^C1)]
+  [5485(^95^E4)]}
+
+<(81=1004)(82=Inbox)(EB=5a91)(EC=53b3e4d3)(EA=1404298451)(86=12)(87=)
+  (88
+    ={"threadCol":{"visible":true},"attachmentCol":{"visible":true},"flaggedCo\
+l":{"visible":true},"subjectCol":{"visible":true},"unreadButtonColHeader":{"vi\
+sible":true},"senderCol":{"visible":true},"recipientCol":{"visible":false},"ju\
+nkStatusCol":{"visible":true},"dateCol":{"visible":true},"locationCol":{"visib\
+le":false}})(E9=7)(A2=2)>
+{1:^9F {(k^A0:c)(s=9)} 
+  [1(^AC=1)(^AD=1)(^88^81)(^A7^82)(^A3^EB)(^A5^EC)(^B6^EA)(^B1=12)(^B2=1)
+    (^B3=0)(^B4=0)(^B7=)(^B5^88)(^C0=1)(^A1=7)(^A2=2)(^A6^C9)]}
+
+@$${35{@
+@$$}35}@
+
+@$${36{@
+@$$}36}@
+
+@$${37{@
+[5485:^80(^C6=28)]
+@$$}37}@
+
+@$${38{@
+[3:m(^94=0)]
+[-1B2C:^80(^9D^A3)(^C1^A4)(^88=1)(^8A=0)(^8B=51)(^82^A5)(^85^A6)(^81^A7)
+    (^83^A8)(^C2^8F)(^86^A9)(^C3^A9)(^89=4)(^96^9F)(^87^AB)(^8C=28)
+    (^9B^94)(^8F^A3)(^C4=0)(^C8^CD)(^CC^D3)(^C6=23)(^C7=1)]
+[5485:^80(^CC^D4)]
+<(EE=53b4280a)>[-1:^9F(^AC=1)(^AD=1)(^88^81)(^A7^82)(^A3^EB)(^A5^EE)
+    (^B6^EA)(^B1=12)(^B2=1)(^B3=0)(^B4=0)(^B7=)(^B5^88)(^C0=1)(^A1=7)
+    (^A2=1)(^A6^C9)]
+@$$}38}@
+
+@$${39{@
+@$$}39}@
+
+@$${3A{@
+@$$}3A}@
+
+@$${3B{@
+[7:m(^94=0)]
+[-5485:^80(^9D^C9)(^C1^E3)(^88=1)(^8A=0)(^8B=51)(^82^B6)(^85^A6)(^81^E4)
+    (^83^E5)(^C2^8F)(^86^E6)(^C3^E7)(^89=1)(^96^9F)(^87^E8)(^8C=3)(^9B^94)
+    (^8F^C9)(^C4=0)(^C8^ED)(^C6=28)(^CC^D4)(^C7=1)]
+<(EF=53b42810)>[-1:^9F(^AC=1)(^AD=1)(^88^81)(^A7^82)(^A3^EB)(^A5^EF)
+    (^B6^EA)(^B1=12)(^B2=1)(^B3=0)(^B4=0)(^B7=)(^B5^88)(^C0=1)(^A1=7)
+    (^A2=0)(^A6^C9)]
+@$$}3B}@
+
+@$${3C{@
+@$$}3C}@
+
+@$${3D{@
+@$$}3D}@
+
+@$${3E{@
+[1B2C:^80(^C7=0)]
+[5485:^80(^C7=0)]
+@$$}3E}@

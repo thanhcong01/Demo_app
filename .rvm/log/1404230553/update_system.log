@@ -1,0 +1,139 @@
+[2014-07-01 09:02:33] requirements_debian_update_system
+requirements_debian_update_system () 
+{ 
+    __rvm_try_sudo apt-get --quiet --yes update || { 
+        typeset __ret=$?;
+        case ${__ret} in 
+            100)
+                rvm_error "There has been error while updating 'apt-get', please give it some time and try again later.
+For 404 errors check your sources configured in:
+    /etc/apt/sources.list
+    /etc/apt/sources.list.d/*.list
+"
+            ;;
+        esac;
+        return ${__ret}
+    }
+}
+current path: /home/thanhcongframgia/Desktop
+PATH=/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/home/thanhcongframgia/.rvm/bin
+command(2): requirements_debian_update_system 
++ __rvm_try_sudo apt-get --quiet --yes update
++ typeset -a command_to_run
++ typeset sudo_path sbin_path missing_paths
++ command_to_run=("$@")
++ ((  UID == 0  ))
++ case "$rvm_autolibs_flag_number" in
++ [[ Ubuntu 12.04 == \S\o\l\a\r\i\s\ \1\0 ]]
++ sudo_path=
++ __rvm_which sudo
++ missing_paths=
++ for sbin_path in /sbin /usr/sbin /usr/local/sbin
++ [[ -d /sbin ]]
++ [[ ! :/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/home/thanhcongframgia/.rvm/bin: =~ :/sbin: ]]
++ for sbin_path in /sbin /usr/sbin /usr/local/sbin
++ [[ -d /usr/sbin ]]
++ [[ ! :/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/home/thanhcongframgia/.rvm/bin: =~ :/usr/sbin: ]]
++ for sbin_path in /sbin /usr/sbin /usr/local/sbin
++ [[ -d /usr/local/sbin ]]
++ [[ ! :/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/home/thanhcongframgia/.rvm/bin: =~ :/usr/local/sbin: ]]
++ [[ -n '' ]]
++ command_to_run=(${sudo_path}sudo -p "%p password required for '$*': " "${command_to_run[@]}")
++ sudo -p '%p password required for '\''apt-get --quiet --yes update'\'': ' apt-get --quiet --yes update
+Hit http://extras.ubuntu.com precise Release.gpg
+Hit http://us.archive.ubuntu.com precise Release.gpg
+Hit http://us.archive.ubuntu.com precise-updates Release.gpg
+Hit http://us.archive.ubuntu.com precise-backports Release.gpg
+Hit http://security.ubuntu.com precise-security Release.gpg
+Hit http://us.archive.ubuntu.com precise Release
+Hit http://security.ubuntu.com precise-security Release
+Hit http://extras.ubuntu.com precise Release
+Hit http://us.archive.ubuntu.com precise-updates Release
+Hit http://security.ubuntu.com precise-security/main Sources
+Hit http://extras.ubuntu.com precise/main Sources
+Hit http://us.archive.ubuntu.com precise-backports Release
+Hit http://us.archive.ubuntu.com precise/main Sources
+Hit http://us.archive.ubuntu.com precise/restricted Sources
+Hit http://us.archive.ubuntu.com precise/universe Sources
+Hit http://us.archive.ubuntu.com precise/multiverse Sources
+Hit http://us.archive.ubuntu.com precise/main amd64 Packages
+Hit http://security.ubuntu.com precise-security/restricted Sources
+Hit http://security.ubuntu.com precise-security/universe Sources
+Hit http://security.ubuntu.com precise-security/multiverse Sources
+Hit http://security.ubuntu.com precise-security/main amd64 Packages
+Hit http://security.ubuntu.com precise-security/restricted amd64 Packages
+Hit http://extras.ubuntu.com precise/main amd64 Packages
+Hit http://extras.ubuntu.com precise/main i386 Packages
+Ign http://extras.ubuntu.com precise/main TranslationIndex
+Hit http://us.archive.ubuntu.com precise/restricted amd64 Packages
+Hit http://us.archive.ubuntu.com precise/universe amd64 Packages
+Hit http://us.archive.ubuntu.com precise/multiverse amd64 Packages
+Hit http://us.archive.ubuntu.com precise/main i386 Packages
+Hit http://us.archive.ubuntu.com precise/restricted i386 Packages
+Hit http://us.archive.ubuntu.com precise/universe i386 Packages
+Hit http://us.archive.ubuntu.com precise/multiverse i386 Packages
+Hit http://us.archive.ubuntu.com precise/main TranslationIndex
+Hit http://us.archive.ubuntu.com precise/multiverse TranslationIndex
+Hit http://us.archive.ubuntu.com precise/restricted TranslationIndex
+Hit http://security.ubuntu.com precise-security/universe amd64 Packages
+Hit http://security.ubuntu.com precise-security/multiverse amd64 Packages
+Hit http://security.ubuntu.com precise-security/main i386 Packages
+Hit http://security.ubuntu.com precise-security/restricted i386 Packages
+Hit http://security.ubuntu.com precise-security/universe i386 Packages
+Hit http://security.ubuntu.com precise-security/multiverse i386 Packages
+Hit http://security.ubuntu.com precise-security/main TranslationIndex
+Hit http://us.archive.ubuntu.com precise/universe TranslationIndex
+Hit http://security.ubuntu.com precise-security/multiverse TranslationIndex
+Hit http://security.ubuntu.com precise-security/restricted TranslationIndex
+Hit http://security.ubuntu.com precise-security/universe TranslationIndex
+Hit http://us.archive.ubuntu.com precise-updates/main Sources
+Hit http://us.archive.ubuntu.com precise-updates/restricted Sources
+Hit http://us.archive.ubuntu.com precise-updates/universe Sources
+Hit http://us.archive.ubuntu.com precise-updates/multiverse Sources
+Hit http://us.archive.ubuntu.com precise-updates/main amd64 Packages
+Hit http://us.archive.ubuntu.com precise-updates/restricted amd64 Packages
+Hit http://us.archive.ubuntu.com precise-updates/universe amd64 Packages
+Hit http://us.archive.ubuntu.com precise-updates/multiverse amd64 Packages
+Hit http://us.archive.ubuntu.com precise-updates/main i386 Packages
+Hit http://security.ubuntu.com precise-security/main Translation-en
+Hit http://us.archive.ubuntu.com precise-updates/restricted i386 Packages
+Hit http://us.archive.ubuntu.com precise-updates/universe i386 Packages
+Hit http://us.archive.ubuntu.com precise-updates/multiverse i386 Packages
+Hit http://us.archive.ubuntu.com precise-updates/main TranslationIndex
+Hit http://us.archive.ubuntu.com precise-updates/multiverse TranslationIndex
+Hit http://us.archive.ubuntu.com precise-updates/restricted TranslationIndex
+Hit http://us.archive.ubuntu.com precise-updates/universe TranslationIndex
+Hit http://us.archive.ubuntu.com precise-backports/main Sources
+Hit http://us.archive.ubuntu.com precise-backports/restricted Sources
+Hit http://us.archive.ubuntu.com precise-backports/universe Sources
+Hit http://security.ubuntu.com precise-security/multiverse Translation-en
+Hit http://security.ubuntu.com precise-security/restricted Translation-en
+Hit http://us.archive.ubuntu.com precise-backports/multiverse Sources
+Hit http://us.archive.ubuntu.com precise-backports/main amd64 Packages
+Hit http://us.archive.ubuntu.com precise-backports/restricted amd64 Packages
+Hit http://us.archive.ubuntu.com precise-backports/universe amd64 Packages
+Hit http://us.archive.ubuntu.com precise-backports/multiverse amd64 Packages
+Hit http://us.archive.ubuntu.com precise-backports/main i386 Packages
+Hit http://us.archive.ubuntu.com precise-backports/restricted i386 Packages
+Hit http://us.archive.ubuntu.com precise-backports/universe i386 Packages
+Hit http://us.archive.ubuntu.com precise-backports/multiverse i386 Packages
+Hit http://us.archive.ubuntu.com precise-backports/main TranslationIndex
+Hit http://us.archive.ubuntu.com precise-backports/multiverse TranslationIndex
+Hit http://security.ubuntu.com precise-security/universe Translation-en
+Hit http://us.archive.ubuntu.com precise-backports/restricted TranslationIndex
+Hit http://us.archive.ubuntu.com precise-backports/universe TranslationIndex
+Hit http://us.archive.ubuntu.com precise/main Translation-en
+Hit http://us.archive.ubuntu.com precise/multiverse Translation-en
+Hit http://us.archive.ubuntu.com precise/restricted Translation-en
+Hit http://us.archive.ubuntu.com precise/universe Translation-en
+Hit http://us.archive.ubuntu.com precise-updates/main Translation-en
+Hit http://us.archive.ubuntu.com precise-updates/multiverse Translation-en
+Hit http://us.archive.ubuntu.com precise-updates/restricted Translation-en
+Hit http://us.archive.ubuntu.com precise-updates/universe Translation-en
+Hit http://us.archive.ubuntu.com precise-backports/main Translation-en
+Hit http://us.archive.ubuntu.com precise-backports/multiverse Translation-en
+Hit http://us.archive.ubuntu.com precise-backports/restricted Translation-en
+Hit http://us.archive.ubuntu.com precise-backports/universe Translation-en
+Ign http://extras.ubuntu.com precise/main Translation-en_US
+Ign http://extras.ubuntu.com precise/main Translation-en
+Reading package lists...

@@ -1,0 +1,160 @@
+Hit http://security.ubuntu.com precise-security Release.gpg
+Hit http://us.archive.ubuntu.com precise Release.gpg
+Get:1 http://us.archive.ubuntu.com precise-updates Release.gpg [198 B]
+Hit http://us.archive.ubuntu.com precise-backports Release.gpg
+Hit http://security.ubuntu.com precise-security Release
+Hit http://security.ubuntu.com precise-security/main Sources
+Hit http://security.ubuntu.com precise-security/restricted Sources
+Hit http://security.ubuntu.com precise-security/universe Sources
+Hit http://security.ubuntu.com precise-security/multiverse Sources
+Hit http://security.ubuntu.com precise-security/main amd64 Packages
+Hit http://security.ubuntu.com precise-security/restricted amd64 Packages
+Hit http://security.ubuntu.com precise-security/universe amd64 Packages
+Hit http://security.ubuntu.com precise-security/multiverse amd64 Packages
+Hit http://security.ubuntu.com precise-security/main i386 Packages
+Hit http://security.ubuntu.com precise-security/restricted i386 Packages
+Hit http://security.ubuntu.com precise-security/universe i386 Packages
+Hit http://security.ubuntu.com precise-security/multiverse i386 Packages
+Hit http://security.ubuntu.com precise-security/main TranslationIndex
+Hit http://us.archive.ubuntu.com precise Release
+Get:2 http://us.archive.ubuntu.com precise-updates Release [49.6 kB]
+Hit http://security.ubuntu.com precise-security/multiverse TranslationIndex
+Hit http://security.ubuntu.com precise-security/restricted TranslationIndex
+Hit http://security.ubuntu.com precise-security/universe TranslationIndex
+Hit http://security.ubuntu.com precise-security/main Translation-en
+Hit http://security.ubuntu.com precise-security/multiverse Translation-en
+Hit http://security.ubuntu.com precise-security/restricted Translation-en
+Hit http://security.ubuntu.com precise-security/universe Translation-en
+Hit http://us.archive.ubuntu.com precise-backports Release
+Hit http://us.archive.ubuntu.com precise/main Sources
+Hit http://us.archive.ubuntu.com precise/restricted Sources
+Hit http://us.archive.ubuntu.com precise/universe Sources
+Hit http://us.archive.ubuntu.com precise/multiverse Sources
+Hit http://us.archive.ubuntu.com precise/main amd64 Packages
+Hit http://us.archive.ubuntu.com precise/restricted amd64 Packages
+Hit http://us.archive.ubuntu.com precise/universe amd64 Packages
+Hit http://us.archive.ubuntu.com precise/multiverse amd64 Packages
+Hit http://us.archive.ubuntu.com precise/main i386 Packages
+Hit http://us.archive.ubuntu.com precise/restricted i386 Packages
+Hit http://us.archive.ubuntu.com precise/universe i386 Packages
+Hit http://us.archive.ubuntu.com precise/multiverse i386 Packages
+Hit http://us.archive.ubuntu.com precise/main TranslationIndex
+Hit http://us.archive.ubuntu.com precise/multiverse TranslationIndex
+Hit http://us.archive.ubuntu.com precise/restricted TranslationIndex
+Hit http://us.archive.ubuntu.com precise/universe TranslationIndex
+Get:3 http://us.archive.ubuntu.com precise-updates/main Sources [474 kB]
+Get:4 http://us.archive.ubuntu.com precise-updates/restricted Sources [8,056 B]
+Get:5 http://us.archive.ubuntu.com precise-updates/universe Sources [108 kB]
+Get:6 http://us.archive.ubuntu.com precise-updates/multiverse Sources [8,890 B]
+Get:7 http://us.archive.ubuntu.com precise-updates/main amd64 Packages [814 kB]
+Hit http://extras.ubuntu.com precise Release.gpg
+Hit http://extras.ubuntu.com precise Release
+Hit http://extras.ubuntu.com precise/main Sources
+Hit http://extras.ubuntu.com precise/main amd64 Packages
+Hit http://extras.ubuntu.com precise/main i386 Packages
+Ign http://extras.ubuntu.com precise/main TranslationIndex
+Ign http://extras.ubuntu.com precise/main Translation-en_US
+Ign http://extras.ubuntu.com precise/main Translation-en
+Get:8 http://us.archive.ubuntu.com precise-updates/restricted amd64 Packages [13.7 kB]
+Get:9 http://us.archive.ubuntu.com precise-updates/universe amd64 Packages [244 kB]
+Get:10 http://us.archive.ubuntu.com precise-updates/multiverse amd64 Packages [15.3 kB]
+Get:11 http://us.archive.ubuntu.com precise-updates/main i386 Packages [846 kB]
+Get:12 http://us.archive.ubuntu.com precise-updates/restricted i386 Packages [13.7 kB]
+Get:13 http://us.archive.ubuntu.com precise-updates/universe i386 Packages [250 kB]
+Get:14 http://us.archive.ubuntu.com precise-updates/universe i386 Packages [250 kB]
+Get:15 http://us.archive.ubuntu.com precise-updates/multiverse i386 Packages [15.5 kB]
+Hit http://us.archive.ubuntu.com precise-updates/main TranslationIndex
+Hit http://us.archive.ubuntu.com precise-updates/multiverse TranslationIndex
+Hit http://us.archive.ubuntu.com precise-updates/restricted TranslationIndex
+Hit http://us.archive.ubuntu.com precise-updates/universe TranslationIndex
+Hit http://us.archive.ubuntu.com precise-backports/main Sources
+Hit http://us.archive.ubuntu.com precise-backports/restricted Sources
+Hit http://us.archive.ubuntu.com precise-backports/universe Sources
+Hit http://us.archive.ubuntu.com precise-backports/multiverse Sources
+Hit http://us.archive.ubuntu.com precise-backports/main amd64 Packages
+Hit http://us.archive.ubuntu.com precise-backports/restricted amd64 Packages
+Hit http://us.archive.ubuntu.com precise-backports/universe amd64 Packages
+Hit http://us.archive.ubuntu.com precise-backports/multiverse amd64 Packages
+Hit http://us.archive.ubuntu.com precise-backports/main i386 Packages
+Hit http://us.archive.ubuntu.com precise-backports/restricted i386 Packages
+Hit http://us.archive.ubuntu.com precise-backports/universe i386 Packages
+Hit http://us.archive.ubuntu.com precise-backports/multiverse i386 Packages
+Hit http://us.archive.ubuntu.com precise-backports/main TranslationIndex
+Hit http://us.archive.ubuntu.com precise-backports/multiverse TranslationIndex
+Hit http://us.archive.ubuntu.com precise-backports/restricted TranslationIndex
+Hit http://us.archive.ubuntu.com precise-backports/universe TranslationIndex
+Hit http://us.archive.ubuntu.com precise/main Translation-en
+Hit http://us.archive.ubuntu.com precise/multiverse Translation-en
+Hit http://us.archive.ubuntu.com precise/restricted Translation-en
+Hit http://us.archive.ubuntu.com precise/universe Translation-en
+Hit http://us.archive.ubuntu.com precise-updates/main Translation-en
+Hit http://us.archive.ubuntu.com precise-updates/multiverse Translation-en
+Hit http://us.archive.ubuntu.com precise-updates/restricted Translation-en
+Hit http://us.archive.ubuntu.com precise-updates/universe Translation-en
+Hit http://us.archive.ubuntu.com precise-backports/main Translation-en
+Hit http://us.archive.ubuntu.com precise-backports/multiverse Translation-en
+Hit http://us.archive.ubuntu.com precise-backports/restricted Translation-en
+Hit http://us.archive.ubuntu.com precise-backports/universe Translation-en
+Fetched 2,855 kB in 1min 54s (24.8 kB/s)
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following extra packages will be installed:
+  git-man liberror-perl
+Suggested packages:
+  git-daemon-run git-daemon-sysvinit git-doc git-el git-arch git-cvs git-svn
+  git-email git-gui gitk gitweb
+The following NEW packages will be installed:
+  git git-man liberror-perl
+0 upgraded, 3 newly installed, 0 to remove and 340 not upgraded.
+Need to get 6,741 kB of archives.
+After this operation, 15.2 MB of additional disk space will be used.
+Get:1 http://us.archive.ubuntu.com/ubuntu/ precise/main liberror-perl all 0.17-1 [23.8 kB]
+Get:2 http://us.archive.ubuntu.com/ubuntu/ precise/main git-man all 1:1.7.9.5-1 [630 kB]
+Get:3 http://us.archive.ubuntu.com/ubuntu/ precise/main git amd64 1:1.7.9.5-1 [6,087 kB]
+Fetched 6,741 kB in 7min 11s (15.6 kB/s)
+Selecting previously unselected package liberror-perl.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 142486 files and directories currently installed.)
+Unpacking liberror-perl (from .../liberror-perl_0.17-1_all.deb) ...
+Selecting previously unselected package git-man.
+Unpacking git-man (from .../git-man_1%3a1.7.9.5-1_all.deb) ...
+Selecting previously unselected package git.
+Unpacking git (from .../git_1%3a1.7.9.5-1_amd64.deb) ...
+Processing triggers for man-db ...
+Setting up liberror-perl (0.17-1) ...
+Setting up git-man (1:1.7.9.5-1) ...
+Setting up git (1:1.7.9.5-1) ...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following NEW packages will be installed:
+  curl
+0 upgraded, 1 newly installed, 0 to remove and 340 not upgraded.
+Need to get 138 kB of archives.
+After this operation, 352 kB of additional disk space will be used.
+Get:1 http://us.archive.ubuntu.com/ubuntu/ precise-updates/main curl amd64 7.22.0-3ubuntu4.8 [138 kB]
+Fetched 138 kB in 1s (71.1 kB/s)
+Selecting previously unselected package curl.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 143135 files and directories currently installed.)
+Unpacking curl (from .../curl_7.22.0-3ubuntu4.8_amd64.deb) ...
+Processing triggers for man-db ...
+Setting up curl (7.22.0-3ubuntu4.8) ...
+Downloading https://github.com/wayneeseguin/rvm/archive/stable.tar.gz
+
+Installing RVM to /home/thanhcongframgia/.rvm/
+    Adding rvm PATH line to /home/thanhcongframgia/.profile /home/thanhcongframgia/.bashrc /home/thanhcongframgia/.zshrc.
+    Adding rvm loading line to /home/thanhcongframgia/.bash_profile /home/thanhcongframgia/.zlogin.
+Installation of RVM in /home/thanhcongframgia/.rvm/ is almost complete:
+
+  * To start using RVM you need to run `source /home/thanhcongframgia/.rvm/scripts/rvm`
+    in all your open shell windows, in rare cases you need to reopen all shell windows.
+
+# thanhcongframgia,
+#
+#   Thank you for using RVM!
+#   We sincerely hope that RVM helps to make your life easier and more enjoyable!!!
+#
+# ~Wayne, Michal & team.
+
+To install do: 'rvm install macruby-0.12'

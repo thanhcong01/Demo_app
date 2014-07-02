@@ -1,0 +1,7 @@
+export PATH="/home/thanhcongframgia/.rvm/gems/ruby-1.9.3-p547/bin:/home/thanhcongframgia/.rvm/gems/ruby-1.9.3-p547@global/bin:/home/thanhcongframgia/.rvm/rubies/ruby-1.9.3-p547/bin:$PATH"
+export GEM_HOME='/home/thanhcongframgia/.rvm/gems/ruby-1.9.3-p547'
+export GEM_PATH='/home/thanhcongframgia/.rvm/gems/ruby-1.9.3-p547:/home/thanhcongframgia/.rvm/gems/ruby-1.9.3-p547@global'
+export MY_RUBY_HOME='/home/thanhcongframgia/.rvm/rubies/ruby-1.9.3-p547'
+export IRBRC='/home/thanhcongframgia/.rvm/rubies/ruby-1.9.3-p547/.irbrc'
+unset MAGLEV_HOME
+unset RBXOPT

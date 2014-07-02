@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>date_time.rl - mail-2.6.1 Documentation</title>
+
+<link href="../../../../fonts.css" rel="stylesheet">
+<link href="../../../../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../../../";
+</script>
+
+<script src="../../../../js/jquery.js"></script>
+<script src="../../../../js/navigation.js"></script>
+<script src="../../../../js/search_index.js"></script>
+<script src="../../../../js/search.js"></script>
+<script src="../../../../js/searcher.js"></script>
+<script src="../../../../js/darkfish.js"></script>
+
+
+<body id="top" role="document" class="file">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../../../../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../../../../table_of_contents.html#pages">Pages</a>
+    <a href="../../../../table_of_contents.html#classes">Classes</a>
+    <a href="../../../../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="project-metadata">
+    <div id="fileindex-section" class="nav-section">
+  <h3>Pages</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../../../CHANGELOG_rdoc.html">CHANGELOG</a>
+  
+    <li><a href="../../../../CONTRIBUTING_md.html">CONTRIBUTING</a>
+  
+    <li><a href="../../../../README_md.html">README</a>
+  
+    <li><a href="../../../../TODO_rdoc.html">TODO</a>
+  
+    <li><a href="../../../../lib/mail/parsers/ragel/common_rl.html">common.rl</a>
+  
+    <li><a href="../../../../lib/mail/parsers/ragel/date_time_rl.html">date_time.rl</a>
+  
+    <li><a href="../../../../lib/mail/parsers/ragel/ruby/machines/address_lists_machine_rb_rl.html">address_lists_machine.rb.rl</a>
+  
+    <li><a href="../../../../lib/mail/parsers/ragel/ruby/machines/content_disposition_machine_rb_rl.html">content_disposition_machine.rb.rl</a>
+  
+    <li><a href="../../../../lib/mail/parsers/ragel/ruby/machines/content_location_machine_rb_rl.html">content_location_machine.rb.rl</a>
+  
+    <li><a href="../../../../lib/mail/parsers/ragel/ruby/machines/content_transfer_encoding_machine_rb_rl.html">content_transfer_encoding_machine.rb.rl</a>
+  
+    <li><a href="../../../../lib/mail/parsers/ragel/ruby/machines/content_type_machine_rb_rl.html">content_type_machine.rb.rl</a>
+  
+    <li><a href="../../../../lib/mail/parsers/ragel/ruby/machines/date_time_machine_rb_rl.html">date_time_machine.rb.rl</a>
+  
+    <li><a href="../../../../lib/mail/parsers/ragel/ruby/machines/envelope_from_machine_rb_rl.html">envelope_from_machine.rb.rl</a>
+  
+    <li><a href="../../../../lib/mail/parsers/ragel/ruby/machines/message_ids_machine_rb_rl.html">message_ids_machine.rb.rl</a>
+  
+    <li><a href="../../../../lib/mail/parsers/ragel/ruby/machines/mime_version_machine_rb_rl.html">mime_version_machine.rb.rl</a>
+  
+    <li><a href="../../../../lib/mail/parsers/ragel/ruby/machines/phrase_lists_machine_rb_rl.html">phrase_lists_machine.rb.rl</a>
+  
+    <li><a href="../../../../lib/mail/parsers/ragel/ruby/machines/rb_actions_rl.html">rb_actions.rl</a>
+  
+    <li><a href="../../../../lib/mail/parsers/ragel/ruby/machines/received_machine_rb_rl.html">received_machine.rb.rl</a>
+  
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-label="Page lib/mail/parsers/ragel/date_time.rl">
+
+<p>%%{</p>
+
+<pre>machine date_time;
+
+# day_of_week
+day_name = &quot;Mon&quot; | &quot;Tue&quot; | &quot;Wed&quot; | &quot;Thu&quot; | &quot;Fri&quot; | &quot;Sat&quot; | &quot;Sun&quot;;
+obs_day_of_week = CFWS? day_name CFWS?;
+day_of_week = (FWS? day_name) | obs_day_of_week;
+
+# date
+obs_day = CFWS? (DIGIT | (DIGIT DIGIT)) CFWS?;
+day = (FWS? DIGIT DIGIT? FWS) | obs_day;
+month = &quot;Jan&quot; | &quot;Feb&quot; | &quot;Mar&quot; | &quot;Apr&quot; | &quot;May&quot; | &quot;Jun&quot; | &quot;Jul&quot; | &quot;Aug&quot; | &quot;Sep&quot; | &quot;Oct&quot; | &quot;Nov&quot; | &quot;Dec&quot;;
+obs_year = CFWS? (DIGIT DIGIT DIGIT*) CFWS?;
+year = FWS DIGIT DIGIT DIGIT DIGIT FWS | obs_year;
+date = day month year;
+
+# time
+obs_hour = CFWS? (DIGIT DIGIT) CFWS?;
+hour = DIGIT DIGIT | obs_hour;
+obs_minute = CFWS? (DIGIT DIGIT) CFWS?;
+minute = DIGIT DIGIT | obs_minute;
+obs_second = CFWS? (DIGIT DIGIT) CFWS?;
+second = DIGIT DIGIT | obs_second;
+obs_zone = &quot;UT&quot; | &quot;GMT&quot; | &quot;EST&quot; | &quot;EDT&quot; | &quot;CST&quot; | &quot;CDT&quot; | &quot;MST&quot; | &quot;MDT&quot; | &quot;PST&quot; | &quot;PDT&quot; | 0x41..0x49 | 0x4B..0x5A | 0x61..0x69 | 0x6B..0x7A;
+time_of_day = hour &quot;:&quot; minute (&quot;:&quot; second)?;
+zone = FWS (((&quot;+&quot; | &quot;-&quot;) DIGIT DIGIT DIGIT DIGIT) | obs_zone);
+time = time_of_day zone;</pre>
+
+<p>}%%</p>
+</main>
+
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.1.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

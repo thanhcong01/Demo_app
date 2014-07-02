@@ -1,0 +1,1159 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class Mail::Address - mail-2.6.1 Documentation</title>
+
+<link href="../fonts.css" rel="stylesheet">
+<link href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script src="../js/jquery.js"></script>
+<script src="../js/navigation.js"></script>
+<script src="../js/search_index.js"></script>
+<script src="../js/search.js"></script>
+<script src="../js/searcher.js"></script>
+<script src="../js/darkfish.js"></script>
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../table_of_contents.html#pages">Pages</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    <div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  
+  <p class="link"><a href="../Object.html">Object</a>
+  
+</div>
+
+    <div id="includes-section" class="nav-section">
+  <h3>Included Modules</h3>
+
+  <ul class="link-list">
+  
+  
+    <li><a class="include" href="Utilities.html">Mail::Utilities</a>
+  
+  
+  </ul>
+</div>
+
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-c-new">::new</a>
+    
+    <li ><a href="#method-i-address">#address</a>
+    
+    <li ><a href="#method-i-address-3D">#address=</a>
+    
+    <li ><a href="#method-i-comments">#comments</a>
+    
+    <li ><a href="#method-i-decoded">#decoded</a>
+    
+    <li ><a href="#method-i-display_name">#display_name</a>
+    
+    <li ><a href="#method-i-display_name-3D">#display_name=</a>
+    
+    <li ><a href="#method-i-domain">#domain</a>
+    
+    <li ><a href="#method-i-encoded">#encoded</a>
+    
+    <li ><a href="#method-i-format">#format</a>
+    
+    <li ><a href="#method-i-format_comments">#format_comments</a>
+    
+    <li ><a href="#method-i-get_comments">#get_comments</a>
+    
+    <li ><a href="#method-i-get_display_name">#get_display_name</a>
+    
+    <li ><a href="#method-i-get_domain">#get_domain</a>
+    
+    <li ><a href="#method-i-get_local">#get_local</a>
+    
+    <li ><a href="#method-i-get_name">#get_name</a>
+    
+    <li ><a href="#method-i-inspect">#inspect</a>
+    
+    <li ><a href="#method-i-local">#local</a>
+    
+    <li ><a href="#method-i-name">#name</a>
+    
+    <li ><a href="#method-i-parse">#parse</a>
+    
+    <li ><a href="#method-i-raw">#raw</a>
+    
+    <li ><a href="#method-i-strip_all_comments">#strip_all_comments</a>
+    
+    <li ><a href="#method-i-strip_domain_comments">#strip_domain_comments</a>
+    
+    <li ><a href="#method-i-to_s">#to_s</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-Mail::Address">
+  <h1 id="class-Mail::Address" class="class">
+    class Mail::Address
+  </h1>
+
+  <section class="description">
+    
+  </section>
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Class Methods</h3>
+       </header>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(value = nil)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p><a href="Address.html">Mail::Address</a> handles all email addresses in <a
+href="../Mail.html">Mail</a>.  It takes an email address string and parses
+it, breaking it down into its component parts and allowing you to get the
+address, comments, display name, name, local part, domain part and fully
+formatted address.</p>
+
+<p><a href="Address.html">Mail::Address</a> requires a correctly formatted
+email address per RFC2822 or RFC822.  It handles all obsolete versions
+including obsolete domain routing on the local part.</p>
+
+<pre class="ruby"><span class="ruby-identifier">a</span> = <span class="ruby-constant">Address</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">'Mikel Lindsaar (My email address) &lt;mikel@test.lindsaar.net&gt;'</span>)
+<span class="ruby-identifier">a</span>.<span class="ruby-identifier">format</span>       <span class="ruby-comment">#=&gt; 'Mikel Lindsaar &lt;mikel@test.lindsaar.net&gt; (My email address)'</span>
+<span class="ruby-identifier">a</span>.<span class="ruby-identifier">address</span>      <span class="ruby-comment">#=&gt; 'mikel@test.lindsaar.net'</span>
+<span class="ruby-identifier">a</span>.<span class="ruby-identifier">display_name</span> <span class="ruby-comment">#=&gt; 'Mikel Lindsaar'</span>
+<span class="ruby-identifier">a</span>.<span class="ruby-identifier">local</span>        <span class="ruby-comment">#=&gt; 'mikel'</span>
+<span class="ruby-identifier">a</span>.<span class="ruby-identifier">domain</span>       <span class="ruby-comment">#=&gt; 'test.lindsaar.net'</span>
+<span class="ruby-identifier">a</span>.<span class="ruby-identifier">comments</span>     <span class="ruby-comment">#=&gt; ['My email address']</span>
+<span class="ruby-identifier">a</span>.<span class="ruby-identifier">to_s</span>         <span class="ruby-comment">#=&gt; 'Mikel Lindsaar &lt;mikel@test.lindsaar.net&gt; (My email address)'</span>
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/mail/elements/address.rb, line 22</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">value</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-ivar">@output_type</span> = <span class="ruby-value">:decode</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">nil?</span>
+    <span class="ruby-ivar">@parsed</span> = <span class="ruby-keyword">false</span>
+    <span class="ruby-ivar">@data</span> = <span class="ruby-keyword">nil</span>
+    <span class="ruby-keyword">return</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">parse</span>(<span class="ruby-identifier">value</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-address" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">address</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns the address that is in the address itself.  That is, the 
+local@domain string, without any angle brackets or the like.</p>
+
+<pre class="ruby"><span class="ruby-identifier">a</span> = <span class="ruby-constant">Address</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">'Mikel Lindsaar (My email address) &lt;mikel@test.lindsaar.net&gt;'</span>)
+<span class="ruby-identifier">a</span>.<span class="ruby-identifier">address</span> <span class="ruby-comment">#=&gt; 'mikel@test.lindsaar.net'</span>
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="address-source">
+            <pre><span class="ruby-comment"># File lib/mail/elements/address.rb, line 64</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">address</span>
+  <span class="ruby-identifier">parse</span> <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@parsed</span>
+  <span class="ruby-identifier">domain</span> <span class="ruby-operator">?</span> <span class="ruby-node">&quot;#{local}@#{domain}&quot;</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">local</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-address-3D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">address=</span><span
+            class="method-args">(value)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Provides a way to assign an address to an already made <a
+href="Address.html">Mail::Address</a> object.</p>
+
+<pre class="ruby"><span class="ruby-identifier">a</span> = <span class="ruby-constant">Address</span>.<span class="ruby-identifier">new</span>
+<span class="ruby-identifier">a</span>.<span class="ruby-identifier">address</span> = <span class="ruby-string">'Mikel Lindsaar (My email address) &lt;mikel@test.lindsaar.net&gt;'</span>
+<span class="ruby-identifier">a</span>.<span class="ruby-identifier">address</span> <span class="ruby-comment">#=&gt; 'mikel@test.lindsaar.net'</span>
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="address-3D-source">
+            <pre><span class="ruby-comment"># File lib/mail/elements/address.rb, line 74</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">address=</span>(<span class="ruby-identifier">value</span>)
+  <span class="ruby-identifier">parse</span>(<span class="ruby-identifier">value</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-comments" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">comments</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns an array of comments that are in the email, or an empty array if
+there are no comments</p>
+
+<pre class="ruby"><span class="ruby-identifier">a</span> = <span class="ruby-constant">Address</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">'Mikel Lindsaar (My email address) &lt;mikel@test.lindsaar.net&gt;'</span>)
+<span class="ruby-identifier">a</span>.<span class="ruby-identifier">comments</span> <span class="ruby-comment">#=&gt; ['My email address']</span>
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="comments-source">
+            <pre><span class="ruby-comment"># File lib/mail/elements/address.rb, line 123</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">comments</span>
+  <span class="ruby-identifier">parse</span> <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@parsed</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">get_comments</span>.<span class="ruby-identifier">empty?</span>
+    <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">get_comments</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">squeeze</span>(<span class="ruby-string">&quot; &quot;</span>) }
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-decoded" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">decoded</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="decoded-source">
+            <pre><span class="ruby-comment"># File lib/mail/elements/address.rb, line 164</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">decoded</span>
+  <span class="ruby-ivar">@output_type</span> = <span class="ruby-value">:decode</span>
+  <span class="ruby-identifier">format</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-display_name" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">display_name</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns the display name of the email address passed in.</p>
+
+<pre class="ruby"><span class="ruby-identifier">a</span> = <span class="ruby-constant">Address</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">'Mikel Lindsaar (My email address) &lt;mikel@test.lindsaar.net&gt;'</span>)
+<span class="ruby-identifier">a</span>.<span class="ruby-identifier">display_name</span> <span class="ruby-comment">#=&gt; 'Mikel Lindsaar'</span>
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="display_name-source">
+            <pre><span class="ruby-comment"># File lib/mail/elements/address.rb, line 82</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">display_name</span>
+  <span class="ruby-identifier">parse</span> <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@parsed</span>
+  <span class="ruby-ivar">@display_name</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">get_display_name</span>
+  <span class="ruby-constant">Encodings</span>.<span class="ruby-identifier">decode_encode</span>(<span class="ruby-ivar">@display_name</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-ivar">@output_type</span>) <span class="ruby-keyword">if</span> <span class="ruby-ivar">@display_name</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-display_name-3D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">display_name=</span><span
+            class="method-args">( str )</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Provides a way to assign a display name to an already made <a
+href="Address.html">Mail::Address</a> object.</p>
+
+<pre class="ruby"><span class="ruby-identifier">a</span> = <span class="ruby-constant">Address</span>.<span class="ruby-identifier">new</span>
+<span class="ruby-identifier">a</span>.<span class="ruby-identifier">address</span> = <span class="ruby-string">'mikel@test.lindsaar.net'</span>
+<span class="ruby-identifier">a</span>.<span class="ruby-identifier">display_name</span> = <span class="ruby-string">'Mikel Lindsaar'</span>
+<span class="ruby-identifier">a</span>.<span class="ruby-identifier">format</span> <span class="ruby-comment">#=&gt; 'Mikel Lindsaar &lt;mikel@test.lindsaar.net&gt;'</span>
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="display_name-3D-source">
+            <pre><span class="ruby-comment"># File lib/mail/elements/address.rb, line 94</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">display_name=</span>( <span class="ruby-identifier">str</span> )
+  <span class="ruby-ivar">@display_name</span> = <span class="ruby-identifier">str</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-domain" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">domain</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns the domain part (the right hand side of the @ sign in the email
+address) of the address</p>
+
+<pre class="ruby"><span class="ruby-identifier">a</span> = <span class="ruby-constant">Address</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">'Mikel Lindsaar (My email address) &lt;mikel@test.lindsaar.net&gt;'</span>)
+<span class="ruby-identifier">a</span>.<span class="ruby-identifier">domain</span> <span class="ruby-comment">#=&gt; 'test.lindsaar.net'</span>
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="domain-source">
+            <pre><span class="ruby-comment"># File lib/mail/elements/address.rb, line 113</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">domain</span>
+  <span class="ruby-identifier">parse</span> <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@parsed</span>
+  <span class="ruby-identifier">strip_all_comments</span>(<span class="ruby-identifier">get_domain</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">get_domain</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-encoded" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">encoded</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="encoded-source">
+            <pre><span class="ruby-comment"># File lib/mail/elements/address.rb, line 159</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">encoded</span>
+  <span class="ruby-ivar">@output_type</span> = <span class="ruby-value">:encode</span>
+  <span class="ruby-identifier">format</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-format" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">format</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns a correctly formatted address for the email going out.  If given an
+incorrectly formatted address as input, <a
+href="Address.html">Mail::Address</a> will do its best to format it
+correctly.  This includes quoting display names as needed and putting the
+address in angle brackets etc.</p>
+
+<pre class="ruby"><span class="ruby-identifier">a</span> = <span class="ruby-constant">Address</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">'Mikel Lindsaar (My email address) &lt;mikel@test.lindsaar.net&gt;'</span>)
+<span class="ruby-identifier">a</span>.<span class="ruby-identifier">format</span> <span class="ruby-comment">#=&gt; 'Mikel Lindsaar &lt;mikel@test.lindsaar.net&gt; (My email address)'</span>
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="format-source">
+            <pre><span class="ruby-comment"># File lib/mail/elements/address.rb, line 46</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">format</span>
+  <span class="ruby-identifier">parse</span> <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@parsed</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@data</span>.<span class="ruby-identifier">nil?</span>
+    <span class="ruby-string">''</span>
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">display_name</span>
+    [<span class="ruby-identifier">quote_phrase</span>(<span class="ruby-identifier">display_name</span>), <span class="ruby-node">&quot;&lt;#{address}&gt;&quot;</span>, <span class="ruby-identifier">format_comments</span>].<span class="ruby-identifier">compact</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">&quot; &quot;</span>)
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">address</span>
+    [<span class="ruby-identifier">address</span>, <span class="ruby-identifier">format_comments</span>].<span class="ruby-identifier">compact</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">&quot; &quot;</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">raw</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-inspect" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">inspect</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Shows the <a href="Address.html">Address</a> object basic details,
+including the <a href="Address.html">Address</a></p>
+
+<pre class="ruby"><span class="ruby-identifier">a</span> = <span class="ruby-constant">Address</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">'Mikel (My email) &lt;mikel@test.lindsaar.net&gt;'</span>)
+<span class="ruby-identifier">a</span>.<span class="ruby-identifier">inspect</span> <span class="ruby-comment">#=&gt; &quot;#&lt;Mail::Address:14184910 Address: |Mikel &lt;mikel@test.lindsaar.net&gt; (My email)| &gt;&quot;</span>
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="inspect-source">
+            <pre><span class="ruby-comment"># File lib/mail/elements/address.rb, line 154</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">inspect</span>
+  <span class="ruby-identifier">parse</span> <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@parsed</span>
+  <span class="ruby-node">&quot;#&lt;#{self.class}:#{self.object_id} Address: |#{to_s}| &gt;&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-local" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">local</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns the local part (the left hand side of the @ sign in the email
+address) of the address</p>
+
+<pre class="ruby"><span class="ruby-identifier">a</span> = <span class="ruby-constant">Address</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">'Mikel Lindsaar (My email address) &lt;mikel@test.lindsaar.net&gt;'</span>)
+<span class="ruby-identifier">a</span>.<span class="ruby-identifier">local</span> <span class="ruby-comment">#=&gt; 'mikel'</span>
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="local-source">
+            <pre><span class="ruby-comment"># File lib/mail/elements/address.rb, line 103</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">local</span>
+  <span class="ruby-identifier">parse</span> <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@parsed</span>
+  <span class="ruby-node">&quot;#{@data.obs_domain_list}#{get_local.strip}&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">get_local</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-name" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">name</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Sometimes an address will not have a display name, but might have the name
+as a comment field after the address.  This returns that name if it exists.</p>
+
+<pre class="ruby"><span class="ruby-identifier">a</span> = <span class="ruby-constant">Address</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">'mikel@test.lindsaar.net (Mikel Lindsaar)'</span>)
+<span class="ruby-identifier">a</span>.<span class="ruby-identifier">name</span> <span class="ruby-comment">#=&gt; 'Mikel Lindsaar'</span>
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="name-source">
+            <pre><span class="ruby-comment"># File lib/mail/elements/address.rb, line 137</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">name</span>
+  <span class="ruby-identifier">parse</span> <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@parsed</span>
+  <span class="ruby-identifier">get_name</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-raw" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">raw</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns the raw input of the passed in string, this is before it is passed
+by the parser.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="raw-source">
+            <pre><span class="ruby-comment"># File lib/mail/elements/address.rb, line 35</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">raw</span>
+  <span class="ruby-ivar">@data</span>.<span class="ruby-identifier">raw</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-to_s" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">to_s</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns the format of the address, or returns nothing</p>
+
+<pre class="ruby"><span class="ruby-identifier">a</span> = <span class="ruby-constant">Address</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">'Mikel Lindsaar (My email address) &lt;mikel@test.lindsaar.net&gt;'</span>)
+<span class="ruby-identifier">a</span>.<span class="ruby-identifier">format</span> <span class="ruby-comment">#=&gt; 'Mikel Lindsaar &lt;mikel@test.lindsaar.net&gt; (My email address)'</span>
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="to_s-source">
+            <pre><span class="ruby-comment"># File lib/mail/elements/address.rb, line 146</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">to_s</span>
+  <span class="ruby-identifier">parse</span> <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@parsed</span>
+  <span class="ruby-identifier">format</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+     <section id="private-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Private Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-format_comments" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">format_comments</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="format_comments-source">
+            <pre><span class="ruby-comment"># File lib/mail/elements/address.rb, line 248</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">format_comments</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">comments</span>
+    <span class="ruby-identifier">comment_text</span> = <span class="ruby-identifier">comments</span>.<span class="ruby-identifier">map</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span> <span class="ruby-identifier">escape_paren</span>(<span class="ruby-identifier">c</span>) }.<span class="ruby-identifier">join</span>(<span class="ruby-string">' '</span>).<span class="ruby-identifier">squeeze</span>(<span class="ruby-string">&quot; &quot;</span>)
+    <span class="ruby-ivar">@format_comments</span> <span class="ruby-operator">||=</span> <span class="ruby-node">&quot;(#{comment_text})&quot;</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-get_comments" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_comments</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="get_comments-source">
+            <pre><span class="ruby-comment"># File lib/mail/elements/address.rb, line 265</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">get_comments</span>
+  <span class="ruby-ivar">@data</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@data</span>.<span class="ruby-identifier">comments</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-get_display_name" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_display_name</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="get_display_name-source">
+            <pre><span class="ruby-comment"># File lib/mail/elements/address.rb, line 211</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">get_display_name</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@data</span>.<span class="ruby-identifier">display_name</span>
+    <span class="ruby-identifier">str</span> = <span class="ruby-identifier">strip_all_comments</span>(<span class="ruby-ivar">@data</span>.<span class="ruby-identifier">display_name</span>.<span class="ruby-identifier">to_s</span>)
+  <span class="ruby-keyword">elsif</span> <span class="ruby-ivar">@data</span>.<span class="ruby-identifier">comments</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-ivar">@data</span>.<span class="ruby-identifier">domain</span>
+      <span class="ruby-identifier">str</span> = <span class="ruby-identifier">strip_domain_comments</span>(<span class="ruby-identifier">format_comments</span>)
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">str</span> = <span class="ruby-keyword">nil</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">end</span>
+  
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">str</span>.<span class="ruby-identifier">blank?</span>
+    <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">str</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-get_domain" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_domain</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="get_domain-source">
+            <pre><span class="ruby-comment"># File lib/mail/elements/address.rb, line 261</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">get_domain</span>
+  <span class="ruby-ivar">@data</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@data</span>.<span class="ruby-identifier">domain</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-get_local" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_local</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="get_local-source">
+            <pre><span class="ruby-comment"># File lib/mail/elements/address.rb, line 257</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">get_local</span>
+  <span class="ruby-ivar">@data</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@data</span>.<span class="ruby-identifier">local</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-get_name" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_name</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="get_name-source">
+            <pre><span class="ruby-comment"># File lib/mail/elements/address.rb, line 231</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">get_name</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">display_name</span>
+    <span class="ruby-identifier">str</span> = <span class="ruby-identifier">display_name</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">comments</span>
+      <span class="ruby-identifier">comment_text</span> = <span class="ruby-identifier">comments</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">' '</span>).<span class="ruby-identifier">squeeze</span>(<span class="ruby-string">&quot; &quot;</span>)
+      <span class="ruby-identifier">str</span> = <span class="ruby-node">&quot;(#{comment_text})&quot;</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">str</span>.<span class="ruby-identifier">blank?</span>
+    <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">unparen</span>(<span class="ruby-identifier">str</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-parse" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">parse</span><span
+            class="method-args">(value = nil)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="parse-source">
+            <pre><span class="ruby-comment"># File lib/mail/elements/address.rb, line 171</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">parse</span>(<span class="ruby-identifier">value</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-ivar">@parsed</span> = <span class="ruby-keyword">true</span>
+
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">value</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-constant">NilClass</span>
+    <span class="ruby-ivar">@data</span> = <span class="ruby-keyword">nil</span>
+    <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-constant">Mail</span><span class="ruby-operator">::</span><span class="ruby-constant">Parsers</span><span class="ruby-operator">::</span><span class="ruby-constant">AddressStruct</span>
+    <span class="ruby-ivar">@data</span> = <span class="ruby-identifier">value</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-constant">String</span>
+    <span class="ruby-ivar">@raw_text</span> = <span class="ruby-identifier">value</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">blank?</span>
+      <span class="ruby-ivar">@data</span> = <span class="ruby-keyword">nil</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">address_list</span> = <span class="ruby-constant">Mail</span><span class="ruby-operator">::</span><span class="ruby-constant">Parsers</span><span class="ruby-operator">::</span><span class="ruby-constant">AddressListsParser</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">value</span>)
+      <span class="ruby-ivar">@data</span> = <span class="ruby-identifier">address_list</span>.<span class="ruby-identifier">addresses</span>.<span class="ruby-identifier">first</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-strip_all_comments" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">strip_all_comments</span><span
+            class="method-args">(string)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="strip_all_comments-source">
+            <pre><span class="ruby-comment"># File lib/mail/elements/address.rb, line 191</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">strip_all_comments</span>(<span class="ruby-identifier">string</span>)
+  <span class="ruby-keyword">unless</span> <span class="ruby-identifier">comments</span>.<span class="ruby-identifier">blank?</span>
+    <span class="ruby-identifier">comments</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">comment</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">string</span> = <span class="ruby-identifier">string</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-node">&quot;(#{comment})&quot;</span>, <span class="ruby-string">''</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">string</span>.<span class="ruby-identifier">strip</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-strip_domain_comments" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">strip_domain_comments</span><span
+            class="method-args">(value)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="strip_domain_comments-source">
+            <pre><span class="ruby-comment"># File lib/mail/elements/address.rb, line 200</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">strip_domain_comments</span>(<span class="ruby-identifier">value</span>)
+  <span class="ruby-keyword">unless</span> <span class="ruby-identifier">comments</span>.<span class="ruby-identifier">blank?</span>
+    <span class="ruby-identifier">comments</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">comment</span><span class="ruby-operator">|</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-ivar">@data</span>.<span class="ruby-identifier">domain</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@data</span>.<span class="ruby-identifier">domain</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-node">&quot;(#{comment})&quot;</span>)
+        <span class="ruby-identifier">value</span> = <span class="ruby-identifier">value</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-node">&quot;(#{comment})&quot;</span>, <span class="ruby-string">''</span>)
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">value</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">strip</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.1.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

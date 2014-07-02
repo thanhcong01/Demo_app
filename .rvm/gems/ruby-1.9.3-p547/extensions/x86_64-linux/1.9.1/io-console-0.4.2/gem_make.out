@@ -1,0 +1,20 @@
+/home/thanhcongframgia/.rvm/rubies/ruby-1.9.3-p547/bin/ruby extconf.rb
+checking for termios.h... yes
+checking for cfmakeraw() in termios.h... yes
+checking for sys/ioctl.h... yes
+checking for rb_check_hash_type() in ruby.h... yes
+checking for rb_io_get_write_io() in ruby/io.h... yes
+checking for rb_cloexec_open() in ruby/io.h... no
+creating Makefile
+
+make  clean
+
+make
+compiling console.c
+console.c: In function ‘rb_cloexec_open’:
+console.c:673:9: warning: unused variable ‘ret’ [-Wunused-variable]
+linking shared-object io/console.so
+
+make  install
+/usr/bin/install -m 0755 console.so /home/thanhcongframgia/.rvm/gems/ruby-1.9.3-p547/gems/io-console-0.4.2/.gem.20140702-6806-24kjua/io
+installing default console libraries

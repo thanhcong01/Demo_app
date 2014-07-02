@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xbel version="1.0"
+      xmlns:bookmark="http://www.freedesktop.org/standards/desktop-bookmarks"
+      xmlns:mime="http://www.freedesktop.org/standards/shared-mime-info"
+>
+  <bookmark href="file:///home/thanhcongframgia/Desktop/rails-installer.sh" added="2014-07-01T15:22:57Z" modified="2014-07-01T15:22:58Z" visited="2014-07-01T15:22:58Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-shellscript"/>
+        <bookmark:applications>
+          <bookmark:application name="Firefox" exec="&apos;firefox %u&apos;" modified="2014-07-01T15:22:58Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/thanhcongframgia/Downloads/TOM%20TAT%20LENH%20UBUNTU.pdf" added="2014-07-01T22:17:51Z" modified="2014-07-01T22:46:51Z" visited="2014-07-01T22:17:51Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/pdf"/>
+        <bookmark:applications>
+          <bookmark:application name="Firefox" exec="&apos;firefox %u&apos;" modified="2014-07-01T22:17:51Z" count="1"/>
+          <bookmark:application name="nautilus" exec="&apos;evince %U&apos;" modified="2014-07-01T22:46:50Z" count="1"/>
+          <bookmark:application name="Document Viewer" exec="&apos;evince %u&apos;" modified="2014-07-01T22:46:51Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/thanhcongframgia/Downloads/Sublime%20Text%202.0.2%20x64.tar.bz2" added="2014-07-01T22:44:41Z" modified="2014-07-01T22:48:55Z" visited="2014-07-01T22:44:41Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-bzip-compressed-tar"/>
+        <bookmark:applications>
+          <bookmark:application name="Firefox" exec="&apos;firefox %u&apos;" modified="2014-07-01T22:44:41Z" count="1"/>
+          <bookmark:application name="File Roller" exec="&apos;file-roller&apos;" modified="2014-07-01T22:48:55Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/thanhcongframgia/Downloads/sublime-text_build-3062_amd64.deb" added="2014-07-01T23:00:59Z" modified="2014-07-01T23:05:03Z" visited="2014-07-01T23:00:59Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-deb"/>
+        <bookmark:applications>
+          <bookmark:application name="Firefox" exec="&apos;firefox %u&apos;" modified="2014-07-01T23:00:59Z" count="1"/>
+          <bookmark:application name="nautilus" exec="&apos;gedit %U&apos;" modified="2014-07-01T23:05:03Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/thanhcongframgia/Desktop/Snip2Code%20-%20Crack%20Sublime%20Text%203%20mp" added="2014-07-01T23:16:45Z" modified="2014-07-01T23:16:48Z" visited="2014-07-01T23:16:45Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/octet-stream"/>
+        <bookmark:applications>
+          <bookmark:application name="Firefox" exec="&apos;firefox %u&apos;" modified="2014-07-01T23:16:48Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+</xbel>

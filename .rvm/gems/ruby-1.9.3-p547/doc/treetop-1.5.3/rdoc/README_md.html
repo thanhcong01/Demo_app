@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>README - treetop-1.5.3 Documentation</title>
+
+<link href="./fonts.css" rel="stylesheet">
+<link href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script src="./js/jquery.js"></script>
+<script src="./js/navigation.js"></script>
+<script src="./js/search_index.js"></script>
+<script src="./js/search.js"></script>
+<script src="./js/searcher.js"></script>
+<script src="./js/darkfish.js"></script>
+
+
+<body id="top" role="document" class="file">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+<div class="nav-section">
+  <h3>Table of Contents</h3>
+
+  <ul class="link-list" role="directory">
+    <li><a href="#label-Support">Support</a>
+    <li><a href="#label-Tutorial">Tutorial</a>
+    <li><a href="#label-Parsing+Expression+Grammars%2C+The+Basics">Parsing Expression Grammars, The Basics</a>
+    <li><a href="#label-Terminal+Symbols">Terminal Symbols</a>
+    <li><a href="#label-Ordered+Choices">Ordered Choices</a>
+    <li><a href="#label-Sequences">Sequences</a>
+    <li><a href="#label-Nonterminal+Symbols">Nonterminal Symbols</a>
+    <li><a href="#label-Repetition">Repetition</a>
+    <li><a href="#label-Negative+Lookahead">Negative Lookahead</a>
+    <li><a href="#label-Positive+lookahead">Positive lookahead</a>
+    <li><a href="#label-Semantic+predicates">Semantic predicates</a>
+  </ul>
+</div>
+
+
+  <div id="project-metadata">
+    <div id="fileindex-section" class="nav-section">
+  <h3>Pages</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./LICENSE.html">LICENSE</a>
+  
+    <li><a href="./README_md.html">README</a>
+  
+    <li><a href="./lib/treetop/compiler/metagrammar_treetop.html">metagrammar.treetop</a>
+  
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-label="Page README.md">
+
+<h1 id="label-Support">Support<span><a href="#label-Support">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
+
+<p>Support for <a href="Treetop.html">Treetop</a> is provided through the
+mailing list you can join or browse here: <a
+href="http://groups.google.com/group/treetop-dev">groups.google.com/group/treetop-dev</a></p>
+
+<h1 id="label-Tutorial">Tutorial<span><a href="#label-Tutorial">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
+
+<p>Languages can be split into two components, their <em>syntax</em> and their
+<em>semantics</em>. It’s your understanding of English syntax that tells
+you the stream of words “Sleep furiously green ideas colorless” is not a
+valid sentence. Semantics is deeper. Even if we rearrange the above
+sentence to be “Colorless green ideas sleep furiously”, which is
+syntactically correct, it remains nonsensical on a semantic level. With <a
+href="Treetop.html">Treetop</a>, you’ll be dealing with languages that are
+much simpler than English, but these basic concepts apply. Your programs
+will need to address both the syntax and the semantics of the languages
+they interpret.</p>
+
+<p><a href="Treetop.html">Treetop</a> equips you with powerful tools for each
+of these two aspects of interpreter writing. You'll describe the syntax of
+your language with a <em>parsing expression grammar</em>. From this
+description, <a href="Treetop.html">Treetop</a> will generate a Ruby parser
+that transforms streams of characters written into your language into
+<em>abstract syntax trees</em> representing their structure. You'll then
+describe the semantics of your language in Ruby by defining methods on the
+syntax trees the parser generates.</p>
+
+<h1 id="label-Parsing+Expression+Grammars%2C+The+Basics">Parsing Expression Grammars, The Basics<span><a href="#label-Parsing+Expression+Grammars%2C+The+Basics">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
+
+<p>The first step in using <a href="Treetop.html">Treetop</a> is defining a
+grammar in a file with the <code>.treetop</code> extension. Here’s a
+grammar that’s useless because it’s empty:</p>
+
+<pre># my_grammar.treetop
+grammar MyGrammar
+end</pre>
+
+<p>Next, you start filling your grammar with rules. Each rule associates a
+name with a parsing expression, like the following:</p>
+
+<pre># my_grammar.treetop
+# You can use a .tt extension instead if you wish
+grammar MyGrammar
+  rule hello
+    'hello chomsky'
+  end
+end</pre>
+
+<p>The first rule becomes the <em>root</em> of the grammar, causing its
+expression to be matched when a parser for the grammar is fed a string. The
+above grammar can now be used in a Ruby program. Notice how a string
+matching the first rule parses successfully, but a second nonmatching
+string does not.</p>
+
+<pre class="ruby"><span class="ruby-comment"># use_grammar.rb</span>
+<span class="ruby-identifier">require</span> <span class="ruby-string">'rubygems'</span>
+<span class="ruby-identifier">require</span> <span class="ruby-string">'treetop'</span>
+<span class="ruby-constant">Treetop</span>.<span class="ruby-identifier">load</span> <span class="ruby-string">'my_grammar'</span>
+<span class="ruby-comment"># or just:</span>
+<span class="ruby-comment"># require 'my_grammar'                     # This works because Polyglot hooks &quot;require&quot; to find and load Treetop files</span>
+    
+<span class="ruby-identifier">parser</span> = <span class="ruby-constant">MyGrammarParser</span>.<span class="ruby-identifier">new</span>
+<span class="ruby-identifier">puts</span> <span class="ruby-identifier">parser</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-string">'hello chomsky'</span>)         <span class="ruby-comment"># =&gt; Treetop::Runtime::SyntaxNode</span>
+<span class="ruby-identifier">puts</span> <span class="ruby-identifier">parser</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-string">'silly generativists!'</span>)  <span class="ruby-comment"># =&gt; nil</span>
+</pre>
+
+<p>Users of <em>regular expressions</em> will find parsing expressions
+familiar. They share the same basic purpose, matching strings against
+patterns. However, parsing expressions can recognize a broader category of
+languages than their less expressive brethren. Before we get into
+demonstrating that, lets cover some basics. At first parsing expressions
+won’t seem much different. Trust that they are.</p>
+
+<h2 id="label-Terminal+Symbols">Terminal Symbols<span><a href="#label-Terminal+Symbols">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+
+<p>The expression in the grammar above is a terminal symbol. It will only
+match a string that matches it exactly. There are two other kinds of
+terminal symbols, which we’ll revisit later. Terminals are called
+<em>atomic expressions</em> because they aren’t composed of smaller
+expressions. A terminal symbol may use either double or single quotes. If
+the closing quote is immediately followed by the modifier ‘i’, the string
+is matched without case-sensitivity, that is, the input.downcase matches
+the terminal.downcase</p>
+
+<p><a href="Treetop.html">Treetop</a> now also supports regular expressions as
+terminals. Use a string as before, but append the modifier character 'r'
+(you can combine this with 'i' to get case-insensitive regular
+expressions). Regular expressions are generally faster than the equivalent
+parsing expressions, but may have polynomial worst-case behaviour, which is
+worse than parsing expressions. Your regular expression will always be
+anchored (by prepending A) to test the current location of the input, so
+some special expressions like b for word boundaries may give unexpected
+results.</p>
+
+<h2 id="label-Ordered+Choices">Ordered Choices<span><a href="#label-Ordered+Choices">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+
+<p>Ordered choices are <em>composite expressions</em>, which allow for any of
+several subexpressions to be matched. These should be familiar from regular
+expressions, but in parsing expressions, they are delimited by the
+<code>/</code> character. Its important to note that the choices are
+prioritized in the order they appear. If an earlier expression is matched,
+no subsequent expressions are tried. Here’s an example:</p>
+
+<pre># my_grammar.treetop
+grammar MyGrammar
+  rule hello
+    'hello chomsky' / 'hello lambek'
+  end
+end</pre>
+
+<pre class="ruby"><span class="ruby-comment"># fragment of use_grammar.rb</span>
+<span class="ruby-identifier">puts</span> <span class="ruby-identifier">parser</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-string">'hello chomsky'</span>)         <span class="ruby-comment"># =&gt; Treetop::Runtime::SyntaxNode</span>
+<span class="ruby-identifier">puts</span> <span class="ruby-identifier">parser</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-string">'hello lambek'</span>)          <span class="ruby-comment"># =&gt; Treetop::Runtime::SyntaxNode</span>
+<span class="ruby-identifier">puts</span> <span class="ruby-identifier">parser</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-string">'silly generativists!'</span>)  <span class="ruby-comment"># =&gt; nil</span>
+</pre>
+
+<p>Note that once a choice rule has matched the text using a particular
+alternative at a particular location in the input and hence has succeeded,
+that choice will never be reconsidered, even if the chosen alternative
+causes another rule to fail where a later alternative wouldn’t have. It’s
+always a later alternative, since the first to succeed is final - why keep
+looking when you’ve found what you wanted? This is a feature of PEG parsers
+that you need to understand if you’re going to succeed in using <a
+href="Treetop.html">Treetop</a>. In order to memoize success and failures,
+such decisions cannot be reversed. Luckily <a
+href="Treetop.html">Treetop</a> provides a variety of clever ways you can
+tell it to avoid making the wrong decisions. But more on that later.</p>
+
+<h2 id="label-Sequences">Sequences<span><a href="#label-Sequences">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+
+<p>Sequences are composed of other parsing expressions separated by spaces.
+Using sequences, we can tighten up the above grammar.</p>
+
+<pre># my_grammar.treetop
+grammar MyGrammar
+  rule hello
+    'hello ' ('chomsky' / 'lambek')
+  end
+end</pre>
+
+<p>Note the use of parentheses to override the default precedence rules, which
+bind sequences more tightly than choices.</p>
+
+<p>Once the whole sequence has been matched, the result is memoized and the
+details of the match will not be reconsidered for that location in the
+input.</p>
+
+<h2 id="label-Nonterminal+Symbols">Nonterminal Symbols<span><a href="#label-Nonterminal+Symbols">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+
+<p>Here we leave regular expressions behind. Nonterminals allow expressions to
+refer to other expressions by name. A trivial use of this facility would
+allow us to make the above grammar more readable should the list of names
+grow longer.</p>
+
+<pre># my_grammar.treetop
+grammar MyGrammar
+  rule hello
+    'hello ' linguist
+  end
+
+  rule linguist
+    'chomsky' / 'lambek' / 'jacobsen' / 'frege'
+  end
+end</pre>
+
+<p>The true power of this facility, however, is unleashed when writing
+<em>recursive expressions</em>. Here is a self-referential expression that
+can match any number of open parentheses followed by any number of closed
+parentheses. This is theoretically impossible with regular expressions due
+to the <em>pumping lemma</em>.</p>
+
+<pre># parentheses.treetop
+grammar Parentheses
+  rule parens
+    '(' parens ')' / ''
+  end
+end</pre>
+
+<p>The <code>parens</code> expression simply states that a <code>parens</code>
+is a set of parentheses surrounding another <code>parens</code> expression
+or, if that doesn’t match, the empty string. If you are uncomfortable with
+recursion, its time to get comfortable, because it is the basis of
+language. Here’s a tip: Don’t try and imagine the parser circling round and
+round through the same rule. Instead, imagine the rule is <em>already</em>
+defined while you are defining it. If you imagine that <code>parens</code>
+already matches a string of matching parentheses, then its easy to think of
+<code>parens</code> as an open and closing parentheses around another set
+of matching parentheses, which conveniently, you happen to be defining. You
+know that <code>parens</code> is supposed to represent a string of matched
+parentheses, so trust in that meaning, even if you haven’t fully
+implemented it yet.</p>
+
+<h2 id="label-Repetition">Repetition<span><a href="#label-Repetition">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+
+<p>Any item in a rule may be followed by a ‘+’ or a ‘*’ character, signifying
+one-or-more and zero-or-more occurrences of that item. Beware though; the
+match is greedy, and if it matches too many items and causes subsequent
+items in the sequence to fail, the number matched will never be
+reconsidered. Here’s a simple example of a rule that will never succeed:</p>
+
+<pre># toogreedy.treetop
+grammar TooGreedy
+  rule a_s
+    'a'* 'a'
+  end
+end</pre>
+
+<p>The ‘a’* will always eat up any ‘a’s that follow, and the subsequent ‘a’
+will find none there, so the whole rule will fail. You might need to use
+lookahead to avoid matching too much. Alternatively, you can use an
+occurrence range:</p>
+
+<pre># toogreedy.treetop
+grammar TooGreedy
+  rule two_to_four_as
+    'a' 2..4
+  end
+end</pre>
+
+<p>In an occurrence range, you may omit either the minimum count or the
+maximum count, so that “0.. ” works like “*” and “1.. ” works like ‘+’.</p>
+
+<h2 id="label-Negative+Lookahead">Negative Lookahead<span><a href="#label-Negative+Lookahead">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+
+<p>When you need to ensure that the following item <em>doesn’t</em> match in
+some case where it might otherwise, you can use negat!ve lookahead, which
+is an item preceeded by a ! - here’s an example:</p>
+
+<pre># postcondition.treetop
+grammar PostCondition
+  rule conditional_sentence
+    ( !conditional_keyword word )+ conditional_keyword [ \t]+ word*
+  end
+
+  rule word
+    ([a-zA-Z]+ [ \t]+) 
+  end
+
+  rule conditional_keyword
+    'if' / 'while' / 'until'
+  end
+end</pre>
+
+<p>Even though the rule <code>word</code> would match any of the conditional
+keywords, the first words of a conditional_sentence must not be
+conditional_keywords. The negative lookahead prevents that matching, and
+prevents the repetition from matching too much input. Note that the
+lookahead may be a grammar rule of any complexity, including one that isn’t
+used elsewhere in your grammar.</p>
+
+<h2 id="label-Positive+lookahead">Positive lookahead<span><a href="#label-Positive+lookahead">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+
+<p>Sometimes you want an item to match, but only if the <em>following</em>
+text would match some pattern. You don’t want to consume that following
+text, but if it’s not there, you want this rule to fail. You can append a
+positive lookahead like this to a rule by appending the lookahead rule
+preceeded by an &amp; character.</p>
+
+<h2 id="label-Semantic+predicates">Semantic predicates<span><a href="#label-Semantic+predicates">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+
+<p>Warning: This is an advanced feature. You need to understand the way a
+packrat parser operates to use it correctly. The result of computing a rule
+containing a semantic predicate will be memoized, even if the same rule,
+applied later at the same location in the input, would work differently due
+to a semantic predicate returning a different value. If you don’t
+understand the previous sentence yet still use this feature, you’re on your
+own, so test carefully!</p>
+
+<p>Sometimes, you need to run external Ruby code to decide whether this syntax
+rule should continue or should fail. You can do this using either positive
+or negative semantic predicates. These are Ruby code blocks (lambdas) which
+are called when the parser reaches that location. For this rule to succeed,
+the value must be true for a positive predicate (a block like &amp;{ … }),
+or false for a negative predicate (a block like !{ … }).</p>
+
+<p>The block is called with one argument, the array containing the preceding
+syntax nodes in the current sequence. Within the block, you cannot use node
+names or labels for the preceding nodes, as the node for the current rule
+does not yet exist. You must refer to preceding nodes using their position
+in the sequence.</p>
+
+<pre class="ruby"><span class="ruby-identifier">grammar</span> <span class="ruby-constant">Keywords</span>
+  <span class="ruby-identifier">rule</span> <span class="ruby-identifier">sequence_of_reserved_and_nonreserved_words</span>
+    ( <span class="ruby-identifier">reserved</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">word</span> )<span class="ruby-operator">*</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">rule</span> <span class="ruby-identifier">reserved</span>
+    <span class="ruby-identifier">word</span> <span class="ruby-operator">&amp;</span>{ <span class="ruby-operator">|</span><span class="ruby-identifier">s</span><span class="ruby-operator">|</span> <span class="ruby-identifier">symbol_reserved?</span>(<span class="ruby-identifier">s</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">text_value</span>) }
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">rule</span> <span class="ruby-identifier">word</span>
+    ([<span class="ruby-identifier">a</span><span class="ruby-operator">-</span><span class="ruby-identifier">zA</span><span class="ruby-operator">-</span><span class="ruby-constant">Z</span>]<span class="ruby-operator">+</span> [ \<span class="ruby-identifier">t</span>]<span class="ruby-operator">+</span>) 
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>One case where it is always safe to use a semantic predicate is to invoke
+the Ruby debugger, but don’t forget to return true so the rule succeeds!
+Assuming you have required the ‘ruby-debug’ module somewhere, it looks like
+this:</p>
+
+<pre class="ruby">  <span class="ruby-identifier">rule</span> <span class="ruby-identifier">problems</span>
+    <span class="ruby-identifier">word</span> <span class="ruby-operator">&amp;</span>{ <span class="ruby-operator">|</span><span class="ruby-identifier">s</span><span class="ruby-operator">|</span> <span class="ruby-identifier">debugger</span>; <span class="ruby-keyword">true</span> }
+  <span class="ruby-keyword">end</span>
+</pre>
+
+<p>When the debugger stops here, you can inspect the contents of the
+SyntaxNode for “word” by looking at <a href="0">s</a>, and the stack trace
+will show how you got there.</p>
+</main>
+
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.1.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

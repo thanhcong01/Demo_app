@@ -1,0 +1,1308 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>module Mail - mail-2.6.1 Documentation</title>
+
+<link href="./fonts.css" rel="stylesheet">
+<link href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script src="./js/jquery.js"></script>
+<script src="./js/navigation.js"></script>
+<script src="./js/search_index.js"></script>
+<script src="./js/search.js"></script>
+<script src="./js/searcher.js"></script>
+<script src="./js/darkfish.js"></script>
+
+
+<body id="top" role="document" class="module">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+<div class="nav-section">
+  <h3>Table of Contents</h3>
+
+  <ul class="link-list" role="directory">
+    <li><a href="#module-Mail-label-Mail+Envelope">Mail Envelope</a>
+    <li><a href="#module-Mail-label-Comments+Field">Comments Field</a>
+    <li><a href="#module-Mail-label-Examples%3A">Examples:</a>
+  </ul>
+</div>
+
+
+  <div id="class-metadata">
+    
+    
+    
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-c-all">::all</a>
+    
+    <li ><a href="#method-c-connection">::connection</a>
+    
+    <li ><a href="#method-c-defaults">::defaults</a>
+    
+    <li ><a href="#method-c-delete_all">::delete_all</a>
+    
+    <li ><a href="#method-c-deliver">::deliver</a>
+    
+    <li ><a href="#method-c-delivery_method">::delivery_method</a>
+    
+    <li ><a href="#method-c-eager_autoload-21">::eager_autoload!</a>
+    
+    <li ><a href="#method-c-find">::find</a>
+    
+    <li ><a href="#method-c-find_and_delete">::find_and_delete</a>
+    
+    <li ><a href="#method-c-first">::first</a>
+    
+    <li ><a href="#method-c-inform_interceptors">::inform_interceptors</a>
+    
+    <li ><a href="#method-c-inform_observers">::inform_observers</a>
+    
+    <li ><a href="#method-c-last">::last</a>
+    
+    <li ><a href="#method-c-new">::new</a>
+    
+    <li ><a href="#method-c-random_tag">::random_tag</a>
+    
+    <li ><a href="#method-c-read">::read</a>
+    
+    <li ><a href="#method-c-read_from_string">::read_from_string</a>
+    
+    <li ><a href="#method-c-register_autoload">::register_autoload</a>
+    
+    <li ><a href="#method-c-register_interceptor">::register_interceptor</a>
+    
+    <li ><a href="#method-c-register_observer">::register_observer</a>
+    
+    <li ><a href="#method-c-retriever_method">::retriever_method</a>
+    
+    <li ><a href="#method-c-something_random">::something_random</a>
+    
+    <li ><a href="#method-c-uniq">::uniq</a>
+    
+    <li ><a href="#method-c-unregister_interceptor">::unregister_interceptor</a>
+    
+    <li ><a href="#method-c-unregister_observer">::unregister_observer</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="module-Mail">
+  <h1 id="module-Mail" class="module">
+    module Mail
+  </h1>
+
+  <section class="description">
+    
+<h1 id="module-Mail-label-Mail+Envelope"><a href="Mail.html">Mail</a> <a href="Mail/Envelope.html">Envelope</a><span><a href="#module-Mail-label-Mail+Envelope">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
+
+<p>The <a href="Mail/Envelope.html">Envelope</a> class provides a field for
+the first line in an mbox file, that looks like “From
+mikel@test.lindsaar.net DATETIME”</p>
+
+<p>This envelope class reads that line, and turns it into an <a
+href="Mail/Envelope.html#method-i-from">Mail::Envelope#from</a> and <a
+href="Mail/Envelope.html#method-i-date">Mail::Envelope#date</a> for your
+use.</p>
+
+<p>encoding: utf-8</p>
+
+<h1 id="module-Mail-label-Comments+Field">Comments <a href="Mail/Field.html">Field</a><span><a href="#module-Mail-label-Comments+Field">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
+
+<p>The Comments field inherits from <a
+href="Mail/UnstructuredField.html">UnstructuredField</a> and handles the
+Comments: header field in the email.</p>
+
+<p>Sending comments to a mail message will instantiate a <a
+href="Mail/Field.html">Mail::Field</a> object that has a <a
+href="Mail/CommentsField.html">CommentsField</a> as its field type.</p>
+
+<p>An email header can have as many comments fields as it wants.  There is no
+upper limit, the comments field is also optional (that is, no comment is
+needed)</p>
+
+<h2 id="module-Mail-label-Examples%3A">Examples:<span><a href="#module-Mail-label-Examples%3A">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+
+<pre class="ruby"><span class="ruby-identifier">mail</span> = <span class="ruby-constant">Mail</span>.<span class="ruby-identifier">new</span>
+<span class="ruby-identifier">mail</span>.<span class="ruby-identifier">comments</span> = <span class="ruby-string">'This is a comment'</span>
+<span class="ruby-identifier">mail</span>.<span class="ruby-identifier">comments</span>    <span class="ruby-comment">#=&gt; 'This is a comment'</span>
+<span class="ruby-identifier">mail</span>[:<span class="ruby-identifier">comments</span>]  <span class="ruby-comment">#=&gt; '#&lt;Mail::Field:0x180e5e8 @field=#&lt;Mail::CommentsField:0x180e1c4</span>
+<span class="ruby-identifier">mail</span>[<span class="ruby-string">'comments'</span>] <span class="ruby-comment">#=&gt; '#&lt;Mail::Field:0x180e5e8 @field=#&lt;Mail::CommentsField:0x180e1c4</span>
+<span class="ruby-identifier">mail</span>[<span class="ruby-string">'comments'</span>] <span class="ruby-comment">#=&gt; '#&lt;Mail::Field:0x180e5e8 @field=#&lt;Mail::CommentsField:0x180e1c4</span>
+
+<span class="ruby-identifier">mail</span>.<span class="ruby-identifier">comments</span> = <span class="ruby-string">&quot;This is another comment&quot;</span>
+<span class="ruby-identifier">mail</span>[:<span class="ruby-identifier">comments</span>].<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">to_s</span> } 
+<span class="ruby-comment">#=&gt; ['This is a comment', &quot;This is another comment&quot;]</span>
+</pre>
+
+<p>keywords        =       “Keywords:” phrase *(“,” phrase) CRLF</p>
+
+<p>trace           =       [return]</p>
+
+<pre>1*received</pre>
+
+<p>return          =       “Return-Path:” path CRLF</p>
+
+<p>path            =       ([CFWS] “&lt;” ([CFWS] / addr-spec) “&gt;” [CFWS])
+/</p>
+
+<pre>obs-path</pre>
+
+<p>received        =       “Received:” name-val-list “;” date-time CRLF</p>
+
+<p>name-val-list   =       [CFWS] [name-val-pair *(CFWS name-val-pair)]</p>
+
+<p>name-val-pair   =       item-name CFWS item-value</p>
+
+<p>item-name       =       ALPHA *([“-”] (ALPHA / DIGIT))</p>
+
+<p>item-value      =       1*angle-addr / addr-spec /</p>
+
+<pre>atom / domain / msg-id</pre>
+
+<p>subject         =       “Subject:” unstructured CRLF</p>
+
+<p>This is an almost cut and paste from <a
+href="ActiveSupport.html">ActiveSupport</a> v3.0.6, copied in here so that
+<a href="Mail.html">Mail</a> itself does not depend on <a
+href="ActiveSupport.html">ActiveSupport</a> to avoid versioning conflicts</p>
+
+<p>line 10
+“/home/bpot/src/gh/bpot/mail/lib/mail/parsers/ragel/ruby/machines/address_lists_machine.rb.rl”</p>
+
+<p>line 10
+“/home/bpot/src/gh/bpot/mail/lib/mail/parsers/ragel/ruby/machines/content_disposition_machine.rb.rl”</p>
+
+<p>line 10
+“/home/bpot/src/gh/bpot/mail/lib/mail/parsers/ragel/ruby/machines/content_location_machine.rb.rl”</p>
+
+<p>line 10
+“/home/bpot/src/gh/bpot/mail/lib/mail/parsers/ragel/ruby/machines/content_transfer_encoding_machine.rb.rl”</p>
+
+<p>line 10
+“/home/bpot/src/gh/bpot/mail/lib/mail/parsers/ragel/ruby/machines/content_type_machine.rb.rl”</p>
+
+<p>line 10
+“/home/bpot/src/gh/bpot/mail/lib/mail/parsers/ragel/ruby/machines/date_time_machine.rb.rl”</p>
+
+<p>line 10
+“/home/bpot/src/gh/bpot/mail/lib/mail/parsers/ragel/ruby/machines/envelope_from_machine.rb.rl”</p>
+
+<p>line 10
+“/home/bpot/src/gh/bpot/mail/lib/mail/parsers/ragel/ruby/machines/message_ids_machine.rb.rl”</p>
+
+<p>line 10
+“/home/bpot/src/gh/bpot/mail/lib/mail/parsers/ragel/ruby/machines/mime_version_machine.rb.rl”</p>
+
+<p>line 10
+“/home/bpot/src/gh/bpot/mail/lib/mail/parsers/ragel/ruby/machines/phrase_lists_machine.rb.rl”</p>
+
+<p>line 10
+“/home/bpot/src/gh/bpot/mail/lib/mail/parsers/ragel/ruby/machines/received_machine.rb.rl”</p>
+
+  </section>
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+    <section class="constants-list">
+      <header>
+        <h3>Constants</h3>
+      </header>
+      <dl>
+      
+        <dt id="RubyVer">RubyVer
+        
+        <dd>
+        
+      
+      </dl>
+    </section>
+    
+
+    
+
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Class Methods</h3>
+       </header>
+
+    
+      <div id="method-c-all" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">all</span><span
+            class="method-args">(*args, &block)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Receive all emails from the default retriever See <a
+href="Mail/Retriever.html">Mail::Retriever</a> for a complete
+documentation.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="all-source">
+            <pre><span class="ruby-comment"># File lib/mail/mail.rb, line 169</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">all</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+  <span class="ruby-identifier">retriever_method</span>.<span class="ruby-identifier">all</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-connection" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">connection</span><span
+            class="method-args">(&block)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="connection-source">
+            <pre><span class="ruby-comment"># File lib/mail/mail.rb, line 189</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">Mail</span>.<span class="ruby-identifier">connection</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+  <span class="ruby-identifier">retriever_method</span>.<span class="ruby-identifier">connection</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-defaults" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">defaults</span><span
+            class="method-args">(&block)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Sets the default delivery method and retriever method for all new <a
+href="Mail.html">Mail</a> objects. The <a
+href="Mail.html#method-c-delivery_method">::delivery_method</a> and <a
+href="Mail.html#method-c-retriever_method">::retriever_method</a> default
+to :smtp and :pop3, with defaults set.</p>
+
+<p>So sending a new email, if you have an <a href="Mail/SMTP.html">SMTP</a>
+server running on localhost is as easy as:</p>
+
+<pre>Mail.deliver do
+  to      'mikel@test.lindsaar.net'
+  from    'bob@test.lindsaar.net'
+  subject 'hi there!'
+  body    'this is a body'
+end</pre>
+
+<p>If you do not specify anything, you will get the following equivalent code
+set in every new mail object:</p>
+
+<pre class="ruby"><span class="ruby-constant">Mail</span>.<span class="ruby-identifier">defaults</span> <span class="ruby-keyword">do</span>
+  <span class="ruby-identifier">delivery_method</span> :<span class="ruby-identifier">smtp</span>, { :<span class="ruby-identifier">address</span>              =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;localhost&quot;</span>,
+                           :<span class="ruby-identifier">port</span>                 =<span class="ruby-operator">&gt;</span> <span class="ruby-value">25</span>,
+                           :<span class="ruby-identifier">domain</span>               =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'localhost.localdomain'</span>,
+                           :<span class="ruby-identifier">user_name</span>            =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">nil</span>,
+                           :<span class="ruby-identifier">password</span>             =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">nil</span>,
+                           :<span class="ruby-identifier">authentication</span>       =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">nil</span>,
+                           :<span class="ruby-identifier">enable_starttls_auto</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>  }
+
+  <span class="ruby-identifier">retriever_method</span> :<span class="ruby-identifier">pop3</span>, { :<span class="ruby-identifier">address</span>             =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;localhost&quot;</span>,
+                            :<span class="ruby-identifier">port</span>                =<span class="ruby-operator">&gt;</span> <span class="ruby-value">995</span>,
+                            :<span class="ruby-identifier">user_name</span>           =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">nil</span>,
+                            :<span class="ruby-identifier">password</span>            =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">nil</span>,
+                            :<span class="ruby-identifier">enable_ssl</span>          =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span> }
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-constant">Mail</span>.<span class="ruby-identifier">delivery_method</span>.<span class="ruby-identifier">new</span>  <span class="ruby-comment">#=&gt; Mail::SMTP instance</span>
+<span class="ruby-constant">Mail</span>.<span class="ruby-identifier">retriever_method</span>.<span class="ruby-identifier">new</span> <span class="ruby-comment">#=&gt; Mail::POP3 instance</span>
+</pre>
+
+<p>Each mail object inherits the default set in <a
+href="Mail.html#method-c-delivery_method">::delivery_method</a>, however,
+on a per email basis, you can override the method:</p>
+
+<pre>mail.delivery_method :sendmail</pre>
+
+<p>Or you can override the method and pass in settings:</p>
+
+<pre class="ruby"><span class="ruby-identifier">mail</span>.<span class="ruby-identifier">delivery_method</span> :<span class="ruby-identifier">sendmail</span>, { :<span class="ruby-identifier">address</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'some.host'</span> }
+</pre>
+
+<p>You can also just modify the settings:</p>
+
+<pre class="ruby"><span class="ruby-identifier">mail</span>.<span class="ruby-identifier">delivery_settings</span> = { :<span class="ruby-identifier">address</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'some.host'</span> }
+</pre>
+
+<p>The passed in hash is just merged against the defaults with
+<code>merge!</code> and the result assigned the mail object.  So the above
+example will change only the :address value of the global smtp_settings to
+be ‘some.host’, keeping all other values</p>
+          
+          
+
+          
+          <div class="method-source-code" id="defaults-source">
+            <pre><span class="ruby-comment"># File lib/mail/mail.rb, line 104</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">defaults</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+  <span class="ruby-constant">Configuration</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">instance_eval</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-delete_all" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">delete_all</span><span
+            class="method-args">(*args, &block)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Delete all emails from the default retriever See <a
+href="Mail/Retriever.html">Mail::Retriever</a> for a complete
+documentation.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="delete_all-source">
+            <pre><span class="ruby-comment"># File lib/mail/mail.rb, line 180</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">delete_all</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+  <span class="ruby-identifier">retriever_method</span>.<span class="ruby-identifier">delete_all</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-deliver" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">deliver</span><span
+            class="method-args">(*args, &block)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Send an email using the default configuration.  You do need to set a
+default configuration first before you use self.deliver, if you don’t, an
+appropriate error will be raised telling you to.</p>
+
+<p>If you do not specify a delivery type, <a href="Mail/SMTP.html">SMTP</a>
+will be used.</p>
+
+<pre>Mail.deliver do
+ to 'mikel@test.lindsaar.net'
+ from 'ada@test.lindsaar.net'
+ subject 'This is a test email'
+ body 'Not much to say here'
+end</pre>
+
+<p>You can also do:</p>
+
+<pre>mail = Mail.read('email.eml')
+mail.deliver!</pre>
+
+<p>And your email object will be created and sent.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="deliver-source">
+            <pre><span class="ruby-comment"># File lib/mail/mail.rb, line 137</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">deliver</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+  <span class="ruby-identifier">mail</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+  <span class="ruby-identifier">mail</span>.<span class="ruby-identifier">deliver</span>
+  <span class="ruby-identifier">mail</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-delivery_method" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">delivery_method</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns the delivery method selected, defaults to an instance of <a
+href="Mail/SMTP.html">Mail::SMTP</a></p>
+          
+          
+
+          
+          <div class="method-source-code" id="delivery_method-source">
+            <pre><span class="ruby-comment"># File lib/mail/mail.rb, line 109</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">delivery_method</span>
+  <span class="ruby-constant">Configuration</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">delivery_method</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-eager_autoload-21" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">eager_autoload!</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>This runs through the autoload list and explictly requires them for you.
+Useful when running mail in a threaded process.</p>
+
+<p>Usage:</p>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">'mail'</span>
+<span class="ruby-constant">Mail</span>.<span class="ruby-identifier">eager_autoload!</span>
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="eager_autoload-21-source">
+            <pre><span class="ruby-comment"># File lib/mail.rb, line 60</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">eager_autoload!</span>
+  <span class="ruby-identifier">@@autoloads</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">_</span>,<span class="ruby-identifier">path</span><span class="ruby-operator">|</span> <span class="ruby-identifier">require</span>(<span class="ruby-identifier">path</span>) }
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-find" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">find</span><span
+            class="method-args">(*args, &block)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Find emails from the default retriever See <a
+href="Mail/Retriever.html">Mail::Retriever</a> for a complete
+documentation.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="find-source">
+            <pre><span class="ruby-comment"># File lib/mail/mail.rb, line 145</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">find</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+  <span class="ruby-identifier">retriever_method</span>.<span class="ruby-identifier">find</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-find_and_delete" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">find_and_delete</span><span
+            class="method-args">(*args, &block)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Finds and then deletes retrieved emails from the default retriever See <a
+href="Mail/Retriever.html">Mail::Retriever</a> for a complete
+documentation.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="find_and_delete-source">
+            <pre><span class="ruby-comment"># File lib/mail/mail.rb, line 151</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">find_and_delete</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+  <span class="ruby-identifier">retriever_method</span>.<span class="ruby-identifier">find_and_delete</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-first" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">first</span><span
+            class="method-args">(*args, &block)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Receive the first email(s) from the default retriever See <a
+href="Mail/Retriever.html">Mail::Retriever</a> for a complete
+documentation.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="first-source">
+            <pre><span class="ruby-comment"># File lib/mail/mail.rb, line 157</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">first</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+  <span class="ruby-identifier">retriever_method</span>.<span class="ruby-identifier">first</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-inform_interceptors" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">inform_interceptors</span><span
+            class="method-args">(mail)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="inform_interceptors-source">
+            <pre><span class="ruby-comment"># File lib/mail/mail.rb, line 239</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">inform_interceptors</span>(<span class="ruby-identifier">mail</span>)
+  <span class="ruby-identifier">@@delivery_interceptors</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">interceptor</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">interceptor</span>.<span class="ruby-identifier">delivering_email</span>(<span class="ruby-identifier">mail</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-inform_observers" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">inform_observers</span><span
+            class="method-args">(mail)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="inform_observers-source">
+            <pre><span class="ruby-comment"># File lib/mail/mail.rb, line 233</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">inform_observers</span>(<span class="ruby-identifier">mail</span>)
+  <span class="ruby-identifier">@@delivery_notification_observers</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">observer</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">observer</span>.<span class="ruby-identifier">delivered_email</span>(<span class="ruby-identifier">mail</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-last" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">last</span><span
+            class="method-args">(*args, &block)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Receive the first email(s) from the default retriever See <a
+href="Mail/Retriever.html">Mail::Retriever</a> for a complete
+documentation.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="last-source">
+            <pre><span class="ruby-comment"># File lib/mail/mail.rb, line 163</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">last</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+  <span class="ruby-identifier">retriever_method</span>.<span class="ruby-identifier">last</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(*args, &block)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Allows you to create a new <a href="Mail/Message.html">Mail::Message</a>
+object.</p>
+
+<p>You can make an email via passing a string or passing a block.</p>
+
+<p>For example, the following two examples will create the same email message:</p>
+
+<p>Creating via a string:</p>
+
+<pre>string = &quot;To: mikel@test.lindsaar.net\r\n&quot;
+string &lt;&lt; &quot;From: bob@test.lindsaar.net\r\n&quot;
+string &lt;&lt; &quot;Subject: This is an email\r\n&quot;
+string &lt;&lt; &quot;\r\n&quot;
+string &lt;&lt; &quot;This is the body&quot;
+Mail.new(string)</pre>
+
+<p>Or creating via a block:</p>
+
+<pre>message = Mail.new do
+  to 'mikel@test.lindsaar.net'
+  from 'bob@test.lindsaar.net'
+  subject 'This is an email'
+  body 'This is the body'
+end</pre>
+
+<p>Or creating via a hash (or hash like object):</p>
+
+<pre class="ruby"><span class="ruby-identifier">message</span> = <span class="ruby-constant">Mail</span>.<span class="ruby-identifier">new</span>({:<span class="ruby-identifier">to</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'mikel@test.lindsaar.net'</span>,
+                    <span class="ruby-string">'from'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'bob@test.lindsaar.net'</span>,
+                    :<span class="ruby-identifier">subject</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'This is an email'</span>,
+                    :<span class="ruby-identifier">body</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'This is the body'</span> })
+</pre>
+
+<p>Note, the hash keys can be strings or symbols, the passed in object does
+not need to be a hash, it just needs to respond to :each_pair and yield
+each key value pair.</p>
+
+<p>As a side note, you can also create a new email through creating a <a
+href="Mail/Message.html">Mail::Message</a> object directly and then passing
+in values via string, symbol or direct method calls.  See <a
+href="Mail/Message.html">Mail::Message</a> for more information.</p>
+
+<pre>mail = Mail.new
+mail.to = 'mikel@test.lindsaar.net'
+mail[:from] = 'bob@test.lindsaar.net'
+mail['subject'] = 'This is an email'
+mail.body = 'This is the body'</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/mail/mail.rb, line 48</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">new</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+  <span class="ruby-constant">Message</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-read" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">read</span><span
+            class="method-args">(filename)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Reads in an email message from a path and instantiates it as a new <a
+href="Mail/Message.html">Mail::Message</a></p>
+          
+          
+
+          
+          <div class="method-source-code" id="read-source">
+            <pre><span class="ruby-comment"># File lib/mail/mail.rb, line 174</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">read</span>(<span class="ruby-identifier">filename</span>)
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">filename</span>, <span class="ruby-string">'rb'</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span> <span class="ruby-identifier">f</span>.<span class="ruby-identifier">read</span> })
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-read_from_string" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">read_from_string</span><span
+            class="method-args">(mail_as_string)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Instantiates a new <a href="Mail/Message.html">Mail::Message</a> using a
+string</p>
+          
+          
+
+          
+          <div class="method-source-code" id="read_from_string-source">
+            <pre><span class="ruby-comment"># File lib/mail/mail.rb, line 185</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">Mail</span>.<span class="ruby-identifier">read_from_string</span>(<span class="ruby-identifier">mail_as_string</span>)
+  <span class="ruby-constant">Mail</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">mail_as_string</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-register_autoload" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">register_autoload</span><span
+            class="method-args">(name, path)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="register_autoload-source">
+            <pre><span class="ruby-comment"># File lib/mail.rb, line 48</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">register_autoload</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">path</span>)
+  <span class="ruby-identifier">@@autoloads</span>[<span class="ruby-identifier">name</span>] = <span class="ruby-identifier">path</span>
+  <span class="ruby-identifier">autoload</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">path</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-register_interceptor" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">register_interceptor</span><span
+            class="method-args">(interceptor)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>You can register an object to be given every mail object that will be sent,
+before it is sent.  So if you want to add special headers or modify any
+email that gets sent through the <a href="Mail.html">Mail</a> library, you
+can do so.</p>
+
+<p>Your object needs to respond to a single method delivering_email(mail)
+which receives the email that is about to be sent.  Make your modifications
+directly to this object.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="register_interceptor-source">
+            <pre><span class="ruby-comment"># File lib/mail/mail.rb, line 221</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">register_interceptor</span>(<span class="ruby-identifier">interceptor</span>)
+  <span class="ruby-keyword">unless</span> <span class="ruby-identifier">@@delivery_interceptors</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">interceptor</span>)
+    <span class="ruby-identifier">@@delivery_interceptors</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">interceptor</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-register_observer" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">register_observer</span><span
+            class="method-args">(observer)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>You can register an object to be informed of every email that is sent
+through this method.</p>
+
+<p>Your object needs to respond to a single method delivered_email(mail) which
+receives the email that is sent.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="register_observer-source">
+            <pre><span class="ruby-comment"># File lib/mail/mail.rb, line 202</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">register_observer</span>(<span class="ruby-identifier">observer</span>)
+  <span class="ruby-keyword">unless</span> <span class="ruby-identifier">@@delivery_notification_observers</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">observer</span>)
+    <span class="ruby-identifier">@@delivery_notification_observers</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">observer</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-retriever_method" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">retriever_method</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns the retriever method selected, defaults to an instance of <a
+href="Mail/POP3.html">Mail::POP3</a></p>
+          
+          
+
+          
+          <div class="method-source-code" id="retriever_method-source">
+            <pre><span class="ruby-comment"># File lib/mail/mail.rb, line 114</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">retriever_method</span>
+  <span class="ruby-constant">Configuration</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">retriever_method</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-unregister_interceptor" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">unregister_interceptor</span><span
+            class="method-args">(interceptor)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Unregister the given interceptor, allowing mail to resume operations
+without it.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="unregister_interceptor-source">
+            <pre><span class="ruby-comment"># File lib/mail/mail.rb, line 229</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">unregister_interceptor</span>(<span class="ruby-identifier">interceptor</span>)
+  <span class="ruby-identifier">@@delivery_interceptors</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">interceptor</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-unregister_observer" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">unregister_observer</span><span
+            class="method-args">(observer)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Unregister the given observer, allowing mail to resume operations without
+it.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="unregister_observer-source">
+            <pre><span class="ruby-comment"># File lib/mail/mail.rb, line 210</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">unregister_observer</span>(<span class="ruby-identifier">observer</span>)
+  <span class="ruby-identifier">@@delivery_notification_observers</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">observer</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+     <section id="protected-class-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Protected Class Methods</h3>
+       </header>
+
+    
+      <div id="method-c-random_tag" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">random_tag</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="random_tag-source">
+            <pre><span class="ruby-comment"># File lib/mail/mail.rb, line 247</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">random_tag</span>
+  <span class="ruby-identifier">t</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>
+  <span class="ruby-identifier">sprintf</span>(<span class="ruby-string">'%x%x_%x%x%d%x'</span>,
+          <span class="ruby-identifier">t</span>.<span class="ruby-identifier">to_i</span>, <span class="ruby-identifier">t</span>.<span class="ruby-identifier">tv_usec</span>,
+          <span class="ruby-identifier">$$</span>, <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">current</span>.<span class="ruby-identifier">object_id</span>.<span class="ruby-identifier">abs</span>, <span class="ruby-keyword">self</span>.<span class="ruby-identifier">uniq</span>, <span class="ruby-identifier">rand</span>(<span class="ruby-value">255</span>))
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+     <section id="private-class-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Private Class Methods</h3>
+       </header>
+
+    
+      <div id="method-c-something_random" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">something_random</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="something_random-source">
+            <pre><span class="ruby-comment"># File lib/mail/mail.rb, line 256</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">something_random</span>
+  (<span class="ruby-constant">Thread</span>.<span class="ruby-identifier">current</span>.<span class="ruby-identifier">object_id</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">rand</span>(<span class="ruby-value">255</span>) <span class="ruby-operator">/</span> <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>.<span class="ruby-identifier">to_f</span>).<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">slice</span>(<span class="ruby-value">-3</span><span class="ruby-operator">..</span><span class="ruby-value">-1</span>).<span class="ruby-identifier">to_i</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-uniq" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">uniq</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="uniq-source">
+            <pre><span class="ruby-comment"># File lib/mail/mail.rb, line 260</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">uniq</span>
+  <span class="ruby-identifier">@@uniq</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.1.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class Bundler::ParallelWorkers::UnixWorker - bundler-1.6.3 Documentation</title>
+
+<link href="../../fonts.css" rel="stylesheet">
+<link href="../../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../";
+</script>
+
+<script src="../../js/jquery.js"></script>
+<script src="../../js/navigation.js"></script>
+<script src="../../js/search_index.js"></script>
+<script src="../../js/search.js"></script>
+<script src="../../js/searcher.js"></script>
+<script src="../../js/darkfish.js"></script>
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../../table_of_contents.html#pages">Pages</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    <div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  
+  <p class="link">Worker
+  
+</div>
+
+    
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li class="calls-super" ><a href="#method-c-new">::new</a>
+    
+    <li ><a href="#method-i-prepare_threads">#prepare_threads</a>
+    
+    <li ><a href="#method-i-prepare_workers">#prepare_workers</a>
+    
+    <li ><a href="#method-i-stop_workers">#stop_workers</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-Bundler::ParallelWorkers::UnixWorker">
+  <h1 id="class-Bundler::ParallelWorkers::UnixWorker" class="class">
+    class Bundler::ParallelWorkers::UnixWorker
+  </h1>
+
+  <section class="description">
+    
+<p><a href="UnixWorker.html">UnixWorker</a> is used only on platforms where
+fork is available. The way this code works is, it forks a preconfigured
+number of workers and then It starts preconfigured number of threads that
+write to the connected pipe.</p>
+
+  </section>
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Class Methods</h3>
+       </header>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(size, job)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+            <div class="method-calls-super">
+              Calls superclass method
+              
+            </div>
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/bundler/parallel_workers/unix_worker.rb, line 17</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">size</span>, <span class="ruby-identifier">job</span>)
+  <span class="ruby-comment"># Close the persistent connections for the main thread before forking</span>
+  <span class="ruby-constant">Net</span><span class="ruby-operator">::</span><span class="ruby-constant">HTTP</span><span class="ruby-operator">::</span><span class="ruby-constant">Persistent</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">'bundler'</span>, <span class="ruby-value">:ENV</span>).<span class="ruby-identifier">shutdown</span>
+  <span class="ruby-keyword">super</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+     <section id="private-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Private Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-prepare_threads" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">prepare_threads</span><span
+            class="method-args">(size)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Start the threads whose job is basically to wait for incoming messages on
+request queue and write that message to the connected pipe. Also retrieve
+messages from child worker via connected pipe and write the message to
+response queue</p>
+
+<p>@param size [Integer] Number of threads to be started</p>
+          
+          
+
+          
+          <div class="method-source-code" id="prepare_threads-source">
+            <pre><span class="ruby-comment"># File lib/bundler/parallel_workers/unix_worker.rb, line 67</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">prepare_threads</span>(<span class="ruby-identifier">size</span>)
+  <span class="ruby-ivar">@threads</span> = <span class="ruby-identifier">size</span>.<span class="ruby-identifier">times</span>.<span class="ruby-identifier">map</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+    <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">start</span> <span class="ruby-keyword">do</span>
+      <span class="ruby-identifier">worker</span> = <span class="ruby-ivar">@workers</span>[<span class="ruby-identifier">i</span>]
+      <span class="ruby-identifier">loop</span> <span class="ruby-keyword">do</span>
+        <span class="ruby-identifier">obj</span> = <span class="ruby-ivar">@request_queue</span>.<span class="ruby-identifier">deq</span>
+        <span class="ruby-keyword">break</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">equal?</span> <span class="ruby-constant">POISON</span>
+        <span class="ruby-ivar">@response_queue</span>.<span class="ruby-identifier">enq</span> <span class="ruby-identifier">worker</span>.<span class="ruby-identifier">work</span>(<span class="ruby-identifier">obj</span>)
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-prepare_workers" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">prepare_workers</span><span
+            class="method-args">(size, func)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Start forked workers for downloading gems. This version of worker is only
+used on platforms where fork is available.</p>
+
+<p>@param size [Integer] Size of worker pool @param func [Proc] Job that
+should be executed in the worker</p>
+          
+          
+
+          
+          <div class="method-source-code" id="prepare_workers-source">
+            <pre><span class="ruby-comment"># File lib/bundler/parallel_workers/unix_worker.rb, line 30</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">prepare_workers</span>(<span class="ruby-identifier">size</span>, <span class="ruby-identifier">func</span>)
+  <span class="ruby-ivar">@workers</span> = <span class="ruby-identifier">size</span>.<span class="ruby-identifier">times</span>.<span class="ruby-identifier">map</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">num</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">child_read</span>, <span class="ruby-identifier">parent_write</span> = <span class="ruby-constant">IO</span>.<span class="ruby-identifier">pipe</span>
+    <span class="ruby-identifier">parent_read</span>, <span class="ruby-identifier">child_write</span> = <span class="ruby-constant">IO</span>.<span class="ruby-identifier">pipe</span>
+
+    <span class="ruby-identifier">pid</span> = <span class="ruby-constant">Process</span>.<span class="ruby-identifier">fork</span> <span class="ruby-keyword">do</span>
+      <span class="ruby-keyword">begin</span>
+        <span class="ruby-identifier">parent_read</span>.<span class="ruby-identifier">close</span>
+        <span class="ruby-identifier">parent_write</span>.<span class="ruby-identifier">close</span>
+
+        <span class="ruby-keyword">while</span> <span class="ruby-operator">!</span><span class="ruby-identifier">child_read</span>.<span class="ruby-identifier">eof?</span>
+          <span class="ruby-identifier">obj</span> = <span class="ruby-constant">Marshal</span>.<span class="ruby-identifier">load</span> <span class="ruby-identifier">child_read</span>
+          <span class="ruby-constant">Marshal</span>.<span class="ruby-identifier">dump</span> <span class="ruby-identifier">func</span>.<span class="ruby-identifier">call</span>(<span class="ruby-identifier">obj</span>, <span class="ruby-identifier">num</span>), <span class="ruby-identifier">child_write</span>
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">rescue</span> <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+        <span class="ruby-keyword">begin</span>
+          <span class="ruby-constant">Marshal</span>.<span class="ruby-identifier">dump</span> <span class="ruby-constant">WrappedException</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">e</span>), <span class="ruby-identifier">child_write</span>
+        <span class="ruby-keyword">rescue</span> <span class="ruby-constant">Errno</span><span class="ruby-operator">::</span><span class="ruby-constant">EPIPE</span>
+          <span class="ruby-keyword">nil</span>
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">ensure</span>
+        <span class="ruby-identifier">child_read</span>.<span class="ruby-identifier">close</span>
+        <span class="ruby-identifier">child_write</span>.<span class="ruby-identifier">close</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-identifier">child_read</span>.<span class="ruby-identifier">close</span>
+    <span class="ruby-identifier">child_write</span>.<span class="ruby-identifier">close</span>
+    <span class="ruby-constant">JobHandler</span>.<span class="ruby-identifier">new</span> <span class="ruby-identifier">pid</span>, <span class="ruby-identifier">parent_read</span>, <span class="ruby-identifier">parent_write</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-stop_workers" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">stop_workers</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Kill the forked workers by sending SIGINT to them</p>
+          
+          
+
+          
+          <div class="method-source-code" id="stop_workers-source">
+            <pre><span class="ruby-comment"># File lib/bundler/parallel_workers/unix_worker.rb, line 81</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">stop_workers</span>
+  <span class="ruby-ivar">@workers</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">worker</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">worker</span>.<span class="ruby-identifier">io_r</span>.<span class="ruby-identifier">close</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">worker</span>.<span class="ruby-identifier">io_r</span>.<span class="ruby-identifier">closed?</span>
+    <span class="ruby-identifier">worker</span>.<span class="ruby-identifier">io_w</span>.<span class="ruby-identifier">close</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">worker</span>.<span class="ruby-identifier">io_w</span>.<span class="ruby-identifier">closed?</span>
+    <span class="ruby-keyword">begin</span>
+      <span class="ruby-constant">Process</span>.<span class="ruby-identifier">kill</span> <span class="ruby-value">:INT</span>, <span class="ruby-identifier">worker</span>.<span class="ruby-identifier">pid</span>
+    <span class="ruby-keyword">rescue</span> <span class="ruby-constant">Errno</span><span class="ruby-operator">::</span><span class="ruby-constant">ESRCH</span>
+      <span class="ruby-keyword">nil</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-ivar">@workers</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">worker</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">begin</span>
+      <span class="ruby-constant">Process</span>.<span class="ruby-identifier">waitpid</span> <span class="ruby-identifier">worker</span>.<span class="ruby-identifier">pid</span>
+    <span class="ruby-keyword">rescue</span> <span class="ruby-constant">Errno</span><span class="ruby-operator">::</span><span class="ruby-constant">ECHILD</span>
+      <span class="ruby-keyword">nil</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.1.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

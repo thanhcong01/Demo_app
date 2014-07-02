@@ -1,0 +1,27 @@
+[2014-07-01 09:13:30] __rvm_set_executable
+__rvm_set_executable () 
+{ 
+    for __file in "$@";
+    do
+        [[ -x "${__file}" ]] || chmod +x "${__file}";
+    done
+}
+current path: /home/thanhcongframgia/Desktop
+PATH=/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/home/thanhcongframgia/.rvm/bin
+command(9): __rvm_set_executable /home/thanhcongframgia/.rvm/rubies/ruby-1.9.3-p547/bin/erb /home/thanhcongframgia/.rvm/rubies/ruby-1.9.3-p547/bin/gem /home/thanhcongframgia/.rvm/rubies/ruby-1.9.3-p547/bin/irb /home/thanhcongframgia/.rvm/rubies/ruby-1.9.3-p547/bin/rake /home/thanhcongframgia/.rvm/rubies/ruby-1.9.3-p547/bin/rdoc /home/thanhcongframgia/.rvm/rubies/ruby-1.9.3-p547/bin/ri /home/thanhcongframgia/.rvm/rubies/ruby-1.9.3-p547/bin/ruby /home/thanhcongframgia/.rvm/rubies/ruby-1.9.3-p547/bin/testrb
++ for __file in '"$@"'
++ [[ -x /home/thanhcongframgia/.rvm/rubies/ruby-1.9.3-p547/bin/erb ]]
++ for __file in '"$@"'
++ [[ -x /home/thanhcongframgia/.rvm/rubies/ruby-1.9.3-p547/bin/gem ]]
++ for __file in '"$@"'
++ [[ -x /home/thanhcongframgia/.rvm/rubies/ruby-1.9.3-p547/bin/irb ]]
++ for __file in '"$@"'
++ [[ -x /home/thanhcongframgia/.rvm/rubies/ruby-1.9.3-p547/bin/rake ]]
++ for __file in '"$@"'
++ [[ -x /home/thanhcongframgia/.rvm/rubies/ruby-1.9.3-p547/bin/rdoc ]]
++ for __file in '"$@"'
++ [[ -x /home/thanhcongframgia/.rvm/rubies/ruby-1.9.3-p547/bin/ri ]]
++ for __file in '"$@"'
++ [[ -x /home/thanhcongframgia/.rvm/rubies/ruby-1.9.3-p547/bin/ruby ]]
++ for __file in '"$@"'
++ [[ -x /home/thanhcongframgia/.rvm/rubies/ruby-1.9.3-p547/bin/testrb ]]

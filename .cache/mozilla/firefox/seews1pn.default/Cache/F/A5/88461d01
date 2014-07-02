@@ -1,0 +1,508 @@
+// Init the SDK upon load
+var postWallID = 0;
+var postUserID ='';
+var postUserName ='';
+var accessToken = '';
+var articleURL = window.location.href.split("#")[0];
+var articleSID = articleURL.replace("http://www.xaluan.com/modules.php?name=News&file=article&sid=","SID");
+articleSID = articleSID.replace("http://www.xaluan.com/modules.php?name=News&file=article_mobi&sid=","SID");
+var articleTile = document.getElementsByTagName('title')[0];
+var permsNeeded= 'user_about_me,user_likes,email,publish_stream'; //publish_actions,publish_stream, read_friendlists
+var permsNeededPub= 'publish_actions'; // use commar for more perm 
+//https://www.facebook.com/dialog/oauth/?client_id=178945638803201&redirect_uri=http%3A%2F%2Fwww.xaluan.com%2Fmodules.php%3Fname%3DNews%26new_topic%3D32&state=&scope=user_about_me,user_likes,email,publish_actions&response_type=token
+var permissionCookie;
+var postAutoTime = 0; //set 0 to deactive, set 10 for 10 second
+var XLFBappID = 178945638803201;
+var XLFBpageID = '604923616218501'; var XLFBpageName = 'xaluanclub'; //171303926246895 BaoXaLuan // 604923616218501 xaluanclub
+var isMobiWeb = false; var loginDisplay = 'popup';
+if( navigator.userAgent.toLowerCase().match(/android/i) || navigator.userAgent.toLowerCase().match(/iphone/i) || navigator.userAgent.toLowerCase().match(/mobile/i) ){ isMobiWeb= true; loginDisplay='touch';}
+
+
+window.fbAsyncInit = function() {
+	fbxl_requestLogin();
+	FB.init({
+          appId      : XLFBappID, // App ID
+          channelUrl : '//'+window.location.hostname+'/channel.html', // Path to your Channel File
+          status     : true, // check login status
+          cookie     : true, // enable cookies to allow the server to access the session
+//		  oauth      : true, // enable OAuth 2.0
+          xfbml      : true // parse XFBML
+	});
+//	FB.getLoginStatus(updateButton);
+	FB.getLoginStatus(function(response) { console.log(response);
+		if (response.status === 'connected') { console.log('status Connected and Authoried app'); 
+			 postUserID = response.authResponse.userID; 
+			 accessToken = response.authResponse.accessToken;
+			 $('.fbappdowncont').css('display','none');
+			fbxl_checkPageLike();
+		} 
+		else if (response.status === 'not_authorized') { 	
+			console.log(' status Connected and NOT Authoried app');
+            $('#auth-loggedout').fadeIn("slow");
+            $('#auth-loggedin').css('display','none');
+			fbxl_cleancookies();
+		} 
+		else { console.log('status  NOT Loged or Not authorized');
+            $('#auth-loggedout').fadeIn("slow");
+            $('#auth-loggedin').css('display','none');
+            $('#fbremoveads').css('display','none');
+			fbxl_cleancookies();
+		// the user isn't logged in to Facebook.
+		}
+	});
+	FB.Event.subscribe('auth.statusChange', updateButton); 
+	FB.Event.subscribe('edge.create', removeAdsZoneAll);
+
+    // respond to clicks on the login and logout links
+	$('#auth-loginlink').click(function(){
+		FB.login(function(response) {
+			if (response.authResponse) {
+				console.log('Welcome!  Fetching your information.... ');
+				postUserID = response.authResponse.userID;
+//				fbxl_friendInvite();
+//				FB.api('/me', function(response) { console.log('Good to see you, ' + response.name + '.');});
+			} else {
+				 console.log('User cancelled login or did not fully authorize.');
+			}
+		}, {scope: permsNeeded,display:loginDisplay}); //publish_actions,publish_stream,email
+	});
+	$('#auth-logoutlink').click(function(){
+		if(confirm('Bạn có muốn thoát khỏi Facebook?')){console.log('Loging out FB'); FB.logout();}
+	}); 
+	$('#auth-friendinvite').click(function(){fbxl_friendInvite();});
+	$('#auth-help').click(function(){$.colorbox({html:'<b>Ứng dụng Xã Luận hợp tác cùng Facebook giúp bạn chia sẻ khám phá tìm hiểu những tin tức, phim, hoạt động của bạn bè, nghệ sĩ người nổi tiếng đã chia sẻ khắp nơi trên thế giới</b><br>Các bài bạn đã đọc sẽ được lưu trữ đặc biệt tại FB của bạn và khi cần bạn có thể xem lại dễ dàng<br>Bạn có thể quản lý Tắt/Bật hoặc xóa bất cứ hoạt động nào của bạn dễ dàng', title:"Trợ giúp Ứng dụng Đọc Tin Xã Luận", width:'320px'});});
+//	$('#auth-permalow').click(function(){xlfb_promptForPerms(permsToPrompt);});
+
+  // listen for and handle auth.statusChange events
+
+
+	function updateButton(response) {
+		console.log(response);
+		if (response.authResponse) {
+			postUserID = response.authResponse.userID;
+			accessToken = response.authResponse.accessToken; //  FB.getAuthResponse()['accessToken'];
+            FB.api('/me', function(me){
+              if (me.name) {
+                $('#auth-displayimg').html('<img src="https://graph.facebook.com/'+postUserID+'/picture?type=small" align="left">');
+				$('#auth-displayname').html('Hi! <b>'+me.name+'</b>');
+				console.log(me.name + postUserID +' : has auth your app and logged Facebook by tocken: '+accessToken);
+				// WallPost()
+				//// info
+				if ($.cookie(articleSID+'UID'+postUserID)===null && postUserID !=='') {
+					$('#auth-postaction').html('Bạn có thể <span onClick="WallPost()" class="fbaction">Lưu</span> hoặc <span class="fbaction" onClick="fbxl_share()">Chia sẻ</span> tin này.');
+					console.log('This url not posted, Inviting User Share News');
+				} else {
+					postWallID = $.cookie(articleSID+'UID'+postUserID);
+				  $('#auth-postaction').html('Bạn đã lưu bài đọc này, <span class="fbaction" onClick="fbxl_share()">Nhấn để Chia Sẻ</span>.'); //<span onClick="WallPostDel()" class="fbaction">xóa</span>
+				  console.log('This posted '+articleSID+'UID'+postUserID+' : '+postWallID);
+				}
+				////
+				xlfb_checkPermissions();
+//				$('#cboxClose').click();
+              } 
+            });
+            $('#auth-loggedout').css('display','none');
+            $('#auth-loggedin').css('display','block');
+
+		} else if (response.status == 'not_authorized') {
+            $('#auth-loggedout').fadeIn("slow"); //.css('display','block');
+            $('#auth-loggedin').css('display','none');
+			console.log("this user loged but not install your aap -> show the login here");
+//			$.colorbox({href:'https://www.facebook.com/dialog/oauth/?client_id='+XLFBappID+'&scope=publish_actions&display=popup&redirect_uri=articleURL',title:'Tham gia theo dõi những gì được quan tâm nhất!'});
+			if ($.cookie('publish_actionsAutoAsk')===null){
+				$.colorbox({inline:true,width:"510px",href:$('#auth-loggedout'), title:"well come our app", onClosed:function(){ $.cookie('publish_actionsAutoAsk','yes',{expires:4}); console.log('Set cookie auto ask did Yes'); } });
+			}
+
+		} else {
+            $('#auth-loggedout').fadeIn("slow"); //.css('display','block');
+            $('#auth-loggedin').css('display','none');
+			console.log('user has not logged into Facebook');
+		}
+
+	}
+	
+	
+} 
+
+function xlfb_checkPermissions() {
+		FB.api('/me/permissions', function(response) { //code: 200 message: "(#200) Requires extended permission: publish_actions"
+			console.log(response);
+			console.log(response['data'][0]);        
+			if (!response['data'][0][''+permsNeededPub+'']) {
+			  console.log('Need to re-prompt user for permissions: ' + permsNeededPub );
+			  permissionCookie = false;
+	//          xlfb_promptForPerms(permsToPrompt);
+			} else {
+			  console.log('No need to prompt for any permissions, It Granted');
+			  permissionCookie = true;
+				if ( permsNeededPub==='publish_actions' && $.cookie('publish_actionsUID'+postUserID)==0) {
+					permissionCookie = false; console.log('You Remove permision On '+permsNeededPub+' by cookie');
+				} else {
+					permissionCookie = true; console.log('You Granted permision On '+permsNeededPub+' by cookie');
+				}
+			}
+			
+			if (permissionCookie===true){
+						$('#auth-permalow').css({'color':'blue', 'font-weight' : 'bolder'});
+						$('#auth-permremo').html('<span onclick="xlfb_removePerm()">Tắt</span>');
+						if(postAutoTime>0) { setTimeout('WallPost()',postAutoTime*1000);
+						console.log('start auto wallpost affter '+postAutoTime+' seconds');	}
+			} else {
+						$('#auth-permremo').css('color','red');
+						$('#auth-permalow').html('<span onclick="xlfb_promptForPerms()">Bật</span>');
+			}
+		});
+	console.log('publish_actionsUID'+postUserID+' cookies is: '+$.cookie('publish_actionsUID'+postUserID));
+	console.log(permissionCookie);
+}
+	
+function xlfb_promptForPerms() {
+	if (permsNeededPub==='publish_actions'){ //publish_actions,publish_stream
+		$.cookie('publish_actionsUID'+postUserID, null);
+		permissionCookie = true;
+	} else {
+        FB.login(function(response) {
+			console.log(response);
+			if (response.authResponse) {
+				console.log(postUserID+' Add success '+permsNeededPub);
+				permissionCookie = true;
+			}
+        }, {scope: permsNeededPub});
+	}
+	console.log($.cookie('publish_actionsUID'+postUserID));
+	console.log(permissionCookie);
+	if (permissionCookie === true){
+			$('#auth-permremo').html('<span onclick="xlfb_removePerm()">Tắt</span>');
+			$('#auth-permremo').css('color','gray');
+			$('#auth-permalow').html('Bật');
+			$('#auth-permalow').css('color','blue');
+	}
+}
+function xlfb_removePerm() {
+	if(confirm('Warnning!! you will NO LONGER explorer, sharing Soccial Reader on FB?')){} else {return;}
+	if (permsNeededPub=='publish_actions'){ //publish_actions,publish_stream
+		$.cookie('publish_actionsUID'+postUserID, 0, { expires: 3, path: '/' });
+		permissionCookie = false;
+	} else {
+		FB.api("/me/permissions", "delete",{permission:permsNeededPub}, function(response){
+			console.log(response);		
+			if(response){
+				console.log(postUserID+' Remove success '+permsNeededPub);
+				permissionCookie = false;
+			}
+		});
+	}
+	console.log($.cookie('publish_actionsUID'+postUserID));
+	console.log(permissionCookie);
+	if(permissionCookie===false){
+			$('#auth-permalow').html('<span onclick="xlfb_promptForPerms()">Bật</span>');
+			$('#auth-permalow').css('color','gray');
+			$('#auth-permremo').html('Tắt');
+			$('#auth-permremo').css('color','red');
+	}
+	
+// user jquery and grap api reques	
+/*	
+	var url = 'https://graph.facebook.com/'+postUserID+'/permissions?permission='+permsNeededPub+'&method=delete&access_token='+accessToken+'';
+	console.log(url);
+	$.ajax({
+	  type: "POST",
+	  url: url,
+	  cache: false,
+	  data: ''
+	}).done(function( msg ) {
+	  console.log( "Data Saved: " + msg );
+	  if(msg=='true'){
+			console.log(postUserID+' Remove success '+permsNeededPub);
+			$('#auth-permalow').html('<span onclick="xlfb_promptForPerms()">On</span>');
+			$('#auth-permalow').css('color','gray');
+			$('#auth-permremo').html('Off');
+			$('#auth-permremo').css('color','red');
+	  }
+	});
+
+*/
+}
+
+function fbxl_removeApp() {
+	FB.api("/me/permissions", "delete", function(response){
+		console.log("User removed the app from acount: "+response);									 
+	});
+}
+
+function fbxl_friendInvite() {
+	if (isMobiWeb) { return; }
+	$('html, body').animate({scrollTop:0}, 'slow'); 
+	FB.ui({method: 'apprequests',
+		message: 'Tôi vừa đăng kí ứng dụng http://apps.facebook.com/xaluancom quả là tuyệt vời giúp theo dõi hoạt động chia sẻ tin tức của bạn bè nè, đăng kí với mình nhé ..',frictionlessRequests : true
+	},
+	function(receiverUserIds) {
+		console.log("IDS : " + receiverUserIds.request_ids);
+    }); 
+//http://tinyurl.com/xaluancom //https://www.facebook.com/dialog/oauth/?client_id='+XLFBappID+'&scope=publish_stream&redirect_uri=http://apps.facebook.com/xaluancom/
+//http://developers.facebook.com/docs/reference/dialogs/requests/
+}
+//uid = 589276036
+//https://graph.facebook.com/me/news.reads?access_token=accessToken&offset=0&limit=20
+function fbxl_userAction(postUserID){
+	var ActionsRecent = '';
+	if (!postUserID) postUserID = 'me';
+//	if (ActionsRecent == '' || ActionsRecent == NoActiSmg){
+		var ActionUrl = 'https://graph.facebook.com/'+postUserID+'/news.reads?access_token='+accessToken+'&offset=0&limit=20&callback=?';
+		console.log(ActionUrl);
+		$.getJSON(ActionUrl, function(json) {
+	  		console.log(json);
+			if (json.data.length !== 0){
+				$.each(json.data, function(key, fb) {
+					var actionID = (typeof(fb.id) != "undefined") ? fb.id : "";
+					var articleData = (typeof(fb.data.article) != "undefined") ? fb.data.article : "";
+					var articleLink = (typeof(fb.data.article.url) != "undefined") ? fb.data.article.url : "";
+					var articleTitle = (typeof(fb.data.article.title) != "undefined") ? fb.data.article.title : "";
+					var articlePubTime = (typeof(fb.publish_time) != "undefined") ? fb.publish_time : "";
+					console.log(actionID+'-'+articleTitle+'-'+articleLink);
+					ActionsRecent += '<li id="' + actionID + '" keydata="'+key+'"><span class="fbaction" onclick="fbxl_userActionDel(\''+actionID+'\')">[X] </span> <a href="'+articleLink+'" target="_blank">' + articleTitle + '</a> | '+articlePubTime.split(':')[0]+'</li>';
+		 		});
+				ActionsRecent = '<div class="othernews fl"><center><a href="http://www.facebook.com/'+postUserID+'/allactivity?log_filter=app_'+XLFBappID+'" target="_blank">'+postUserID+' Click vào đây để xem danh sách đầy đủ bài đã đọc</a></center><hr><ul id="ActionsRecent_Content" style="min-width:400px; max-width:640px;">'+ActionsRecent+'</ul></div>';
+			} else {ActionsRecent = "Bạn không có hoạt động, đọc bài, chia sẻ nào gần đây, Hãy đăng hoặc bật chức năng Chia Sẻ Cộng Đồng để khám phá";}
+			console.log(ActionsRecent);
+			$.colorbox({html:ActionsRecent, title:"Hoạt động và bài đã đọc của bạn, nhấn [X] để xóa", height:"500px"});
+		});
+//	} else {$.colorbox({html:ActionsRecent, title:"Your soccial reader activities from XaLuan"});}
+
+/*
+      FB.api(
+      {
+        method: 'fql.query',
+        query: 'SELECT  post_id, created_time FROM stream WHERE app_id='+appId+' AND source_id = '+postUserID+''
+      },
+      function(response) {
+          var x = response[0].username
+        alert('Username is ' + x);
+      }
+	  );
+*/	  
+}
+function fbxl_userActionDel (actionID){
+		if (actionID === 0 || actionID===null) {return '';}
+		if(confirm('Remove this article sharing ?')){}else{return'';}
+		FB.api('/'+actionID, 'delete', function(response) {
+		console.log(response);
+		  if (!response || response.error) {
+			console.log('Error occured, can not delete: '+actionID);
+		  } else {
+			console.log('Post was deleted: ' + actionID);
+			///info
+			$('#'+actionID).remove();
+			ActionsRecent = '';
+			$.cookie(articleSID+'UID'+postUserID,null);
+			$('#auth-postaction').html('Bạn có thể <span onClick="WallPost()" class="fbaction">Lưu</span> lại bài này');
+		  }
+		});
+}
+
+	  
+function WallPost()
+	{  //return;
+		if (permissionCookie===false){ 
+			console.log('Posting is turn off'); 
+			if(confirm('Bạn cần phải bật chức năng Chia Sẻ cộng đồng '+permsNeededPub)){
+				xlfb_promptForPerms();
+			} else {
+			return; }
+		}
+		if ($.cookie(articleSID+'UID'+postUserID)===null && postUserID !='') { // check the link posted yet or not
+		  FB.api('/me/news.reads', 'post', {article: articleURL},
+			function(response) {
+				console.log(response); 
+			   if (!response || response.error) {
+				  console.log('Error occured cant not post: ' + articleURL);
+				  console.log(response.error); // response.error.code == 3501 // user already post this url
+				  if(response.error.code == 3501){$('#auth-postaction').html('Đã lưu bài, <span class="fbaction" onClick="fbxl_share()">Nhấn Chia Sẻ</span>. Hoạt động cũ');}
+			   } else {
+				  postWallID = response.id;
+				  console.log(articleURL + ' Posting article! actionID: ' + response.id + ' By user: '+postUserID);
+				  $.cookie(articleSID+'UID'+postUserID, postWallID, {expires:1,path:'/'}); //, { expires: 1, path: '/' }
+				  console.log('Write cookies: '+articleSID+'UID'+postUserID+' : '+$.cookie(articleSID+'UID'+postUserID));
+				  //// info
+				  $('#auth-postaction').html('Đang lưu bài. <span class="fbaction" onClick="fbxl_share()">Click Chia Sẻ</span>'); //<span onClick="WallPostDel()" class="fbaction">xóa</span>
+				  ////
+			   }
+		  });
+		} else {
+			postWallID = $.cookie(articleSID+'UID'+postUserID);
+			$('#auth-postaction').html('Bạn chia sẻ bài. '); //<span onClick="WallPostDel()" class="fbaction">xóa</span>
+			console.log('Cookies for this article exit, cancel post!');
+		}
+}
+
+function WallPostDel (){
+		if (postWallID == 0 ) {return '';}
+		FB.api(postWallID, 'delete', function(response) {
+		  if (!response || response.error) {
+			console.log('Error occured, can not delete: '+postWallID);
+		  } else {
+			console.log('Post was deleted: ' + postWallID);
+			///info
+			$.cookie(articleSID+'UID'+postUserID,null);
+			$('#auth-postaction').html('Chia sẻ <span onClick="WallPost()" class="fbaction">Lưu</span>');
+			///
+		  }
+		});
+}
+	
+function fbxl_requestLogin(){
+	var fbWellcomeBoad = '<div id="auth-loggedout" style="display:none; height:120px; text-align: left; padding: 5px 10px;" class="commentcount">\
+            <div style="" class="fl nomobi" id="auth-wellcome">\
+              <span style="font-size:14px"><b>Vui XaLuan News!</b></span>\
+              <br><span class="gray">Cập nhật tin.. <br>khám phá cùng bạn bè.</span>\
+            </div>\
+            <div class="">\
+              <span id="auth-loginlink" class="btn_blue btn_action" style="height:34px; font-size:15px; width:130px; overflow:hidden;">CLB Facebook<br>tham gia !</span>\
+            </div>\
+        </div>\
+';
+	var fbActionsBoad = '<div id="auth-loggedin" style="display:none; text-align: left; padding: 5px 10px; font-size:12px;min-height:50px" class="commentcount">\
+        	<div id="auth-displayimg" class="fl"></div>\
+			<span id="auth-displayname"></span>.\
+			<br><span class="fbaction nomobi" id="auth-friendinvite">Tặng quà..</span>on Facebook.\
+			<br><span id="auth-postaction" class="nomobi"></span>\
+            <span onClick="fbxl_userAction();" class="fbaction nomobi"><br>Hoạt động cũ. </span>\
+			<br>Chia Sẻ: <span class="gray" id="auth-permalow">Bật</span> | <span class="gray" id="auth-permremo">Tắt</span><span class="fr nomobi"><span id="auth-help" class="fbaction">[?]</span><!-- <span class="fbaction" id="auth-logoutlink">[&oslash;]</span>--></span>\
+		</div>\
+';
+//    document.getElementById("XLFBInfo").innerHTML = fbWellcomeBoad;  
+//    document.getElementById("XLFBAction").innerHTML = fbActionsBoad;  
+	$('#XLFBInfo').html(fbWellcomeBoad);
+	$('#XLFBAction').html(fbActionsBoad);
+	console.log('Show the Wellcome boad and prepare hidden Action boad');
+	if (isMobiWeb){$(".nomobi").remove(); }	
+}
+
+function fbxl_cleancookies(){
+	var cookies = document.cookie.split(";");
+	for(var i=0; i < cookies.length; i++) {
+		var equals = cookies[i].indexOf("=");
+		var name = (equals > -1)?(cookies[i].substr(0,equals)):cookies[i];
+		if ( name.indexOf('SID') > 0 && name.indexOf('UID') > 0){//		console.log(name);
+		document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
+		}
+	}
+}
+function fbxl_checkPageLike() {
+	if (postUserID ===''){console.log('no userid failed check like page'); return; }
+	if ($.cookie('fbpage'+XLFBpageID)==='1'){ console.log('got cookie failed check like page'); return;}
+	var fql_query = "SELECT uid FROM page_fan WHERE page_id = "+XLFBpageID+"and uid="+postUserID;
+	//var fql_query = "SELECT url FROM url_like WHERE user_id="+postUserID+" and url='"+XLLikeUrl+"'";
+      FB.api({
+        method: 'fql.query',
+        query: fql_query
+      },function(response) {
+			if (response.length >0 && response[0].uid == postUserID) {
+				console.log('you are fan of '+XLFBpageID);
+			} else {
+				console.log('Not a fan! of '+XLFBpageID);
+				$.colorbox({html:'<div class="commentcount">Hôm nay là một ngày đẹp trời. :),<br>Bạn có thích cùng cười xả láng với bạn bè ?<br><b>Tham gia CLB nhấn nút « <span class="red">Thích / Like</span> » dưới đây</b><br>và thêm nút <b>g+1</b> để đóng, lưu trữ và tăng tốc độ web nhé<center><div id="p1div"></div></center></div><iframe src="http://www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2F'+XLFBpageName+'&amp;width=340&amp;height=290&amp;colorscheme=light&amp;show_faces=true&amp;border_color&amp;stream=false&amp;header=false&amp;appId='+XLFBappID+'&amp;locale=vi_VN" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:340px; height:290px;" allowTransparency="true"></iframe>', title:"nhấn LIKE / Thích để cùng câu lạc bộ vui vẻ", width:'370px', height:'460px'});
+				$.cookie('fbpage'+XLFBpageID, 1, { expires: 3, path: '/' });
+				gapi.plusone.render("p1div",{"size": "small","href":"http://www.xaluan.com","callback":"p1divclicked","recommendations":"false"});
+			}
+      });
+}
+function p1divclicked(jsonParam){
+	if(jsonParam.state == "on"){console.log('user plus 1 to '+jsonParam.href); setTimeout(function(){$.colorbox.close();},2000);} 
+	else { console.log('user plus NOT 1 to '+jsonParam.href); }
+}
+
+function fbxl_share (){
+	console.log('run share now for url: '+articleURL);
+  var left = (screen.width/2)-(540/2);
+  var top = (screen.height/2)-(320/2);
+	window.open ('http://www.facebook.com/sharer.php?u='+encodeURIComponent(articleURL),"fbxl_sharewindow","toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no,width=540,height=320"+", top="+top+", left="+left+"");
+}
+
+function removeAdsZoneAll(){
+	$("#fbremoveadsinfo").html('Cám ơn bạn đã chia sẻ');
+	hideshowAds('adtitle_ad300x300_1','ad300x300_1'); hideshowAds('adtitle_ad300x300_2','ad300x300_2');hideshowAds('adtitle_ad300x300_3','ad300x300_3');hideshowAds('adtitle_ad300x300_4','ad300x300_4');
+	hideshowAds('adtitle_adsright','adsright');  $('#ad728x90_footer').css('display','none');
+	$(".maincontent").click(function () { $("#fbremoveads").hide("fast");});
+	setTimeout(function() { $('#fbremoveads').fadeOut('fast'); }, 10000);
+}
+
+// check the link have comment from disqus if not more than 1 show fb comment.
+var queryUrlSid = getQueryParams(document.location.search).sid;
+var tamsucontact = ((XLtopicid==43)?'<br><i><span style="font-size:small">Bài mới xin gửi về TamSu@xaluan.com (gõ có dấu).</span></i>' : '');
+//	$('.xlcomments').on('click',function(){ $('html, body').animate({scrollTop: $("#fbYesCmt").offset().top}, 800);});
+$(document).ready(function () {
+	fbxl_CmtCount();
+	/*
+	if(queryUrlSid >=220000 && queryUrlSid < 897000 ){
+        var urlArray = [];
+		var disqusURL = 'http://www.xaluan.com/COMMENT_'+queryUrlSid+'.html'; //http://www.xaluan.com/COMMENT_897297.html
+		var disqusIdentifier= 'COMMENT_'+queryUrlSid;
+        urlArray.push('link:' + disqusURL);
+		console.log('get cmt count from DQ: '+disqusURL);
+		$.ajax({
+               type: 'GET',
+               url: "https://disqus.com/api/3.0/threads/set.jsonp",
+               data: { api_key: "zb4d3PdFUA9k4gjKZ9SfBPnZRrluQRDr7JcalEzj9U3L0qLagUlujJYcKMFy2XxJ", forum : "xlcomment", thread : urlArray }, // URL method
+               cache: false,
+               dataType: 'jsonp',
+               success: function (result) { console.log(result);
+                    for (var i in result.response) {
+                        var DisqusCount = result.response[i].posts;
+						console.log('DisqusCount: '+DisqusCount);
+                        if (DisqusCount <= 1){
+							fbxl_CmtCount();
+						} else { //show disqus comment.
+							$('#xlcomments').addClass('commentcount');
+//							$('#xlcomments').html('Bạn đọc gửi <a rel="nofollow" class="link-folder boxiframefix720 cboxElement" href="http://www.xaluan.com/modules/News/comnews.php?sid='+queryUrlSid+'" title="'+CommentTitle+'">'+DisqusCount+' Bình luận</a> &laquo; Nhấn để đọc và cùng chia sẻ'+tamsucontact);
+
+							$('#xlcomments').html('Bạn đọc gửi <a rel="nofollow" onclick="disqus_Call(queryUrlSid,CommentTitle)" title="'+CommentTitle+'">'+DisqusCount+' Bình luận</a> &laquo; Nhấn để đọc và cùng chia sẻ'+tamsucontact);
+
+						}
+
+                    }
+                },
+				error: function (request, status, error) {
+					console.log('DQ error: '+request.responseText);
+				}
+        });
+	} else {
+		fbxl_CmtCount();
+	}
+	function disqus_Call(queryUrlSid,CommentTitle){
+		$.colorbox({href:'http://www.xaluan.com/modules/News/comnews.php?sid='+queryUrlSid+'', title:CommentTitle,innerWidth:720, innerHeight:"90%",iframe:true });
+	}
+	*/
+});
+function fbxl_CmtCount(url) {
+	if(queryUrlSid>0){} else return;
+	if (!url){url = 'http://www.xaluan.com/modules.php?name=News&file=article&sid='+queryUrlSid; } //document.location.href;
+	console.log('sid: '+queryUrlSid+', url: '+url);
+    $.getJSON('https://graph.facebook.com/?ids='+encodeURIComponent(url), function(json) {
+	console.log(json);
+		if(url != '' && !json['error'] ) { console.log('get cmt frm FB: '+url);
+              if(typeof(json[url]['comments'])!='undefined'){} else{ json[url]['comments'] = 0;}
+              if(typeof(json[url]['shares'])  !='undefined'){} else{ json[url]['shares'] = 0;  }
+			  console.log('FB comments: '+json[url]['comments']+', Shares: '+ json[url]['shares']);
+			//show comment box in midle page if no comments yet, or will show notice number of comments and click go to comment at bottom
+			if ( json[url]['comments']>2 ) {  console.log('Apply FB to fbYesCmt');
+				if ($('#fbYesCmt').length > 0){} else { $('<div id="fbYesCmt"></div>').insertAfter('.tags'); }
+				var fbCmt = $('#fbYesCmt');
+				fbCmt.attr( 'data-numposts', 5 );
+				$('#xlcomments').addClass('commentcount');
+				$('#xlcomments').html('Bạn đọc gửi <a rel="nofollow">' +json[url]['comments']+ ' Bình luận, '+json[url]['shares']+' Like chia sẻ</a> &laquo; Nhấn để đọc'+tamsucontact);
+				$('#xlcomments').click(function(){  $('html, body').animate({scrollTop: $("#fbYesCmt").offset().top}, 300);});
+			} else { console.log('Apply FB to fbNoCmt');
+				if ($('#fbNoCmt').length > 0){} else { $('<div id="fbNoCmt"></div>').insertAfter('#xlcomments'); $('#xlcomments').remove();}
+				var fbCmt = $('#fbNoCmt'); 
+				if ( json[url]['comments']==0 ){ $('#fbNoCmt').css({'height':'100px','overflow-y':'hidden'}); 
+				FB.Event.subscribe('comment.create', function(response) { $('#fbNoCmt').css({'height':'auto'});});}
+			}
+			fbCmt.addClass( 'fb-comments' );
+			fbCmt.attr( 'data-href', url );
+			fbCmt.attr( 'data-width', 500 );
+			fbCmt.attr( 'data-colorscheme', 'light' );
+			FB.XFBML.parse();
+		}
+     });
+} 

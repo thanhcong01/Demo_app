@@ -1,0 +1,121 @@
+status: 200
+content-location: https://software-center.ubuntu.com/api/2.0/exhibits/en/precise/
+expires: Tue, 01 Jul 2014 09:55:06 GMT
+vary: Authorization
+server: Apache/2.2.22 (Ubuntu)
+last-modified: Tue, 01 Jul 2014 09:45:06 GMT
+etag: "b76897616ff2356ef12f36f884cc314f"
+cache-control: max-age=600
+date: Tue, 01 Jul 2014 09:45:06 GMT
+content-type: application/json; charset=utf-8
+
+[
+    {
+        "package_names": "leadwerks\r\nleadwerks-indie", 
+        "click_url": "", 
+        "weight": 1, 
+        "banner_url": "http://myapps.developer.ubuntu.com/site_media/exhibits/2014/05/leadwerks-ubuntu-banner.png", 
+        "distroseries": [
+            {
+                "version": "12.04", 
+                "code_name": "precise"
+            }, 
+            {
+                "version": "13.10", 
+                "code_name": "saucy"
+            }, 
+            {
+                "version": "14.04", 
+                "code_name": "trusty"
+            }
+        ], 
+        "html": "<div style=\"background-color: #000000; width:1680px; height:200px;\">\r\n <div style=\"background: url('/site_media/exhibits/2014/05/leadwerks-ubuntu-banner.png') top left no-repeat; width:700px; height:200px;\"></div>\r\n</div>", 
+        "published": true, 
+        "date_created": "2014-05-09 17:54:22", 
+        "banner_urls": [
+            "http://myapps.developer.ubuntu.com/site_media/exhibits/2014/05/leadwerks-ubuntu-banner.png"
+        ], 
+        "id": 101
+    }, 
+    {
+        "package_names": "amnesia-amfp", 
+        "click_url": "", 
+        "weight": 2, 
+        "banner_url": "http://myapps.developer.ubuntu.com/site_media/exhibits/2013/09/AAMFP_Leaderboard_700x200_1.jpg", 
+        "distroseries": [
+            {
+                "version": "12.04", 
+                "code_name": "precise"
+            }, 
+            {
+                "version": "13.04", 
+                "code_name": "raring"
+            }, 
+            {
+                "version": "13.10", 
+                "code_name": "saucy"
+            }
+        ], 
+        "html": "<div style=\"background-color: #161513; width:1680px; height:200px;\">\r\n <div style=\"background: url('/site_media/exhibits/2013/09/AAMFP_Leaderboard_700x200_1.jpg') top left no-repeat; width:700px; height:200px;\"></div>\r\n</div>", 
+        "published": true, 
+        "date_created": "2013-09-20 19:12:52", 
+        "banner_urls": [
+            "http://myapps.developer.ubuntu.com/site_media/exhibits/2013/09/AAMFP_Leaderboard_700x200_1.jpg"
+        ], 
+        "id": 99
+    }, 
+    {
+        "package_names": "zhackers-volume2-usc", 
+        "click_url": "", 
+        "weight": 3, 
+        "banner_url": "http://myapps.developer.ubuntu.com/site_media/exhibits/2013/10/banner-zhackers-vol2.png", 
+        "distroseries": [
+            {
+                "version": "12.04", 
+                "code_name": "precise"
+            }, 
+            {
+                "version": "13.04", 
+                "code_name": "raring"
+            }, 
+            {
+                "version": "13.10", 
+                "code_name": "saucy"
+            }
+        ], 
+        "html": "<div style=\"background-color: #000000; width:1680px; height:200px;\">\r\n <div style=\"background: url('/site_media/exhibits/2013/10/banner-zhackers-vol2.png') top left no-repeat; width:700px; height:200px;\"></div>\r\n</div>", 
+        "published": true, 
+        "date_created": "2013-10-16 10:21:12", 
+        "banner_urls": [
+            "http://myapps.developer.ubuntu.com/site_media/exhibits/2013/10/banner-zhackers-vol2.png"
+        ], 
+        "id": 100
+    }, 
+    {
+        "package_names": "keepassx", 
+        "click_url": "", 
+        "weight": 4, 
+        "banner_url": "http://myapps.developer.ubuntu.com/site_media/exhibits/2013/05/SC_banners_KeePassX.png", 
+        "distroseries": [
+            {
+                "version": "12.04", 
+                "code_name": "precise"
+            }, 
+            {
+                "version": "12.10", 
+                "code_name": "quantal"
+            }, 
+            {
+                "version": "13.04", 
+                "code_name": "raring"
+            }
+        ], 
+        "html": "<div style=\"background-color: #f7f7f6; width:1680px; height:200px;\">\r\n <div style=\"background: url('/site_media/exhibits/2013/05/SC_banners_KeePassX.png') top left no-repeat; width:700px; height:200px;\"></div>\r\n</div>", 
+        "published": true, 
+        "date_created": "2013-05-06 18:07:31", 
+        "banner_urls": [
+            "http://myapps.developer.ubuntu.com/site_media/exhibits/2013/05/SC_banners_KeePassX.png"
+        ], 
+        "id": 88
+    }
+]

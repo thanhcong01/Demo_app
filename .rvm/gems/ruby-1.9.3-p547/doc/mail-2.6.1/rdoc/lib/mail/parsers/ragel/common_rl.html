@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>common.rl - mail-2.6.1 Documentation</title>
+
+<link href="../../../../fonts.css" rel="stylesheet">
+<link href="../../../../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../../../";
+</script>
+
+<script src="../../../../js/jquery.js"></script>
+<script src="../../../../js/navigation.js"></script>
+<script src="../../../../js/search_index.js"></script>
+<script src="../../../../js/search.js"></script>
+<script src="../../../../js/searcher.js"></script>
+<script src="../../../../js/darkfish.js"></script>
+
+
+<body id="top" role="document" class="file">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../../../../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../../../../table_of_contents.html#pages">Pages</a>
+    <a href="../../../../table_of_contents.html#classes">Classes</a>
+    <a href="../../../../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="project-metadata">
+    <div id="fileindex-section" class="nav-section">
+  <h3>Pages</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../../../CHANGELOG_rdoc.html">CHANGELOG</a>
+  
+    <li><a href="../../../../CONTRIBUTING_md.html">CONTRIBUTING</a>
+  
+    <li><a href="../../../../README_md.html">README</a>
+  
+    <li><a href="../../../../TODO_rdoc.html">TODO</a>
+  
+    <li><a href="../../../../lib/mail/parsers/ragel/common_rl.html">common.rl</a>
+  
+    <li><a href="../../../../lib/mail/parsers/ragel/date_time_rl.html">date_time.rl</a>
+  
+    <li><a href="../../../../lib/mail/parsers/ragel/ruby/machines/address_lists_machine_rb_rl.html">address_lists_machine.rb.rl</a>
+  
+    <li><a href="../../../../lib/mail/parsers/ragel/ruby/machines/content_disposition_machine_rb_rl.html">content_disposition_machine.rb.rl</a>
+  
+    <li><a href="../../../../lib/mail/parsers/ragel/ruby/machines/content_location_machine_rb_rl.html">content_location_machine.rb.rl</a>
+  
+    <li><a href="../../../../lib/mail/parsers/ragel/ruby/machines/content_transfer_encoding_machine_rb_rl.html">content_transfer_encoding_machine.rb.rl</a>
+  
+    <li><a href="../../../../lib/mail/parsers/ragel/ruby/machines/content_type_machine_rb_rl.html">content_type_machine.rb.rl</a>
+  
+    <li><a href="../../../../lib/mail/parsers/ragel/ruby/machines/date_time_machine_rb_rl.html">date_time_machine.rb.rl</a>
+  
+    <li><a href="../../../../lib/mail/parsers/ragel/ruby/machines/envelope_from_machine_rb_rl.html">envelope_from_machine.rb.rl</a>
+  
+    <li><a href="../../../../lib/mail/parsers/ragel/ruby/machines/message_ids_machine_rb_rl.html">message_ids_machine.rb.rl</a>
+  
+    <li><a href="../../../../lib/mail/parsers/ragel/ruby/machines/mime_version_machine_rb_rl.html">mime_version_machine.rb.rl</a>
+  
+    <li><a href="../../../../lib/mail/parsers/ragel/ruby/machines/phrase_lists_machine_rb_rl.html">phrase_lists_machine.rb.rl</a>
+  
+    <li><a href="../../../../lib/mail/parsers/ragel/ruby/machines/rb_actions_rl.html">rb_actions.rl</a>
+  
+    <li><a href="../../../../lib/mail/parsers/ragel/ruby/machines/received_machine_rb_rl.html">received_machine.rb.rl</a>
+  
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-label="Page lib/mail/parsers/ragel/common.rl">
+
+<p>%%{</p>
+
+<pre>machine common;
+
+action comment_begin { fcall comment_tail; }
+action comment_exit { fret; }
+
+# RFC5322: address_lists, date_time, message_ids, phrase_lists, received
+
+obs_NO_WS_CTL = 0x01..0x08 | 0x0b | 0x0c | 0x0e..0x1f | 0x7f;
+LF = &quot;\n&quot;;
+CR = &quot;\r&quot;;
+CRLF = &quot;\r\n&quot;;
+WSP = 0x09 | 0x20;
+obs_ctext = obs_NO_WS_CTL;
+VCHAR = 0x21..0x7e;
+obs_qp = &quot;\\&quot; (0x00 | obs_NO_WS_CTL | LF | CR);
+obs_FWS = (CRLF? WSP)+;
+ctext = 0x21..0x27 | 0x2a..0x5b | 0x5d..0x7e | obs_ctext;
+quoted_pair = (&quot;\\&quot; (VCHAR | WSP)) | obs_qp;
+FWS = (WSP* CRLF WSP+) | (CRLF WSP+) | obs_FWS;
+ALPHA = [a-zA-Z];
+DIGIT = [0-9];
+DQUOTE = '&quot;';
+obs_qtext = obs_NO_WS_CTL;
+atext = ALPHA | DIGIT | &quot;!&quot; | &quot;#&quot; | &quot;$&quot; | &quot;%&quot; | &quot;&amp;&quot; |
+        &quot;'&quot; | &quot;*&quot; | &quot;+&quot; | &quot;-&quot; | &quot;/&quot; | &quot;=&quot; | &quot;?&quot; | &quot;^&quot; |
+        &quot;_&quot; | &quot;`&quot; | &quot;{&quot; | &quot;|&quot; | &quot;}&quot; | &quot;~&quot;;
+qtext = 0x21 | 0x23..0x5b | 0x5d..0x7e | obs_qtext;
+obs_dtext = obs_NO_WS_CTL | quoted_pair;
+qcontent = qtext | quoted_pair;
+
+# Handle recursive comments
+ccontent = ctext | quoted_pair | &quot;(&quot; @comment_begin;
+comment_tail := ((FWS? ccontent)* &gt;comment_s) FWS? &quot;)&quot; @comment_exit;
+comment = &quot;(&quot; @comment_begin %comment_e;
+CFWS = ((FWS? comment)+ FWS?) | FWS;
+
+quoted_string = CFWS?
+                (DQUOTE
+                  (((FWS? qcontent)* FWS?) &gt;qstr_s %qstr_e)
+                DQUOTE)
+                CFWS?;
+
+atom = CFWS? atext+ CFWS?;
+word = atom | quoted_string;
+
+# phrase_lists
+obs_phrase = (word | &quot;.&quot; | &quot;@&quot;)+;
+phrase = (obs_phrase | word+) &gt;phrase_s %phrase_e;
+phrase_lists = phrase (&quot;,&quot; FWS* phrase)*;
+
+# address_lists
+
+# local_part:
+domain_text = (DQUOTE (FWS? qcontent)+ FWS? DQUOTE) | atext+;
+local_dot_atom_text = (&quot;.&quot;* domain_text &quot;.&quot;*)+;
+local_dot_atom = CFWS?
+                 (local_dot_atom_text &gt;local_dot_atom_s %local_dot_atom_pre_comment_e)
+                 CFWS?;
+obs_local_part = word (&quot;.&quot; word)*;
+local_part = (local_dot_atom &gt;local_dot_atom_s %local_dot_atom_e |
+              (quoted_string %local_quoted_string_e) |
+              obs_local_part);
+
+# Treetop parser behavior was to ignore addresses missing '@' inside of angle
+# brackets. This construction preserves that behavior.
+local_part_no_capture = (local_dot_atom | quoted_string | obs_local_part);
+
+# domain:
+dot_atom_text = &quot;.&quot;* domain_text (&quot;.&quot;* domain_text)*;
+dtext = 0x21..0x5a | 0x5e..0x7e | obs_dtext;
+dot_atom = CFWS? dot_atom_text (CFWS? &gt;(comment_after_address,1));
+domain_literal = CFWS? &quot;[&quot; (FWS? dtext)* FWS? &quot;]&quot; CFWS?;
+obs_domain = atom (&quot;.&quot; atom)*;
+domain = (dot_atom | domain_literal | obs_domain) &gt;domain_s %domain_e;
+
+# addr_spec:
+
+# The %(end_addr,N) priority resolves uncertainty when whitespace
+# after an addr_spec could cause it to be interpreted as a
+# display name: &quot;bar@example.com ,...&quot;
+
+addr_spec_in_angle_brackets =
+  (local_part &quot;@&quot; domain) %(end_addr,1) |
+  local_part_no_capture   %(end_addr,0);
+
+addr_spec_no_angle_brackets =
+  (local_part &quot;@&quot; domain) %(end_addr,1) |
+  local_part              %(end_addr,0);
+
+# angle_addr:
+obs_domain_list = (CFWS | &quot;,&quot;)* &quot;@&quot; domain (&quot;,&quot; CFWS? (&quot;@&quot; domain)?)*;
+obs_route = (obs_domain_list &quot;:&quot;) &gt;obs_domain_list_s %obs_domain_list_e;
+obs_angle_addr = CFWS? &quot;&lt;&quot; obs_route? addr_spec_in_angle_brackets &quot;&gt;&quot; CFWS?;
+
+angle_addr = CFWS? (&quot;&lt;&quot; &gt;angle_addr_s) addr_spec_in_angle_brackets &quot;&gt;&quot; CFWS? |
+              obs_angle_addr;
+
+# Address
+display_name = phrase;
+name_addr = display_name? %(end_addr,2) angle_addr;
+mailbox = (name_addr | addr_spec_no_angle_brackets) &gt;address_s %address_e;
+obs_mbox_list = (CFWS? &quot;,&quot;)* mailbox (&quot;,&quot; (mailbox | CFWS)?)*;
+mailbox_list = (mailbox ((&quot;,&quot; | &quot;;&quot;) mailbox)*) | obs_mbox_list;
+obs_group_list = (CFWS? &quot;,&quot;)+ CFWS?;
+group_list = mailbox_list | CFWS | obs_group_list;
+group = (display_name &gt;group_name_s %group_name_e) &quot;:&quot;
+          (group_list?) &quot;;&quot; CFWS?;
+address = group | mailbox;
+#obs_addr_list = (CFWS? &quot;,&quot;)* address (&quot;,&quot; (address | CFWS)?)*;
+address_lists = address? %(comment_after_address,0)
+                (FWS* (&quot;,&quot; | &quot;;&quot;) FWS* address?)*;
+
+# message_ids
+obs_id_left = local_part;
+id_left = dot_atom_text | obs_id_left;
+# id_right modifications to support multiple '@' in msg_id.
+msg_id_atext = ALPHA | DIGIT | &quot;!&quot; | &quot;#&quot; | &quot;$&quot; | &quot;%&quot; | &quot;&amp;&quot; | &quot;'&quot; | &quot;*&quot; |
+               &quot;+&quot; | &quot;-&quot; | &quot;/&quot; | &quot;=&quot; | &quot;?&quot; | &quot;^&quot; | &quot;_&quot; | &quot;`&quot; | &quot;{&quot; | &quot;|&quot; |
+               &quot;}&quot; | &quot;~&quot; | &quot;@&quot;;
+msg_id_dot_atom_text = (msg_id_atext+ &quot;.&quot;?)+;
+obs_id_right = domain;
+no_fold_literal = &quot;[&quot; (dtext)* &quot;]&quot;;
+id_right = msg_id_dot_atom_text | no_fold_literal | obs_id_right;
+msg_id = (CFWS)?
+         ((&quot;&lt;&quot; id_left &quot;@&quot; id_right &quot;&gt;&quot;) &gt;msg_id_s %msg_id_e)
+         (CFWS)?;
+message_ids = msg_id (CFWS? msg_id)*;
+
+include date_time &quot;date_time.rl&quot;;
+date_time = (day_of_week &quot;,&quot;)?
+            (date &gt;date_s %date_e) &lt;: (time &gt;time_s %time_e) CFWS?;
+
+# Added CFWS? to increase robustness
+# (qmail likes to include a comment style string...?)
+received_token = word | angle_addr | addr_spec_no_angle_brackets | domain;
+received = ((CFWS? received_token*) &gt;received_tokens_s %received_tokens_e)
+            &quot;;&quot; date_time;
+
+# RFC2045: mime_version, content_type, content_transfer_encoding
+mime_version = CFWS?
+          (DIGIT+ &gt;major_digits_s %major_digits_e)
+          comment? &quot;.&quot; comment?
+          (DIGIT+ &gt;minor_digits_s %minor_digits_e)
+          CFWS?;
+
+token = 0x21..0x27 | 0x2a..0x2b | 0x2c..0x2e |
+        0x30..0x39 | 0x41..0x5a | 0x5e..0x7e;
+value = (quoted_string | (token -- '&quot;' | 0x3d)+) &gt;param_val_s %param_val_e;
+attribute = (token+) &gt;param_attr_s %param_attr_e;
+parameter = CFWS? attribute &quot;=&quot; value CFWS?;
+
+ietf_token = token+;
+custom_x_token = 'x'i &quot;-&quot; token+;
+extension_token = ietf_token | custom_x_token;
+discrete_type = 'text'i | 'image'i | 'audio'i | 'video'i |
+                'application'i | extension_token;
+composite_type = 'message'i | 'multipart'i | extension_token;
+iana_token = token+;
+main_type = (discrete_type | composite_type) &gt;main_type_s %main_type_e;
+sub_type = (extension_token | iana_token) &gt;sub_type_s %sub_type_e;
+content_type = main_type &quot;/&quot; sub_type (((CFWS? &quot;;&quot;+) | CFWS) parameter CFWS?)*;
+
+encoding = ('7bits' | '8bits' | '7bit' | '8bit' | 'binary' |
+            'quoted-printable' | 'base64' | ietf_token |
+            custom_x_token) &gt;encoding_s %encoding_e;
+content_transfer_encoding = CFWS? encoding CFWS? &quot;;&quot;? CFWS?;
+
+# RFC2183: content_disposition
+# TODO: recognize filename, size, creation date, etc.
+disposition_type = 'inline'i | 'attachment'i | extension_token | '';
+content_disposition = (disposition_type &gt;disp_type_s %disp_type_e)
+                      (CFWS? &quot;;&quot; parameter CFWS?)*;
+
+# Envelope From
+ctime_date = day_name &quot; &quot;+ month &quot; &quot;+ day &quot; &quot; time_of_day &quot; &quot; year;
+envelope_from = (addr_spec_no_angle_brackets) &gt;address_s %address_e &quot; &quot;
+                (ctime_date &gt;ctime_date_s %ctime_date_e);
+
+# content_location
+location = quoted_string | ((token | 0x3d)+ &gt;token_string_s %token_string_e);
+content_location = CFWS? location CFWS?;</pre>
+
+<p>}%%</p>
+</main>
+
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.1.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

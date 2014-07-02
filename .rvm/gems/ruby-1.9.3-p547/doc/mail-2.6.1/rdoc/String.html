@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class String - mail-2.6.1 Documentation</title>
+
+<link href="./fonts.css" rel="stylesheet">
+<link href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script src="./js/jquery.js"></script>
+<script src="./js/navigation.js"></script>
+<script src="./js/search_index.js"></script>
+<script src="./js/search.js"></script>
+<script src="./js/searcher.js"></script>
+<script src="./js/darkfish.js"></script>
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    <div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  
+  <p class="link"><a href="Object.html">Object</a>
+  
+</div>
+
+    
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-i-at">#at</a>
+    
+    <li ><a href="#method-i-constantize">#constantize</a>
+    
+    <li ><a href="#method-i-first">#first</a>
+    
+    <li ><a href="#method-i-from">#from</a>
+    
+    <li ><a href="#method-i-is_utf8-3F">#is_utf8?</a>
+    
+    <li ><a href="#method-i-last">#last</a>
+    
+    <li ><a href="#method-i-mb_chars">#mb_chars</a>
+    
+    <li ><a href="#method-i-to">#to</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-String">
+  <h1 id="class-String" class="class">
+    class String
+  </h1>
+
+  <section class="description">
+    
+<p>This is an almost cut and paste from <a
+href="ActiveSupport.html">ActiveSupport</a> v3.0.6, copied in here so that
+<a href="Mail.html">Mail</a> itself does not depend on <a
+href="ActiveSupport.html">ActiveSupport</a> to avoid versioning conflicts</p>
+
+  </section>
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-at" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">at</span><span
+            class="method-args">(position)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns the character at the <code>position</code> treating the string as
+an array (where 0 is the first character).</p>
+
+<p>Examples:</p>
+
+<pre class="ruby"><span class="ruby-string">&quot;hello&quot;</span>.<span class="ruby-identifier">at</span>(<span class="ruby-value">0</span>)  <span class="ruby-comment"># =&gt; &quot;h&quot;</span>
+<span class="ruby-string">&quot;hello&quot;</span>.<span class="ruby-identifier">at</span>(<span class="ruby-value">4</span>)  <span class="ruby-comment"># =&gt; &quot;o&quot;</span>
+<span class="ruby-string">&quot;hello&quot;</span>.<span class="ruby-identifier">at</span>(<span class="ruby-value">10</span>) <span class="ruby-comment"># =&gt; ERROR if &lt; 1.9, nil in 1.9</span>
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="at-source">
+            <pre><span class="ruby-comment"># File lib/mail/core_extensions/string/access.rb, line 15</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">at</span>(<span class="ruby-identifier">position</span>)
+  <span class="ruby-identifier">mb_chars</span>[<span class="ruby-identifier">position</span>, <span class="ruby-value">1</span>].<span class="ruby-identifier">to_s</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-constantize" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">constantize</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Tries to find a constant with the name specified in the argument string:</p>
+
+<pre class="ruby"><span class="ruby-string">&quot;Module&quot;</span>.<span class="ruby-identifier">constantize</span>     <span class="ruby-comment"># =&gt; Module</span>
+<span class="ruby-string">&quot;Test::Unit&quot;</span>.<span class="ruby-identifier">constantize</span> <span class="ruby-comment"># =&gt; Test::Unit</span>
+</pre>
+
+<p>The name is assumed to be the one of a top-level constant, no matter
+whether it starts with “::” or not. No lexical context is taken into
+account:</p>
+
+<pre class="ruby"><span class="ruby-constant">C</span> = <span class="ruby-string">'outside'</span>
+<span class="ruby-keyword">module</span> <span class="ruby-constant">M</span>
+  <span class="ruby-constant">C</span> = <span class="ruby-string">'inside'</span>
+  <span class="ruby-constant">C</span>               <span class="ruby-comment"># =&gt; 'inside'</span>
+  <span class="ruby-string">&quot;C&quot;</span>.<span class="ruby-identifier">constantize</span> <span class="ruby-comment"># =&gt; 'outside', same as ::C</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>NameError is raised when the name is not in CamelCase or the constant is
+unknown.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="constantize-source">
+            <pre><span class="ruby-comment"># File lib/mail/core_extensions/string/access.rb, line 122</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">constantize</span>
+  <span class="ruby-identifier">names</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">'::'</span>)
+  <span class="ruby-identifier">names</span>.<span class="ruby-identifier">shift</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">names</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">names</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">empty?</span>
+
+  <span class="ruby-identifier">constant</span> = <span class="ruby-constant">Object</span>
+  <span class="ruby-identifier">names</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">name</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">constant</span> = <span class="ruby-identifier">constant</span>.<span class="ruby-identifier">const_defined?</span>(<span class="ruby-identifier">name</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">constant</span>.<span class="ruby-identifier">const_get</span>(<span class="ruby-identifier">name</span>) <span class="ruby-operator">:</span> <span class="ruby-identifier">constant</span>.<span class="ruby-identifier">const_missing</span>(<span class="ruby-identifier">name</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">constant</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-first" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">first</span><span
+            class="method-args">(limit = 1)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns the first character of the string or the first <code>limit</code>
+characters.</p>
+
+<p>Examples:</p>
+
+<pre class="ruby"><span class="ruby-string">&quot;hello&quot;</span>.<span class="ruby-identifier">first</span>     <span class="ruby-comment"># =&gt; &quot;h&quot;</span>
+<span class="ruby-string">&quot;hello&quot;</span>.<span class="ruby-identifier">first</span>(<span class="ruby-value">2</span>)  <span class="ruby-comment"># =&gt; &quot;he&quot;</span>
+<span class="ruby-string">&quot;hello&quot;</span>.<span class="ruby-identifier">first</span>(<span class="ruby-value">10</span>) <span class="ruby-comment"># =&gt; &quot;hello&quot;</span>
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="first-source">
+            <pre><span class="ruby-comment"># File lib/mail/core_extensions/string/access.rb, line 45</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">first</span>(<span class="ruby-identifier">limit</span> = <span class="ruby-value">1</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">limit</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
+    <span class="ruby-string">''</span>
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">limit</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-identifier">size</span>
+    <span class="ruby-keyword">self</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">mb_chars</span>[<span class="ruby-value">0</span><span class="ruby-operator">...</span><span class="ruby-identifier">limit</span>].<span class="ruby-identifier">to_s</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-from" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">from</span><span
+            class="method-args">(position)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns the remaining of the string from the <code>position</code> treating
+the string as an array (where 0 is the first character).</p>
+
+<p>Examples:</p>
+
+<pre class="ruby"><span class="ruby-string">&quot;hello&quot;</span>.<span class="ruby-identifier">from</span>(<span class="ruby-value">0</span>)  <span class="ruby-comment"># =&gt; &quot;hello&quot;</span>
+<span class="ruby-string">&quot;hello&quot;</span>.<span class="ruby-identifier">from</span>(<span class="ruby-value">2</span>)  <span class="ruby-comment"># =&gt; &quot;llo&quot;</span>
+<span class="ruby-string">&quot;hello&quot;</span>.<span class="ruby-identifier">from</span>(<span class="ruby-value">10</span>) <span class="ruby-comment"># =&gt; &quot;&quot; if &lt; 1.9, nil in 1.9</span>
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="from-source">
+            <pre><span class="ruby-comment"># File lib/mail/core_extensions/string/access.rb, line 25</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">from</span>(<span class="ruby-identifier">position</span>)
+  <span class="ruby-identifier">mb_chars</span>[<span class="ruby-identifier">position</span><span class="ruby-operator">..</span><span class="ruby-value">-1</span>].<span class="ruby-identifier">to_s</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-is_utf8-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">is_utf8?</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="is_utf8-3F-source">
+            <pre><span class="ruby-comment"># File lib/mail/core_extensions/string/multibyte.rb, line 52</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">is_utf8?</span> <span class="ruby-comment">#:nodoc</span>
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">encoding</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-constant">Encoding</span><span class="ruby-operator">::</span><span class="ruby-constant">UTF_8</span>
+    <span class="ruby-identifier">valid_encoding?</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-constant">Encoding</span><span class="ruby-operator">::</span><span class="ruby-constant">ASCII_8BIT</span>, <span class="ruby-constant">Encoding</span><span class="ruby-operator">::</span><span class="ruby-constant">US_ASCII</span>
+    <span class="ruby-identifier">dup</span>.<span class="ruby-identifier">force_encoding</span>(<span class="ruby-constant">Encoding</span><span class="ruby-operator">::</span><span class="ruby-constant">UTF_8</span>).<span class="ruby-identifier">valid_encoding?</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">false</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-last" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">last</span><span
+            class="method-args">(limit = 1)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns the last character of the string or the last <code>limit</code>
+characters.</p>
+
+<p>Examples:</p>
+
+<pre class="ruby"><span class="ruby-string">&quot;hello&quot;</span>.<span class="ruby-identifier">last</span>     <span class="ruby-comment"># =&gt; &quot;o&quot;</span>
+<span class="ruby-string">&quot;hello&quot;</span>.<span class="ruby-identifier">last</span>(<span class="ruby-value">2</span>)  <span class="ruby-comment"># =&gt; &quot;lo&quot;</span>
+<span class="ruby-string">&quot;hello&quot;</span>.<span class="ruby-identifier">last</span>(<span class="ruby-value">10</span>) <span class="ruby-comment"># =&gt; &quot;hello&quot;</span>
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="last-source">
+            <pre><span class="ruby-comment"># File lib/mail/core_extensions/string/access.rb, line 61</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">last</span>(<span class="ruby-identifier">limit</span> = <span class="ruby-value">1</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">limit</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
+    <span class="ruby-string">''</span>
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">limit</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-identifier">size</span>
+    <span class="ruby-keyword">self</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">mb_chars</span>[(<span class="ruby-operator">-</span><span class="ruby-identifier">limit</span>)<span class="ruby-operator">..</span><span class="ruby-value">-1</span>].<span class="ruby-identifier">to_s</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-mb_chars" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">mb_chars</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <h2 id="method-i-mb_chars-label-Multibyte+proxy">Multibyte proxy<span><a href="#method-i-mb_chars-label-Multibyte+proxy">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+
+<p><code>mb_chars</code> is a multibyte safe proxy for string methods.</p>
+
+<p>In Ruby 1.8 and older it creates and returns an instance of the <a
+href="Mail/Multibyte/Chars.html">Mail::Multibyte::Chars</a> class which
+encapsulates the original string. A Unicode safe version of all the <a
+href="String.html">String</a> methods are defined on this proxy class. If
+the proxy class doesn’t respond to a certain method, it’s forwarded to the
+encapsuled string.</p>
+
+<pre class="ruby"><span class="ruby-identifier">name</span> = <span class="ruby-string">'Claus Müller'</span>
+<span class="ruby-identifier">name</span>.<span class="ruby-identifier">reverse</span> <span class="ruby-comment"># =&gt; &quot;rell??M sualC&quot;</span>
+<span class="ruby-identifier">name</span>.<span class="ruby-identifier">length</span>  <span class="ruby-comment"># =&gt; 13</span>
+
+<span class="ruby-identifier">name</span>.<span class="ruby-identifier">mb_chars</span>.<span class="ruby-identifier">reverse</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-comment"># =&gt; &quot;rellüM sualC&quot;</span>
+<span class="ruby-identifier">name</span>.<span class="ruby-identifier">mb_chars</span>.<span class="ruby-identifier">length</span>       <span class="ruby-comment"># =&gt; 12</span>
+</pre>
+
+<p>In Ruby 1.9 and newer <code>mb_chars</code> returns <code>self</code>
+because <a href="String.html">String</a> is (mostly) encoding aware. This
+means that it becomes easy to run one version of your code on multiple Ruby
+versions.</p>
+
+<h2 id="method-i-mb_chars-label-Method+chaining">Method chaining<span><a href="#method-i-mb_chars-label-Method+chaining">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+
+<p>All the methods on the Chars proxy which normally return a string will
+return a Chars object. This allows method chaining on the result of any of
+these methods.</p>
+
+<pre class="ruby"><span class="ruby-identifier">name</span>.<span class="ruby-identifier">mb_chars</span>.<span class="ruby-identifier">reverse</span>.<span class="ruby-identifier">length</span> <span class="ruby-comment"># =&gt; 12</span>
+</pre>
+
+<h2 id="method-i-mb_chars-label-Interoperability+and+configuration">Interoperability and configuration<span><a href="#method-i-mb_chars-label-Interoperability+and+configuration">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+
+<p>The Chars object tries to be as interchangeable with <a
+href="String.html">String</a> objects as possible: sorting and comparing
+between <a href="String.html">String</a> and Char work like expected. The
+bang! methods change the internal string representation in the Chars
+object. Interoperability problems can be resolved easily with a
+<code>to_s</code> call.</p>
+
+<p>For more information about the methods defined on the Chars proxy see <a
+href="Mail/Multibyte/Chars.html">Mail::Multibyte::Chars</a>. For
+information about how to change the default Multibyte behaviour see <a
+href="Mail/Multibyte.html">Mail::Multibyte</a>.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="mb_chars-source">
+            <pre><span class="ruby-comment"># File lib/mail/core_extensions/string/multibyte.rb, line 44</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">mb_chars</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-constant">Mail</span><span class="ruby-operator">::</span><span class="ruby-constant">Multibyte</span>.<span class="ruby-identifier">proxy_class</span>.<span class="ruby-identifier">consumes?</span>(<span class="ruby-keyword">self</span>)
+    <span class="ruby-constant">Mail</span><span class="ruby-operator">::</span><span class="ruby-constant">Multibyte</span>.<span class="ruby-identifier">proxy_class</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword">self</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">self</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-to" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">to</span><span
+            class="method-args">(position)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns the beginning of the string up to the <code>position</code>
+treating the string as an array (where 0 is the first character).</p>
+
+<p>Examples:</p>
+
+<pre class="ruby"><span class="ruby-string">&quot;hello&quot;</span>.<span class="ruby-identifier">to</span>(<span class="ruby-value">0</span>)  <span class="ruby-comment"># =&gt; &quot;h&quot;</span>
+<span class="ruby-string">&quot;hello&quot;</span>.<span class="ruby-identifier">to</span>(<span class="ruby-value">2</span>)  <span class="ruby-comment"># =&gt; &quot;hel&quot;</span>
+<span class="ruby-string">&quot;hello&quot;</span>.<span class="ruby-identifier">to</span>(<span class="ruby-value">10</span>) <span class="ruby-comment"># =&gt; &quot;hello&quot;</span>
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="to-source">
+            <pre><span class="ruby-comment"># File lib/mail/core_extensions/string/access.rb, line 35</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">to</span>(<span class="ruby-identifier">position</span>)
+  <span class="ruby-identifier">mb_chars</span>[<span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-identifier">position</span>].<span class="ruby-identifier">to_s</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.1.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

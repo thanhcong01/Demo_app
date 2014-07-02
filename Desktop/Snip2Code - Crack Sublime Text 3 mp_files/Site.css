@@ -1,0 +1,5441 @@
+/* UI Color Definitions
+--------------------------------------------------------- */
+/*800px;*/
+/* Useful Mixins */
+@import "normalize.css";
+html {
+  overflow-y: scroll;
+}
+ol,
+ul {
+  margin-left: 3em;
+}
+pre.prettyprint ol,
+prettyprint ul {
+  margin-left: 0px;
+  padding-left: 3.5em;
+}
+strong {
+  font-weight: bold;
+}
+em {
+  font-style: italic;
+  color: black;
+}
+p {
+  margin: 6px 0px;
+}
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  color: #606060;
+  background-color: whitesmoke;
+  padding: 0px;
+  margin: 0px;
+  font-size: 14px;
+  padding-top: 70px;
+}
+body ul.s2cMenu {
+  position: fixed;
+  left: -1000px;
+  z-index: 1000;
+  background-color: white;
+  border: solid 1px #3030d0;
+  padding: 0px !important;
+  overflow-x: hidden;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.4);
+  font-weight: normal;
+}
+body ul.s2cMenu li.ui-menu-item {
+  padding: 2px 4px;
+  font-size: 14px;
+  line-height: 21px;
+  margin: 0px;
+  margin-top: -1px;
+  border-top: solid 1px transparent;
+  border-bottom: solid 1px transparent;
+  cursor: pointer;
+  color: #555555 !important;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+body ul.s2cMenu li.ui-menu-item a {
+  background: none !important;
+  border: none !important;
+  padding: 0px !important;
+  margin: 0px !important;
+  color: #555555 !important;
+}
+body ul.s2cMenu li.ui-menu-item i {
+  float: left;
+  line-height: 27px;
+  vertical-align: bottom;
+  color: white;
+  background-color: #fab033;
+  margin: -3px -4px -2px -4px;
+  display: inline-block;
+  padding: 0px 2px;
+}
+body ul.s2cMenu li:active,
+body ul.s2cMenu li.selected,
+body ul.s2cMenu li.ui-menu-item:hover,
+body ul.s2cMenu .ui-state-focus {
+  padding: 2px 4px;
+  background-color: #f7f7f7;
+  border-top: solid 1px silver;
+  border-bottom: solid 1px silver;
+  color: black;
+}
+body ul.s2cMenu li:active a,
+body ul.s2cMenu li.selected a,
+body ul.s2cMenu li.ui-menu-item:hover a,
+body ul.s2cMenu .ui-state-focus a {
+  color: #000066 !important;
+}
+body ul.s2cMenu li:active i,
+body ul.s2cMenu li.selected i,
+body ul.s2cMenu li.ui-menu-item:hover i,
+body ul.s2cMenu .ui-state-focus i {
+  background-color: #3030d0;
+  color: white;
+}
+body ul.s2cMenu.ContextMenu {
+  z-index: 1000;
+  width: 240px;
+  cursor: pointer;
+  border: solid 1px silver;
+  padding-top: -1px !important;
+  padding-bottom: -1px !important;
+  overflow: hidden;
+}
+body ul.s2cMenu.ContextMenu li.ui-menu-item {
+  font-size: 21px !important;
+  line-height: 27px;
+}
+body ul.s2cMenu.ContextMenu li.ui-menu-item.selected {
+  color: #dd9b38 !important;
+}
+body ul.s2cMenu.ContextMenu li:active,
+body ul.s2cMenu.ContextMenu li.ui-menu-item:hover,
+body ul.s2cMenu.ContextMenu .ui-state-focus {
+  border-top: solid 1px #e0e0e0;
+  border-bottom: solid 1px #e0e0e0;
+}
+input[type="checkbox"] {
+  vertical-align: top;
+  margin-top: 6px;
+}
+input[type="text"],
+input[type="password"],
+input[type="file"],
+input.text-box,
+textarea.text-box,
+textarea,
+select,
+input.ui-autocomplete-input {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 21px;
+  background: ivory;
+  border: solid 1px #e0e0d0;
+  /*.box-shadow( inset 4px 4px 4px, @light-border);*/
+  padding: 1px 4px 1px 4px;
+  color: #303010;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  vertical-align: top;
+  height: 24px;
+}
+select {
+  padding: 2px;
+}
+input[type="text"].input-validation-error,
+input[type="password"].input-validation-error {
+  border: solid 1px #dd8888;
+}
+input#Name {
+  font-size: 16px;
+  padding: 0px 2px;
+  line-height: 18px;
+  margin: 0px 4px;
+  width: 400px;
+}
+#quickSearchTip {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+}
+div.relatedSnippets {
+  margin-top: 1em;
+  height: 66px;
+}
+div.relatedSnippets h2 {
+  text-align: center;
+  margin-bottom: 2px;
+  font-size: 16px;
+  font-weight: bold;
+}
+div.relatedSnippets div.snipLink {
+  cursor: pointer;
+  border: solid 3px #eaeaea;
+}
+div.relatedSnippets div.snipLink:hover {
+  border: solid 3px silver;
+}
+div.relatedSnippets div.snipPrevLink {
+  background-image: url('images/prev.png');
+  background-position: left center;
+  background-repeat: no-repeat;
+}
+div.relatedSnippets div.snipNextLink {
+  background-image: url('images/next.png');
+  background-position: right center;
+  background-repeat: no-repeat;
+}
+div.relatedSnippets div.snipPrevLink:hover {
+  background-image: url('images/prev-hover.png');
+  color: #3030d0;
+}
+div.relatedSnippets div.snipNextLink:hover {
+  background-image: url('images/next-hover.png');
+  color: #3030d0;
+}
+div.relatedSnippets div.prevSnippets {
+  float: left;
+  border: solid 3px #eaeaea;
+  width: 208px;
+  height: 40px;
+  text-align: left;
+  -webkit-border-top-right-radius: 0px;
+  -webkit-border-bottom-right-radius: 0px;
+  -webkit-border-bottom-left-radius: 20px;
+  -webkit-border-top-left-radius: 20px;
+  -moz-border-radius-topright: 0px;
+  -moz-border-radius-bottomright: 0px;
+  -moz-border-radius-bottomleft: 20px;
+  -moz-border-radius-topleft: 20px;
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 20px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 0px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  overflow: hidden;
+}
+div.relatedSnippets div.prevSnippets div {
+  height: 40px;
+  width: 168px;
+  display: table-cell;
+  vertical-align: middle;
+  padding-left: 44px;
+  padding-right: 6px;
+  font-size: 13px;
+  line-height: 18px;
+}
+div.relatedSnippets div.nextSnippets {
+  cursor: pointer;
+  float: right;
+  border: solid 3px #eaeaea;
+  width: 208px;
+  height: 40px;
+  -webkit-border-top-right-radius: 20px;
+  -webkit-border-bottom-right-radius: 20px;
+  -webkit-border-bottom-left-radius: 0px;
+  -webkit-border-top-left-radius: 0px;
+  -moz-border-radius-topright: 20px;
+  -moz-border-radius-bottomright: 20px;
+  -moz-border-radius-bottomleft: 0px;
+  -moz-border-radius-topleft: 0px;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 0px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 20px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  text-align: right;
+  overflow: hidden;
+}
+div.relatedSnippets div.nextSnippets div {
+  height: 40px;
+  width: 168px;
+  display: table-cell;
+  vertical-align: middle;
+  padding-right: 44px;
+  padding-left: 6px;
+  font-size: 13px;
+  line-height: 18px;
+}
+div.relatedSnippets div.relSnippets {
+  cursor: pointer;
+  margin-left: 216px;
+  margin-right: 216px;
+  border: solid 3px #eaeaea;
+  height: 40px;
+  text-align: center;
+  width: 220px;
+  overflow: hidden;
+}
+div.relatedSnippets div.relSnippets div {
+  height: 40px;
+  width: 208px;
+  display: table-cell;
+  vertical-align: middle;
+  padding: 0px 6px;
+  font-size: 13px;
+  line-height: 18px;
+}
+div.relatedSnippets div.relSnippets:hover {
+  color: #3030d0;
+}
+div.relatedRequests {
+  margin-top: 1em;
+  /*height: 46px;*/
+
+  /*div.reqLink { available when the page of requests is finished
+    cursor: pointer;
+    border: solid 3px @light-border;
+  }
+    */
+
+}
+div.relatedRequests h2 {
+  text-align: center;
+  margin-bottom: 2px;
+  font-size: 16px;
+  font-weight: bold;
+}
+div.relatedRequests div.reqLink:hover {
+  border: solid 3px silver;
+}
+div.relatedRequests div.relRequest {
+  /*cursor: pointer; available when the page of requests is finished */
+  border: solid 3px #eaeaea;
+  /*height: 40px;
+    text-align: center;*/
+  overflow: hidden;
+}
+div.relatedRequests div.relRequest div {
+  /*height: 40px;*/
+  display: table-cell;
+  vertical-align: middle;
+  /*text-align: center;*/
+  padding: 6px;
+  /* 0px 6px; */
+  font-size: 13px;
+  line-height: 18px;
+  /*width: 650px;  this is needed to display the text centered*/
+
+}
+div.relatedRequests div.relRequest:hover {
+  color: #3030d0;
+}
+div.signupFromSnip {
+  margin-top: 40px;
+  font-size: 16px;
+  text-align: center;
+}
+textarea#SnippetTags {
+  font-size: 13px;
+}
+h1 {
+  font-size: 25px;
+  color: #222222;
+}
+h2 {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 22px;
+  line-height: 25px;
+  color: #222222;
+  margin-top: 8px;
+  margin-bottom: 0px;
+}
+h3 {
+  font-size: 17px;
+  margin-top: 8px;
+  margin-bottom: 0px;
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  color: #222222;
+}
+h4 {
+  font-size: 16px;
+  margin: 1em 0px;
+  color: #222222;
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+}
+label {
+  text-align: right;
+  display: inline-block;
+}
+#snippetCountLabel {
+  color: #dd9b38;
+  padding: 0px 2px;
+  font-weight: bold;
+}
+div.underlapLabel {
+  text-align: right;
+  height: 0px;
+  overflow: visible;
+  font-size: 20px;
+  line-height: 31px;
+  text-transform: uppercase;
+  margin-right: 1em;
+}
+/* LOGIN PAGE */
+
+#LoginGithubBtn {
+  height: 32px;
+  width: 32px;
+  border: solid 0px red;
+  top: 8px;
+  display: inline-block;
+  position: relative;
+}
+#LoginGithubBtn:hover {
+  text-decoration: none;
+  border-bottom: none;
+}
+div.publicpage div.inputForm {
+  width: 550px;
+}
+div.providers_block {
+  width: 550px;
+}
+/* END LOGIN PAGE */
+
+a:link,
+a:visited,
+a:active {
+  font-weight: bold;
+  color: #333333;
+  text-decoration: none;
+}
+a:hover {
+  border-bottom: solid 1px silver;
+  color: #3030d0;
+}
+span.snipTag,
+a.snipTag,
+a.snipTag:visited,
+a.snipTag:link,
+a.snipEditTag,
+a.snipEditTag:visited,
+a.snipEditTag:link,
+a.snipEditTagNoDelete,
+a.snipEditTagNoDelete:visited,
+a.snipEditTagNoDelete:link {
+  margin: 1px 0.2em 1px 0.2em;
+  display: inline-block;
+  min-width: 40px;
+  border: solid 1px #c9ca00;
+  background-color: #fcfce0;
+  color: #3030d0;
+  text-align: center;
+  padding: 0px 6px 0px;
+  line-height: 17px;
+  font-size: 12px;
+  vertical-align: bottom;
+  letter-spacing: 0.5px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  font-weight: normal;
+}
+a.snipEditTag,
+a.snipEditTag:visited,
+a.snipEditTag:link {
+  padding-right: 14px;
+  background-image: url("images/action_delete.png");
+  background-position: right center;
+  background-repeat: no-repeat;
+}
+span.snipTag:hover,
+a.snipTag:hover,
+a.snipEditTag:hover,
+a.snipEditTagNoDelete:hover {
+  border: solid 1px #3030d0;
+  color: #222222;
+  background-color: #ffffb0;
+}
+a.snipEditTag:hover {
+  background-image: url("images/action_delete_hover.png");
+}
+a.property,
+a.property:visited,
+a.property:link {
+  margin: 2px 0px;
+  padding: 0px;
+  white-space: nowrap;
+  /*font-weight:normal;*/
+  color: #606070;
+  font-size: 13px;
+  line-height: 18px;
+  border: solid 1px white;
+  display: block;
+  outline: 0;
+}
+table.propertyTable {
+  font-weight: normal;
+  line-height: 20px;
+  border-collapse: collapse;
+  font-size: 13px;
+  margin: 4px 0px;
+  max-width: 255px;
+  width: 255px;
+  min-width: 255px;
+}
+table.propertyTable tr {
+  border-top: solid 2px white;
+  border-bottom: solid 1px white;
+  cursor: pointer;
+  height: 20px !important;
+}
+table.propertyTable tr td,
+table.propertyTable tr td.s2cAutoComplete {
+  vertical-align: middle;
+  border: solid 1px white;
+  border-right: solid 2px white;
+  height: 20px !important;
+  overflow: hidden;
+}
+table.propertyTable tr td .editPropValue,
+table.propertyTable tr td.s2cAutoComplete .editPropValue,
+table.propertyTable tr td .editPropName,
+table.propertyTable tr td.s2cAutoComplete .editPropName {
+  font-size: 13px;
+  padding: 0px;
+  margin: 0px;
+  outline: none;
+  min-height: 19px;
+  max-height: 19px;
+}
+table.propertyTable tr td .editPropName,
+table.propertyTable tr td.s2cAutoComplete .editPropName {
+  width: 112px;
+}
+table.propertyTable tr td .editPropValue,
+table.propertyTable tr td.s2cAutoComplete .editPropValue {
+  width: 111px;
+}
+table.propertyTable tr td span,
+table.propertyTable tr td.s2cAutoComplete span,
+table.propertyTable tr td a,
+table.propertyTable tr td.s2cAutoComplete a {
+  display: block;
+  line-height: 20px;
+  height: 20px;
+}
+table.propertyTable tr td.name {
+  width: 50%;
+  max-width: 125px;
+  height: 20px;
+}
+table.propertyTable tr td.name span.name {
+  display: block;
+  height: 20px;
+  border-style: solid;
+  border-width: 1px;
+  border-left-width: 6px;
+  border-color: #effadf;
+  background-color: #effadf;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: right;
+  padding: 0px 3px;
+  border-color: #e4f7c9;
+}
+table.propertyTable tr td.value {
+  width: 50%;
+  max-width: 125px;
+  height: 20px;
+}
+table.propertyTable tr td.value span.value {
+  display: block;
+  height: 20px;
+  background-color: #effadf;
+  border: solid 1px #e4f7c9;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: left;
+  padding: 0px 3px;
+}
+table.propertyTable tr:hover td span.name,
+table.propertyTable tr:hover td span.value {
+  border-color: #8ad321;
+  color: #303090;
+  background-color: #f3fbe8;
+}
+table.propertyTable tr.propEdit {
+  cursor: default;
+}
+table.propertyTable tr.propEdit td.name {
+  max-width: 110px;
+}
+table.propertyTable tr.propEdit td.value {
+  max-width: 110px;
+}
+table.propertyTable tr.propEdit i.fa {
+  cursor: pointer;
+}
+table.propertyTable input#newPropNameComboInput {
+  min-width: 112px;
+  max-width: 112px;
+  text-align: right;
+  font-weight: normal;
+}
+table.propertyTable input#newPropValueComboInput {
+  width: 90px;
+  text-align: left;
+}
+/*
+table.propertyTable .editPropValue, table.propertyTable textarea.editPropName, .ui-autocomplete-input, table.propertyTable span.editPropValue
+{
+  font-size:13px;
+  line-height:18px;
+  min-height: 18px;
+  max-height: 18px;
+
+  
+  margin:0px 6px;
+  padding:1px 2px;
+  display:inline-block;
+  text-align:left;
+  font-weight:bold;
+  margin:0px;
+  
+  overflow:hidden;
+  white-space:nowrap;
+  text-overflow: ellipsis;
+  resize:none;
+
+}
+*/
+
+/*
+a.property:hover
+{
+    text-decoration:none;
+    border-color:@prop-border-hi;
+    color:@prop-text-hi;
+    background-color: @prop-bg;
+    border: solid 1px Transparent;
+    border-bottom: solid 1px @prop-border;
+}
+
+a.property  {
+  span.name {
+    // display:inline-block;
+  }
+}
+*/
+
+.s2cAutoComplete a.ui-button {
+  width: 5px;
+  min-width: 5px;
+  height: 5px;
+  min-height: 5px;
+  margin: 4px 0px 0px 0px;
+  padding: 1px 1px 0px 0px;
+}
+.ui-autocomplete li.newPropNameComboInputliClass {
+  text-align: right;
+  margin-right: 0.2em;
+  margin: 0px;
+  text-overflow: ellipsis;
+  width: 130px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.ui-autocomplete li.newPropValueComboInputliClass {
+  text-align: left;
+  margin-left: 0.2em;
+  margin: 0px;
+  text-overflow: ellipsis;
+  width: 130px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+/*
+a.property span.value, table.propertyTable span.value
+{
+  margin-left:0.2em;
+  padding:0px 3px;
+  display:inline-block;
+  width:117px;
+  text-align:left;
+  font-weight:bold;
+  margin:0px;
+  vertical-align:top;
+  height:20px;
+  line-height:18px;
+  background-color: @prop-bg;
+  border: solid 1px @prop-border;
+  border-bottom: solid 1px @prop-border;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+*/
+
+/* this is the style for the items in the drop down menu of autocomplete */
+
+.ui-menu .ui-menu-item a {
+  display: inline-block;
+  width: 120px;
+  padding-right: 18px;
+}
+/*
+table.propertyTable span.editPropValue {
+  border:solid 1px @prop-border;
+  background-color:@prop-bg-hi;
+  width:@prop-value-width;
+}
+
+table.propertyTable .editPropName
+{
+  min-width:@prop-name-width;
+  max-width:@prop-name-width;
+  width:@prop-name-width;
+  text-align:right;
+  font-weight:normal;
+  padding:1px 3px;
+}
+
+table.propertyTable .editPropValue
+{
+  min-width:@prop-value-width + 10;
+  max-width:@prop-value-width + 10;
+  width:@prop-value-width + 10;
+  text-align:left;
+  font-weight:normal;
+}
+*/
+
+a.s2cButton.squareBt {
+  padding: 0px;
+  min-width: 20px;
+  height: 20px;
+  margin: 0px;
+}
+a.property:hover span.name,
+a.property:hover span.value {
+  color: #303090;
+  text-decoration: none;
+}
+#replaceBtnShow {
+  cursor: pointer;
+}
+.replaceTextInCode {
+  color: #dd9b38;
+}
+input.replaceTextInCodeInput {
+  width: 220px;
+  background: #dd9b38;
+  font-weight: bold;
+}
+/* Start Captcha CSS 
+-----------------------------------------------------------*/
+
+/*
+.cf_captcha span input#chrono_verification {
+    margin-top: 10px;
+    width: 50%;
+}
+.cf_captcha .tooltipimg {
+    margin-top: 10px;
+    vertical-align: top;
+}
+.cf_captcha img#imgver {
+    vertical-align: middle;
+}
+*/
+
+.recaptcha_theme_clean {
+  background-color: White;
+}
+.recaptchatable {
+  background-color: White;
+}
+/* End Captcha CSS */
+
+/* Styles for basic forms
+-----------------------------------------------------------*/
+
+div.help {
+  background-color: #fafffa;
+  border: solid 1px #d5f0d5;
+  color: #666666;
+  -webkit-box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.4);
+  box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.4);
+  margin: 1em auto;
+  padding: 4px 1em;
+  font-size: 14px;
+  line-height: 21px;
+}
+div.help ul {
+  margin: 6px 1em;
+}
+div.help ul li {
+  margin: 0px 1em;
+}
+div.helpPanel {
+  background-color: #fafffa;
+  border: solid 1px #d5f0d5;
+  color: #666666;
+  -webkit-box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.4);
+  box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.4);
+  min-width: 400px;
+  width: 520px;
+  margin: 1em auto;
+  padding: 4px 1em;
+  text-align: center;
+  font-size: 13px;
+  line-height: 20px;
+}
+div.inputForm {
+  padding: 20px;
+  min-width: 400px;
+  width: 530px;
+  border: solid 0px #e0e0d0;
+}
+div.inputForm div.settingsPanel {
+  margin: 0px 1em;
+  min-height: 160px;
+}
+div.inputForm div.settingsInfo {
+  width: 580px;
+  margin: 0.5em auto;
+  background-color: #fafffa;
+  border: solid 1px #d5f0d5;
+  color: #666666;
+  -webkit-box-shadow: 2px 2px 4px rgba(50, 50, 50, 0.2);
+  -moz-box-shadow: 2px 2px 4px rgba(50, 50, 50, 0.2);
+  box-shadow: 2px 2px 4px rgba(50, 50, 50, 0.2);
+  padding: 0.5em 1em;
+}
+div.inputForm span.inputLabel {
+  display: inline-block;
+  min-width: 120px;
+  text-align: right;
+  white-space: nowrap;
+  vertical-align: bottom;
+  font-size: 14px;
+  line-height: 26px;
+  margin-right: 0.3em;
+}
+div.inputForm span.inputInfo {
+  display: inline-block;
+  min-width: 200px;
+  width: 350px;
+  /*CG: was 300px*/
+  text-align: left;
+  vertical-align: bottom;
+  font-size: 14px;
+  line-height: 24px;
+  color: #3030d0;
+  padding: 0px 4px;
+  border: solid 1px #eaeaea;
+  border-radius: 3px;
+  margin: 2px 0px;
+}
+div.inputForm span.inputInfo em {
+  color: #3030d0;
+  font-weight: bold;
+}
+div.inputForm span.inputInfo span.inputInvisible {
+  display: inline-block;
+  min-width: 200px;
+  text-align: left;
+  vertical-align: top;
+  font-size: 15px;
+  line-height: 24px;
+  color: transparent;
+  padding: 3px 0.5em;
+  border: dotted 1px transparent;
+}
+div.inputForm span.inputInfo .s2cInputLabel {
+  display: inline-block;
+  min-width: 120px;
+  text-align: right;
+  white-space: nowrap;
+  vertical-align: bottom;
+  font-size: 14px;
+  line-height: 26px;
+  margin-right: 0.3em;
+}
+div.inputForm span.inputInfo span.inputLabel {
+  display: inline-block;
+  min-width: 120px;
+  text-align: right;
+  white-space: nowrap;
+  vertical-align: bottom;
+  font-size: 14px;
+  line-height: 26px;
+  margin-right: 0.3em;
+}
+div.inputForm h3 {
+  text-align: left;
+  text-transform: capitalize;
+  margin: 0px 0px 10px 0px;
+  font-size: 20px;
+}
+div.inputForm h3.collapsable {
+  background-position: left center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+div.inputForm h3.open:before {
+  font-family: FontAwesome;
+  content: "\f0d7 ";
+  display: inline-block;
+  width: 1.3em;
+  text-align: center;
+  color: #3030d0;
+}
+div.inputForm h3.close:before {
+  font-family: FontAwesome;
+  content: "\f0da ";
+  display: inline-block;
+  width: 1.3em;
+  text-align: center;
+  color: #3030d0;
+}
+div.inputForm h4 {
+  margin-bottom: 0px;
+  text-align: left;
+  font-size: 14px;
+  margin-left: 0px;
+}
+div.inputForm span.inputInfo {
+  display: inline-block;
+  min-width: 200px;
+  width: 350px;
+  /*CG: was 300px*/
+  text-align: left;
+  vertical-align: bottom;
+  font-size: 14px;
+  line-height: 24px;
+  color: #3030d0;
+  padding: 0px 4px;
+  border: solid 1px #eaeaea;
+  border-radius: 3px;
+  margin: 2px 0px;
+}
+div.inputForm span.inputInfo div.inputGroup {
+  border: solid 1px Transparent;
+  margin-left: 0.5em;
+  padding: 0px 6px;
+}
+div.inputForm span.inputInfo em {
+  color: #3030d0;
+  font-weight: bold;
+}
+div.inputForm span.inputInvisible {
+  display: inline-block;
+  min-width: 200px;
+  text-align: left;
+  vertical-align: top;
+  font-size: 15px;
+  line-height: 24px;
+  color: transparent;
+  padding: 3px 0.5em;
+  border: dotted 1px transparent;
+}
+div.inputForm div.inputGroup {
+  border: solid 1px Transparent;
+  margin-bottom: 3ex;
+}
+div.inputForm p {
+  text-align: left;
+  font-size: 15px;
+  line-height: 1.7;
+  word-wrap: break-word;
+}
+#alertsSettingsPanel div.inputField {
+  padding-top: 0;
+  padding-bottom: 20px;
+}
+#advertisewithus_panel span.inputLabel {
+  width: 170px;
+}
+div.inputForm.center {
+  margin: 20px auto;
+}
+div.inputForm.border {
+  background-color: #f7f7f7;
+  border: solid 1px #eaeaea;
+}
+div.groupList {
+  background-color: whitesmoke;
+  margin-bottom: 1.2em;
+  padding-left: 0.8em;
+  padding-right: 0.2em;
+  border-left: solid 4px transparent;
+  max-height: 280px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+div.inputForm div.inputField {
+  margin: 0px;
+  padding: 7px;
+  text-align: left;
+  vertical-align: bottom;
+}
+div.descColumn {
+  float: left;
+  width: 220px;
+  text-align: right;
+  padding: 2px;
+}
+div.inputColumn {
+  margin-left: 220px;
+}
+div.inputForm span.inputError,
+span.errorMessage {
+  display: inline-block;
+  min-width: 200px;
+  text-align: left;
+  vertical-align: top;
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 27px;
+  color: #601010;
+  background-color: snow;
+  border: solid 1px #dd8888;
+  background-image: url('images/error.png');
+  background-position: 8px center;
+  background-repeat: no-repeat;
+  padding: 3px 0.5em 3px 2.0em;
+  border-radius: 3px;
+}
+div.inputForm span.inputOK {
+  display: inline-block;
+  min-width: 200px;
+  text-align: left;
+  vertical-align: top;
+  font-size: 14px;
+  line-height: 20px;
+  color: white;
+  background-color: white;
+  border: solid 1px white;
+  padding: 3px 0.5em;
+  padding-left: 26px;
+  border-radius: 3px;
+}
+span.errorMessage em {
+  color: #601010;
+  font-weight: bold;
+}
+span.inputLabelSignup,
+div.inputLabel {
+  display: inline-block;
+  min-width: 120px;
+  text-align: right;
+  white-space: nowrap;
+  vertical-align: bottom;
+  font-size: 14px;
+  line-height: 24px;
+  margin-right: 0.4em;
+  /*overflow:hidden;*/
+
+}
+div.inputForm span.inputLabel {
+  min-width: 140px;
+  width: 160px;
+}
+span.inputLabelSignup {
+  min-width: 200px;
+}
+div.inputHelp {
+  border: solid 1px #e0e0d0;
+  padding: 4px;
+  margin: 4px 0px;
+  font-size: 11px;
+  border-radius: 5px;
+  color: #3030d0;
+  /*overflow:hidden;*/
+
+}
+span.editErrorMessage,
+div.editErrorMessage {
+  min-height: 24px;
+  background-color: snow;
+  position: absolute;
+  border: solid 1px #dd8888;
+  z-index: 100;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 3px 8px 3px 26px;
+  background-image: url('images/error.png');
+  background-position: 4px 6px;
+  background-repeat: no-repeat;
+  -webkit-box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.4);
+  box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.4);
+}
+div.inputForm span.field-validation-error,
+div.inputForm div.field-validation-error {
+  display: inline-block;
+  float: right;
+  color: #601010;
+  width: 200px;
+  text-align: left;
+  border: solid 1px #dd8888;
+  background-color: snow;
+  padding: 4px;
+  margin: 0px 4px 4px 0px;
+  font-size: 12px;
+  overflow: visible;
+  white-space: nowrap;
+}
+div.signupForm span.field-validation-error,
+div.signupForm div.field-validation-error {
+  width: 300px;
+  /*was 240px*/
+  margin: 1px;
+  text-align: center;
+  white-space: normal;
+}
+fieldset {
+  border: 1px solid #dddddd;
+  padding: 0 1.4em 1.4em 1.4em;
+  margin: 0 0 1.5em 0;
+}
+legend {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+/*
+textarea 
+{
+  min-height: 75px;
+}*/
+
+.editor-label {
+  margin: 1em 0 0 0;
+}
+.editor-field {
+  margin: 0.5em 0 0 0;
+}
+textarea.tagEdit {
+  font-size: 13px;
+  line-height: 15px;
+  min-height: 18px;
+  max-height: 18px;
+  width: 239px;
+  max-width: 239px;
+  min-width: 239px;
+  padding: 1px 3px;
+  margin: 0px;
+  overflow: hidden;
+  white-space: nowrap;
+  resize: none;
+}
+select.permissionDropDown {
+  -moz-appearance: none;
+  width: 248px;
+  margin: 0px;
+}
+div.permission {
+  background-color: #effadf;
+  border: solid 1px #e4f7c9;
+  padding: 2px 6px;
+}
+/* Index page 
+-----------------------------------------------------------*/
+
+div.inputFormIndex h3 {
+  margin-bottom: 6px;
+  text-align: left;
+  color: #3030d0;
+}
+div.fakeInputBoxIndex {
+  display: inline-block;
+  background-color: ivory;
+  font-size: 14px;
+  font-weight: normal;
+  color: black;
+  margin: 4px 2px 4px 4px;
+  height: 22px;
+  padding: 1px 2px 2px 2px;
+  border: solid 1px silver;
+  -webkit-box-shadow: inset 2px 2px 3px #e0e0e0;
+  -moz-box-shadow: inset 2px 2px 3px #e0e0e0;
+  box-shadow: inset 2px 2px 3px #e0e0e0;
+  margin: 0px;
+  white-space: nowrap;
+  float: left;
+}
+div.fakeInputBoxIndex input[type="text"],
+div.fakeInputBoxIndex input[type="password"] {
+  background-color: Transparent;
+  border: 0px;
+  margin: 0px;
+  padding: 0px;
+  box-shadow: none;
+  font-size: 13px;
+  line-height: 16px;
+  float: right;
+  height: 18px;
+  float: left;
+  outline: none;
+}
+div.fakeInputBoxIndex div.message {
+  display: inline-block;
+  font-size: 13px;
+  line-height: 17px;
+  width: 0px;
+  height: 18px;
+  overflow: visible;
+  color: silver;
+  white-space: nowrap;
+  margin: 0px;
+  float: left;
+  padding-top: 2px;
+}
+div.innerFakeInputBoxIndex {
+  padding-left: 5px;
+}
+tr.trIndex {
+  height: 35px;
+}
+/* END Index page 
+-----------------------------------------------------------*/
+
+/* Main styles for web app
+-----------------------------------------------------------*/
+
+.header {
+  border-bottom: solid 1px #3030d0;
+  background: none repeat scroll 0 0 white;
+  border-bottom: 1px solid #303090;
+  height: 70px;
+  position: fixed;
+  width: 100%;
+  top: 0px;
+  z-index: 100;
+}
+div.loginfo {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  float: right;
+  width: 580px;
+  height: 18px;
+  text-align: right;
+  margin: 10px 0em 10px 0px;
+  vertical-align: top;
+  font-size: 14px;
+  line-height: 16px;
+  overflow: visible;
+  border: solid 1px transparent;
+}
+div.loginfo div.dropMenuContainer {
+  border: solid 1px rgba(0, 0, 0, 0.1);
+  color: rgba(0, 0, 0, 0.1);
+  display: block;
+  float: right;
+  position: relative;
+  top: -6px;
+  cursor: pointer;
+  height: 26px;
+  width: 49px;
+}
+div.loginfo div.dropMenuContainer i {
+  color: inherit;
+  float: right;
+  top: 6px;
+  position: relative;
+}
+div.loginfo div.dropMenuContainer:hover,
+div.loginfo div.menuSelected {
+  color: #9c9c9c;
+  border: solid 1px #9c9c9c;
+}
+div.loginfo div.menuSelected,
+div.loginfo div.menuSelected:hover {
+  border: solid 1px #3030d0;
+  color: #3030d0;
+  -webkit-box-shadow: 1px 1px 2px rgba(50, 50, 50, 0.2);
+  -moz-box-shadow: 1px 1px 2px rgba(50, 50, 50, 0.2);
+  box-shadow: 1px 1px 2px rgba(50, 50, 50, 0.2);
+}
+div.loginfo a {
+  padding: 0px 4px;
+  margin: 1px 3px;
+  border: solid 1px Transparent;
+  -webkit-border-radius: 1px;
+  -moz-border-radius: 1px;
+  border-radius: 1px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  font-weight: normal;
+  color: #3030d0;
+  letter-spacing: 1px;
+}
+div.loginfo a:hover {
+  border-bottom: solid 1px silver;
+}
+div.loginfo a.selected {
+  font-weight: bold;
+  letter-spacing: 0px;
+  border-bottom: solid 2px #5757e6;
+}
+div.loginfo span {
+  color: #909090;
+}
+div.loginfo div.userPicSmallFrame {
+  display: inline-block;
+  padding: 0px;
+  margin: 0px;
+  background-color: whitesmoke;
+  border: solid 1px transparent;
+  overflow: hidden;
+  cursor: pointer;
+  height: 24px;
+}
+div.loginfo div.userPicSmallFrame img.userPicSmall {
+  margin: 0px;
+  padding: 0px;
+  border: solid 1px transparent;
+  box-shadow: none;
+}
+div.userInfoBasic {
+  text-align: center;
+}
+div.userInfoBasic div.nickname {
+  color: #222222;
+  font-size: 19px;
+  margin: 0px;
+  letter-spacing: 1px;
+}
+div.userInfoBasic div.fullname {
+  margin: 0px;
+  text-transform: capitalize;
+  padding: 1px;
+  font-size: 17px;
+  letter-spacing: -1px;
+  color: #222222;
+  line-height: 21px;
+}
+div.userInfoBasic div.picture img {
+  border: 1px solid white;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  margin: 6px;
+  height: 150px;
+  width: 150px;
+}
+div.userInfoBasic div.picture div.topReputation {
+  color: #fab033;
+  width: 150px;
+  margin: 0px auto;
+  height: 18px;
+  line-height: 18px;
+  background-color: rgba(0, 0, 0, 0.6);
+  overflow: visible;
+  position: relative;
+  top: -28px;
+  font-size: 11px;
+}
+div.userInfoBasic div.picture div.topReputation i.fa {
+  font-size: 13px;
+  height: 1px;
+  display: inline-block;
+  text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.6);
+}
+.title {
+  color: #3030d0;
+  padding: 10px 0px 10px 20px;
+}
+.title div {
+  cursor: pointer;
+  height: 50px;
+  background-image: url("images/Snip2Code 212x48.png");
+  background-position: left center;
+  background-repeat: no-repeat;
+  margin-right: 440px;
+}
+.searchbox {
+  float: right;
+  background-color: transparent;
+  /* @mid-bg; */
+  padding: 2px 0px;
+  height: 30px;
+  clear: right;
+  z-index: 100;
+  width: 582px;
+  /* + 32;*/
+
+}
+.topperButtons {
+  float: left;
+}
+.topperButton {
+  cursor: pointer;
+}
+div.fakeInputBox {
+  display: inline-block;
+  background-color: ivory;
+  font-size: 14px;
+  font-weight: normal;
+  color: black;
+  height: 20px;
+  padding: 1px 2px 2px 2px;
+  border: solid 1px silver;
+  -webkit-box-shadow: inset 2px 2px 3px #e0e0e0;
+  -moz-box-shadow: inset 2px 2px 3px #e0e0e0;
+  box-shadow: inset 2px 2px 3px #e0e0e0;
+  margin: 0px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  white-space: nowrap;
+  width: 462px;
+  float: right;
+}
+div.fakeInputBox input[type="text"] {
+  background-color: Transparent;
+  border: 0px;
+  margin: 0px;
+  padding: 0px;
+  box-shadow: none;
+  width: 440px;
+  font-size: 14px;
+  line-height: 21px;
+  height: 21px;
+  float: left;
+  outline: none;
+  font-family: 'Roboto', sans-serif;
+}
+div.fakeInputBox div.message {
+  display: inline-block;
+  font-size: 14px;
+  line-height: 20px;
+  width: 0px;
+  height: 20px;
+  overflow: visible;
+  color: silver;
+  white-space: nowrap;
+  margin: 0px;
+  float: left;
+}
+#quickSearchBt {
+  float: left;
+  display: inline-block;
+  line-height: 20px;
+  font-size: 15px;
+  height: 20px;
+  width: 20px;
+  margin: 1px 2px;
+  padding: 0px;
+  -webkit-opacity: 0.8;
+  -moz-opacity: 0.8;
+  opacity: 0.8;
+  filter: alpha(opacity = (80) );
+  min-width: 18px;
+  margin: 0px;
+  border: 0px;
+  text-align: center;
+  /*
+    background-image:url("images/search.png");
+    background-position:center center;
+    background-repeat:no-repeat;
+    background-color:transparent;*/
+
+}
+#searchBtnImg {
+  display: inline-block;
+  margin: 0px 0px 0px 0px;
+  float: right;
+  -webkit-opacity: 1;
+  -moz-opacity: 1;
+  opacity: 1;
+  filter: alpha(opacity = (100) );
+  filter: alpha(opacity=100);
+}
+.mainmenu,
+.mainheader {
+  max-width: 972px;
+  border: solid 0px red;
+  margin: 0px auto;
+}
+.publicmainmenu,
+.publicmainheader {
+  max-width: 972px;
+  border: solid 0px red;
+  margin: 0px auto;
+}
+.menu {
+  font-size: 15px;
+  height: 27px;
+  margin-right: 0px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.menu a,
+.menu span {
+  display: block;
+  float: left;
+  text-align: center;
+  padding: 1px 4px;
+  text-decoration: none;
+  color: #909090;
+  min-width: 80px;
+  margin-right: 1em;
+  border: 0px;
+}
+.menu span {
+  color: #3030d0;
+  font-weight: bold;
+}
+.menu a:hover {
+  color: #3030d0;
+}
+.menu a.selected {
+  color: #3030d0;
+  font-weight: bold;
+}
+#spacer {
+  background-color: whitesmoke;
+  transition-property: height;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
+}
+.body div.page {
+  margin: 1.8em auto;
+  background-color: white;
+  min-height: 550px;
+  /*650px;*/
+  padding: 0px;
+  border: solid 1px #e0e0e0;
+  -webkit-box-shadow: 0px 0px 5px #e0e0e0;
+  -moz-box-shadow: 0px 0px 5px #e0e0e0;
+  box-shadow: 0px 0px 5px #e0e0e0;
+  width: 972px;
+  max-width: 972px;
+  min-width: 972px;
+}
+.body div.publicpage {
+  margin: 1em auto;
+  background-color: white;
+  min-height: 330px;
+  /* 397px; */
+  /*650px;*/
+  padding: 0px;
+  border: solid 1px #e0e0e0;
+  max-width: 972px;
+  -webkit-box-shadow: 0px 0px 5px #e0e0e0;
+  -moz-box-shadow: 0px 0px 5px #e0e0e0;
+  box-shadow: 0px 0px 5px #e0e0e0;
+}
+div.content {
+  border-left: solid 1px #eaeaea;
+  border-right: solid 1px #eaeaea;
+}
+div.content div.snippetInfoFrame:hover a {
+  -webkit-opacity: 1;
+  -moz-opacity: 1;
+  opacity: 1;
+  filter: alpha(opacity = (100) );
+}
+div.content div.snippetInfoFrame:hover div.snippetInfo {
+  border: solid 1px #eaeaea;
+  border-right: solid 1px #c4c4c4;
+  border-bottom: solid 1px #c4c4c4;
+  background-color: #f7f7f7;
+}
+div.content div.snippetInfoFrame:hover div.snippetInfo h4.info span.visibility {
+  width: 120px;
+  opacity: 1.0;
+}
+div.content div.snippetInfoFrame:hover div.snippetInfo div.description {
+  color: Black;
+}
+div.content div.snippetInfoFrame:hover div.snippetInfo div.name {
+  color: #3030d0;
+}
+div.content div.snippetInfoFrame:hover div.snippetInfo div.bottom-left-b,
+div.content div.snippetInfoFrame:hover div.snippetInfo div.bottom-left-w {
+  display: block;
+  border-bottom: 20px solid #eaeaea;
+}
+div.content div.snippetInfoFrame:hover div.snippetInfo div.bottom-left-w {
+  display: block;
+  border-bottom: 20px solid white;
+}
+div.content div.snippetInfoFrame:hover div.snippetInfo div.accent {
+  -webkit-opacity: 1;
+  -moz-opacity: 1;
+  opacity: 1;
+  filter: alpha(opacity = (100) );
+}
+div.content div.snippetInfoFrame {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  padding: 0px;
+  margin-bottom: 2ex;
+  margin-top: 0.2em;
+  height: 110px;
+  overflow: visible;
+}
+div.content div.snippetInfoFrame p {
+  margin: 0px;
+}
+div.content div.snippetInfoFrame div.snippetInfoSelect,
+div.content div.snippetInfoFrame div.snippetInfoSelect:hover {
+  border: solid 1px #eaeaea;
+  background-color: #f7f7f7;
+}
+div.content div.snippetInfoFrame div.snippetInfoDeleted,
+div.content div.snippetInfoFrame div.snippetInfoDeleted:hover {
+  border: solid 1px #601010;
+  background-color: snow;
+}
+div.content div.snippetInfoFrame div.code {
+  display: none;
+  margin-left: auto;
+  border-top: solid 0px Transparent;
+  border-left: solid 1px #eaeaea;
+  border-right: solid 1px #c4c4c4;
+  border-bottom: solid 1px #c4c4c4;
+  background-color: #f7f7f7;
+  z-index: 100;
+  top: -1px;
+  position: relative;
+  overflow: hidden;
+  width: 574px;
+}
+div.content div.snippetInfoFrame div.code div pre.codepreview {
+  margin: 4px 24px 4px 4px;
+  padding: 2px;
+  border: solid 1px silver;
+  background-color: white;
+  color: #333333;
+  font-family: 'Droid Sans Mono', sans-serif;
+  font-size: 9px;
+  line-height: 15px;
+  max-height: 200px;
+  overflow-y: auto;
+  white-space: pre-wrap;
+}
+div.content div.snippetInfoFrame div.code .accent.public {
+  border-left: solid 4px #2080ff;
+}
+div.content div.snippetInfoFrame div.code div.accent.group {
+  border-left: solid 4px #20ca20;
+}
+div.content div.snippetInfoFrame div.code div.accent.private {
+  border-left: solid 4px #b5b500;
+}
+div.content div.snippetInfoFrame div.code div.accent.foreignSource {
+  border-left: solid 4px #d0d0d0;
+}
+div.content div.snippetInfoFrame div.snippetInfo {
+  position: relative;
+  height: 106px;
+  padding: 4px;
+  margin: 0px;
+  cursor: pointer;
+  border: solid 1px transparent;
+  transition-property: background border;
+  transition-duration: 0.6s;
+  transition-timing-function: ease-out;
+  transition-delay: 0s;
+}
+div.content div.snippetInfoFrame div.snippetInfo div.author {
+  float: left;
+  width: 54px;
+  height: 54px;
+  margin-right: 5px;
+  margin-bottom: 40px;
+}
+div.content div.snippetInfoFrame div.snippetInfo div.author div.picture {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 50px 50px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: solid 1px #eaeaea;
+}
+div.content div.snippetInfoFrame div.snippetInfo div.author div.reputation,
+div.content div.snippetInfoFrame div.snippetInfo div.author div.badges {
+  opacity: 0.0;
+  text-align: center;
+  margin: 4px;
+  color: #909090;
+  font-size: 12px;
+  -moz-transition-property: all;
+  -o-transition-property: all;
+  -webkit-transition-property: all;
+  transition-property: all;
+  -moz-transition-duration: 0.4s;
+  -o-transition-duration: 0.4s;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  -moz-transition-delay: 0.1s;
+  -o-transition-delay: 0.1s;
+  -webkit-transition-delay: 0.1s;
+  transition-delay: 0.1s;
+  -moz-transition-timing-function: ease-in-out;
+  -o-transition-timing-function: ease-in-out;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+div.content div.snippetInfoFrame div.snippetInfo div.author div.reputation i,
+div.content div.snippetInfoFrame div.snippetInfo div.author div.badges i {
+  color: inherit;
+}
+div.content div.snippetInfoFrame div.snippetInfo h4.info {
+  font-size: 12px;
+  color: #909090;
+  display: block;
+  margin: 0px 1.2em 0px 60px;
+  white-space: nowrap;
+  vertical-align: top;
+  height: 19px;
+  overflow: visible;
+  font-weight: normal;
+}
+div.content div.snippetInfoFrame div.snippetInfo h4.info a {
+  font-weight: bold;
+}
+div.content div.snippetInfoFrame div.snippetInfo h4.info em {
+  color: #3030d0;
+  margin-right: 0.5em;
+  font-style: normal;
+}
+div.content div.snippetInfoFrame div.snippetInfo h4.info span.honors {
+  display: inline-block;
+  margin: 0px 0.5em;
+  padding: 0px 0.5em;
+  border-left: solid 1px #eaeaea;
+}
+div.content div.snippetInfoFrame div.snippetInfo h4.info span.visibility {
+  float: right;
+  display: inline-block;
+  width: 1px;
+  height: 13px;
+  padding: 2px;
+  text-align: center;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 0.0;
+  position: relative;
+  top: -4px;
+  right: -5px;
+  border-bottom: solid 2px transparent;
+  transition-property: width, opacity;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-out;
+  transition-delay: 0.5s;
+  overflow: hidden;
+}
+div.content div.snippetInfoFrame div.snippetInfo h4.info span.public {
+  background-color: #2080ff;
+}
+div.content div.snippetInfoFrame div.snippetInfo h4.info span.private {
+  background-color: #b5b500;
+}
+div.content div.snippetInfoFrame div.snippetInfo h4.info span.group {
+  background-color: #20ca20;
+}
+div.content div.snippetInfoFrame div.snippetInfo h4.info span.foreignSource {
+  background-color: #d0d0d0;
+}
+div.content div.snippetInfoFrame div.snippetInfo div.name,
+div.content div.snippetInfoFrame div.snippetInfo h3.name {
+  font-size: 22px;
+  font-weight: normal;
+  line-height: 29px;
+  color: #3030d0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  vertical-align: top;
+  margin: 0px 0px 0px 60px;
+  width: 650px;
+  display: block;
+}
+div.content div.snippetInfoFrame div.snippetInfo div.name a,
+div.content div.snippetInfoFrame div.snippetInfo h3.name a {
+  color: #3030d0;
+  font-weight: normal;
+}
+div.content div.snippetInfoFrame div.snippetInfo div.name a:hover,
+div.content div.snippetInfoFrame div.snippetInfo h3.name a:hover {
+  color: #3030d0;
+  text-decoration: none;
+  border-bottom: solid 1px transparent;
+}
+div.content div.snippetInfoFrame div.snippetInfo div.description {
+  height: 21px;
+  width: 650px;
+  font-size: 15px;
+  line-height: 21px;
+  margin: 0px 0px 4px 60px;
+  overflow: hidden;
+  -ms-text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: block;
+}
+div.content div.snippetInfoFrame div.snippetInfo div.tags {
+  padding-top: 2px;
+  height: 21px;
+  margin-right: 150px;
+  /*200px;*/
+  margin-left: 0px;
+  vertical-align: bottom;
+  overflow: hidden;
+}
+div.content div.snippetInfoFrame div.snippetInfo div.actions {
+  text-align: right;
+  font-size: 12px;
+  color: #333333;
+  float: right;
+  height: 20px;
+  padding: 2px;
+  /*width:300px; leave the width auto computed for Safari*/
+  border: solid 1px transparent;
+  margin-right: 2em;
+}
+div.content div.snippetInfoFrame div.snippetInfo div.accent {
+  background-color: Transparent;
+  width: 4px;
+  position: absolute;
+  right: -1px;
+  top: 0px;
+  height: 114px;
+  border-right: solid 8px Transparent;
+  -webkit-opacity: 0.4;
+  -moz-opacity: 0.4;
+  opacity: 0.4;
+  filter: alpha(opacity = (40) );
+}
+div.content div.snippetInfoFrame div.snippetInfo div.accent.public {
+  border-left: solid 4px #2080ff;
+}
+div.content div.snippetInfoFrame div.snippetInfo div.accent.private {
+  border-left: solid 4px #b5b500;
+}
+div.content div.snippetInfoFrame div.snippetInfo div.accent.group {
+  border-left: solid 4px #20ca20;
+}
+div.content div.snippetInfoFrame div.snippetInfo div.accent.foreignSource {
+  border-left: solid 4px #d0d0d0;
+}
+div.content div.snippetInfoFrame div.snippetInfo:hover {
+  border: solid 1px #eaeaea;
+  border-right: solid 1px #c4c4c4;
+  border-bottom: solid 1px #c4c4c4;
+  background-color: #f7f7f7;
+}
+div.content div.snippetInfoFrame div.snippetInfo:hover div.author div.reputation,
+div.content div.snippetInfoFrame div.snippetInfo:hover div.author div.badges {
+  opacity: 1.0;
+}
+div.content div.snippetInfoFrame div.snippetInfo:hover div.description {
+  color: Black;
+}
+div.content div.snippetInfoFrame div.snippetInfo:hover div.name {
+  color: #3030d0;
+}
+div.content div.snippetInfoFrame div.snippetInfo:hover div.bottom-left-b,
+div.content div.snippetInfoFrame div.snippetInfo:hover div.bottom-left-w {
+  display: block;
+  border-bottom: 20px solid #eaeaea;
+}
+div.content div.snippetInfoFrame div.snippetInfo:hover div.bottom-left-w {
+  display: block;
+  border-bottom: 20px solid white;
+}
+div.content div.snippetInfoFrame div.snippetInfo:hover div.accent {
+  -webkit-opacity: 1;
+  -moz-opacity: 1;
+  opacity: 1;
+  filter: alpha(opacity = (100) );
+}
+div.content div.snippetInfoFrame a.s2cButton {
+  font-size: 11px;
+  letter-spacing: 1px;
+  line-height: 16px;
+  margin: 1 0 1 4px;
+  min-height: 17px;
+  height: 17px;
+}
+div.content div.snippetInfoFrame a.s2cButton i {
+  display: inline-block;
+  width: 17px;
+  height: 17px;
+}
+div.content div.snippetFromOtherSearchOp {
+  opacity: 0.6;
+}
+div.code div.accent {
+  background-color: Transparent;
+  width: 4px;
+  position: absolute;
+  right: -1px;
+  top: 0px;
+  height: 220px;
+  border-right: solid 8px Transparent;
+}
+span.checkItem.public {
+  border-bottom: solid 1px #2080ff;
+}
+span.checkItem.private {
+  border-bottom: solid 1px #b5b500;
+}
+span.checkItem.group {
+  border-bottom: solid 1px #20ca20;
+}
+div.fullGroupName {
+  background-color: #f7f7f7;
+  border: solid 1px #eaeaea;
+  color: #3030d0;
+  margin: 0px;
+  padding: 0px;
+  font-size: 16px;
+  line-height: 23px;
+  margin-bottom: 10px;
+  /*2em;*/
+  cursor: pointer;
+}
+div.fullGroupName div.group,
+div.fullGroupName div.channel {
+  border-style: solid;
+  display: block;
+  padding: 3px 6px;
+  margin: -1px 12px -1px 0px;
+  border-width: 0px;
+  border-right-width: 4px;
+  font-weight: bold;
+  background-position: 3px center;
+  background-repeat: no-repeat;
+}
+div.fullGroupName:hover {
+  background-color: #f7f7f7;
+  border: solid 1px #eaeaea;
+  box-shadow: 0px 0px 2px silver;
+  color: #3030d0;
+  font-weight: bold;
+}
+div.fullGroupName:hover div.group i,
+div.fullGroupName:hover div.channel i {
+  transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+}
+div.verticalPanel div.list {
+  padding: 0px;
+  margin: 8px 22px 8px 16px;
+}
+div.verticalPanel div.list div.title,
+div.verticalPanel div.list h2 {
+  color: #dd9b38;
+  font-weight: bold;
+  font-size: 19px;
+  margin: 0px;
+  padding: 4px 4px;
+  line-height: 26px;
+}
+div.verticalPanel div.list div.item {
+  margin: 2px 0px 1px 0px;
+  padding: 2px 4px;
+  font-size: 14px;
+  line-height: 24px;
+  border-bottom: dotted 1px #eaeaea;
+}
+div.verticalPanel div.list div.item div {
+  float: right;
+  border-radius: 3px;
+  background-color: #4973b4;
+  color: white;
+  font-size: 12px;
+  line-height: 17px;
+  margin: 3px;
+  padding: 1px 6px;
+}
+div.verticalPanel div.list div.item:hover {
+  background-color: #f7f7f7;
+  color: #3030d0;
+}
+div.verticalPanel div.userHonors {
+  width: 48%;
+  margin-right: 52%;
+  min-height: 150px;
+  padding-top: 20px;
+}
+div.verticalPanel div.userStats {
+  float: right;
+  min-height: 150px;
+  margin-right: 1.5em;
+  padding-top: 28px;
+}
+div.verticalPanel div.userStats div.property {
+  width: 355px;
+}
+div.verticalPanel div.breaker {
+  height: 3px;
+  margin: 2px;
+  padding: 0px;
+  clear: right;
+  text-align: center;
+  font-size: 11px;
+  margin-bottom: 2em;
+}
+div.verticalPanel div.badgeList {
+  font-size: 15px;
+  width: 360px;
+  line-height: 30px;
+  border: solid 1px #eaeaea;
+  background-color: #f7f7f7;
+  margin: 8px 6px 8px 16px;
+}
+div.verticalPanel div.badgeList div.badge {
+  float: left;
+  width: 164px;
+  height: 30px;
+  margin: 4px 2px 0px 4px;
+  overflow: visible;
+  white-space: nowrap;
+  letter-spacing: -0.5px;
+}
+div.verticalPanel div.badgeList div.badge i {
+  position: relative;
+  display: inline-block;
+  margin: 0px 0.2em;
+  font-size: 20px;
+  top: 3px;
+  width: 18px;
+  text-align: center;
+}
+div.verticalPanel div.property {
+  font-size: 16px;
+  width: 360px;
+  height: 36px;
+  line-height: 30px;
+  border: solid 1px #eaeaea;
+  padding: 0px;
+  margin: 8px 6px 8px 16px;
+  overflow: hidden;
+}
+div.verticalPanel div.property div.name {
+  text-align: right;
+  width: 106px;
+  padding: 3px;
+  margin-right: 100px;
+  color: #222222;
+  font-weight: normal;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+}
+div.verticalPanel div.property div.value {
+  font-weight: bold;
+  float: right;
+  text-align: left;
+  width: 232px;
+  padding: 3px 6px;
+  background-color: #f7f7f7;
+  color: #dd9b38;
+}
+div.verticalPanel div.channelInfo {
+  margin: 0px 0px 0px 0px;
+  min-height: 191px;
+  padding: 10px;
+  background-color: white;
+  border-top: solid 1px white;
+  border-bottom: solid 1px #eaeaea;
+}
+div.verticalPanel div.channelInfo div.channelOwner {
+  margin: 2px 7px;
+  margin-right: 140px;
+  color: #909090;
+  font-weight: normal;
+}
+div.verticalPanel div.channelInfo div.channelOwner span {
+  color: #3030d0;
+  font-weight: bold;
+}
+div.verticalPanel div.channelInfo div.channelOwner a.rss,
+div.verticalPanel div.channelInfo div.channelOwner a.rss:hover {
+  float: right;
+  cursor: pointer;
+  text-decoration: none !important;
+}
+div.verticalPanel div.channelInfo div.channelOwner a.rss i,
+div.verticalPanel div.channelInfo div.channelOwner a.rss:hover i {
+  cursor: pointer;
+  font-size: 18px;
+  line-height: 22px;
+  vertical-align: top;
+  color: #fab033;
+}
+div.verticalPanel div.channelInfo div.name {
+  font-size: 25px;
+  font-weight: bold;
+  line-height: 27px;
+  margin: 4px 6px;
+  color: #3030d0;
+  margin-right: 140px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+div.verticalPanel div.channelInfo div.description {
+  border: solid 1px transparent;
+  margin: 1em;
+  font-size: 16px;
+  margin: 0px 160px 0px 0px;
+  min-height: 94px;
+  padding: 2px 4px;
+  font-size: 15px;
+  line-height: 19px;
+  overflow: hidden;
+  color: #222222;
+}
+div.verticalPanel div.channelInfo div.info {
+  margin: -11px;
+  float: right;
+  width: 128px;
+  border-right: solid 1px blue;
+  min-height: 150px;
+  color: #909090;
+}
+div.verticalPanel div.channelInfo div.info div.buttonsPanel {
+  margin: 2px;
+  padding: 0.8em 0px;
+  vertical-align: middle;
+  overflow: visible;
+  text-align: center;
+}
+div.verticalPanel div.channelInfo div.info div.buttonsPanel a.s2cButton {
+  font-size: 11px;
+  letter-spacing: 1px;
+  line-height: 16px;
+  margin: 1 0 1 4px;
+  min-height: 17px;
+  height: 17px;
+  margin: 4px 0px;
+  width: 70%;
+}
+div.verticalPanel div.channelInfo div.info div.buttonsPanel a.s2cButton i {
+  display: inline-block;
+  width: 17px;
+  height: 17px;
+}
+div.verticalPanel div.channelInfo div.info div.followers,
+div.verticalPanel div.channelInfo div.info div.snipcount {
+  color: #909090;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+div.verticalPanel div.channelInfo div.info div.followers div.label,
+div.verticalPanel div.channelInfo div.info div.snipcount div.label {
+  height: 0px;
+  overflow: visible;
+  color: #909090;
+  font-size: 14px;
+  text-align: left;
+  vertical-align: bottom;
+  line-height: 22px;
+  margin-left: 0.5em;
+}
+div.verticalPanel div.channelInfo div.info div.followers div.value,
+div.verticalPanel div.channelInfo div.info div.snipcount div.value {
+  vertical-align: bottom;
+  font-size: 32px;
+  line-height: 50px;
+  text-align: right;
+  font-weight: 500;
+  margin: 0px 10px 0px 0px;
+  white-space: nowrap;
+  overflow: hidden;
+  font-family: 'Fredericka the Great';
+}
+div.verticalPanel div.inputForm {
+  display: none;
+  width: auto;
+}
+div.verticalPanel div.panel {
+  padding: 20px;
+  display: none;
+}
+div.verticalPanel div.snippetBlock {
+  filter: alpha(opacity=0);
+  margin-left: 1em;
+  margin-right: 1em;
+}
+#channelsPanel {
+  border: solid 0px red;
+  margin-left: 0px;
+}
+#channelsPanel div.channelList div.channelOwner {
+  margin: 2px 7px;
+  color: #909090;
+  font-weight: normal;
+  width: 320px;
+  height: 17px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+#channelsPanel div.channelList div.channelOwner a {
+  color: #3030d0;
+  font-weight: bold;
+}
+#channelsPanel div.channelList div.channel {
+  float: left;
+  width: 462px;
+  height: 150px;
+  border: solid 1px transparent;
+  border-right-width: 2px;
+  margin-left: 1em;
+  margin-bottom: 1em;
+  cursor: pointer;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  box-shadow: 0px 0px 1px #eaeaea;
+  transition-property: background border box-shadow;
+  transition-duration: 0.6s;
+  transition-timing-function: ease-out;
+  transition-delay: 0s;
+  background-color: #fcfcfc;
+}
+#channelsPanel div.channelList div.channel div.buttonsPanel {
+  -webkit-opacity: 0.1;
+  -moz-opacity: 0.1;
+  opacity: 0.1;
+  filter: alpha(opacity = (10) );
+  margin: 12px 0px;
+  padding: 0px;
+  vertical-align: middle;
+  overflow: visible;
+  text-align: center;
+  transition-property: opacity;
+  transition-duration: 0.6s;
+  transition-timing-function: ease-out;
+  transition-delay: 0s;
+}
+#channelsPanel div.channelList div.channel div.buttonsPanel a.s2cButton {
+  font-size: 11px;
+  letter-spacing: 1px;
+  line-height: 16px;
+  margin: 1 0 1 4px;
+  min-height: 17px;
+  height: 17px;
+  margin: 0px;
+  width: 70%;
+}
+#channelsPanel div.channelList div.channel div.buttonsPanel a.s2cButton i {
+  display: inline-block;
+  width: 17px;
+  height: 17px;
+}
+#channelsPanel div.channelList div.channel div.name {
+  font-size: 23px;
+  font-weight: bold;
+  text-transform: capitalize;
+  line-height: 27px;
+  margin: 6px 6px 0px 6px;
+  color: #3030d0;
+  width: 320px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: 81px;
+}
+#channelsPanel div.channelList div.channel div.infoBt {
+  font-size: 20px;
+  width: 0px;
+  height: 0px;
+  color: #909090;
+  float: right;
+  overflow: visible;
+  position: relative;
+  left: 100px;
+  -moz-transition-property: all;
+  -o-transition-property: all;
+  -webkit-transition-property: all;
+  transition-property: all;
+  -moz-transition-duration: 0.4s;
+  -o-transition-duration: 0.4s;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  -moz-transition-delay: 0.1s;
+  -o-transition-delay: 0.1s;
+  -webkit-transition-delay: 0.1s;
+  transition-delay: 0.1s;
+  -moz-transition-timing-function: ease-in-out;
+  -o-transition-timing-function: ease-in-out;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+#channelsPanel div.channelList div.channel div.infoBt i {
+  color: inherit;
+}
+#channelsPanel div.channelList div.channel div.info {
+  position: relative;
+  left: 130px;
+  float: right;
+  width: 120px;
+  height: 146px;
+  border-color: transparent;
+  border-left: solid 1px #eaeaea;
+  padding-left: 4px;
+  margin: 2px;
+  color: #909090;
+  background-color: white;
+  opacity: 0.0;
+  -moz-transition-property: all;
+  -o-transition-property: all;
+  -webkit-transition-property: all;
+  transition-property: all;
+  -moz-transition-duration: 0.4s;
+  -o-transition-duration: 0.4s;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  -moz-transition-delay: 0.1s;
+  -o-transition-delay: 0.1s;
+  -webkit-transition-delay: 0.1s;
+  transition-delay: 0.1s;
+  -moz-transition-timing-function: ease-in-out;
+  -o-transition-timing-function: ease-in-out;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+#channelsPanel div.channelList div.channel div.info div.followers div.label,
+#channelsPanel div.channelList div.channel div.info div.snipcount div.label {
+  height: 0px;
+  overflow: visible;
+  font-size: 14px;
+  text-align: left;
+  vertical-align: bottom;
+  line-height: 20px;
+  letter-spacing: 1px;
+  padding-left: 2px;
+}
+#channelsPanel div.channelList div.channel div.info div.followers div.value,
+#channelsPanel div.channelList div.channel div.info div.snipcount div.value {
+  vertical-align: bottom;
+  font-size: 30px;
+  line-height: 50px;
+  text-align: right;
+  font-weight: 500;
+  margin: 0px 10px 0px 0px;
+  white-space: nowrap;
+  overflow: hidden;
+  font-family: 'Fredericka the Great';
+}
+#channelsPanel div.channelList div.channel div.description {
+  margin-right: 120px;
+  min-height: 90px;
+  padding: 2px;
+  margin: 4px;
+  font-size: 15px;
+  line-height: 19px;
+  width: 320px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+#channelsPanel div.channelList div.channel:hover,
+#channelsPanel div.channelList div.channel.selected {
+  box-shadow: 1px 1px 2px #eaeaea;
+  border-color: #eaeaea;
+  background-color: #f7f7f7;
+}
+#channelsPanel div.channelList div.channel:hover div.buttonsPanel,
+#channelsPanel div.channelList div.channel.selected div.buttonsPanel {
+  opacity: 1.0;
+}
+#channelsPanel div.channelList div.channel:hover div.description,
+#channelsPanel div.channelList div.channel.selected div.description {
+  color: #3030d0;
+}
+#channelsPanel div.channelList div.channel:hover div.infoBt,
+#channelsPanel div.channelList div.channel.selected div.infoBt {
+  opacity: 0.0;
+}
+#channelsPanel div.channelList div.channel:hover div.info,
+#channelsPanel div.channelList div.channel.selected div.info {
+  left: 0px;
+  opacity: 1.0;
+}
+#channelsPanel div.channelList div.channel:hover div.info div.value,
+#channelsPanel div.channelList div.channel.selected div.info div.value {
+  opacity: 1.0;
+  color: #3030d0;
+}
+.followBtn {
+  float: right;
+}
+/* clipped borders: http://stackoverflow.com/questions/8854457/css-only-cross-browser-clipped-corners */
+
+div.snippetInfo div.bottom-left-b {
+  display: none;
+  width: 0;
+  height: 0;
+  position: absolute;
+  bottom: -1px;
+  left: 0px;
+  border-bottom: solid 20px transparent;
+  border-right: solid 20px transparent;
+  z-index: 1;
+}
+div.snippetInfo div.bottom-left-w {
+  display: block;
+  /* none */
+  width: 0;
+  height: 0;
+  position: absolute;
+  bottom: -1px;
+  left: -1px;
+  border-bottom: solid 20px transparent;
+  border-right: solid 20px transparent;
+  z-index: 2;
+}
+div.snippetInfoFrame div.code div {
+  padding: 0px;
+  padding-top: 4px;
+}
+div.snippetInfoFrame div.code pre.prettyprint {
+  background-color: White;
+  max-height: 180px;
+  overflow: auto;
+  margin: 4px;
+  margin-right: 2em;
+  white-space: pre-wrap;
+}
+.mispelledLink {
+  font-style: italic;
+}
+div.textContent {
+  padding: 20px;
+}
+div.textContent h3,
+div.textContent h2,
+div.textContent h1 {
+  margin: 0px 0px 20px;
+}
+div.textContent p,
+div.textContent div.inputForm,
+div.textContent div.inputField {
+  text-align: left;
+  margin: 20px 0px;
+  padding: 0px;
+}
+/* ------------------------------------------------------------------------------------- */
+
+div.horizontalPanel {
+  background-color: whitesmoke;
+  min-height: 300px;
+  padding: 0px;
+}
+div.horizontalPanel a.s2cButton {
+  font-size: 11px;
+  letter-spacing: 1px;
+  line-height: 16px;
+  margin: 1 0 1 4px;
+  min-height: 17px;
+  height: 17px;
+}
+div.horizontalPanel a.s2cButton i {
+  display: inline-block;
+  width: 17px;
+  height: 17px;
+}
+div.horizontalPanel div.inputForm {
+  margin: 0px;
+  padding: 20px;
+}
+div.horizontalPanel div.inputForm div.inputFiled {
+  border: none;
+}
+div.horizontalPanel div.panelToolbar {
+  height: 22px;
+  text-align: right;
+  padding: 4px;
+  border-bottom: solid 1px whitesmoke;
+  background-color: whitesmoke;
+}
+div.horizonalMenu {
+  border-bottom: solid 0px #eaeaea;
+  margin-bottom: 0px;
+  margin-top: 0.5em;
+  overflow: hidden;
+  padding-top: 4px;
+  margin-top: 2em;
+}
+div.horizonalMenu a {
+  display: inline-block;
+  padding: 14px 30px 0px 0px;
+  margin: -14px 0px -4px 0px;
+  font-size: 15px;
+  font-weight: normal;
+  letter-spacing: 1px;
+  line-height: 19px;
+  border: solid 0px White;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+  min-width: 90px;
+  height: 22px;
+  text-align: center;
+  color: #555555;
+  background-color: #e0e0e0;
+}
+div.horizonalMenu a.selected {
+  display: inline-block;
+  font-weight: bold;
+  letter-spacing: 0px;
+  color: #3030d0;
+  height: 22px;
+  text-align: center;
+  background-color: whitesmoke;
+}
+div.horizonalMenu a:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-top: 34px solid white;
+  border-left: 34px solid #e0e0e0;
+  width: 0;
+}
+div.horizonalMenu a.selected:before {
+  background-color: white;
+  border-top: 34px solid white;
+  border-left: 34px solid whitesmoke;
+}
+div.groupInfoFrame.active {
+  border: solid 1px silver;
+}
+div.groupInfoFrame {
+  border: solid 1px Transparent;
+  margin: 2px 0px;
+}
+div.groupInfoFrame a.s2cButton {
+  font-size: 11px;
+  letter-spacing: 1px;
+  line-height: 16px;
+  margin: 1 0 1 4px;
+  min-height: 17px;
+  height: 17px;
+}
+div.groupInfoFrame a.s2cButton i {
+  display: inline-block;
+  width: 17px;
+  height: 17px;
+}
+div.groupInfoFrame div.groupInfo:hover {
+  background-color: #f3fbe8;
+  color: #3030d0;
+  font-weight: bold;
+  border: solid 1px silver;
+  box-shadow: 0px 0px 2px silver;
+}
+div.groupInfoFrame div.groupInfo:hover div.name,
+div.groupInfoFrame div.groupInfo:hover div.nameNotAdmin {
+  color: #3030d0;
+}
+div.groupInfoFrame div.groupInfo:hover div.name div.channel i,
+div.groupInfoFrame div.groupInfo:hover div.nameNotAdmin div.channel i,
+div.groupInfoFrame div.groupInfo:hover div.name div.group i,
+div.groupInfoFrame div.groupInfo:hover div.nameNotAdmin div.group i {
+  transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+}
+div.groupInfoFrame div.groupInfo:hover a.s2cButton {
+  -webkit-opacity: 1;
+  -moz-opacity: 1;
+  opacity: 1;
+  filter: alpha(opacity = (100) );
+}
+div.groupInfoFrame div.groupInfo.selected {
+  border: solid 1px #3030d0;
+  background-color: #def6dc;
+}
+div.groupInfoFrame div.groupInfo.selected div.actions {
+  background-image: url('images/checkmark 20x20.png');
+  background-position: left center;
+  background-repeat: no-repeat;
+  background-size: 20px;
+}
+div.groupInfoFrame div.groupInfo.selected:hover {
+  border: solid 1px #3030d0;
+  background-color: #cbf1c8;
+}
+div.groupInfoFrame div.groupInfo {
+  -moz-transition-property: all;
+  -o-transition-property: all;
+  -webkit-transition-property: all;
+  transition-property: all;
+  -moz-transition-duration: 0.6s;
+  -o-transition-duration: 0.6s;
+  -webkit-transition-duration: 0.6s;
+  transition-duration: 0.4s;
+  -moz-transition-delay: 0.1s;
+  -o-transition-delay: 0.1s;
+  -webkit-transition-delay: 0.1s;
+  transition-delay: 0.1s;
+  -moz-transition-timing-function: ease-in-out;
+  -o-transition-timing-function: ease-in-out;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  background-color: white;
+  padding: 0px;
+  border: solid 1px #e0e0e0;
+  box-shadow: 0px 0px 2px #e0e0e0;
+  cursor: pointer;
+  height: 30px;
+  line-height: 30px;
+  vertical-align: middle;
+}
+div.groupInfoFrame div.groupInfo div.actions {
+  border-right: solid 4px blue;
+  margin: -1px 10px -1px 0px;
+  height: 32px;
+  float: right;
+  width: 350px;
+  text-align: right;
+  padding-right: 4px;
+  transition-property: background-size;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
+  transition-delay: 0.1s;
+  background-size: 0px;
+}
+div.groupInfoFrame div.groupInfo div.info {
+  margin-left: 50px;
+}
+div.groupInfoFrame div.groupInfo div.name,
+div.groupInfoFrame div.groupInfo div.nameNotAdmin {
+  padding: 0px 3px;
+  margin-right: 300px;
+  text-overflow: ellipsis;
+  font-weight: normal;
+  white-space: nowrap;
+  color: #909090;
+  line-height: 30px;
+  vertical-align: middle;
+  height: 32px;
+  border: 0px;
+  font-size: 16px;
+  line-height: 32px;
+  text-transform: capitalize;
+}
+div.groupInfoFrame div.groupInfo div.name div.channel,
+div.groupInfoFrame div.groupInfo div.nameNotAdmin div.channel,
+div.groupInfoFrame div.groupInfo div.name div.group,
+div.groupInfoFrame div.groupInfo div.nameNotAdmin div.group {
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+div.groupInfoFrame div.groupInfo div.name div.channel i,
+div.groupInfoFrame div.groupInfo div.nameNotAdmin div.channel i,
+div.groupInfoFrame div.groupInfo div.name div.group i,
+div.groupInfoFrame div.groupInfo div.nameNotAdmin div.group i {
+  color: inherit;
+}
+div.groupInfoFrame div.groupInfo div.name div,
+div.groupInfoFrame div.groupInfo div.nameNotAdmin div {
+  margin: 0px 3px;
+  font-weight: normal;
+  color: black;
+  background-position: 3px center;
+  background-repeat: no-repeat;
+}
+div.groupInfoFrame div.groupInfo.active {
+  color: #3030d0;
+  font-weight: bold;
+  background-color: whitesmoke;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+}
+div.pendingGroup div.groupInfoFrame div.groupInfo {
+  height: auto;
+}
+div.groupEdit {
+  height: 0px;
+  overflow: hidden;
+  -webkit-opacity: 0;
+  -moz-opacity: 0;
+  opacity: 0;
+  filter: alpha(opacity = (0) );
+  filter: alpha(opacity=0);
+  border: solid 0px #e0e0e0;
+  margin: 2px 0px;
+  display: none;
+}
+div.groupEdit div.groupTools {
+  text-align: right;
+  font-size: 12px;
+  padding: 2px 0px;
+  margin: 0px 8px;
+}
+div.groupEdit div.groupUserListPanel {
+  float: left;
+  height: 200px;
+  width: 368px;
+  padding: 2px;
+  border-right: dotted 1px #e0e0e0;
+}
+div.groupUserListPanel div.groupUserList,
+div.groupActionPanel div.usersList {
+  margin: 4px 10px;
+  height: 150px;
+  overflow: auto;
+  background-color: whitesmoke;
+}
+div.groupUserList div.groupUser {
+  background-color: White;
+  margin: 1px;
+  padding: 0px;
+  padding-left: 24px;
+  font-size: 14px;
+  background-image: url('/Content/images/checkOff.png');
+  background-position: left center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  height: 34px;
+  border-bottom: solid 1px #e0e0e0;
+  margin-top: 2px;
+}
+div.groupUserList div.groupUser.check {
+  color: #3030d0;
+  background-color: White;
+  margin: 1px;
+  padding: 0px;
+  padding-left: 24px;
+  font-size: 14px;
+  background-image: url('/Content/images/checkOn.png');
+  background-position: left center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  height: 34px;
+  margin-top: 2px;
+}
+div.groupUserList div.groupUser:hover {
+  background-color: #f3fbe8;
+}
+span.adminAction {
+  margin-right: 5px;
+}
+.adminResultMsg {
+  font-size: 30pt;
+  color: red;
+}
+div.groupUser div.groupUserName {
+  margin-left: 36px;
+  height: 25px;
+  padding: 5px;
+}
+div.groupUser div.actions {
+  float: right;
+  height: 25px;
+  text-align: right;
+  padding: 5px;
+}
+div.groupUser img {
+  float: left;
+  vertical-align: top;
+}
+#actionResultMsgSpacer {
+  width: 200px;
+  min-width: 200px;
+  max-width: 200px;
+}
+div.groupEdit div.groupActionPanel {
+  margin-left: 375px;
+  height: 200px;
+}
+/* ------------------------------------------------------------------------------------- */
+
+div.s2cListFooter {
+  text-align: center;
+  height: 80px;
+  margin: 1em;
+  border: solid 1px Transparent;
+}
+div.s2cListFooter a {
+  margin: 3em;
+  display: inline-block;
+  vertical-align: middle;
+}
+center.progress {
+  -webkit-opacity: 0;
+  -moz-opacity: 0;
+  opacity: 0;
+  filter: alpha(opacity = (0) );
+  filter: alpha(opacity=0);
+  display: block;
+  margin: 4px;
+}
+#progressIndicator {
+  display: none;
+}
+div.actions a {
+  -moz-transition-property: all;
+  -o-transition-property: all;
+  -webkit-transition-property: all;
+  transition-property: all;
+  -moz-transition-duration: 0.5s;
+  -o-transition-duration: 0.5s;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.4s;
+  -moz-transition-delay: 0.1s;
+  -o-transition-delay: 0.1s;
+  -webkit-transition-delay: 0.1s;
+  transition-delay: 0.1s;
+  -moz-transition-timing-function: ease-in-out;
+  -o-transition-timing-function: ease-in-out;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  -webkit-opacity: 0;
+  -moz-opacity: 0;
+  opacity: 0;
+  filter: alpha(opacity = (0) );
+  filter: alpha(opacity=0);
+}
+.groupUserList:hover div.actions a {
+  -webkit-opacity: 1;
+  -moz-opacity: 1;
+  opacity: 1;
+  filter: alpha(opacity = (100) );
+  filter: alpha(opacity=100);
+}
+/*
+input[type="text"]#SnippetName
+{
+    width:@snip-edit-size;
+}
+*/
+
+#Preferences_GravatarEmail {
+  width: 300px;
+}
+#realFileUpload {
+  width: 300px;
+}
+.tagInTags {
+  float: left;
+  display: inline-block;
+}
+div.userPicLargeContainer {
+  width: 580px;
+  margin: 1em auto;
+  border: solid 0px #eaeaea;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  font-size: 16px;
+}
+div.userPicLargeContainer div.radioInput {
+  margin-left: 24px;
+  border: solid 0px #eaeaea;
+  height: 26px;
+  padding: 4px 0px;
+}
+div.userPicLargeContainer input[type="radio"].radioCheck {
+  float: left;
+  margin-top: 2px;
+  height: 26px;
+  vertical-align: middle;
+}
+div.userPicLargeContainer div.userPicture {
+  width: 88px;
+  /*128px;*/
+  height: 88px;
+  text-align: center;
+  padding: 2px;
+  margin: 4px;
+  background-color: whitesmoke;
+}
+div.userPicLargeContainer div.userPicture .userPicLarge {
+  /* CG: re-add this style for class 'userPicLarge' otherwise picture in settings is not correctly sized */
+  width: 88px;
+  /*128px;*/
+  height: 88px;
+  /*128px;*/
+
+}
+i.fa {
+  cursor: default;
+}
+i.junior {
+  color: #9c5f45;
+}
+i.junior:before {
+  content: "\f097";
+}
+i.serious {
+  color: #83bd04;
+}
+i.serious:before {
+  content: "\f02e";
+}
+i.senior {
+  color: #c41717;
+}
+i.senior:before {
+  content: "\f132";
+}
+i.master {
+  color: #b7b503;
+}
+i.master:before {
+  content: "\f132";
+}
+i.guru {
+  color: #fab033;
+}
+i.guru:before {
+  content: "\f005";
+}
+i.badge-10perc {
+  color: #fab033;
+}
+i.badge-10perc:before {
+  content: "\f006";
+}
+i.badge-5perc {
+  color: #fab033;
+}
+i.badge-5perc:before {
+  content: "\f123";
+}
+i.badge-1perc {
+  color: #fab033;
+}
+i.badge-1perc:before {
+  content: "\f005";
+}
+div.snipMain div.actions {
+  text-align: right;
+  font-size: 12px;
+  color: #333333;
+  float: right;
+  height: 20px;
+  padding: 2px;
+  /*width:300px; leave the width auto computed for Safari*/
+  border: solid 1px transparent;
+  margin-right: 2em;
+}
+div.snipMain h1 {
+  margin-top: 0.5em;
+  margin-bottom: 0.2em;
+  font-size: 26px;
+  line-height: 31px;
+  font-weight: normal;
+  color: #000066;
+  border: solid 1px transparent;
+}
+div.snipMain div.SnippetNameContainer {
+  margin-top: 0.5em;
+  margin-bottom: 0.2em;
+  font-size: 28px;
+  line-height: 34px;
+  font-weight: normal;
+  min-height: 30px;
+}
+div.snipMain div.SnippetDescriptionContainer {
+  margin-bottom: 0.5em;
+  font-size: 16px;
+  line-height: 21px;
+  position: relative;
+  min-height: 22px;
+  border: solid 1px transparent;
+  margin: 4px 0 0.5em;
+}
+div.snipMain div.inputInfo {
+  width: 658px;
+  overflow: visible;
+  display: none;
+  border-left: solid 1px transparent;
+  border-right: solid 1px transparent;
+  height: 0px;
+  z-index: -100;
+}
+div.snipMain textarea {
+  padding: 0px;
+  width: 658px;
+  min-width: 658px;
+  max-width: 658px;
+  resize: none;
+  background-color: transparent;
+  border: solid 1px transparent;
+  overflow: hidden;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  font-size: inherit;
+  line-height: inherit;
+  font-weight: inherit;
+}
+div.snipMain textarea:focus {
+  background-color: ivory;
+  border: solid 1px #e0e0d0;
+}
+div.snipMain textarea#SnippetName {
+  color: black;
+}
+div.snipMain textarea#SnippetDescription {
+  color: #222222;
+  height: 22px;
+}
+div.snipMain #codeBlock {
+  border: 1px solid #e0e0e0;
+  margin-top: 10px;
+}
+div.snipMain #codeBlock textarea#SnippetCode {
+  display: none;
+}
+div.snipMain #codeBlock div.codeToolbar {
+  background-color: #e0e0e0;
+  height: 24px;
+  padding: 0px;
+  margin: 0px;
+  display: block;
+}
+div.snipMain #codeBlock div.codeToolbar div#searchTools {
+  margin-right: 220px;
+  height: 22px;
+  border: solid 0px red;
+}
+div.snipMain #codeBlock div.codeToolbar div#searchTools div.inputButton {
+  border: solid 1px transparent;
+  height: 20px;
+  width: 16px;
+  display: inline-block;
+  top: -5px;
+  margin: 0px 1px;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  position: relative;
+  color: #222222;
+}
+div.snipMain #codeBlock div.codeToolbar div#searchTools div.inputButton i {
+  color: inherit;
+}
+div.snipMain #codeBlock div.codeToolbar div#searchTools div.inputButton:hover {
+  border: solid 1px silver;
+}
+div.snipMain #codeBlock div.codeToolbar div#searchTools div.inputTxtFrame {
+  background-color: ivory;
+  border: solid 1px silver;
+  -webkit-box-shadow: inset 2px 2px 3px #e0e0e0;
+  -moz-box-shadow: inset 2px 2px 3px #e0e0e0;
+  box-shadow: inset 2px 2px 3px #e0e0e0;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  overflow: hidden;
+  height: 20px;
+}
+div.snipMain #codeBlock div.codeToolbar div#searchTools div.inputTxtFrame input[type="text"] {
+  padding: 0px;
+  margin: 0px;
+  outline: none;
+  color: #3030d0;
+  width: 100%;
+  height: 20px;
+  font-size: 14px;
+  line-height: 19px;
+}
+div.snipMain #codeBlock div.codeToolbar div#searchTools div#searchTxtFrame {
+  display: inline-block;
+  width: 0px;
+  opacity: 0.0;
+  background-color: white;
+  margin: 0px;
+}
+div.snipMain #codeBlock div.codeToolbar div#searchTools div#replaceBt {
+  opacity: 0.0;
+}
+div.snipMain #codeBlock div.codeToolbar div#searchTools div#replaceNextBt {
+  opacity: 0.0;
+}
+div.snipMain #codeBlock div.codeToolbar div#searchTools div#replaceTxtFrame {
+  display: inline-block;
+  width: 0px;
+  opacity: 0.0;
+  background-color: white;
+  margin: 0px 0px 0px 4px;
+}
+div.snipMain #codeBlock div.codeToolbar a.s2cButton {
+  margin-left: 4px;
+  font-size: 11px;
+  letter-spacing: 1px;
+  line-height: 16px;
+  margin: 1 0 1 4px;
+  min-height: 17px;
+  height: 17px;
+}
+div.snipMain #codeBlock div.codeToolbar a.s2cButton i {
+  display: inline-block;
+  width: 17px;
+  height: 17px;
+}
+div.snipMain #codeBlock div.codeToolbar span {
+  display: inline-block;
+  float: right;
+  line-height: 22px;
+  margin: 0px;
+  border: solid 1px transparent;
+  padding: 0px;
+}
+div.snipMain #codeBlock div.codeToolbar span.text {
+  margin-top: 1px;
+  margin-right: 0.5em;
+  display: inline-block;
+}
+div.snipMain #codeBlock div.codeToolbar span.text i {
+  color: inherit;
+}
+div.snipMain #codeBlock div.codeToolbar span.text.left {
+  float: left;
+  margin: 0px 0.5em;
+  color: #222222;
+}
+div.snipMain #codeBlock div.codeToolbar div.codeToolbutton {
+  float: right;
+  margin: 0px;
+}
+div.snipMain #codeBlock div.codeToolbar div.dropMenuContainer {
+  border: solid 1px silver;
+  background-color: ivory;
+  margin: 0px 0px 0px 0.3em;
+  padding: 0px;
+  display: block;
+  float: right;
+  height: 22px;
+  width: 160px;
+  line-height: 20px;
+  text-align: left;
+}
+div.snipMain #codeBlock div.codeToolbar div.dropMenuContainer input[type="text"] {
+  margin: 0px 1px;
+  border: none;
+  padding: 0px 2px;
+  font-size: 14px;
+  background: transparent;
+  display: block;
+  width: 130px;
+  margin-right: 22px;
+  letter-spacing: 1px;
+  line-height: 22px;
+  height: 22px;
+}
+div.snipMain #codeBlock div.codeToolbar div.dropMenuContainer i {
+  line-height: 22px;
+  width: 18px;
+  text-align: center;
+  cursor: pointer;
+  float: right;
+  display: inline-block;
+  margin: 0px 2px;
+}
+div.snipMain #codeBlock div.codeToolbar img.lock {
+  width: 22px;
+  height: 22px;
+  transform: rotate(-7deg);
+  -ms-transform: rotate(-7deg);
+  /* IE 9 */
+  -webkit-transform: rotate(-7deg);
+  /* Safari and Chrome */
+
+  margin-left: 4px;
+}
+div.snipMain #codeBlock #SnippetCodeEditor {
+  font-size: 13px;
+  line-height: 18px;
+  font-family: 'Droid Sans Mono', sans-serif !important;
+  min-height: 441px;
+  border-top: solid 1px #eaeaea;
+  display: none;
+}
+div.snipMain .ace_gutter {
+  background-color: whitesmoke;
+}
+div.snipMain .ace_gutter-cell {
+  color: #909090;
+}
+div.snipMain .ace_line,
+div.snipMain .ace_comment,
+div.snipMain .ace_constant,
+div.snipMain .ace_variable,
+div.snipMain .ace_type,
+div.snipMain .ace_editor p,
+div.snipMain .ace_editor div {
+  font-size: 13px;
+  line-height: 18px;
+  font-family: 'Droid Sans Mono', sans-serif !important;
+}
+div.snipMain .ace_line span,
+div.snipMain .ace_comment span,
+div.snipMain .ace_constant span,
+div.snipMain .ace_variable span,
+div.snipMain .ace_type span,
+div.snipMain .ace_editor p span,
+div.snipMain .ace_editor div span {
+  font-size: 13px;
+  line-height: 18px;
+  font-family: 'Droid Sans Mono', sans-serif !important;
+}
+div.snipBasic {
+  margin: 10px;
+}
+div.snipBasic div.snipMeta {
+  float: right;
+  width: 256px;
+  min-height: 400px;
+  border-left: solid 0px #e0e0e0;
+  margin: 0px 0px;
+  padding-left: 1em;
+  position: relative;
+  top: -2px;
+}
+div.snipBasic div.snipMeta div.infoSection h4,
+div.snipBasic div.snipMeta div.snipProperties h4 {
+  margin-bottom: 2px;
+  color: #222222;
+  font-weight: normal;
+  font-family: 'Roboto', sans-serif;
+}
+div.snipBasic div.snipMain {
+  clear: left;
+  padding: 0px 2px;
+  margin: 0px;
+  margin-right: 280px;
+}
+div.snipBasic div.snipProps {
+  margin-bottom: 4px;
+  padding: 4px;
+}
+div.snipBasic div.honors {
+  margin: 0px;
+  font-size: 16px;
+  line-height: 30px;
+  color: #333333;
+}
+div.snipBasic div.honors div.badgeRanking {
+  margin-left: 60px;
+  font-size: 14px;
+  text-align: right;
+}
+div.snipBasic div.honors div.views {
+  margin-left: 60px;
+  padding-left: 1em;
+  min-height: 86px;
+  font-size: 14px;
+  border-style: solid;
+  border-width: 1px;
+  border-left-width: 6px;
+  border-color: #e5e55c;
+  background-color: #fafae0;
+}
+div.snipBasic div.honors div.views div.viewCounter {
+  text-align: right;
+  margin-right: 8px;
+  float: right;
+  width: 85px;
+  overflow: hidden;
+}
+div.snipBasic div.honors div.views div.badgeTotal {
+  margin-right: 85px;
+  margin-left: -0.4em;
+}
+div.snipBasic div.honors div.views span {
+  margin-right: 0.5em;
+  display: inline-bleck;
+  text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.6);
+}
+div.snipBasic div.honors div.views div.badgeList {
+  min-height: 26px;
+}
+div.snipBasic div.honors div.views div.badgeList div {
+  font-size: 12px;
+  height: 22px;
+  background-color: white;
+  border: solid 1px #e5e55c;
+  border-radius: 2px;
+  padding: 0px 4px;
+  margin: 0px 4px 2px -12px;
+  color: #3030d0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  vertical-align: middle;
+  line-height: 20px;
+}
+div.snipBasic div.honors div.views div.badgeList div i {
+  font-size: 18px;
+  display: inline-block;
+  width: 1.5em;
+  text-align: center;
+  line-height: 24px;
+  vertical-align: middle;
+}
+div.snipBasic div.honors div.scoring {
+  float: left;
+  width: 50px;
+  height: 86px;
+  border: solid 0px #eeeeff;
+}
+div.snipBasic div.honors div.scoring div.votes {
+  font-family: 'Fredericka the Great';
+  display: block;
+  height: 28px;
+  text-align: center;
+  font-size: 22px;
+}
+div.snipBasic div.honors div.scoring div {
+  height: 28px;
+  font-size: 24px;
+  text-align: center;
+}
+div.snipBasic div.honors div.scoring div i.button {
+  text-align: center;
+  cursor: pointer;
+}
+div.snipBasic div.honors div.scoring div i.button:active {
+  color: red;
+}
+div.snipBasic div.honors div.scoring div i.button.voted {
+  color: #f0f0f0;
+}
+div.snipBasic div.honors i {
+  line-height: 30px;
+  padding: 0px;
+  width: 20px;
+}
+div.snipBasic div.infoSection {
+  margin-top: 0.5em;
+  margin-bottom: 1em;
+  padding: 0px;
+  font-size: 14px;
+}
+div.snipBasic div.infoSection form {
+  display: block;
+  margin: 0px;
+  padding: 10px;
+  text-align: center;
+  border: solid 1px #eeeeff;
+  background-color: #fdfdff;
+}
+div.snipBasic div.infoSection form p {
+  margin: 0px;
+  padding: 0px;
+}
+div.snipBasic div.infoSection form input {
+  margin-top: 5px;
+}
+div.snipBasic div.infoSection div.visibInfoSection {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+div.snipBasic div.infoSection h4 {
+  font-size: 16px;
+  color: #222222;
+}
+div.snipBasic div.infoSection div.tags {
+  padding: 3px 0px;
+  border: solid 1px transparent;
+  background-color: transparent;
+  min-height: 20px;
+}
+div.snipBasic div.infoSection div.tags div.snipTag {
+  font-weight: bold;
+  font-size: 12px;
+  padding: auto 1em;
+}
+div.snipBasic div.infoSection div.info {
+  border: solid 1px #eeeeff;
+  border-left: solid 6px #eeeeff;
+  background-color: #fdfdff;
+  color: #333333;
+}
+div.snipBasic div.infoSection div.info div {
+  margin: 4px 0em 2px 0.5em;
+  text-align: left;
+}
+div.snipBasic div.infoSection div.info div.buttonPanel {
+  text-align: right;
+  border-top: solid 1px #eeeeff;
+  margin: 2px 4px;
+  padding: 4px 2px;
+  clear: right;
+}
+div.snipBasic div.infoSection div.info div.buttonPanel a.s2cButton {
+  font-size: 11px;
+  letter-spacing: 1px;
+  line-height: 16px;
+  margin: 1 0 1 4px;
+  min-height: 17px;
+  height: 17px;
+}
+div.snipBasic div.infoSection div.info div.buttonPanel a.s2cButton i {
+  display: inline-block;
+  width: 17px;
+  height: 17px;
+}
+div.snipBasic div.infoSection div.info h3 {
+  font-size: 14px;
+  margin-top: 8px;
+  display: block;
+  text-transform: uppercase;
+  font-weight: normal;
+}
+div.snipBasic div.infoSection div.info strong {
+  color: #222222;
+  font-weight: bold;
+}
+div.snipBasic div.infoSection div.info a {
+  font-weight: normal;
+  color: #3030d0;
+}
+div.snipBasic div.infoSection div.info a:hover {
+  text-decoration: none;
+  color: #222222;
+}
+div.snipBasic div.infoSection div.info ul {
+  margin: 4px 0px 6px 0px;
+  padding-left: 0.2em;
+}
+div.snipBasic div.infoSection div.info ul li {
+  margin-left: 0.6em;
+  margin-right: .2em;
+  margin-top: 1px;
+  padding: 2px 1px;
+  color: #3030d0;
+  font-weight: normal;
+  list-style-image: none;
+  list-style-type: none;
+  border: solid 1px transparent;
+  overflow: hidden;
+}
+div.snipBasic div.infoSection div.info ul li i.fa {
+  float: right;
+  color: #909090;
+  margin: 2px;
+  cursor: pointer;
+}
+div.snipBasic div.infoSection div.info ul li a:hover {
+  text-decoration: none;
+  border: none;
+}
+div.snipBasic div.infoSection div.info ul li span.channelUnpublish {
+  display: inline-block;
+  float: right;
+  width: 24px;
+  height: 17px;
+  cursor: pointer;
+}
+div.snipBasic div.infoSection div.info ul li span.channelUnpublish:hover {
+  background-image: url("images/action_delete_hover.png");
+}
+div.snipBasic div.infoSection div.info ul li:hover {
+  border: solid 1px #e0e0e0;
+  background-color: white;
+}
+div.snipBasic div.infoSection div.info ul li:hover i.fa {
+  color: red;
+}
+div.snipBasic div.infoSection div.info div.correlatedSnip {
+  margin-bottom: 0px;
+  line-height: 17px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 236px;
+  color: #909090;
+  display: inline-block;
+  border: solid 1px transparent;
+  text-decoration: none !important;
+}
+div.snipBasic div.infoSection div.info div.correlatedSnip a:link,
+div.snipBasic div.infoSection div.info div.correlatedSnip a:visited,
+div.snipBasic div.infoSection div.info div.correlatedSnip a:active {
+  font-weight: normal;
+  color: #222222;
+  border: none;
+}
+div.snipBasic div.infoSection div.info div.correlatedSnip a:hover {
+  color: #3030d0;
+  border: none;
+}
+div.snipBasic div.infoSection div.info div.correlatedSnip i {
+  color: inherit;
+  margin-right: 0px;
+  margin-bottom: 4px;
+  margin-top: 2px;
+  float: left;
+  display: inline-box;
+  width: 1.4em;
+  text-align: left;
+  color: #222222;
+}
+div.snipBasic div.infoSection div.info div.correlatedSnip:hover {
+  text-decoration: none !important;
+  background-color: white;
+  border: solid 1px #e0e0e0;
+  color: #3030d0 !important;
+}
+div.snipBasic div.infoSection div.info div.correlatedSnip:hover a:link,
+div.snipBasic div.infoSection div.info div.correlatedSnip:hover a:visited,
+div.snipBasic div.infoSection div.info div.correlatedSnip:hover a:active {
+  color: #3030d0;
+}
+div.snipBasic div.snipDesc {
+  margin: 4px 0px 12px 0px;
+  padding: 0px;
+  color: #222222;
+  margin-bottom: 0.5em;
+  font-size: 16px;
+  line-height: 21px;
+  background-color: transparent;
+  border: solid 1px transparent;
+  min-height: 22px;
+  padding: 1px;
+}
+div.snipBasic div.snipDesc pre {
+  white-space: pre-wrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  margin: 0px;
+}
+div.snipBasic em {
+  font-weight: bold;
+}
+div.snipBasic h1 {
+  margin-top: 0.5em;
+  margin-bottom: 0.2em;
+  font-size: 28px;
+  line-height: 35px;
+  font-weight: normal;
+  color: black;
+  border: solid 1px transparent;
+  padding: 0px;
+}
+div.snipBasic h1 pre {
+  white-space: pre-wrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  font-family: 'Roboto', sans-serif;
+  margin: 0px;
+}
+div.snipBasic h2 {
+  margin-top: 0.5em;
+  margin-bottom: 0px;
+  font-size: 15px;
+  font-weight: bold;
+  color: #000066;
+  line-height: 23px;
+  margin-left: 6px;
+}
+div.snipBasic p {
+  margin: 10px 0px;
+}
+img.userPicMid {
+  max-width: 50px;
+  /*120px; */
+  max-height: 50px;
+  margin: 1px;
+  /*border: solid 1px White;*/
+
+}
+img.userPicSmall {
+  max-width: 24px;
+  /*120px; */
+  max-height: 24px;
+  margin: 2px;
+  border: solid 1px White;
+}
+div.codeEmbed {
+  background-color: #f0f0f0;
+}
+div.codeEmbed div {
+  overflow: hidden;
+  border-bottom: 1px solid #e0e0e0;
+}
+div.codeEmbed #codeEmbedPanel {
+  height: 1px;
+  overflow: hidden;
+  width: 658px;
+}
+div.codeEmbed div.codeEmbedFrame {
+  width: 634px;
+  background-color: White;
+  color: black;
+  margin: 4px 4px 0px 4px;
+  padding: 4px 6px;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 12px;
+  line-height: 16px;
+  -moz-tab-size: 3;
+  -o-tab-size: 3;
+  -webkit-tab-size: 3;
+  tab-size: 3;
+  cursor: pointer;
+  border: solid 1px #e0e0d0;
+  -webkit-box-shadow: 0px 0px 3px rgba(50, 50, 50, 0.2);
+  -moz-box-shadow: 0px 0px 3px rgba(50, 50, 50, 0.2);
+  box-shadow: 0px 0px 3px rgba(50, 50, 50, 0.2);
+}
+div.codeEmbed div.codeEmbedFrame:hover code,
+div.codeEmbed div.s2cButtonHover code {
+  background-color: #484848;
+  color: yellow;
+}
+div.codeEmbed div.codeEmbedControls {
+  padding: 2px 4px;
+  margin: 0px;
+  font-size: 11px;
+}
+div.codeEmbed div.codeEmbedControls span {
+  display: inline-block;
+  margin-right: 0.4em;
+  line-height: 23px;
+  font-size: 12px;
+}
+div.codeEmbed div.codeEmbedControls input {
+  margin-left: 0.2em;
+  margin-right: 1em;
+  width: 60px;
+  font-size: 15px;
+  height: 18px;
+  line-height: 20px;
+}
+div.snipCode {
+  font-size: 13px;
+  line-height: 18px;
+  font-family: 'Droid Sans Mono', sans-serif !important;
+  padding: 2px;
+  background-color: #fafafa;
+  color: #3030d0;
+  display: block;
+  -moz-tab-size: 3;
+  -o-tab-size: 3;
+  -webkit-tab-size: 3;
+  tab-size: 3;
+  word-wrap: break-word;
+}
+div.snipCode li span {
+  font-size: 13px;
+  line-height: 18px;
+  font-family: 'Droid Sans Mono', sans-serif !important;
+}
+div.snipCode pre.prettyprint {
+  border: none;
+  overflow: visible;
+  margin: 0px;
+}
+div.snipCode .tag {
+  font-weight: normal;
+}
+div.snipCode .kwd {
+  font-weight: normal;
+}
+div.snipCode li.L1,
+div.snipCode li.L3,
+div.snipCode li.L5,
+div.snipCode li.L7,
+div.snipCode li.L9 {
+  background-color: #fafafa;
+  list-style-type: decimal;
+  white-space: pre-wrap;
+  color: #909090;
+}
+div.snipCode li.L0,
+div.snipCode li.L2,
+div.snipCode li.L4,
+div.snipCode li.L6,
+div.snipCode li.L8 {
+  background-color: whitesmoke;
+  list-style-type: decimal;
+  white-space: pre-wrap;
+  color: #909090;
+}
+#publishDialog div.groupList {
+  margin: 0px;
+}
+div.snipTags div {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.deletePropButtonTD {
+  width: 40px;
+}
+.addSnippet {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 13pt;
+  color: #505050;
+  margin: 3px 0px 0px 230px;
+  float: left;
+}
+#addSnippetBtn {
+  margin: 3px 5px 0px 5px;
+  float: right;
+}
+div.publicpage div.actionContainer {
+  float: right;
+  width: 180px;
+  margin: 0px;
+  padding: 2px;
+  text-align: right;
+  height: 30px;
+  border-bottom: solid 1px #e0e0e0;
+  background: -webkit-gradient(linear, left top, right top, from(white), to(silver));
+  background: -moz-linear-gradient(left, white, whitesmoke);
+  background: -ms-linear-gradient(left, white, whitesmoke);
+}
+div.publicpage div.contentTitle {
+  height: 32px;
+  margin: 0px;
+  padding: 0px;
+  border-bottom: solid 1px #e0e0e0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+div.publicpage div.contentTitle h1 {
+  color: #dd9b38;
+  font-size: 23px;
+  font-weight: bold;
+  line-height: 33px;
+  padding: 0px 2px;
+  height: 32px;
+  margin: 0px;
+}
+div.publicpage div.verticalPanel h2 {
+  color: #3030d0;
+}
+div.pageHeader {
+  border: solid 1px #eaeaea;
+  height: 32px;
+  overflow: hidden;
+}
+div.pageHeader div.contentTitle {
+  font-weight: bold;
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 22px;
+  color: #dd9b38;
+  line-height: 30px !important;
+}
+div.pageHeader div.contentTitle h1,
+div.pageHeader div.contentTitle h2 {
+  color: #dd9b38;
+  vertical-align: top;
+  overflow: visible;
+  height: 32px;
+  padding: 0px;
+  margin: 0px;
+  display: inline-block;
+  line-height: 30px !important;
+  min-width: 182px;
+  font-size: 22px;
+}
+div.pageHeader div.contentTitle h1 i,
+div.pageHeader div.contentTitle h2 i {
+  color: #eaeaea;
+}
+div.pageHeader div.contentTitle h1 a,
+div.pageHeader div.contentTitle h2 a {
+  color: #dd9b38;
+  font-weight: normal;
+}
+div.pageHeader div.contentTitle h1 span,
+div.pageHeader div.contentTitle h2 span {
+  margin: 0px 5px;
+}
+div.pageHeader div.contentTitle div.selector {
+  height: 32px;
+  font-weight: normal;
+  vertical-align: top;
+  overflow: visible;
+  width: 240px;
+  margin: 0px;
+  padding: 0px;
+  display: inline-block;
+  border: none;
+  border-left: solid 1px #eaeaea;
+  border-right: solid 1px #eaeaea;
+  cursor: pointer;
+  text-align: left;
+}
+div.pageHeader div.contentTitle div.selector i {
+  cursor: pointer;
+  float: right;
+  display: inline-block;
+  margin: 4px;
+}
+div.pageHeader div.contentTitle div.selector span {
+  display: inline-block;
+  margin: 0px;
+  padding: 0px 4px;
+}
+div.pageHeader div.contentTitle div.selector:hover,
+div.pageHeader div.contentTitle div.selector.selected {
+  border-color: silver;
+  background-color: #f7f7f7;
+}
+div.page div.actionContainer {
+  float: right;
+  width: 400px;
+  margin: 0px;
+  padding: 2px;
+  text-align: right;
+  height: 30px;
+  border-bottom: solid 1px transparent;
+  background: -webkit-gradient(linear, left top, right top, from(white), to(whitesmoke));
+  background: -moz-linear-gradient(left, white, whitesmoke);
+  background: -ms-linear-gradient(left, white, whitesmoke);
+  /*
+      span {
+        font-size: 16px;
+        line-height: 24px;
+        margin-right:0.5em;
+      }*/
+
+}
+div.page div.contentTitle {
+  height: 32px;
+  margin: 0px;
+  padding: 1px 0px;
+  border-bottom: solid 1px transparent;
+  overflow: hidden;
+  white-space: nowrap;
+  overflow: visible;
+  margin-right: 340px;
+}
+div.page div.contentTitle div.author {
+  cursor: pointer;
+  padding: 0px 2px;
+  float: left;
+  width: 250px;
+  overflow: hidden;
+  margin: 10px 0px 10px 10px;
+  border-style: solid;
+  border-width: 1px;
+  border-left-width: 6px;
+  border-color: #eeeeff;
+  background-color: #fdfdff;
+  -moz-transition-property: all;
+  -o-transition-property: all;
+  -webkit-transition-property: all;
+  transition-property: all;
+  -moz-transition-duration: 0.4s;
+  -o-transition-duration: 0.4s;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  -moz-transition-delay: 0.1s;
+  -o-transition-delay: 0.1s;
+  -webkit-transition-delay: 0.1s;
+  transition-delay: 0.1s;
+  -moz-transition-timing-function: ease-in-out;
+  -o-transition-timing-function: ease-in-out;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+div.page div.contentTitle div.author div.userPicture {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 34px 34px;
+  border: solid 2px transparent;
+  width: 30px;
+  height: 30px;
+  border-radius: 21px;
+  margin: 2px 6px 2px 6px;
+  float: left;
+}
+div.page div.contentTitle div.author div.authorInfo {
+  margin: 2px 0px;
+  color: #222222;
+  font-size: 13px;
+  margin-left: 50px;
+  width: 198px;
+  -moz-transition-property: all;
+  -o-transition-property: all;
+  -webkit-transition-property: all;
+  transition-property: all;
+  -moz-transition-duration: 0.4s;
+  -o-transition-duration: 0.4s;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  -moz-transition-delay: 0.1s;
+  -o-transition-delay: 0.1s;
+  -webkit-transition-delay: 0.1s;
+  transition-delay: 0.1s;
+  -moz-transition-timing-function: ease-in-out;
+  -o-transition-timing-function: ease-in-out;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+div.page div.contentTitle div.author div.authorInfo div {
+  overflow: hidden;
+  white-space: nowrap;
+  -ms-text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  width: 198px;
+  margin: 0px;
+  -moz-transition-property: all;
+  -o-transition-property: all;
+  -webkit-transition-property: all;
+  transition-property: all;
+  -moz-transition-duration: 0.4s;
+  -o-transition-duration: 0.4s;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  -moz-transition-delay: 0.1s;
+  -o-transition-delay: 0.1s;
+  -webkit-transition-delay: 0.1s;
+  transition-delay: 0.1s;
+  -moz-transition-timing-function: ease-in-out;
+  -o-transition-timing-function: ease-in-out;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+div.page div.contentTitle div.author div.authorInfo div.authorName {
+  line-height: 19px;
+}
+div.page div.contentTitle div.author div.authorInfo div.authorName span {
+  -moz-transition-property: all;
+  -o-transition-property: all;
+  -webkit-transition-property: all;
+  transition-property: all;
+  -moz-transition-duration: 0.4s;
+  -o-transition-duration: 0.4s;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  -moz-transition-delay: 0.1s;
+  -o-transition-delay: 0.1s;
+  -webkit-transition-delay: 0.1s;
+  transition-delay: 0.1s;
+  -moz-transition-timing-function: ease-in-out;
+  -o-transition-timing-function: ease-in-out;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+div.page div.contentTitle div.author div.authorInfo div.authorName span.name {
+  color: #3030d0;
+  background-color: white;
+  padding: 0px 2px;
+  margin: 0px;
+  display: inline-block;
+  text-align: center;
+  font-weight: bold;
+  -moz-transition-property: all;
+  -o-transition-property: all;
+  -webkit-transition-property: all;
+  transition-property: all;
+  -moz-transition-duration: 0.4s;
+  -o-transition-duration: 0.4s;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  -moz-transition-delay: 0.1s;
+  -o-transition-delay: 0.1s;
+  -webkit-transition-delay: 0.1s;
+  transition-delay: 0.1s;
+  -moz-transition-timing-function: ease-in-out;
+  -o-transition-timing-function: ease-in-out;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+div.page div.contentTitle div.author div.authorInfo div.scores {
+  font-size: 11px;
+  padding: 0px 2px;
+}
+div.page div.contentTitle div.author div.authorInfo div.scores span {
+  -moz-transition-property: all;
+  -o-transition-property: all;
+  -webkit-transition-property: all;
+  transition-property: all;
+  -moz-transition-duration: 0.4s;
+  -o-transition-duration: 0.4s;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  -moz-transition-delay: 0.1s;
+  -o-transition-delay: 0.1s;
+  -webkit-transition-delay: 0.1s;
+  transition-delay: 0.1s;
+  -moz-transition-timing-function: ease-in-out;
+  -o-transition-timing-function: ease-in-out;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+div.page div.contentTitle div.author div.authorInfo div.scores i {
+  color: #fab033;
+}
+div.page div.contentTitle div.author:hover {
+  border-color: #cacaff;
+  width: 440px;
+}
+div.page div.contentTitle div.author:hover div.authorInfo {
+  width: 438px;
+}
+div.page div.contentTitle div.author:hover div.authorInfo div {
+  width: 438px;
+}
+div.page div.contentTitle div.author:hover div.authorInfo div span,
+div.page div.contentTitle div.author:hover div.authorInfo div span.name {
+  color: black;
+}
+div.contentTitle span.editErrorMessage,
+div.contentTitle div.editErrorMessage {
+  width: 490px;
+  white-space: normal;
+}
+div.contentTitle span.editErrorMessage:before,
+div.contentTitle div.editErrorMessage:before {
+  content: ' ';
+  height: 0;
+  position: absolute;
+  width: 0;
+  border: 10px solid transparent;
+  border-bottom-color: #dd8888;
+  top: -20px;
+  left: 50px;
+}
+div.contentTitle h2.exploreListTitle {
+  height: 32px;
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 24px;
+  line-height: 27px;
+  font-weight: bold;
+  color: #dd9b38;
+  padding: 0px 2px;
+}
+div.contentTitle h2.exploreListTitle a {
+  color: #dd9b38;
+  font-weight: normal;
+}
+a.s2cButton.add {
+  background-image: url('/Content/images/action_add.png');
+  background-repeat: no-repeat;
+  background-position: right center;
+}
+a.s2cButton.remove {
+  background-image: url('/Content/images/action_remove.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+a.s2cButton.ask {
+  background-image: url('/Content/images/action_ask.png');
+  background-repeat: no-repeat;
+  background-position: right center;
+}
+a.s2cButton.github {
+  background-image: url('/Content/images/github32.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-color: Transparent;
+  border: 0px solid #5353e5;
+  width: 32px;
+  height: 32px;
+}
+a.s2cButton.github:hover {
+  background-image: url('/Content/images/githubhi32.png');
+  border: 0px solid #5757e6;
+  background-color: Transparent;
+  -webkit-box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.4);
+}
+a.s2cButton,
+input[type="submit"].s2cButton,
+input[type="button"].s2cButton {
+  cursor: pointer;
+  font-family: Segoe UI, Futura, "Trebuchet MS", Arial, Sans-Serif;
+  background-color: #9595ef;
+  border: 1px solid #5353e5;
+  display: inline-block;
+  color: white !important;
+  font-size: 14px;
+  letter-spacing: 1px;
+  line-height: 21px;
+  min-height: 22px;
+  font-weight: normal;
+  padding: 1px 6px;
+  text-decoration: none;
+  margin: 1px;
+  min-width: 60px;
+  text-align: center;
+  text-transform: uppercase;
+  border-radius: 2px;
+}
+a.s2cButton i,
+input[type="submit"].s2cButton i,
+input[type="button"].s2cButton i {
+  text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.6);
+}
+a.s2cButton.large,
+input[type="submit"].s2cButton.large,
+input[type="button"].s2cButton.large {
+  font-size: 15px;
+  line-height: 26px;
+  min-height: 26px;
+  vertical-align: top;
+  padding: 2px 10px;
+  font-weight: normal;
+  border-radius: 4px;
+  min-width: 80px;
+}
+a.s2cButton:hover,
+input[type="submit"].s2cButton:hover,
+input[type="button"].s2cButton:hover,
+a.hover,
+a.s2cButtonHover {
+  color: yellow;
+  -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.4);
+  border: 1px solid #5757e6;
+  background-color: #9999f0;
+  text-shadow: 0px 0px 0px white, 0px 0px 0px white, 0px 0px 0.5px #5757e6;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+a.s2cButton:active,
+a.active,
+a.s2cButtonActive {
+  position: relative;
+  top: 1px;
+  left: 1px;
+  -webkit-box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.4);
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+div.actionContainer input[type="submit"] {
+  margin: 4px;
+  font-size: 12px;
+  text-align: center;
+  width: 100px;
+}
+div.listControlsBottom {
+  display: none;
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  color: #222222;
+  background-color: whitesmoke;
+  width: 300px;
+  border-radius: 3px;
+  padding: 4px;
+  box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.4);
+  /*
+  height: 22px;
+  border-top: solid 1px @dark-border;
+  margin-bottom: 1em;
+    */
+
+}
+div.listControlsTop {
+  margin: 0px 0px 1em 0px;
+  font-size: 15px;
+  height: 42px;
+  color: #222222;
+  background-color: #f7f7f7;
+  border-top: solid 1px white;
+  border-bottom: solid 1px #eaeaea;
+}
+div.listControlsTop span.label,
+div.listControlsTop div {
+  display: block;
+  min-width: 150px;
+  padding: 10px;
+}
+div.listControlsTop span.tab {
+  cursor: pointer;
+  background-color: White;
+  display: inline-block;
+  border-top: solid 1px silver;
+  border-left: solid 1px silver;
+  border-right: solid 1px silver;
+  border-bottom: solid 1px white;
+  padding: 0px 6px;
+  margin: 0px 2px;
+}
+div.listControlsTop span.selected {
+  color: #3030d0;
+  padding-bottom: 1px;
+}
+div.pageControls {
+  float: left;
+  width: 400px;
+  text-align: left;
+  font-size: 15px;
+  font-weight: bold;
+  margin: 0px;
+  overflow: visible;
+}
+div.pageControls div {
+  white-space: nowrap;
+}
+div.pageControls a.pagePrev,
+div.pageControls a.pageNext {
+  display: inline-block;
+  cursor: pointer;
+  margin-right: 0.2em;
+  margin-left: 0.2em;
+  padding: 0px 0.5em;
+  border: solid 0px red;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+}
+div.pageControls a.pageNext {
+  background-image: url('/Content/images/pageNext.png');
+}
+div.pageControls a.pagePrev {
+  background-image: url('/Content/images/pagePrev.png');
+}
+div.pageControls div.pageNumber {
+  font-size: 15px;
+}
+#sniplistPanel {
+  min-height: 378px;
+  padding: 0px;
+  margin: 0px;
+  overflow: visible;
+}
+div.publicpage > div.content > div.verticalMenu {
+  margin: 0px;
+  float: left;
+  width: 188px;
+  min-height: 241px;
+  font-size: 13px;
+  padding: 0px;
+  background: -webkit-gradient(linear, left top, left bottom, from(whitesmoke), to(white));
+  background: -moz-linear-gradient(top, whitesmoke, white);
+  background: -ms-linear-gradient(top, whitesmoke, white);
+}
+div.content > div.verticalMenu {
+  margin: 0px;
+  float: left;
+  width: 188px;
+  min-height: 441px;
+  font-size: 13px;
+  padding: 0px;
+  background: -webkit-gradient(linear, left top, left bottom, from(whitesmoke), to(white));
+  background: -moz-linear-gradient(top, whitesmoke, white);
+  background: -ms-linear-gradient(top, whitesmoke, white);
+}
+div.content div.verticalPanel {
+  margin: 0px;
+  padding: 0px;
+  margin-left: 188px;
+  min-height: 300px;
+  border-left: solid 1px #eaeaea;
+}
+div.panel p {
+  margin: 10px 0px;
+  line-height: 3ex;
+}
+div.panel ol li,
+div.panel ul li {
+  line-height: 3ex;
+}
+span.footnote {
+  font-size: smaller;
+}
+div.verticalMenu {
+  border-right: solid 1px #eaeaea;
+}
+div.verticalMenu div.filter:hover {
+  background-color: white;
+}
+div.verticalMenu div.filter:hover div.name {
+  color: #3030d0;
+}
+div.verticalMenu div.filter,
+div.verticalMenu div.applyBox,
+div.verticalMenu div.box {
+  border-left: none;
+  border-right: none;
+  border-top: solid 1px white;
+  border-bottom: solid 1px #eaeaea;
+  margin: 0px;
+  font-size: 12px;
+  line-height: 14px;
+  padding: 10px 6px;
+  overflow: hidden;
+  -moz-transition-property: all;
+  -o-transition-property: all;
+  -webkit-transition-property: all;
+  transition-property: all;
+  -moz-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.4s;
+  -moz-transition-delay: 0.1s;
+  -o-transition-delay: 0.1s;
+  -webkit-transition-delay: 0.1s;
+  transition-delay: 0.1s;
+  -moz-transition-timing-function: ease-in-out;
+  -o-transition-timing-function: ease-in-out;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+div.verticalMenu div.filter div.name,
+div.verticalMenu div.applyBox div.name,
+div.verticalMenu div.box div.name,
+div.verticalMenu div.filter h2,
+div.verticalMenu div.applyBox h2,
+div.verticalMenu div.box h2 {
+  text-align: left;
+  text-transform: capitalize;
+  color: #222222;
+  text-shadow: -1px -1px 0px white;
+  font-size: 15px;
+  padding: 0px;
+  margin: 0px 0px 2px 0px;
+  line-height: 20px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+div.verticalMenu div.filter div.name i,
+div.verticalMenu div.applyBox div.name i,
+div.verticalMenu div.box div.name i,
+div.verticalMenu div.filter h2 i,
+div.verticalMenu div.applyBox h2 i,
+div.verticalMenu div.box h2 i {
+  font-size: 13px;
+  vertical-align: top;
+  line-height: 20px;
+}
+div.verticalMenu div.filter h2,
+div.verticalMenu div.applyBox h2,
+div.verticalMenu div.box h2 {
+  font-weight: bold;
+}
+div.verticalMenu div.filter div.values.closed,
+div.verticalMenu div.applyBox div.values.closed,
+div.verticalMenu div.box div.values.closed {
+  height: 0px;
+}
+div.verticalMenu div.filter div.values,
+div.verticalMenu div.applyBox div.values,
+div.verticalMenu div.box div.values {
+  overflow: hidden;
+  padding: 0px;
+  margin: 0px;
+  -moz-transition-property: all;
+  -o-transition-property: all;
+  -webkit-transition-property: all;
+  transition-property: all;
+  -moz-transition-duration: 1s;
+  -o-transition-duration: 1s;
+  -webkit-transition-duration: 1s;
+  transition-duration: 0.4s;
+  -moz-transition-delay: 0.1s;
+  -o-transition-delay: 0.1s;
+  -webkit-transition-delay: 0.1s;
+  transition-delay: 0.1s;
+  -moz-transition-timing-function: ease-in-out;
+  -o-transition-timing-function: ease-in-out;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+div.verticalMenu div.filter div.values div.filterList,
+div.verticalMenu div.applyBox div.values div.filterList,
+div.verticalMenu div.box div.values div.filterList {
+  text-align: left;
+}
+div.verticalMenu div.filter div.values div.filterList span,
+div.verticalMenu div.applyBox div.values div.filterList span,
+div.verticalMenu div.box div.values div.filterList span {
+  display: inline-block;
+  background-color: #effadf;
+  border: solid 1px #8ad321;
+  padding: 0px 3px;
+  margin: 1px 4px 1px 0px;
+  line-height: 17px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+}
+div.verticalMenu div.filter div.values div.filterList span span,
+div.verticalMenu div.applyBox div.values div.filterList span span,
+div.verticalMenu div.box div.values div.filterList span span {
+  display: inline-block;
+  max-width: 120px;
+  white-space: nowrap;
+  border: none;
+  overflow: hidden;
+  margin: 0px;
+  padding: 0px;
+  vertical-align: bottom;
+  text-overflow: ellipsis;
+}
+div.verticalMenu div.filter div.values div.filterList span i,
+div.verticalMenu div.applyBox div.values div.filterList span i,
+div.verticalMenu div.box div.values div.filterList span i {
+  color: #b03030;
+  cursor: pointer;
+  display: inline-block;
+}
+div.verticalMenu div.filter div.values div.input,
+div.verticalMenu div.applyBox div.values div.input,
+div.verticalMenu div.box div.values div.input {
+  margin: 4px 0px 0px 0px;
+  background-color: ivory;
+  border: solid 1px silver;
+  width: 174px;
+}
+div.verticalMenu div.filter div.values div.input i,
+div.verticalMenu div.applyBox div.values div.input i,
+div.verticalMenu div.box div.values div.input i {
+  line-height: 24px;
+  width: 18px;
+  text-align: center;
+  cursor: pointer;
+  float: right;
+  display: inline-block;
+  margin: 0px 2px;
+}
+div.verticalMenu div.filter div.values div.input div,
+div.verticalMenu div.applyBox div.values div.input div,
+div.verticalMenu div.box div.values div.input div {
+  color: #909090;
+  height: 0px;
+  overflow: visible;
+  font-size: 13px;
+  line-height: 24px;
+  padding: 0px 2px;
+}
+div.verticalMenu div.filter div.values div.input input[type="text"],
+div.verticalMenu div.applyBox div.values div.input input[type="text"],
+div.verticalMenu div.box div.values div.input input[type="text"] {
+  border: none;
+  padding: 0px 0px;
+  font-size: 14px;
+  background: transparent;
+  display: block;
+  width: 150px;
+  margin-right: 22px;
+  letter-spacing: 1px;
+}
+div.verticalMenu div.applyBox {
+  text-align: right;
+}
+div.verticalMenu span.checkItem {
+  margin: 2px 4px;
+  padding: 2px 24px 2px 4px;
+  background-image: url('/Content/images/checkOff.png');
+  background-position: right center;
+  background-repeat: no-repeat;
+}
+div.verticalMenu span:hover {
+  color: #3030d0;
+  background-color: white;
+}
+div.verticalMenu span.item {
+  display: block;
+  padding: 2px 4px;
+  margin: 0px;
+  border-top: solid 1px white;
+  border-bottom: solid 1px rgba(50, 50, 50, 0.2);
+  line-height: 34px;
+  height: 34px;
+  vertical-align: middle;
+  text-align: right;
+  color: #909090;
+  font-weight: bold;
+  cursor: pointer;
+  overflow: hidden;
+}
+div.verticalMenu span.item img,
+div.verticalMenu span.item i {
+  float: left;
+  line-height: 34px;
+  vertical-align: middle;
+  display: inline-block;
+  text-align: center;
+  color: rgba(50, 50, 50, 0.2);
+  font-size: 24px;
+  -moz-transition-property: all;
+  -o-transition-property: all;
+  -webkit-transition-property: all;
+  transition-property: all;
+  -moz-transition-duration: 0.4s;
+  -o-transition-duration: 0.4s;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  -moz-transition-delay: 0.1s;
+  -o-transition-delay: 0.1s;
+  -webkit-transition-delay: 0.1s;
+  transition-delay: 0.1s;
+  -moz-transition-timing-function: ease-in-out;
+  -o-transition-timing-function: ease-in-out;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+div.verticalMenu span.item.current {
+  background-color: white;
+  cursor: default;
+  color: #3030d0;
+}
+div.verticalMenu span.item.current img,
+div.verticalMenu span.item.current i {
+  color: #3030d0;
+}
+div.verticalMenu span.check {
+  padding: 2px 24px 2px 4px;
+  display: block;
+  text-align: right;
+  color: #3030d0;
+  font-weight: normal;
+  cursor: default;
+  background-image: url('/Content/images/checkOn.png');
+  background-position: right center;
+  background-repeat: no-repeat;
+}
+div.verticalMenu h3 {
+  text-align: left;
+  margin-top: 0.2em;
+  margin-bottom: 0.4em;
+  margin-left: 4px;
+}
+div.verticalMenu #exploreMenu {
+  margin: 0px;
+  padding: 0px !important;
+  min-width: 160px;
+  border: solid 1px silver;
+  text-align: right;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.4);
+  color: #3030d0;
+}
+div.verticalMenu #exploreMenu li {
+  cursor: pointer;
+  margin: 0px;
+  display: block;
+  font-size: 14px;
+  line-height: 20px;
+  border: solid 1px transparent;
+  padding: 2px 12px 0px 0px;
+}
+div.verticalMenu #exploreMenu li:hover {
+  color: black;
+  background-color: whitesmoke;
+  border-bottom: solid 1px #e0e0e0;
+}
+div.verticalMenu h4 {
+  padding: 2px 0px 2px 8px;
+  margin: 1.5em 0px 2px 0px;
+  display: block;
+  border-bottom: solid 1px #eaeaea;
+}
+.footer {
+  width: 100%;
+  background-color: #e0e0e0;
+  height: 38px;
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  white-space: nowrap;
+}
+.footer div.footerContent {
+  width: 972px;
+  margin: 1px auto;
+  color: #222222;
+  font-size: 15px;
+  line-height: 18px;
+  padding: 8px 0px 0px 0px;
+  background-color: transparent;
+}
+.footer div.footerContent .footerButtons {
+  float: right;
+  margin-top: -2px;
+  width: 120px;
+}
+.footer div.footerContent div.footerLabels {
+  margin-right: 130px;
+  text-align: center;
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+}
+.footer div.footerContent div.footerLabels a {
+  font-weight: normal;
+  color: #3030d0;
+  display: inline-block;
+  border: solid 1px transparent;
+  border-left: solid 1px #3030d0;
+  padding: 0px 8px 0px 8px;
+  margin-right: -5px;
+  min-width: 30px;
+}
+.footer div.footerContent div.footerLabels a:hover {
+  background-color: lightgray;
+  color: #3030d0;
+  text-decoration: none;
+}
+.sitemap {
+  max-width: 972px;
+  font-size: 12px;
+  height: 120px;
+  padding: 4px;
+  margin: auto;
+}
+.sitemap div {
+  float: left;
+  width: 170px;
+  height: 110px;
+  white-space: nowrap;
+  overflow: visible;
+  margin-left: .5em;
+  margin-right: .5em;
+  border-right: solid 1px #eaeaea;
+}
+.sitemap p {
+  margin: 0px 0px 0px 1em;
+}
+div.logosquare {
+  margin: 1em;
+  height: 64px;
+  width: 64px;
+  background-image: url("images/Snip2Code 64x64.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.userPoints {
+  font-weight: bolder;
+}
+.userForAdmin a.s2cButton {
+  display: inline;
+  font-size: 11px;
+  letter-spacing: 1px;
+  line-height: 16px;
+  margin: 1 0 1 4px;
+  min-height: 17px;
+  height: 17px;
+}
+.userForAdmin a.s2cButton i {
+  display: inline-block;
+  width: 17px;
+  height: 17px;
+}
+/* Styles for group invitation
+---------------------------------------------------------- */
+table.groupUserList {
+  margin: 2px 0px;
+  padding: 0px;
+  white-space: nowrap;
+  /*font-weight:normal;*/
+  color: #606070;
+  font-size: 13px;
+  line-height: 18px;
+  border: solid 1px Transparent;
+  display: block;
+  outline: 0;
+}
+table.groupUserList .ui-menu .ui-menu-item a {
+  width: 100%;
+  text-align: left;
+  display: inline-block;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 18px;
+  height: 20px;
+  padding: 1px;
+}
+table.groupUserList td {
+  vertical-align: middle;
+  line-height: 1px;
+}
+table.groupUserList span.name {
+  padding: 0px 3px;
+  display: inline-block;
+  width: 320px;
+  text-align: left;
+  margin-right: 0.2em;
+  margin: 0px;
+  font-weight: normal;
+  vertical-align: top;
+  font-size: 16px;
+  height: 24px;
+  line-height: 22px;
+  border: solid 1px silver;
+  color: #222222;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+table.groupUserList textarea.editUserName {
+  font-size: 15px;
+  line-height: 22px;
+  min-height: 22px;
+  max-height: 22px;
+  width: 320px;
+  min-width: 320px;
+  max-width: 320px;
+  margin: 0px 8px;
+  padding: 1px 3px;
+  display: inline-block;
+  text-align: left;
+  font-weight: bold;
+  margin: 0px;
+  overflow: hidden;
+  white-space: nowrap;
+  resize: none;
+}
+#userGroups {
+  cursor: pointer;
+}
+#colorInTitle {
+  margin-left: 10px;
+  float: left;
+  width: 20px;
+}
+.commandLineScript {
+  font-weight: bold;
+  font-family: Courier, "Courier New", monospace;
+}
+.commandLineParam {
+  font-weight: bold;
+  font-family: Courier, "Courier New", monospace;
+}
+/* Styles for validation helpers
+-----------------------------------------------------------*/
+
+.field-validation-valid {
+  display: none;
+}
+.input-validation-error {
+  border: 1px solid #dd8888;
+  /*background-color: #ffeeee;*/
+
+}
+.validation-summary-errors {
+  font-weight: bold;
+  color: #601010;
+}
+.validation-summary-valid {
+  display: none;
+}
+/* Styles for landing page
+-----------------------------------------------------------*/
+
+#signupEmail {
+  color: #b1b1b0;
+  border: 1px solid #3030d0;
+  font-family: Segoe UI, Futura, "Trebuchet MS", Arial, Sans-Serif;
+  background: #f0f0f0;
+  text-decoration: none;
+  width: 186px;
+  padding: 1px;
+}
+#signupQuestion {
+  color: #b1b1b0;
+  font-size: 13px;
+}
+/*
+#createNewBt 
+{
+  background-image:url("images/add_btn.jpg");
+}
+*/
+
+/* Styles for error message
+-----------------------------------------------------------*/
+
+div.error {
+  text-align: center;
+  color: #601010;
+  border: solid 1px #dd8888;
+  background-color: snow;
+  margin: 2em auto;
+  padding: 1em 2em;
+  font-size: 16px;
+  max-width: 500px;
+}
+/* Styles for error pages
+-----------------------------------------------------------*/
+
+.errorPage {
+  text-align: center;
+}
+.embeddedErrorDiv {
+  padding-top: 20px;
+  font-size: 16px;
+  text-align: center;
+  font-family: Segoe UI, Futura Std Heavy, "Trebuchet MS", Arial, Sans-Serif;
+  font-weight: bold;
+}
+div.errorMessage {
+  text-align: right;
+  width: 99%;
+  padding-top: 60px;
+  padding-right: 10px;
+  margin-right: 10px;
+  font-family: Segoe UI, Futura Std Heavy, "Trebuchet MS", Arial, Sans-Serif;
+  color: white;
+  font-weight: bold;
+  text-shadow: 2px 2px 9px rgba(0, 0, 0, 0.6);
+  font-size: 28px;
+  background-image: url("images/errorBackGround_1104x552.jpg");
+}
+div.errorMessageNoBck {
+  text-align: right;
+  width: 99%;
+  padding-top: 60px;
+  padding-right: 10px;
+  margin-right: 10px;
+  font-family: Segoe UI, Futura Std Heavy, "Trebuchet MS", Arial, Sans-Serif;
+  color: white;
+  font-weight: bold;
+  text-shadow: 2px 2px 9px rgba(0, 0, 0, 0.6);
+  font-size: 28px;
+}
+div.innerError {
+  height: 492px;
+  text-align: right;
+  width: 550px;
+  margin-left: 350px;
+}
+img.errorImage {
+  width: 98%;
+  margin: 4em auto;
+}
+/* Styles for image cropping
+-----------------------------------------------------------*/
+
+#cropPreview {
+  float: left;
+  overflow: hidden;
+  width: 100px;
+  height: 100px;
+}
+#cropDisplay {
+  float: left;
+  clear: right;
+}
+/* Style for bookmarklet download
+------------------------------------------------------------------------- */
+
+.bookmarklet {
+  padding-bottom: 0.6em;
+}
+.bookmarklet a {
+  display: block;
+  color: #303010;
+  border: 1px solid #3030d0;
+  background: #f0f0f0;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 0.1em 0.5em;
+  margin: 1em auto;
+  width: 250px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+}
+.bookmarklet a:hover {
+  color: White;
+  border-color: #3030d0;
+  background: #3030d0;
+}
+.invisibShare .btn_ico {
+  width: 16px;
+  height: 16px;
+  display: block;
+  float: left;
+  cursor: pointer;
+  outline: 0 none;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  margin: 4px 2px;
+}
+.invisibShare_linkedin .btn_ico {
+  background-image: url("images/linkedin.png");
+}
+.invisibShare_twitter .btn_ico {
+  background-image: url("images/twitter.png");
+}
+.invisibShare_facebook .btn_ico {
+  background-image: url("images/facebook.png");
+}
+.invisibShare_digg .btn_ico {
+  background-image: url("images/digg.png");
+}
+.invisibShare_google_bookmarks .btn_ico {
+  background-image: url("images/google_bookmarks.png");
+}
+.invisibShare_facebook_like_but .btn_ico {
+  background-image: url("images/facebook.png");
+  /*url("images/facebook_like_but.png");*/
+  width: 36px;
+  height: 16px;
+}
+.invisibShare_linkedin_share_but .btn_ico {
+  background-image: url("images/linkedin.png");
+  /*url("images/linkedin_share_but.png");*/
+
+}
+.invisibShare_google_plus_one_but .btn_ico {
+  background-image: url("images/google_bookmarks.png");
+  /*url("images/google_plus_one_but.png");*/
+
+}
+.invisibShare_twitter_tweet_but .btn_ico {
+  background-image: url("images/twitter.png");
+  /*url("images/twitter_tweet_but.png");*/
+
+}
+#languageMenu {
+  width: 160px;
+  height: 437px;
+  overflow-y: scroll;
+  -webkit-box-shadow: 1px 1px 2px rgba(50, 50, 50, 0.2);
+  -moz-box-shadow: 1px 1px 2px rgba(50, 50, 50, 0.2);
+  box-shadow: 1px 1px 2px rgba(50, 50, 50, 0.2);
+}
+/* Combo box styles */
+
+.ui-dialog .ui-dialog-buttonpane {
+  margin: 0px;
+  padding: 0px;
+}
+.ui-dialog .ui-dialog-buttonpane button {
+  height: 30px;
+  font-size: 12px;
+  background-color: #9595ef;
+  background-image: none;
+  border-color: #5353e5;
+  color: yellow;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 3px;
+}
+.ui-widget-overlay {
+  opacity: 0.5;
+}
+.ui-dialog-titlebar,
+.ui-dialog,
+.ui-corner-all {
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  padding: 3px 4px !important;
+}
+.ui-dialog {
+  -webkit-box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4);
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4);
+}
+.ui-menu-item {
+  font-size: 12px;
+  line-height: normal;
+}
+/* Combo box styles */
+
+.ui-button {
+  font-size: 11px;
+  letter-spacing: 1px;
+  line-height: 16px;
+  margin: 1 0 1 4px;
+  min-height: 17px;
+  height: 17px;
+  margin-left: -1px;
+}
+.ui-button i {
+  display: inline-block;
+  width: 17px;
+  height: 17px;
+}
+.ui-button span {
+  padding-top: 2px !important;
+  padding-bottom: 2px !important;
+}
+.ui-button-icon-only .ui-button-text {
+  padding: 0.35em;
+}
+.ui-autocomplete-input {
+  margin: 0;
+  /*padding: 0.48em 0 0.47em 0.45em; */
+
+}
+.ui-autocomplete {
+  margin: 0px;
+  border: solid 1px #e0e0e0;
+  -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.4);
+  max-height: 240px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+/* END Combo box styles */
+
+#disqus_thread {
+  margin-top: 3em;
+  padding: 0em;
+}
+/* Docs styles */
+
+.dataObjectDoc table {
+  text-align: center;
+  vertical-align: middle;
+}
+.dataObjectDoc th {
+  font-weight: bold;
+  padding: 5px;
+  border: 1px solid;
+}
+.dataObjectDoc td {
+  padding: 5px;
+  border: 1px solid;
+}
+.dataObjectDoc td.dataObjectDocDescr {
+  text-align: justify;
+}
+.dataObjectDoc h3 {
+  font-size: 18px;
+  padding: 10px;
+}
+.dataObjectDoc a.internalRef {
+  cursor: pointer;
+  font-weight: bold;
+}
+div.objRefDiv {
+  padding-bottom: 100px;
+}
+tbody.operation-params > strong {
+  text-transform: none;
+}
+div.docsParagraph {
+  line-height: 20px;
+  margin-bottom: 10px;
+}
+div.docsParagraph td {
+  padding-right: 10px;
+}
+span.docsMethodName {
+  font-family: 'Courier New';
+  font-weight: bold;
+}
+span.docsMethodType {
+  font-family: 'Courier New';
+  font-weight: bolder;
+}
+/* END Docs styles */
+
+img.pluginLeftImg {
+  width: 25px;
+  float: left;
+  margin-top: 5px;
+}
+span.pluginLeftTitle {
+  margin: 4px 2px 0px 4px;
+}
+/* ADS Section styles */
+
+div.adsContactUs {
+  font-size: smaller;
+  margin-left: 10px;
+}
+/* END ADS Section styles */
+#rankingsPanel {
+  border: solid 0px red;
+  margin-left: 0px;
+}
+#rankingsPanel div.rankedUsersList div.rankedUser {
+  cursor: pointer;
+  padding: 0px 2px;
+  float: left;
+  width: 290px;
+  overflow: hidden;
+  margin: 10px;
+  border-style: solid;
+  border-width: 1px;
+  border-left-width: 6px;
+  border-color: #eeeeff;
+  background-color: #fdfdff;
+  -moz-transition-property: all;
+  -o-transition-property: all;
+  -webkit-transition-property: all;
+  transition-property: all;
+  -moz-transition-duration: 0.4s;
+  -o-transition-duration: 0.4s;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  -moz-transition-delay: 0.1s;
+  -o-transition-delay: 0.1s;
+  -webkit-transition-delay: 0.1s;
+  transition-delay: 0.1s;
+  -moz-transition-timing-function: ease-in-out;
+  -o-transition-timing-function: ease-in-out;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+#rankingsPanel div.rankedUsersList div.rankedUser div.userPicture {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 54px 54px;
+  border: solid 2px transparent;
+  width: 50px;
+  height: 50px;
+  border-radius: 81px;
+  margin: 2px 6px 2px 6px;
+  float: left;
+}
+#rankingsPanel div.rankedUsersList div.rankedUser div.authorInfo {
+  margin: 2px 0px;
+  color: #222222;
+  font-size: 16px;
+  margin-left: 135px;
+  width: 150px;
+  -moz-transition-property: all;
+  -o-transition-property: all;
+  -webkit-transition-property: all;
+  transition-property: all;
+  -moz-transition-duration: 0.4s;
+  -o-transition-duration: 0.4s;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  -moz-transition-delay: 0.1s;
+  -o-transition-delay: 0.1s;
+  -webkit-transition-delay: 0.1s;
+  transition-delay: 0.1s;
+  -moz-transition-timing-function: ease-in-out;
+  -o-transition-timing-function: ease-in-out;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+#rankingsPanel div.rankedUsersList div.rankedUser div.authorInfo div {
+  overflow: hidden;
+  white-space: nowrap;
+  -ms-text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  width: 150px;
+  margin: 0px;
+  -moz-transition-property: all;
+  -o-transition-property: all;
+  -webkit-transition-property: all;
+  transition-property: all;
+  -moz-transition-duration: 0.4s;
+  -o-transition-duration: 0.4s;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  -moz-transition-delay: 0.1s;
+  -o-transition-delay: 0.1s;
+  -webkit-transition-delay: 0.1s;
+  transition-delay: 0.1s;
+  -moz-transition-timing-function: ease-in-out;
+  -o-transition-timing-function: ease-in-out;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+#rankingsPanel div.rankedUsersList div.rankedUser div.authorInfo div.authorName {
+  line-height: 30px;
+}
+#rankingsPanel div.rankedUsersList div.rankedUser div.authorInfo div.authorName span {
+  -moz-transition-property: all;
+  -o-transition-property: all;
+  -webkit-transition-property: all;
+  transition-property: all;
+  -moz-transition-duration: 0.4s;
+  -o-transition-duration: 0.4s;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  -moz-transition-delay: 0.1s;
+  -o-transition-delay: 0.1s;
+  -webkit-transition-delay: 0.1s;
+  transition-delay: 0.1s;
+  -moz-transition-timing-function: ease-in-out;
+  -o-transition-timing-function: ease-in-out;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+#rankingsPanel div.rankedUsersList div.rankedUser div.authorInfo div.authorName span.name {
+  color: #3030d0;
+  background-color: white;
+  padding: 0px 2px;
+  margin: 0px;
+  display: inline-block;
+  text-align: center;
+  font-weight: bold;
+  -moz-transition-property: all;
+  -o-transition-property: all;
+  -webkit-transition-property: all;
+  transition-property: all;
+  -moz-transition-duration: 0.4s;
+  -o-transition-duration: 0.4s;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  -moz-transition-delay: 0.1s;
+  -o-transition-delay: 0.1s;
+  -webkit-transition-delay: 0.1s;
+  transition-delay: 0.1s;
+  -moz-transition-timing-function: ease-in-out;
+  -o-transition-timing-function: ease-in-out;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+#rankingsPanel div.rankedUsersList div.rankedUser div.authorInfo div.scores {
+  font-size: 16px;
+  padding: 0px 10px;
+}
+#rankingsPanel div.rankedUsersList div.rankedUser div.authorInfo div.scores span {
+  -moz-transition-property: all;
+  -o-transition-property: all;
+  -webkit-transition-property: all;
+  transition-property: all;
+  -moz-transition-duration: 0.4s;
+  -o-transition-duration: 0.4s;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  -moz-transition-delay: 0.1s;
+  -o-transition-delay: 0.1s;
+  -webkit-transition-delay: 0.1s;
+  transition-delay: 0.1s;
+  -moz-transition-timing-function: ease-in-out;
+  -o-transition-timing-function: ease-in-out;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+#rankingsPanel div.rankedUsersList div.rankedUser div.authorInfo div.scores i {
+  color: #fab033;
+  padding-right: 3px;
+  padding-left: 10px;
+}
+#rankingsPanel div.rankedUsersList div.rankedUser div.rankedUser:hover {
+  border-color: black;
+  background-color: white;
+}
+#rankingsPanel div.rankedPropertiesList div.rankedProp {
+  cursor: pointer;
+  padding: 0px 2px;
+  float: left;
+  width: 290px;
+  overflow: hidden;
+  margin: 10px;
+  border-style: solid;
+  border-width: 1px;
+  border-left-width: 6px;
+  border-color: #eeeeff;
+  background-color: #fdfdff;
+  -moz-transition-property: all;
+  -o-transition-property: all;
+  -webkit-transition-property: all;
+  transition-property: all;
+  -moz-transition-duration: 0.4s;
+  -o-transition-duration: 0.4s;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  -moz-transition-delay: 0.1s;
+  -o-transition-delay: 0.1s;
+  -webkit-transition-delay: 0.1s;
+  transition-delay: 0.1s;
+  -moz-transition-timing-function: ease-in-out;
+  -o-transition-timing-function: ease-in-out;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+#rankingsPanel div.rankedPropertiesList div.rankedProp div.propInfo {
+  margin: 2px 0px;
+  color: #222222;
+  font-size: 16px;
+  margin-left: 70px;
+  width: 218px;
+  -moz-transition-property: all;
+  -o-transition-property: all;
+  -webkit-transition-property: all;
+  transition-property: all;
+  -moz-transition-duration: 0.4s;
+  -o-transition-duration: 0.4s;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  -moz-transition-delay: 0.1s;
+  -o-transition-delay: 0.1s;
+  -webkit-transition-delay: 0.1s;
+  transition-delay: 0.1s;
+  -moz-transition-timing-function: ease-in-out;
+  -o-transition-timing-function: ease-in-out;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+#rankingsPanel div.rankedPropertiesList div.rankedProp div.propInfo div {
+  overflow: hidden;
+  white-space: nowrap;
+  -ms-text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  width: 218px;
+  margin: 0px;
+  -moz-transition-property: all;
+  -o-transition-property: all;
+  -webkit-transition-property: all;
+  transition-property: all;
+  -moz-transition-duration: 0.4s;
+  -o-transition-duration: 0.4s;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  -moz-transition-delay: 0.1s;
+  -o-transition-delay: 0.1s;
+  -webkit-transition-delay: 0.1s;
+  transition-delay: 0.1s;
+  -moz-transition-timing-function: ease-in-out;
+  -o-transition-timing-function: ease-in-out;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+#rankingsPanel div.rankedPropertiesList div.rankedProp div.propInfo div.propName {
+  line-height: 30px;
+}
+#rankingsPanel div.rankedPropertiesList div.rankedProp div.propInfo div.propName span {
+  -moz-transition-property: all;
+  -o-transition-property: all;
+  -webkit-transition-property: all;
+  transition-property: all;
+  -moz-transition-duration: 0.4s;
+  -o-transition-duration: 0.4s;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  -moz-transition-delay: 0.1s;
+  -o-transition-delay: 0.1s;
+  -webkit-transition-delay: 0.1s;
+  transition-delay: 0.1s;
+  -moz-transition-timing-function: ease-in-out;
+  -o-transition-timing-function: ease-in-out;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+#rankingsPanel div.rankedPropertiesList div.rankedProp div.propInfo div.propName span.name {
+  color: #3030d0;
+  background-color: white;
+  padding: 0px 2px;
+  margin: 0px;
+  display: inline-block;
+  text-align: center;
+  font-weight: bold;
+  -moz-transition-property: all;
+  -o-transition-property: all;
+  -webkit-transition-property: all;
+  transition-property: all;
+  -moz-transition-duration: 0.4s;
+  -o-transition-duration: 0.4s;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  -moz-transition-delay: 0.1s;
+  -o-transition-delay: 0.1s;
+  -webkit-transition-delay: 0.1s;
+  transition-delay: 0.1s;
+  -moz-transition-timing-function: ease-in-out;
+  -o-transition-timing-function: ease-in-out;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+#rankingsPanel div.rankedPropertiesList div.rankedProp div.propInfo div.scores {
+  font-size: 16px;
+  padding: 0px 10px;
+}
+#rankingsPanel div.rankedPropertiesList div.rankedProp div.propInfo div.scores span {
+  -moz-transition-property: all;
+  -o-transition-property: all;
+  -webkit-transition-property: all;
+  transition-property: all;
+  -moz-transition-duration: 0.4s;
+  -o-transition-duration: 0.4s;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  -moz-transition-delay: 0.1s;
+  -o-transition-delay: 0.1s;
+  -webkit-transition-delay: 0.1s;
+  transition-delay: 0.1s;
+  -moz-transition-timing-function: ease-in-out;
+  -o-transition-timing-function: ease-in-out;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+#rankingsPanel div.rankedPropertiesList div.rankedProp div.propInfo div.scores i {
+  color: #fab033;
+  padding-right: 3px;
+  padding-left: 10px;
+}
+#rankingsPanel div.rankedPropertiesList div.rankedProp div.rankedProp:hover {
+  border-color: black;
+  background-color: white;
+}
+#rankingsPanel div.rankingPosition {
+  border: solid 2px transparent;
+  width: 50px;
+  height: 50px;
+  margin: 2px 6px 2px 6px;
+  float: left;
+  padding: 5px 0 0 0;
+}
+#rankingsPanel div.rankingPosition .posId {
+  font-size: 26px;
+}
+#rankingsPanel div.rankingPosition .rankingMedal {
+  margin-left: 10px;
+  font-size: 22px;
+}
+#rankingsPanel .gold {
+  color: gold;
+}
+#rankingsPanel .silver {
+  color: silver;
+}
+#rankingsPanel .bronze {
+  color: #cd7f32;
+}
+#askQuestion_panel div.inputForm span.inputLabel {
+  min-width: 100px;
+  width: 100px;
+}
+#askQuestion_panel .inputInfo,
+#askQuestion_panel .inputError {
+  margin-top: 10px;
+  margin-left: 108px;
+}
+#askQuestion_panel .inputError {
+  min-width: 670px;
+}
+#askQuestion_panel .inputInfo {
+  min-width: 700px;
+}

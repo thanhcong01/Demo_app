@@ -1,0 +1,573 @@
+From - Tue Jul  1 02:46:30 2014
+X-Account-Key: account1
+X-UIDL: 0000000153b21cd6
+X-Mozilla-Status: 0001
+X-Mozilla-Status2: 00000000
+X-Mozilla-Keys:                                                                                 
+Return-Path: <redmine@dev.framgia.com>
+X-Spam-Checker-Version: SpamAssassin 3.3.1 (2010-03-16) on framgia.com
+X-Spam-Level: *
+X-Spam-Status: No, score=1.6 required=13.0 tests=CONTENT_TYPE_PRESENT,
+	HTML_MESSAGE,MIMEQENC,MULTIPART_ALTERNATIVE,QENCPTR1,QENCPTR2 autolearn=no
+	version=3.3.1
+X-Original-To: duong.thanh.cong@framgia.com
+Delivered-To: duong.thanh.cong@framgia.com
+Received: from localhost (localhost [127.0.0.1])
+	by ms01.framgia.com (Postfix) with ESMTP id F05D1608BA
+	for <duong.thanh.cong@framgia.com>; Mon, 30 Jun 2014 17:17:11 +0900 (JST)
+X-Virus-Scanned: amavisd-new at framgia.com
+Received: from ms01.framgia.com ([127.0.0.1])
+	by localhost (framgia.com [127.0.0.1]) (amavisd-new, port 10024)
+	with ESMTP id tSvT9wjgRKhf for <duong.thanh.cong@framgia.com>;
+	Mon, 30 Jun 2014 17:17:11 +0900 (JST)
+Received: from framgia.com (unknown [113.164.3.180])
+	by ms01.framgia.com (Postfix) with ESMTPA id 8B0C5608B9
+	for <duong.thanh.cong@framgia.com>; Mon, 30 Jun 2014 17:17:11 +0900 (JST)
+Date: Mon, 30 Jun 2014 15:15:38 +0700
+From: redmine@dev.framgia.com
+Message-Id: <53b11caada761_47783f8d53d0de441011c4@framgia.tmail>
+Subject: Your framgia Redmine account activation
+Mime-Version: 1.0
+Content-Type: multipart/alternative; boundary=mimepart_53b11cb14735_47783f8d53d0de4410121
+Precedence: bulk
+X-Mailer: Redmine
+Auto-Submitted: auto-generated
+X-Redmine-Site: framgia Redmine
+X-Redmine-Host: dev.framgia.com/redmine
+To: undisclosed-recipients:;
+
+
+--mimepart_53b11cb14735_47783f8d53d0de4410121
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: Quoted-printable
+Content-Disposition: inline
+
+
+Your account information:
+* Login: duong.thanh.cong
+* Password: 32e6y6JA
+
+Sign in: https://dev.framgia.com/redmine/login
+
+-- =
+
+You have received this notification because you have either subscribed to=
+ it, or are involved in it.
+To change your notification preferences, please click here: http://dev.fr=
+amgia.com/redmine/my/account
+
+--mimepart_53b11cb14735_47783f8d53d0de4410121
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: Quoted-printable
+Content-Disposition: inline
+
+<html>
+<head>
+<style>
+body {
+  font-family: Verdana, sans-serif;
+  font-size: 0.8em;
+  color:#484848;
+}
+h1, h2, h3 { font-family: "Trebuchet MS", Verdana, sans-serif; margin: 0p=
+x; }
+h1 { font-size: 1.2em; }
+h2, h3 { font-size: 1.1em; }
+a, a:link, a:visited { color: #2A5685;}
+a:hover, a:active { color: #c61a1a; }
+a.wiki-anchor { display: none; }
+hr {
+  width: 100%;
+  height: 1px;
+  background: #ccc;
+  border: 0;
+}
+.footer {
+  font-size: 0.8em;
+  font-style: italic;
+}
+</style>
+</head>
+<body>
+<span class=3D"header"></span>
+
+<p>Your account information:</p>
+<ul>
+    <li>Login: duong.thanh.cong</li>
+    <li>Password: 32e6y6JA</li>
+</ul>
+
+
+<p>Sign in: <a href=3D"https://dev.framgia.com/redmine/login">https://dev=
+.framgia.com/redmine/login</a></p>
+
+<hr />
+<span class=3D"footer"><p>You have received this notification because you=
+ have either subscribed to it, or are involved in it.<br />To change your=
+ notification preferences, please click here: <a class=3D"external" href=3D=
+"http://dev.framgia.com/redmine/my/account">http://dev.framgia.com/redmin=
+e/my/account</a></p></span>
+</body>
+</html>
+
+--mimepart_53b11cb14735_47783f8d53d0de4410121--
+
+
+From - Tue Jul  1 02:46:30 2014
+X-Account-Key: account1
+X-UIDL: 0000000253b21cd6
+X-Mozilla-Status: 0001
+X-Mozilla-Status2: 00000000
+X-Mozilla-Keys:                                                                                 
+Return-Path: <nguyen.thi.uoc.mo@framgia.com>
+X-Spam-Checker-Version: SpamAssassin 3.3.1 (2010-03-16) on framgia.com
+X-Spam-Level: 
+X-Spam-Status: No, score=-0.1 required=13.0 tests=CONTENT_TYPE_PRESENT
+	autolearn=ham version=3.3.1
+X-Original-To: duong.thanh.cong@framgia.com
+Delivered-To: duong.thanh.cong@framgia.com
+Received: from localhost (localhost [127.0.0.1])
+	by ms01.framgia.com (Postfix) with ESMTP id B32CB60885;
+	Tue,  1 Jul 2014 10:39:31 +0900 (JST)
+X-Virus-Scanned: amavisd-new at framgia.com
+Received: from ms01.framgia.com ([127.0.0.1])
+	by localhost (framgia.com [127.0.0.1]) (amavisd-new, port 10024)
+	with ESMTP id ryNADa0dQhP7; Tue,  1 Jul 2014 10:39:31 +0900 (JST)
+Received: from [192.168.1.4] (unknown [118.70.170.72])
+	by ms01.framgia.com (Postfix) with ESMTPSA id 078206072E;
+	Tue,  1 Jul 2014 10:39:28 +0900 (JST)
+Message-ID: <53B21142.1050407@framgia.com>
+Date: Tue, 01 Jul 2014 08:39:14 +0700
+From: Uoc Mo NT <nguyen.thi.uoc.mo@framgia.com>
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:24.0) Gecko/20100101 Thunderbird/24.6.0
+MIME-Version: 1.0
+To: duong.thanh.cong@framgia.com, tran.van.cuong@framgia.com, 
+ bui.duy.doanh@framgia.com, vu.huy.tuan@framgia.com
+CC: "hr_team@framgia.com" <hr_team@framgia.com>
+Subject: [HR] =?UTF-8?B?SMaw4bubbmcgZOG6q24gbuG7mWkgcXV5?=
+References: <53141AF0.10103@framgia.com>
+In-Reply-To: <53141AF0.10103@framgia.com>
+X-Forwarded-Message-Id: <53141AF0.10103@framgia.com>
+Content-Type: text/plain; charset=UTF-8; format=flowed
+Content-Transfer-Encoding: 8bit
+
+Dear All,
+
+Để nắm rõ nội quy công ty, mọi vào link sau để đọc thêm nhé:
+\\192.168.1.10\Public\hr (http://192.168.1.10:8080/)
+
+Mọi người tạo tài khoản chatwork và redmine nữa nhé.
+https://www.chatwork.com
+http://dev.framgia.com/redmine
+Tên đăng nhập sử dụng email nội bộ: (vd: nguyen.van.a@framgia.com)
+Lưu ý: mail login: mail công ty, tên giống email nội bộ của các bạn/anh
+Tên hiển thị Chatwork: Nguyen Van A
+Tên hiển thị Redmine: A Nguyen Van
+
+Tạo xong thì add nguyen.thi.uoc.mo@framgia.com để em/tớ add mọi người vào group
+trên chatwork.
+
+Em/tớ đã share file điền skill, mọi người điền theo các mức (có hướng dẫn ở cuối
+file).
+Link
+https://docs.google.com/spreadsheet/ccc?key=0AotnPE7ITNFNdG52N0tONmNWbFg4VUVnSHpQaDZxWHc#gid=1
+để điền các skill (chỉ điền từ cột G đến cột M)
+
+Đồng thời, mọi người cũng điền số năm kinh nghiệm làm việc với các ngôn ngữ lập trình có trong file sau:
+https://docs.google.com/spreadsheet/ccc?key=0AkVS7h95QLeGdGRmV0xZS1ZiTFF6ZllOM045V1Q4Snc&usp=drive_web#gid=1
+
+  Nếu cần hỗ trợ gì về kỹ thuật, mọi người có thể nhờ anh Trần Nam Sơn
+(tran.nam.son@framgia.com)
+
+Ngoài ra, có gì chưa rõ thì cứ hỏi em/tớ nhé
+
+Chào mừng mọi người gia nhập Framgia Việt Nam.
+
+-- 
+Kind regards,
+Uoc Mo
+===============================
+Nguyen Thi Uoc Mo (Ms.)
+Framgia Viet Nam Co.,Ltd
+9F VietA building, Duy Tan street, Cau Giay district, Hanoi, Vietnam
+Mail: nguyen.thi.uoc.mo@framgia.com
+Mobile: 0973.766.610
+https://www.facebook.com/FramgiaVietnam?ref=hl
+https://framgia.com
+
+
+
+
+From - Tue Jul  1 02:46:31 2014
+X-Account-Key: account1
+X-UIDL: 0000000353b21cd6
+X-Mozilla-Status: 0001
+X-Mozilla-Status2: 00000000
+X-Mozilla-Keys:                                                                                 
+Return-Path: <error-bounce@chatwork.com>
+X-Spam-Checker-Version: SpamAssassin 3.3.1 (2010-03-16) on framgia.com
+X-Spam-Level: 
+X-Spam-Status: No, score=0.1 required=13.0 tests=CONTENT_TYPE_PRESENT,QENCPTR1,
+	RCVD_IN_DNSWL_NONE,SPF_HELO_PASS autolearn=no version=3.3.1
+X-Original-To: duong.thanh.cong@framgia.com
+Delivered-To: duong.thanh.cong@framgia.com
+Received: from localhost (localhost [127.0.0.1])
+	by ms01.framgia.com (Postfix) with ESMTP id 9956E60885
+	for <duong.thanh.cong@framgia.com>; Tue,  1 Jul 2014 11:01:46 +0900 (JST)
+X-Virus-Scanned: amavisd-new at framgia.com
+Received: from ms01.framgia.com ([127.0.0.1])
+	by localhost (framgia.com [127.0.0.1]) (amavisd-new, port 10024)
+	with ESMTP id SPIfqo_5dGKd for <duong.thanh.cong@framgia.com>;
+	Tue,  1 Jul 2014 11:01:46 +0900 (JST)
+Received: from srs9859.cuenote.jp (srs9859.cuenote.jp [210.188.255.66])
+	by ms01.framgia.com (Postfix) with ESMTP id 7BAFD60884
+	for <duong.thanh.cong@framgia.com>; Tue,  1 Jul 2014 11:01:46 +0900 (JST)
+Received: from ip-10-167-0-13.localdomain (ec2-46-51-251-129.ap-northeast-1.compute.amazonaws.com [46.51.251.129]) by srs9859.cuenote.jp (Cuenote SR-S); Tue,  1 Jul 2014 11:01:46 +0900
+Received: from ip-10-167-1-169.localdomain (ip-10-167-1-169.ap-northeast-1.compute.internal [10.167.1.169])
+	by ip-10-167-0-13.localdomain (Postfix) with ESMTP id 117B3240B6;
+	Tue,  1 Jul 2014 11:01:46 +0900 (JST)
+Received: by ip-10-167-1-169.localdomain (Postfix, from userid 48)
+	id 0BFF0203B3; Tue,  1 Jul 2014 11:01:46 +0900 (JST)
+To: duong.thanh.cong@framgia.com
+Subject: =?UTF-8?B?Q2hhdFdvcms6IENyZWF0aW5nIHlvdXIgYWNjb3VudA==?=
+X-PHP-Originating-Script: 500:class.phpmailer.php
+Date: Tue, 1 Jul 2014 11:01:46 +0900
+From: =?UTF-8?B?Q2hhdFdvcms=?= <info@chatwork.com>
+Message-ID: <fa21afc8490cbf7e1bc66a3605092622@www.chatwork.com>
+X-Priority: 3
+X-Mailer: PHPMailer [version 1.73/EC Framework v0.90]
+X-CW-ERROR-BACKUP: 53b2168a04f4c
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="UTF-8"
+
+Thank you for your interest in ChatWork!
+
+Here are the steps to create your account.
+
+──────────────────────────────
+ Creating your account
+──────────────────────────────
+
+Please follow the steps below to start using ChatWork:
+
+1) Please click the following link
+
+- ChatWork account creation URL
+https://www.chatwork.com/service/packages/chatwork/register.php?lang=en&pkey=940c671ccf40b543&act=logout&d=1
+
+2) Enter your user information and finish registering for ChatWork
+
+*For security purposes you'll be asked to create a password.
+Please make sure to use a password you won't forget and keep it safe.
+
+After you finish registering you'll receive an email that shows you how to log in.
+
+
+If you would like to know more, please visit the ChatWork FAQ:
+
+ChatWork - FAQ
+http://www.chatwork.com/help/
+
+
+*If you are unsure why you have received this email, you can simply delete it.
+
+┏━━━ ━━━━━━━━━━━━━━━━━━━━━━━━━
+┃ChatWork Inc
+┗━━━┗━━┻━━┛━━━━━━━━━━━━━━━━━━━
+
+ URL: http://www.chatwork.com/
+ Contact: http://www.chatwork.com/help/
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+
+From - Tue Jul  1 02:46:31 2014
+X-Account-Key: account1
+X-UIDL: 0000000453b21cd6
+X-Mozilla-Status: 0001
+X-Mozilla-Status2: 00000000
+X-Mozilla-Keys:                                                                                 
+Return-Path: <error-bounce@chatwork.com>
+X-Spam-Checker-Version: SpamAssassin 3.3.1 (2010-03-16) on framgia.com
+X-Spam-Level: 
+X-Spam-Status: No, score=0.1 required=13.0 tests=CONTENT_TYPE_PRESENT,QENCPTR1,
+	RCVD_IN_DNSWL_NONE,SPF_HELO_PASS autolearn=no version=3.3.1
+X-Original-To: duong.thanh.cong@framgia.com
+Delivered-To: duong.thanh.cong@framgia.com
+Received: from localhost (localhost [127.0.0.1])
+	by ms01.framgia.com (Postfix) with ESMTP id 002A760884
+	for <duong.thanh.cong@framgia.com>; Tue,  1 Jul 2014 11:39:13 +0900 (JST)
+X-Virus-Scanned: amavisd-new at framgia.com
+Received: from ms01.framgia.com ([127.0.0.1])
+	by localhost (framgia.com [127.0.0.1]) (amavisd-new, port 10024)
+	with ESMTP id Fp-3DxEkRTb7 for <duong.thanh.cong@framgia.com>;
+	Tue,  1 Jul 2014 11:39:12 +0900 (JST)
+Received: from srs9859.cuenote.jp (srs9859.cuenote.jp [210.188.255.66])
+	by ms01.framgia.com (Postfix) with ESMTP id E280460866
+	for <duong.thanh.cong@framgia.com>; Tue,  1 Jul 2014 11:39:12 +0900 (JST)
+Received: from ip-10-167-0-13.localdomain (ec2-46-51-251-129.ap-northeast-1.compute.amazonaws.com [46.51.251.129]) by srs9859.cuenote.jp (Cuenote SR-S); Tue,  1 Jul 2014 11:39:12 +0900
+Received: from ip-10-125-130-229.localdomain (ip-10-125-130-229.ap-northeast-1.compute.internal [10.125.130.229])
+	by ip-10-167-0-13.localdomain (Postfix) with ESMTP id 899EC23FDF;
+	Tue,  1 Jul 2014 11:39:12 +0900 (JST)
+Received: by ip-10-125-130-229.localdomain (Postfix, from userid 48)
+	id 86240204D6; Tue,  1 Jul 2014 11:39:12 +0900 (JST)
+To: duong.thanh.cong@framgia.com
+Subject: =?UTF-8?B?Q2hhdFdvcms6IENyZWF0aW5nIHlvdXIgYWNjb3VudA==?=
+X-PHP-Originating-Script: 500:class.phpmailer.php
+Date: Tue, 1 Jul 2014 11:39:12 +0900
+From: =?UTF-8?B?Q2hhdFdvcms=?= <info@chatwork.com>
+Message-ID: <dbf82c7cb260ab1840e396db0cad3c67@www.chatwork.com>
+X-Priority: 3
+X-Mailer: PHPMailer [version 1.73/EC Framework v0.90]
+X-CW-ERROR-BACKUP: 53b21f507f2ff
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="UTF-8"
+
+Thank you for your interest in ChatWork!
+
+Here are the steps to create your account.
+
+──────────────────────────────
+ Creating your account
+──────────────────────────────
+
+Please follow the steps below to start using ChatWork:
+
+1) Please click the following link
+
+- ChatWork account creation URL
+https://www.chatwork.com/service/packages/chatwork/register.php?lang=en&pkey=940c671ccf40b543&act=logout&d=1
+
+2) Enter your user information and finish registering for ChatWork
+
+*For security purposes you'll be asked to create a password.
+Please make sure to use a password you won't forget and keep it safe.
+
+After you finish registering you'll receive an email that shows you how to log in.
+
+
+If you would like to know more, please visit the ChatWork FAQ:
+
+ChatWork - FAQ
+http://www.chatwork.com/help/
+
+
+*If you are unsure why you have received this email, you can simply delete it.
+
+┏━━━ ━━━━━━━━━━━━━━━━━━━━━━━━━
+┃ChatWork Inc
+┗━━━┗━━┻━━┛━━━━━━━━━━━━━━━━━━━
+
+ URL: http://www.chatwork.com/
+ Contact: http://www.chatwork.com/help/
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+
+From - Tue Jul  1 02:46:31 2014
+X-Account-Key: account1
+X-UIDL: 0000000553b21cd6
+X-Mozilla-Status: 0001
+X-Mozilla-Status2: 00000000
+X-Mozilla-Keys:                                                                                 
+Return-Path: <vu.huy.tuan@framgia.com>
+X-Spam-Checker-Version: SpamAssassin 3.3.1 (2010-03-16) on framgia.com
+X-Spam-Level: 
+X-Spam-Status: No, score=-0.1 required=13.0 tests=CONTENT_TYPE_PRESENT
+	autolearn=ham version=3.3.1
+X-Original-To: duong.thanh.cong@framgia.com
+Delivered-To: duong.thanh.cong@framgia.com
+Received: from localhost (localhost [127.0.0.1])
+	by ms01.framgia.com (Postfix) with ESMTP id 556C360884
+	for <duong.thanh.cong@framgia.com>; Tue,  1 Jul 2014 11:56:44 +0900 (JST)
+X-Virus-Scanned: amavisd-new at framgia.com
+Received: from ms01.framgia.com ([127.0.0.1])
+	by localhost (framgia.com [127.0.0.1]) (amavisd-new, port 10024)
+	with ESMTP id pqPNsr0Ff2bV for <duong.thanh.cong@framgia.com>;
+	Tue,  1 Jul 2014 11:56:44 +0900 (JST)
+Received: from [192.168.2.65] (unknown [118.70.170.72])
+	by ms01.framgia.com (Postfix) with ESMTPSA id 963CD60866
+	for <duong.thanh.cong@framgia.com>; Tue,  1 Jul 2014 11:56:43 +0900 (JST)
+Message-ID: <53B22368.6050407@framgia.com>
+Date: Tue, 01 Jul 2014 09:56:40 +0700
+From: Huy Tuan <vu.huy.tuan@framgia.com>
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:17.0) Gecko/20130804 Thunderbird/17.0.8
+MIME-Version: 1.0
+To: duong.thanh.cong@framgia.com
+Subject: aaaaaaa
+Content-Type: text/plain; charset=ISO-8859-1; format=flowed
+Content-Transfer-Encoding: 7bit
+
+aaaaaaaa
+
+
+From - Tue Jul  1 02:46:31 2014
+X-Account-Key: account1
+X-UIDL: 0000000653b21cd6
+X-Mozilla-Status: 0001
+X-Mozilla-Status2: 00000000
+X-Mozilla-Keys:                                                                                 
+Return-Path: <nguyen.thi.uoc.mo@framgia.com>
+X-Spam-Checker-Version: SpamAssassin 3.3.1 (2010-03-16) on framgia.com
+X-Spam-Level: ***
+X-Spam-Status: No, score=3.8 required=13.0 tests=CONTENT_TYPE_PRESENT,
+	HTML_MESSAGE,MULTIPART_ALTERNATIVE,UNWANTED_LANGUAGE_BODY autolearn=no
+	version=3.3.1
+X-Original-To: duong.thanh.cong@framgia.com
+Delivered-To: duong.thanh.cong@framgia.com
+Received: from localhost (localhost [127.0.0.1])
+	by ms01.framgia.com (Postfix) with ESMTP id 4AA2A6089F;
+	Tue,  1 Jul 2014 18:03:15 +0900 (JST)
+X-Virus-Scanned: amavisd-new at framgia.com
+Received: from ms01.framgia.com ([127.0.0.1])
+	by localhost (framgia.com [127.0.0.1]) (amavisd-new, port 10024)
+	with ESMTP id FnBKjPfeVp21; Tue,  1 Jul 2014 18:03:15 +0900 (JST)
+Received: from [192.168.1.4] (unknown [118.70.170.72])
+	by ms01.framgia.com (Postfix) with ESMTPSA id A81DB60127;
+	Tue,  1 Jul 2014 18:03:14 +0900 (JST)
+Message-ID: <53B2794E.6050006@framgia.com>
+Date: Tue, 01 Jul 2014 16:03:10 +0700
+From: Uoc Mo NT <nguyen.thi.uoc.mo@framgia.com>
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:24.0) Gecko/20100101 Thunderbird/24.6.0
+MIME-Version: 1.0
+To: duong.thanh.cong@framgia.com
+CC: "hr_team@framgia.com" <hr_team@framgia.com>, 
+ Tuan Chu Anh <chu.anh.tuan@framgia.com>
+Subject: [HR] =?UTF-8?B?SMaw4bubbmcgZOG6q24gcXV5IHRyw6xuaCBo4buNYyBSdWJ5IA==?=
+ =?UTF-8?B?VHV0b3JpYWwu?=
+References: <53140445.6010805@framgia.com>
+In-Reply-To: <53140445.6010805@framgia.com>
+X-Forwarded-Message-Id: <53140445.6010805@framgia.com>
+Content-Type: multipart/alternative;
+ boundary="------------070507050808090108040306"
+
+This is a multi-part message in MIME format.
+--------------070507050808090108040306
+Content-Type: text/plain; charset=UTF-8; format=flowed
+Content-Transfer-Encoding: 8bit
+
+DearCông,
+
+Chào mừng bạn gia nhập Framgia VN.
+
+Bước đầu, bạn học tài liệu training về Ruby để có thể đáp ứng được yêu 
+cầu đào tạo đầu vào của Framgia.
+Đây là link đọc tài 
+liệu:https://docs.google.com/document/d/1C5etDNDZNI5Y2o17m4rlM51zqS36ZT2-O_V6CkVl0xc/edit
+Thời gian đọc tài liệu là 02 tuần, tính từ ngày 01/07/2014
+Trong thời gian đọc tài liệu, nếu có gì thắc mắc hoặc cần support kỹ 
+thuật, bạn có thể hỏi anh Chu Anh Tuấn - phụ trách đào tạo của công ty - 
+hoặc hỏi bất kỳ anh/chị/bạn nào trong công ty (công ty đánh giá cao tinh 
+thần học hỏi, chịu khó giao tiếp của mỗi thành viên).
+*Cuối giờ chiều mỗi ngày, khi kết thúc 1 chapter trong tài liệu, bạn qua 
+chỗ mình điền thông tin ngày kết thúc vào tờ Ruby passport để tiện theo 
+dõi quá trình học tập.*
+Kết thúc thời gian đọc tài liệu,*bạn sẽ làm bài test* nhỏ dưới sự hướng 
+dẫn của anh Tuấn.
+
+Chúc bạn sớm hoàn thành tốt thời gian training!!!
+
+-- 
+Kind regards,
+Uoc Mo
+===============================
+Nguyen Thi Uoc Mo (Ms.)
+Framgia Viet Nam Co.,Ltd
+9F VietA building, Duy Tan street, Cau Giay district, Hanoi, Vietnam
+Mail:nguyen.thi.uoc.mo@framgia.com
+Mobile: 0973.766.610
+https://www.facebook.com/FramgiaVietnam?ref=hl
+https://framgia.com
+
+
+
+
+--------------070507050808090108040306
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+<html>
+  <head>
+
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  </head>
+  <body bgcolor="#FFFFFF" text="#000000">
+    DearCông,<br>
+    <br>
+    <div class="moz-forward-container"> Chào mừng bạn gia nhập Framgia
+      VN.<br>
+      <br>
+      Bước đầu, bạn học tài liệu training về Ruby để có thể đáp ứng được
+      yêu cầu đào tạo đầu vào của Framgia.<br>
+      Đây là link đọc tài liệu:<a moz-do-not-send="true"
+href="https://docs.google.com/document/d/1C5etDNDZNI5Y2o17m4rlM51zqS36ZT2-O_V6CkVl0xc/edit">https://docs.google.com/document/d/1C5etDNDZNI5Y2o17m4rlM51zqS36ZT2-O_V6CkVl0xc/edit</a><br>
+      Thời gian đọc tài liệu là 02 tuần, tính từ ngày 01/07/2014<br>
+      Trong thời gian đọc tài liệu, nếu có gì thắc mắc hoặc cần support
+      kỹ thuật, bạn có thể hỏi anh Chu Anh Tuấn - phụ trách đào tạo của
+      công ty - hoặc hỏi bất kỳ anh/chị/bạn nào trong công ty (công ty
+      đánh giá cao tinh thần học hỏi, chịu khó giao tiếp của mỗi thành
+      viên).<br>
+      <b>Cuối giờ chiều mỗi ngày, khi kết thúc 1 chapter trong tài liệu,
+        bạn qua chỗ mình điền thông tin ngày kết thúc vào tờ Ruby
+        passport để tiện theo dõi quá trình học tập.</b><br>
+      Kết thúc thời gian đọc tài liệu,<b> bạn sẽ làm bài test</b> nhỏ
+      dưới sự hướng dẫn của anh Tuấn.<br>
+      <br>
+      Chúc bạn sớm hoàn thành tốt thời gian training!!!
+      <pre class="moz-signature" cols="72">-- 
+Kind regards,
+Uoc Mo
+===============================
+Nguyen Thi Uoc Mo (Ms.)
+Framgia Viet Nam Co.,Ltd
+9F VietA building, Duy Tan street, Cau Giay district, Hanoi, Vietnam
+Mail: <a moz-do-not-send="true" class="moz-txt-link-abbreviated" href="mailto:nguyen.thi.uoc.mo@framgia.com">nguyen.thi.uoc.mo@framgia.com</a>
+Mobile: 0973.766.610
+<a moz-do-not-send="true" class="moz-txt-link-freetext" href="https://www.facebook.com/FramgiaVietnam?ref=hl">https://www.facebook.com/FramgiaVietnam?ref=hl</a>
+<a moz-do-not-send="true" class="moz-txt-link-freetext" href="https://framgia.com">https://framgia.com</a></pre>
+      <br>
+    </div>
+    <br>
+  </body>
+</html>
+
+--------------070507050808090108040306--
+
+
+From - Wed Jul  2 03:54:11 2014
+X-Account-Key: account1
+X-UIDL: 0000000753b21cd6
+X-Mozilla-Status: 0001
+X-Mozilla-Status2: 00000000
+X-Mozilla-Keys:                                                                                 
+Return-Path: <vu.huy.tuan@framgia.com>
+X-Spam-Checker-Version: SpamAssassin 3.3.1 (2010-03-16) on framgia.com
+X-Spam-Level: 
+X-Spam-Status: No, score=-0.1 required=13.0 tests=CONTENT_TYPE_PRESENT
+	autolearn=ham version=3.3.1
+X-Original-To: duong.thanh.cong@framgia.com
+Delivered-To: duong.thanh.cong@framgia.com
+Received: from localhost (localhost [127.0.0.1])
+	by ms01.framgia.com (Postfix) with ESMTP id 642B760875
+	for <duong.thanh.cong@framgia.com>; Wed,  2 Jul 2014 19:09:02 +0900 (JST)
+X-Virus-Scanned: amavisd-new at framgia.com
+Received: from ms01.framgia.com ([127.0.0.1])
+	by localhost (framgia.com [127.0.0.1]) (amavisd-new, port 10024)
+	with ESMTP id xTHsG9NMNQPC for <duong.thanh.cong@framgia.com>;
+	Wed,  2 Jul 2014 19:09:02 +0900 (JST)
+Received: from [192.168.1.152] (unknown [118.70.170.72])
+	by ms01.framgia.com (Postfix) with ESMTPSA id 7AB0660866
+	for <duong.thanh.cong@framgia.com>; Wed,  2 Jul 2014 19:09:01 +0900 (JST)
+Message-ID: <53B3DA39.5080502@framgia.com>
+Date: Wed, 02 Jul 2014 17:08:57 +0700
+From: Huy Tuan <vu.huy.tuan@framgia.com>
+User-Agent: Mozilla/5.0 (Windows NT 6.2; rv:24.0) Gecko/20100101 Thunderbird/24.6.0
+MIME-Version: 1.0
+To: duong.thanh.cong@framgia.com
+Subject: aaaaaaaaa
+Content-Type: text/plain; charset=UTF-8; format=flowed
+Content-Transfer-Encoding: 7bit
+
+vvvvvvvvvvv
+
+

@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"mailer_name:EFI"$ActionMailer::Base::mailer_name;FI"W;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I".Allows to set the name of current mailer.;T:
+@file0TI"lib/action_mailer/base.rb;T

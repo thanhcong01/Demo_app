@@ -1,0 +1,30 @@
+2014-07-01 02:45:00,335 - softwarecenter.ui.gtk3.app - INFO - setting up proxy 'None'
+2014-07-01 02:45:00,374 - softwarecenter.db.database - INFO - open() database: path=None use_axi=True use_agent=True
+2014-07-01 02:45:00,388 - softwarecenter.db.database - ERROR - failed to add apt-xapian-index
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/db/database.py", line 183, in _get_new_xapiandb
+    softwarecenter.paths.APT_XAPIAN_INDEX_DB_PATH)
+  File "/usr/lib/python2.7/dist-packages/xapian/__init__.py", line 3666, in __init__
+    _xapian.Database_swiginit(self,_xapian.new_Database(*args))
+DatabaseOpeningError: Couldn't stat '/var/lib/apt-xapian-index/index' (No such file or directory)
+2014-07-01 02:45:00,700 - softwarecenter.backend.reviews - WARNING - Could not get usefulness from server, no username in config file
+2014-07-01 02:45:00,929 - softwarecenter.ui.gtk3.app - INFO - show_available_packages: search_text is '', app is None.
+2014-07-01 02:45:00,940 - softwarecenter.db.pkginfo_impl.aptcache - INFO - aptcache.open()
+2014-07-01 02:45:01,690 - softwarecenter.db.categories - WARNING - sort by cataloged time requested but your a-x-i does not seem to support that yet
+2014-07-01 02:45:02,425 - softwarecenter.db.categories - WARNING - sort by cataloged time requested but your a-x-i does not seem to support that yet
+2014-07-01 02:45:02,536 - softwarecenter.db.categories - WARNING - sort by cataloged time requested but your a-x-i does not seem to support that yet
+2014-07-01 02:45:02,576 - softwarecenter.db.categories - WARNING - sort by cataloged time requested but your a-x-i does not seem to support that yet
+2014-07-01 02:45:02,615 - softwarecenter.db.categories - WARNING - sort by cataloged time requested but your a-x-i does not seem to support that yet
+2014-07-01 02:45:02,978 - softwarecenter.db.categories - WARNING - sort by cataloged time requested but your a-x-i does not seem to support that yet
+2014-07-01 02:45:03,012 - softwarecenter.db.categories - WARNING - sort by cataloged time requested but your a-x-i does not seem to support that yet
+2014-07-01 02:45:08,662 - softwarecenter.fixme - WARNING - logs to the root logger: '('/usr/share/software-center/softwarecenter/utils.py', 201, 'get_title_from_html')'
+2014-07-01 02:45:08,661 - root - WARNING - failed to parse: '<div style="background-color: #161513; width:1680px; height:200px;">
+ <div style="background: url('/site_media/exhibits/2013/09/AAMFP_Leaderboard_700x200_1.jpg') top left no-repeat; width:700px; height:200px;"></div>
+</div>' ('ascii' codec can't encode character u'\xa0' in position 70: ordinal not in range(128))
+2014-07-01 02:45:48,817 - softwarecenter.db.update - INFO - skipping region restricted app: 'Khitomer Free' (not whitelisted)
+2014-07-01 02:45:48,914 - softwarecenter.db.update - INFO - skipping region restricted app: 'Bulleti d'esquerra de Calonge i Sant Antoni ' (not whitelisted)
+2014-07-01 02:45:49,028 - softwarecenter.db.update - INFO - skipping region restricted app: 'Just Play MP3' (not whitelisted)
+2014-07-01 02:45:49,100 - softwarecenter.db.update - INFO - skipping region restricted app: 'reEarCandy' (not whitelisted)
+2014-07-01 02:45:49,362 - softwarecenter.db.update - INFO - skipping region restricted app: 'Source Code Analyzer' (not whitelisted)
+2014-07-01 02:45:49,650 - softwarecenter.db.update - INFO - skipping region restricted app: 'Flaggame' (not whitelisted)
+2014-07-01 02:45:49,824 - softwarecenter.db.update - INFO - skipping region restricted app: 'Comentarios Web' (not whitelisted)

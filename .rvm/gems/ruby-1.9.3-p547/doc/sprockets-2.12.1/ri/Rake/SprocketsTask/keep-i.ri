@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"	keep:EFI"Rake::SprocketsTask#keep;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I""Number of old assets to keep.;T:
+@file0FI"lib/rake/sprocketstask.rb;T
